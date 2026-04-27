@@ -133,7 +133,13 @@ export interface SceneScrollyStep {
   body: string;
   image: ImageAsset;
   focus?: SceneScrollyFocus;
-  overlayPosition?: 'left-lower' | 'right-lower' | 'left-upper' | 'right-upper';
+  overlayPosition?:
+    | 'left-lower'
+    | 'right-lower'
+    | 'left-upper'
+    | 'right-upper'
+    | 'left-center'
+    | 'right-center';
   placeLabel?: string;
   annotation?: SceneScrollyAnnotation;
 }

@@ -229,8 +229,18 @@
   }
 
   .overlay-copy {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(
+      180deg,
+      rgba(24, 21, 18, 0.66),
+      rgba(24, 21, 18, 0.5)
+    );
+    border: 1px solid rgba(255, 253, 248, 0.14);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.16);
     color: var(--color-panel);
     max-width: min(29rem, calc(100% - (var(--gutter) * 2)));
+    padding: var(--space-4) var(--space-4) var(--space-4);
     position: absolute;
     z-index: 3;
   }
@@ -250,9 +260,21 @@
     top: clamp(var(--space-6), 8vh, var(--space-8));
   }
 
+  .overlay-copy.left-center {
+    left: var(--gutter);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .overlay-copy.right-upper {
     right: var(--gutter);
     top: clamp(var(--space-6), 8vh, var(--space-8));
+  }
+
+  .overlay-copy.right-center {
+    right: var(--gutter);
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .place-label,
@@ -360,6 +382,16 @@
 
     .scene-canvas {
       display: none;
+    }
+
+    .overlay-copy {
+      backdrop-filter: none;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      transform: none;
     }
 
     .scene-triggers {

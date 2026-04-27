@@ -24,6 +24,61 @@ export const europeanMeasuresExplained: Story = {
       ],
     },
     {
+      type: "scene-scrolly",
+      title: "How the election takes shape",
+      intro: "This first sequence follows the movement from nomination to count inside Leinster House.",
+      steps: [
+        {
+          eyebrow: "Step 1",
+          title: "Candidates address the House",
+          body: "Placeholder text for the opening scene. This panel can explain how candidates are proposed and how the chamber is set for the first decision of a new Dáil.",
+          placeLabel: "Dáil chamber",
+          overlayPosition: "left-center",
+          focus: { x: 52, y: 38, scale: 1.02 },
+          image: {
+            src: "/media/john-mcguinness-speaking-in-the-dail.jpg",
+            alt: "John McGuinness speaking in the Dáil during the election of the Ceann Comhairle.",
+          },
+        },
+        {
+          eyebrow: "Step 2",
+          title: "Officials prepare the count",
+          body: "Placeholder text for the counting room. This can describe the administrative work behind a secret ballot and the transition from speeches in the chamber to counting outside it.",
+          placeLabel: "Counting room",
+          overlayPosition: "right-center",
+          focus: { x: 50, y: 46, scale: 1.01 },
+          image: {
+            src: "/media/counting-of-ceann-comhairle-ballots.jpg",
+            alt: "Officials and staff overseeing the counting of ballots in a reception room in Leinster House.",
+          },
+        },
+        {
+          eyebrow: "Step 3",
+          title: "Ballot boxes leave the chamber",
+          body: "Placeholder text for the transfer between spaces. This panel can explain the procedural choreography that keeps the vote secret while moving the ballot to the count.",
+          placeLabel: "Leinster House corridor",
+          overlayPosition: "left-center",
+          focus: { x: 49, y: 44, scale: 1.03 },
+          image: {
+            src: "/media/ushers-exiting-the-dail-chamber-with-ballot-boxes.jpg",
+            alt: "Ushers carrying ballot boxes out of the Dáil chamber during the election process.",
+          },
+        },
+        {
+          eyebrow: "Step 4",
+          title: "The result is reported back",
+          body: "Placeholder text for the closing scene. This can set up the formal declaration of the successful candidate and the return from procedure to chamber business.",
+          placeLabel: "Dáil chamber",
+          overlayPosition: "right-center",
+          focus: { x: 52, y: 42, scale: 1.02 },
+          image: {
+            src: "/media/Verona-murphy-speaking-in-the-Dail.jpg",
+            alt: "Verona Murphy speaking in the Dáil after the Ceann Comhairle vote.",
+          },
+        },
+      ],
+    },
+    {
       type: "chart",
       chart: "ceann-comhairle-waffle",
       data: "/data/CCSelectionCompleteData.csv",
