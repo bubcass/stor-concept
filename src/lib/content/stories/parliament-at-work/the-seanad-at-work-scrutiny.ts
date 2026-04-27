@@ -22,7 +22,7 @@ export const theSeanadAtWork: Story = {
       type: "text",
       paragraphs: [
         "Unexpectedly, the first reference made by the Cathaoirleach of the Seanad, Senator Mark Daly, is to a newspaper that's been defunct for a century.",
-        "\"Everybody knows the story of the <em>Skibbereen Eagle</em> keeping its eye on the Russian Tsar in the late 19th century. It comes up quite a bit in Seanad debates as a sort of funny reference, a slant on David versus Goliath. But that doesn't mean the idea of scrutiny was wrong. Scrutiny, transparency, accoutability - they're all connected. And they're everybody's responsibility.\" ",
+        "\"Everybody knows the story of the <em>Skibbereen Eagle</em> keeping its eye on the Russian Tsar in the late 19th century. It comes up quite a bit in Seanad debates as a sort of funny reference, a slant on David versus Goliath. But that doesn't mean the idea of scrutiny was wrong. Scrutiny, transparency, accountability - they're all connected, and they're everybody's responsibility. We all have a part to play and this Committee does its part with scrutiny of measures coming from Europe.\" ",
         "Senator Daly is looking over a sheaf of documents as he says this, a brief he's been given by Departments in advance of the latest meeting of the <strong>Seanad Select Committee on EU Scrutiny and Transparency.</strong>",
         "Tuesday's meeting is the next in the regularly scheduled series, when the Committee will hold a discussion with the Minister of State at the Department of the Taoiseach with responsibility for EU affairs, Deputy Thomas Byrne, as it continues its scrutiny work. The Minister of State is no stranger to the work being done by the Committee.",
       ],
