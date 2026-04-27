@@ -368,7 +368,7 @@
       display: block;
       margin: 0 auto;
       max-width: calc(var(--measure) + (var(--gutter) * 2));
-      padding: var(--space-2) var(--gutter) 0;
+      padding: var(--space-5) var(--gutter) 0;
     }
 
     .story-hero.immersive .mobile-immersive-copy .lede {

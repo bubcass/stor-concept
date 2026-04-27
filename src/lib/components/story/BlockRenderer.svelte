@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { StoryBlock } from '$lib/content/types';
+  import ChartBlock from './blocks/ChartBlock.svelte';
   import ImageBlock from './ImageBlock.svelte';
   import LinkListBlock from './LinkListBlock.svelte';
   import MediaTextBlock from './MediaTextBlock.svelte';
@@ -14,6 +15,8 @@
 
 {#if block.type === 'text'}
   <TextBlock {block} />
+{:else if block.type === 'chart'}
+  <ChartBlock {block} />
 {:else if block.type === 'media-text'}
   <MediaTextBlock {block} />
 {:else if block.type === 'image'}

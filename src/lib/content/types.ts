@@ -3,6 +3,7 @@ export type StoryBlock =
   | MediaTextBlock
   | ImageBlock
   | VideoBlock
+  | ChartStoryBlock
   | LinkListBlock
   | QuoteBlock
   | ScrollyBlock
@@ -71,6 +72,14 @@ export interface ImageBlock {
 export interface VideoBlock {
   type: 'video';
   video: VideoAsset;
+}
+
+export interface ChartStoryBlock {
+  type: 'chart';
+  chart: string;
+  data: string;
+  title?: string;
+  caption?: string;
 }
 
 export interface LinkListItem {

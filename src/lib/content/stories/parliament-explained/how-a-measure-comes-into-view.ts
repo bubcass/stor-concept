@@ -24,6 +24,14 @@ export const europeanMeasuresExplained: Story = {
       ],
     },
     {
+      type: "chart",
+      chart: "ceann-comhairle-waffle",
+      data: "/data/CCfinalCount.csv",
+      title: "Election of the Ceann Comhairle",
+      caption:
+        "Standings after each count. Candidates must reach the quota to be elected.",
+    },
+    {
       type: "media-text",
       eyebrow: "Motion insert",
       heading: "When a short clip is enough",
