@@ -5,13 +5,20 @@
 
   let { story }: { story: Story } = $props();
   let heroLayout = $derived(story.heroLayout ?? 'contained');
+  let heroIsVideo = $derived(story.hero.src.toLowerCase().endsWith('.mp4'));
 </script>
 
 <article class="story">
   <header class={`story-hero ${heroLayout}`}>
     {#if heroLayout === 'immersive'}
       <figure class="hero-media">
-        <img src="{base}{story.hero.src}" alt={story.hero.alt} fetchpriority="high" />
+        {#if heroIsVideo}
+          <video autoplay muted loop playsinline aria-label={story.hero.alt}>
+            <source src="{base}{story.hero.src}" type="video/mp4" />
+          </video>
+        {:else}
+          <img src="{base}{story.hero.src}" alt={story.hero.alt} fetchpriority="high" />
+        {/if}
         <div class="hero-overlay">
           {#if story.eyebrow}
             <p class="eyebrow">{story.eyebrow}</p>
@@ -58,7 +65,13 @@
       </div>
 
       <figure class="hero-media">
-        <img src="{base}{story.hero.src}" alt={story.hero.alt} fetchpriority="high" />
+        {#if heroIsVideo}
+          <video autoplay muted loop playsinline aria-label={story.hero.alt}>
+            <source src="{base}{story.hero.src}" type="video/mp4" />
+          </video>
+        {:else}
+          <img src="{base}{story.hero.src}" alt={story.hero.alt} fetchpriority="high" />
+        {/if}
         {#if story.hero.caption || story.hero.credit}
           <figcaption class="caption">
             {story.hero.caption}
@@ -192,7 +205,8 @@
     grid-column: 2;
   }
 
-  img {
+  img,
+  video {
     background: var(--color-soft);
     flex: 1;
     height: 100%;
@@ -205,7 +219,8 @@
     margin-top: var(--space-6);
   }
 
-  .story-hero.contained img {
+  .story-hero.contained img,
+  .story-hero.contained video {
     aspect-ratio: 16 / 10;
     display: block;
     flex: none;
@@ -249,7 +264,8 @@
     position: absolute;
   }
 
-  .story-hero.immersive img {
+  .story-hero.immersive img,
+  .story-hero.immersive video {
     display: block;
     height: max(42rem, calc(100svh - var(--site-header-height)));
     min-height: 0;
@@ -335,7 +351,9 @@
     }
 
     .story-hero.split img,
-    .story-hero.contained img {
+    .story-hero.split video,
+    .story-hero.contained img,
+    .story-hero.contained video {
       aspect-ratio: 4 / 3;
       height: auto;
       min-height: 0;
@@ -353,7 +371,8 @@
       background: linear-gradient(180deg, rgb(0 0 0 / 0.05) 0%, rgb(0 0 0 / 0.5) 100%);
     }
 
-    .story-hero.immersive img {
+    .story-hero.immersive img,
+    .story-hero.immersive video {
       aspect-ratio: 4 / 5;
       height: auto;
       min-height: 27rem;

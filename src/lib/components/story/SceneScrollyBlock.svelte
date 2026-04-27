@@ -7,8 +7,9 @@
   let activeIndex = $state(0);
   let stepNodes: HTMLElement[] = [];
   let activeStep = $derived(block.steps[activeIndex] ?? block.steps[0]);
+  let headingText = $derived(block.title?.trim() || 'Story scenes');
   let headingId = $derived(
-    `scene-scrolly-${block.title
+    `scene-scrolly-${headingText
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-|-$/g, '') || 'story-block'}`
@@ -44,14 +45,23 @@
   });
 </script>
 
-<section class="scene-scrolly" aria-labelledby={headingId}>
-  <div class="scene-intro">
-    <p class="eyebrow">Place in focus</p>
-    <h2 id={headingId}>{block.title}</h2>
-    {#if block.intro}
-      <p>{block.intro}</p>
-    {/if}
-  </div>
+<section
+  class="scene-scrolly"
+  class:has-intro={Boolean(block.title || block.intro)}
+  aria-labelledby={headingId}
+>
+  {#if block.title || block.intro}
+    <div class="scene-intro">
+      {#if block.title}
+        <h2 id={headingId}>{headingText}</h2>
+      {/if}
+      {#if block.intro}
+        <p>{block.intro}</p>
+      {/if}
+    </div>
+  {:else}
+    <h2 id={headingId} class="sr-only">{headingText}</h2>
+  {/if}
 
   <div class="scene-stage" style:--scene-count={block.steps.length}>
     <div class="scene-canvas">
@@ -121,13 +131,13 @@
 <style>
   .scene-scrolly {
     margin: var(--block-space) calc(var(--gutter) * -1);
-    padding: var(--space-8) 0;
+    padding: 0;
   }
 
   .scene-intro {
     margin: 0 auto;
     max-width: var(--measure-prose);
-    padding: 0 var(--gutter);
+    padding: var(--space-7) var(--gutter) 0;
   }
 
   h2 {
@@ -149,9 +159,13 @@
   }
 
   .scene-stage {
-    margin-top: var(--space-7);
+    margin-top: 0;
     min-height: calc((var(--scene-count) * 118vh) + 100vh);
     position: relative;
+  }
+
+  .scene-scrolly.has-intro .scene-stage {
+    margin-top: var(--space-5);
   }
 
   .scene-canvas {
@@ -325,6 +339,18 @@
     position: absolute;
   }
 
+  .sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
   article {
     min-height: 118vh;
     opacity: 0;
@@ -371,12 +397,10 @@
   @media (max-width: 820px) {
     .scene-scrolly {
       margin: 3.75rem calc(var(--gutter) * -1);
-      padding-bottom: var(--space-7);
-      padding-top: var(--space-7);
+      padding: 0 0 var(--space-7);
     }
 
     .scene-stage {
-      margin-top: var(--space-6);
       min-height: 0;
     }
 

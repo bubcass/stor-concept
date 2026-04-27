@@ -146,7 +146,7 @@ export interface SceneScrollyStep {
 
 export interface SceneScrollyBlock {
   type: 'scene-scrolly';
-  title: string;
+  title?: string;
   intro?: string;
   steps: SceneScrollyStep[];
 }

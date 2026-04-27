@@ -2,6 +2,7 @@
     import { base } from "$app/paths";
     import { stories } from "$lib/content/stories";
     import { plainTextFromHtml } from "$lib/content/text";
+    const isVideoHero = (src: string) => src.toLowerCase().endsWith(".mp4");
 </script>
 
 <svelte:head>
@@ -26,7 +27,13 @@
         {#each stories as story}
             <article>
                 <a href="{base}/stories/{story.slug}/">
-                    <img src="{base}{story.hero.src}" alt="" loading="lazy" />
+                    {#if isVideoHero(story.hero.src)}
+                        <video autoplay muted loop playsinline aria-hidden="true">
+                            <source src="{base}{story.hero.src}" type="video/mp4" />
+                        </video>
+                    {:else}
+                        <img src="{base}{story.hero.src}" alt="" loading="lazy" />
+                    {/if}
                     <div>
                         <p>{story.eyebrow}</p>
                         <h2>{story.title}</h2>
@@ -72,7 +79,8 @@
         text-decoration: none;
     }
 
-    img {
+    img,
+    video {
         aspect-ratio: 4 / 3;
         border: 1px solid var(--color-line);
         object-fit: cover;

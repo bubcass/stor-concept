@@ -10,6 +10,7 @@
   let secondaryStories = $derived(
     featuredStory ? stories.filter((story) => story.slug !== featuredStory.slug) : []
   );
+  const isVideoHero = (src: string) => src.toLowerCase().endsWith('.mp4');
 </script>
 
 <section class="page-shell section-page">
@@ -32,7 +33,13 @@
           <span class="featured-summary">{plainTextFromHtml(featuredStory.dek)}</span>
           <small>{featuredStory.date} · {featuredStory.readingTime}</small>
         </div>
-        <img src="{base}{featuredStory.hero.src}" alt="" loading="eager" />
+        {#if isVideoHero(featuredStory.hero.src)}
+          <video autoplay muted loop playsinline aria-hidden="true">
+            <source src="{base}{featuredStory.hero.src}" type="video/mp4" />
+          </video>
+        {:else}
+          <img src="{base}{featuredStory.hero.src}" alt="" loading="eager" />
+        {/if}
       </a>
     </article>
   {/if}
@@ -42,7 +49,13 @@
       {#each secondaryStories as story}
         <article class="secondary-story">
           <a href="{base}/stories/{story.slug}/">
-            <img src="{base}{story.hero.src}" alt="" loading="lazy" />
+            {#if isVideoHero(story.hero.src)}
+              <video autoplay muted loop playsinline aria-hidden="true">
+                <source src="{base}{story.hero.src}" type="video/mp4" />
+              </video>
+            {:else}
+              <img src="{base}{story.hero.src}" alt="" loading="lazy" />
+            {/if}
             <div class="secondary-copy">
               <div class="story-context">
                 <p>{story.eyebrow}</p>
@@ -144,7 +157,8 @@
     white-space: pre-line;
   }
 
-  .featured-story img {
+  .featured-story img,
+  .featured-story video {
     aspect-ratio: 16 / 10;
     background: var(--color-soft);
     object-fit: cover;
@@ -163,7 +177,8 @@
     text-decoration: none;
   }
 
-  .secondary-story img {
+  .secondary-story img,
+  .secondary-story video {
     aspect-ratio: 4 / 3;
     background: var(--color-soft);
     object-fit: cover;
