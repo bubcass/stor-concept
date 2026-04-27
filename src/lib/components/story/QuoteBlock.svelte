@@ -27,9 +27,9 @@
 
   p {
     font-family: var(--font-serif);
-    font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+    font-size: clamp(1.2rem, 1.9vw, 1.65rem);
     font-weight: 500;
-    line-height: 1.24;
+    line-height: 1.3;
     margin: 0;
     text-wrap: balance;
   }

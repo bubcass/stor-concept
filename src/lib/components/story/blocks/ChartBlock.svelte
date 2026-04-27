@@ -387,7 +387,8 @@
         align-items: center;
         display: flex;
         flex-wrap: wrap;
-        gap: var(--space-2);
+        column-gap: var(--space-3);
+        row-gap: var(--space-2);
         justify-content: flex-start;
         margin: 0 auto var(--space-3);
         max-width: var(--measure-prose);
@@ -419,7 +420,7 @@
     .count-pills {
         display: inline-flex;
         flex-wrap: wrap;
-        gap: var(--space-1);
+        gap: 0.6rem;
     }
 
     .count-pills button {
@@ -502,6 +503,7 @@
 
     @media (max-width: 700px) {
         .chart-control {
+            column-gap: var(--space-2);
             justify-content: flex-start;
         }
 

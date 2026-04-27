@@ -280,6 +280,20 @@
     z-index: 1;
   }
 
+  .story-hero.immersive .overlay-dek,
+  .story-hero.immersive .overlay-meta {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(
+      180deg,
+      rgba(24, 21, 18, 0.62),
+      rgba(24, 21, 18, 0.46)
+    );
+    border: 1px solid rgba(255, 253, 248, 0.14);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.14);
+    padding: var(--space-3) var(--space-4);
+  }
+
   .story-hero.immersive h1,
   .story-hero.immersive .lede,
   .story-hero.immersive .meta,
@@ -292,11 +306,16 @@
   }
 
   .story-hero.immersive .lede {
+    margin-top: var(--space-3);
     max-width: 32rem;
   }
 
   .story-hero.immersive .meta span:not(:last-child)::after {
     color: rgb(255 255 255 / 0.58);
+  }
+
+  .story-hero.immersive .overlay-meta {
+    margin-top: var(--space-3);
   }
 
   .story-hero.immersive .immersive-caption {
