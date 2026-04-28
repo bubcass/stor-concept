@@ -42,7 +42,7 @@ export const howDoTDsVoteInTheDail: Story = {
           title: "Getting the agreement of the House",
           body: "In many cases this agreement is given without a formal vote. Where agreement is not reached, however, Deputies may ask for a formal vote, or division of the Dáil, to take place.",
           //placeLabel: "Division lobbies",
-          overlayPosition: "left-lower",
+          overlayPosition: "left-center",
           focus: { x: 50, y: 50, scale: 1.02 },
           image: {
             src: "/media/deputy_bacik.jpg",
@@ -69,15 +69,15 @@ export const howDoTDsVoteInTheDail: Story = {
     {
       type: "text",
       paragraphs: [
-        "Members are assigned seats in the Dáil Chamber and must use them when voting in order to correctly identify their votes in the electronic process.",
         "Once the question has been put by the Chair, the vote process in the Chamber begins with the ringing of bells around Leinster House for a defined period. This is to allow Members who are not present in the Chamber the time to make their way to the Dáil for the formal vote.",
-        "Once the defined period elapses, the doors to the Chamber are locked. Only Members of Dáil Éireann, parliamentary ushers and some Oireachtas officials are allowed in the Chamber for the vote.",
+        "Once the defined period elapses, the doors to the Chamber are locked.",
       ],
     },
     {
       type: "vote-map",
       title: "How a vote looks in the Chamber",
-      intro: "Explore the example of TDs voting on a motion before the House.",
+      intro:
+        "Explore the example of TDs voting on a motion before the House.  Once a vote begins, only Members of Dáil Éireann, parliamentary ushers and some Oireachtas officials are allowed in the Chamber for the vote.",
       chamberSvg: "/media/dail-chamber.svg",
       voteData: "/data/dail-vote-sample.json",
       seatData: "/data/seatAssignmentsHistory.csv",
