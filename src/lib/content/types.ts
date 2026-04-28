@@ -4,6 +4,7 @@ export type StoryBlock =
   | ImageBlock
   | VideoBlock
   | ChartStoryBlock
+  | VoteMapStoryBlock
   | LinkListBlock
   | QuoteBlock
   | ScrollyBlock
@@ -82,6 +83,17 @@ export interface ChartStoryBlock {
   caption?: string;
 }
 
+export interface VoteMapStoryBlock {
+  type: 'vote-map';
+  title?: string;
+  intro?: string;
+  chamberSvg: string;
+  voteData: string;
+  seatData: string;
+  membersData: string;
+  caption?: string;
+}
+
 export interface LinkListItem {
   label: string;
   href: string;
@@ -132,6 +144,7 @@ export interface SceneScrollyStep {
   title: string;
   body: string;
   image: ImageAsset;
+  video?: VideoAsset;
   focus?: SceneScrollyFocus;
   overlayPosition?:
     | 'left-lower'

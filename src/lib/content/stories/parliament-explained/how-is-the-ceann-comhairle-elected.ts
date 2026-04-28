@@ -1,6 +1,6 @@
 import type { Story } from "../../types";
 
-export const europeanMeasuresExplained: Story = {
+export const ceannComhairleElection: Story = {
   slug: "how-is-the-ceann-comhairle-elected",
   section: "parliament-explained",
   heroLayout: "immersive",
@@ -169,4 +169,4 @@ export const europeanMeasuresExplained: Story = {
   ],
 };
 
-export default europeanMeasuresExplained;
+export default ceannComhairleElection;

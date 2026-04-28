@@ -20,6 +20,8 @@
     return `--focus-x: ${focus.x}%; --focus-y: ${focus.y}%; --focus-scale: ${focus.scale ?? 1};`;
   };
 
+  const stepAlt = (step: SceneScrollyStep) => step.video?.caption || step.image.alt;
+
   onMount(() => {
     if (!('IntersectionObserver' in window)) return;
 
@@ -71,7 +73,24 @@
           aria-hidden={index !== activeIndex}
           style={sceneStyle(step)}
         >
-          <img src="{base}{step.image.src}" alt={step.image.alt} loading={index === 0 ? 'eager' : 'lazy'} />
+          {#if step.video}
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              aria-label={stepAlt(step)}
+              poster={step.video.poster ? `${base}${step.video.poster}` : undefined}
+            >
+              <source src="{base}{step.video.src}" type="video/mp4" />
+            </video>
+          {:else}
+            <img
+              src="{base}{step.image.src}"
+              alt={step.image.alt}
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+          {/if}
           {#if step.annotation}
             <figcaption
               class="annotation"
@@ -107,11 +126,24 @@
           aria-current={index === activeIndex ? 'step' : undefined}
         >
           <figure class="mobile-figure">
-            <img src="{base}{step.image.src}" alt={step.image.alt} loading="lazy" />
+            {#if step.video}
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-label={stepAlt(step)}
+                poster={step.video.poster ? `${base}${step.video.poster}` : undefined}
+              >
+                <source src="{base}{step.video.src}" type="video/mp4" />
+              </video>
+            {:else}
+              <img src="{base}{step.image.src}" alt={step.image.alt} loading="lazy" />
+            {/if}
             {#if step.image.caption}
               <figcaption class="caption">{step.image.caption}</figcaption>
-            {:else if step.placeLabel}
-              <figcaption class="caption">{step.placeLabel}</figcaption>
+            {:else if step.video?.caption}
+              <figcaption class="caption">{step.video.caption}</figcaption>
             {/if}
           </figure>
           {#if step.placeLabel}
@@ -209,7 +241,8 @@
     opacity: 1;
   }
 
-  .scene-canvas img {
+  .scene-canvas img,
+  .scene-canvas video {
     background: var(--color-soft);
     height: 100%;
     object-fit: cover;
@@ -452,7 +485,8 @@
       margin: 0 0 var(--space-3);
     }
 
-    .mobile-figure img {
+    .mobile-figure img,
+    .mobile-figure video {
       border: 1px solid var(--color-line);
       display: block;
       height: auto;
