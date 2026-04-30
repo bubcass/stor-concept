@@ -97,7 +97,7 @@ export const ceannComhairleElection: Story = {
     {
       type: "text",
       paragraphs: [
-        "The successful candidate must be formally elected by the Dáil before taking the Chair of the Dáil.",
+        "The successful candidate must be formally elected by the Dáil before taking the Chair.",
       ],
     },
     {
