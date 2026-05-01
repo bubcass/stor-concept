@@ -74,7 +74,7 @@
                 {/if}
               </div>
               <h3>{story.title}</h3>
-              <span>{plainTextFromHtml(story.dek)}</span>
+              <span class="secondary-summary">{plainTextFromHtml(story.dek)}</span>
               <small>{story.date} · {story.readingTime}</small>
             </div>
           </a>
@@ -150,16 +150,20 @@
   }
 
   .saved-chip {
+    -webkit-text-size-adjust: 100%;
+    align-self: center;
     border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
     border-radius: 999px;
     color: var(--color-muted);
     display: inline-flex;
+    flex: 0 0 auto;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     line-height: 1;
     padding: 0.25rem 0.5rem;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .featured-story h2 {
@@ -226,7 +230,7 @@
     text-wrap: balance;
   }
 
-  .secondary-story span {
+  .secondary-summary {
     color: var(--color-muted);
     display: block;
     font-family: var(--font-sans);
