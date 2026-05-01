@@ -50,6 +50,7 @@
             <a href="{base}/parliament-now/">Parliament Now</a>
             <a href="{base}/parliament-explained/">Parliament Explained</a>
             <a href="{base}/parliament-at-work/">Parliament at Work</a>
+            <a href="{base}/my-parliament/">My Parliament</a>
         </div>
     </nav>
 </header>

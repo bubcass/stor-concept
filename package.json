@@ -7,13 +7,14 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "postinstall": "svelte-kit sync",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+    "audio:stories": "node scripts/generate-story-audio.mjs",
+    "audio:stories:force": "node scripts/generate-story-audio.mjs --force",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "^3.0.8",
-    "@sveltejs/kit": "^2.16.1",
-    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.58.0",
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
     "@types/d3": "^7.4.3",
     "svelte": "^5.19.7",
     "svelte-check": "^4.1.4",
@@ -22,6 +23,7 @@
   },
   "dependencies": {
     "@observablehq/plot": "^0.6.17",
-    "d3": "^7.9.0"
+    "d3": "^7.9.0",
+    "dotenv": "^17.4.2"
   }
 }

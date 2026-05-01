@@ -1,5 +1,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
+  import { onMount } from 'svelte';
+  import { readBookmarks } from '$lib/components/story/bookmarks';
   import type { Story } from '$lib/content/types';
   import type { StorySectionMeta } from '$lib/content/stories';
   import { plainTextFromHtml } from '$lib/content/text';
@@ -11,6 +13,11 @@
     featuredStory ? stories.filter((story) => story.slug !== featuredStory.slug) : []
   );
   const isVideoHero = (src: string) => src.toLowerCase().endsWith('.mp4');
+  let bookmarked = $state<Set<string>>(new Set());
+
+  onMount(() => {
+    bookmarked = new Set(readBookmarks());
+  });
 </script>
 
 <section class="page-shell section-page">
@@ -26,9 +33,12 @@
     <article class="featured-story">
       <a href="{base}/stories/{featuredStory.slug}/">
         <div class="featured-copy">
-          <div class="story-context">
-            <p>{featuredStory.eyebrow}</p>
-          </div>
+            <div class="story-context">
+              <p>{featuredStory.eyebrow}</p>
+              {#if bookmarked.has(featuredStory.slug)}
+                <span class="saved-chip">Saved</span>
+              {/if}
+            </div>
           <h2>{featuredStory.title}</h2>
           <span class="featured-summary">{plainTextFromHtml(featuredStory.dek)}</span>
           <small>{featuredStory.date} · {featuredStory.readingTime}</small>
@@ -59,6 +69,9 @@
             <div class="secondary-copy">
               <div class="story-context">
                 <p>{story.eyebrow}</p>
+                {#if bookmarked.has(story.slug)}
+                  <span class="saved-chip">Saved</span>
+                {/if}
               </div>
               <h3>{story.title}</h3>
               <span>{plainTextFromHtml(story.dek)}</span>
@@ -133,6 +146,19 @@
     letter-spacing: 0.11em;
     line-height: var(--line-height-small);
     margin: 0;
+    text-transform: uppercase;
+  }
+
+  .saved-chip {
+    border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+    border-radius: 999px;
+    color: var(--color-muted);
+    display: inline-flex;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
     text-transform: uppercase;
   }
 

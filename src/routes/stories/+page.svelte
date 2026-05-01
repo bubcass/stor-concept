@@ -1,8 +1,15 @@
 <script lang="ts">
     import { base } from "$app/paths";
+    import { onMount } from "svelte";
+    import { readBookmarks } from "$lib/components/story/bookmarks";
     import { stories } from "$lib/content/stories";
     import { plainTextFromHtml } from "$lib/content/text";
     const isVideoHero = (src: string) => src.toLowerCase().endsWith(".mp4");
+    let bookmarked = $state<Set<string>>(new Set());
+
+    onMount(() => {
+        bookmarked = new Set(readBookmarks());
+    });
 </script>
 
 <svelte:head>
@@ -48,7 +55,12 @@
                         />
                     {/if}
                     <div>
-                        <p>{story.eyebrow}</p>
+                        <div class="story-context">
+                            <p>{story.eyebrow}</p>
+                            {#if bookmarked.has(story.slug)}
+                                <span class="saved-chip">Saved</span>
+                            {/if}
+                        </div>
                         <h2>{story.title}</h2>
                         <span>{plainTextFromHtml(story.dek)}</span>
                         <small>{story.date} · {story.readingTime}</small>
@@ -101,13 +113,34 @@
         width: 100%;
     }
 
-    article p {
+    .story-context {
+        align-items: baseline;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem 0.55rem;
+        margin-bottom: 0.55rem;
+    }
+
+    .story-context p {
         color: var(--color-accent);
         font-size: var(--font-size-small);
         font-weight: var(--font-weight-meta);
         letter-spacing: 0.11em;
         line-height: var(--line-height-small);
-        margin: 0 0 0.55rem;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .saved-chip {
+        border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+        border-radius: 999px;
+        color: var(--color-muted);
+        display: inline-flex;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        padding: 0.25rem 0.5rem;
         text-transform: uppercase;
     }
 

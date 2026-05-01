@@ -2,6 +2,7 @@
   import { base } from '$app/paths';
   import type { Story } from '$lib/content/types';
   import BlockRenderer from './BlockRenderer.svelte';
+  import StoryToolbar from './StoryToolbar.svelte';
 
   let { story }: { story: Story } = $props();
   let heroLayout = $derived(story.heroLayout ?? 'contained');
@@ -83,6 +84,8 @@
       </figure>
     {/if}
   </header>
+
+  <StoryToolbar {story} />
 
   <div class="story-body">
     {#each story.blocks as block}
@@ -183,7 +186,7 @@
     gap: 0.35rem 0.65rem;
     letter-spacing: 0;
     line-height: var(--line-height-small);
-    margin: var(--space-stack-loose) 0 0;
+    margin: var(--space-5) 0 0;
     max-width: var(--measure-card);
   }
 
@@ -329,12 +332,21 @@
   }
 
   .story-body {
-    padding: var(--space-4) var(--gutter) 0;
+    padding: 0 var(--gutter) 0;
   }
 
   .story-hero.split + .story-body,
   .story-hero.immersive + .story-body {
-    padding-top: var(--space-6);
+    padding-top: 0;
+  }
+
+  .story-body > :global(:first-child) {
+    margin-top: 0;
+  }
+
+  .story-hero.split + :global(.story-toolbar),
+  .story-hero.immersive + :global(.story-toolbar) {
+    padding-top: var(--space-4);
   }
 
   @media (max-width: 860px) {
