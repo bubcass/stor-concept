@@ -20,7 +20,7 @@ export const howDoTDsVoteInTheDail: Story = {
       type: "text",
       paragraphs: [
         "Dáil Éireann decides all questions put to it by the Chair. A question on an item of business, such as the business being conducted on a day or whether a piece of legislation is acceptable, is put at the end of a debate or a section of debate.",
-        "If there is no disagreement the Chair may agree the question informally, or by <strong>voice vote</strong>. Where there is disagreement, Members may ask for a formal vote, which is formally called a <strong>division</strong>",
+        "If there is no disagreement the Chair may agree the question informally, or by <strong>voice vote</strong>. Where there is disagreement, Members may ask for a formal vote, which is formally called a <strong>division</strong>.",
         "Explore how voting works in the Dáil with our <strong>visual essay</strong>.",
       ],
     },

@@ -3,5 +3,10 @@
     "src": "/audio/stories/leaders-questions.mp3",
     "generatedAt": "2026-05-01T00:00:00.000Z",
     "provider": "manual-elevenlabs"
+  },
+  "how-do-tds-vote-in-the-dail": {
+    "src": "/audio/stories/how-do-tds-vote-in-the-dail.mp3",
+    "generatedAt": "2026-05-01T00:00:00.000Z",
+    "provider": "manual-elevenlabs"
   }
 }
