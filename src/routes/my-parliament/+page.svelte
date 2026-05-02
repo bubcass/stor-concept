@@ -52,9 +52,6 @@
                 other devices. They do not require a sign-on but may be cleared
                 if your browser data is removed.
             </p>
-            <p>
-                Clearing your browser cookies will also remove saved bookmarks.
-            </p>
             <div class="empty-state__links">
                 <a href="{base}/parliament-now/">Browse Parliament Now</a>
                 <a href="{base}/parliament-explained/"
