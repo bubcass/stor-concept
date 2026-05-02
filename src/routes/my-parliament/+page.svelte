@@ -44,12 +44,13 @@
         <section class="empty-state">
             <h2>Nothing saved yet</h2>
             <p>
-                Use the "Save" button on any story page to bookmark it here for
+                Use the "Save" button on any story page to add it here for
                 later.
             </p>
             <p>
-                Bookmarks do not require a sign-on but use cookies so they will
-                not be saved across devices.
+                Saved stories are storied in your browser and won't appear on
+                other devices. They do not require a sign-on but may be cleared
+                if your browser data is removed.
             </p>
             <p>
                 Clearing your browser cookies will also remove saved bookmarks.

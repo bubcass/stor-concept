@@ -6,7 +6,7 @@ export const routesThroughTheBuilding: Story = {
   heroLayout: "immersive",
   eyebrow: "The Dáil at work",
   title: "To the point: Accountability and Leaders' Questions",
-  dek: "So many hours of debate in the Dáil are often reduced to a few key questions and answers but the process is fundamental to our parliamentary democracy.\nThe Ceann Comhairle, Deputy Verona Murphy, gives us insight into the weekly Leader's Questions slot in the Dáil.",
+  dek: "So many hours of debate in the Dáil are often reduced to a few key questions and answers but the process is fundamental to our parliamentary democracy.\nThe Ceann Comhairle, Deputy Verona Murphy, gives us insight into the weekly Leaders' Questions slot in the Dáil.",
   byline: "David Cass",
   date: "April 14, 2026",
   readingTime: "6 min read",

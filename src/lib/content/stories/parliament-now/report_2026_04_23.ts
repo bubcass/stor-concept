@@ -20,7 +20,7 @@ export const thePublicRecord: Story = {
       type: "text",
       heading: "An inability to provide oversight",
       paragraphs: [
-        "Witnesses from multiple parts of the children in care sector raised concerns about 'an inability to provide oversight in the care of children and particularly the lack of accountability for care providers', according to the Cathaoirleach, Deputy Alan Kelly.",
+        'Witnesses from multiple parts of the children in care sector raised concerns about "an inability to provide oversight in the care of children and particularly the lack of accountability for care providers", according to the Cathaoirleach, Deputy Alan Kelly.',
         "He also indicated that key actors seemed to abscond from their responsibilities because of human resource constraints.",
         "The report calls for a targeted reform of management in key oversight areas and argues that the reform should be carried out urgently.",
       ],
@@ -28,6 +28,7 @@ export const thePublicRecord: Story = {
     {
       type: "media-text",
       paragraphs: [
+        "The Committee made a strong recommendations that a stakeholder process be put in place to ensure accountability and oversight in the care of children and care providers.",
         "The Committee acknowledges the significant progress made in recent years to improve access to education for disabled learners, including expanded special education provision, enhanced investment in supports and emerging reforms to early intervention and therapeutic services. ",
         "However, the Committee heard that systemic features of the current framework prevent Ireland from fully realising its obligations under Article 24 of the UNCRPD.",
       ],
