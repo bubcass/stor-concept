@@ -75,7 +75,7 @@ export const theSeanadAtWork: Story = {
       heading: "The scale of the job",
       paragraphs: [
         "At the Committee's meeting with the Minister of State , Deputy Thomas Byrne ,on 17 February 2026, members heard how much the workload has expanded. The Minister of State indicated the number of statutory instruments made by Ministers each year under the European Communities Act 1972 has grown from around 20 in the 1970s to roughly 200 a year in recent times.",
-        "He also estimated that about 70 draft EU-related statutory instruments a year may come before the Committee, or approximately 10% of all statutory instruments made by Government annually. The Cathaoirleach notes the Committee's amended terms of reference, adopted in August 2025,  extend beyond draft statutory instruments to include infringement proceedings and external EU agreements. As he states, \"It's a growing body and it means the scrutiny is required now more than ever. And our Committee is well placed to do it\"",
+        "He also estimated that about 70 draft EU-related statutory instruments a year may come before the Committee, or approximately 10% of all statutory instruments made by Government annually. The Cathaoirleach notes the Committee's amended terms of reference, adopted in August 2025,  extend beyond draft statutory instruments to include infringement proceedings and external EU agreements. As he states, \"It's a growing body and it means the scrutiny is required now more than ever. And our Committee is well placed to do it.\"",
       ],
     },
     {

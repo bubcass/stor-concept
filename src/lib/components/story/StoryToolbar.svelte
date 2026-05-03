@@ -81,6 +81,10 @@
       album: 'Inside Parliament',
       artwork: [
         {
+          src: `${base}/brand/Inside%20Parliament.png`,
+          type: 'image/png'
+        },
+        {
           src: `${base}/icons/inside-parliament-lockup-square.svg`,
           sizes: '512x512',
           type: 'image/svg+xml'
