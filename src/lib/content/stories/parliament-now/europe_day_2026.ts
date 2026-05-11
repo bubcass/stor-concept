@@ -3,6 +3,7 @@ import type { Story } from "../../types";
 export const parliamentNowStoryScaffold: Story = {
   slug: "europe-day-2026-2026-05-11",
   section: "parliament-now",
+  featured: true,
   heroLayout: "split",
   eyebrow: "Europe Day 2026",
   title: "Turning history's wounds into shared strengths",
