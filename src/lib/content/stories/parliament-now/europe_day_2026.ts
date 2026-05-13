@@ -54,7 +54,7 @@ export const parliamentNowStoryScaffold: Story = {
       type: "media-text",
       paragraphs: [
         "According to the Cathaoirleach, Senator Mark Daly, the Seanad's scrutiny of European measures is vital work now more than ever.",
-        "<div style=\"border-left: 4px solid #ccc; padding-left: 1rem; margin-left: 0.5rem; line-height: 1.5;\"><p>We are a critical juncture now in our relationship with Europe. I've spoken before about John Hume's idea that the answer to difference is to respect it. That's what the Schuman Declaration did. It's what we must continue to do.</p></div>",
+        "<div style=\"border-left: 4px solid #ccc; padding-left: 1rem; margin-left: 0.5rem; line-height: 1.5;\"><p>We are at a critical juncture now in our relationship with Europe. I've spoken before about John Hume's idea that the answer to difference is to respect it. That's what the Schuman Declaration did. It's what we must continue to do.</p></div>",
         "To this end, the work of the Seanad scrutiny committee is complemented by regular discussions with Ireland's MEPs, who are asked to come to the Upper House to foster the connection between people and their European representatives, ensure accountability on a national platform and facilitate collaboration between Senators and MEPs. ",
       ],
       mediaSide: "left",
