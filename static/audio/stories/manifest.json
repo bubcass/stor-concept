@@ -23,5 +23,10 @@
     "src": "/audio/stories/europe-day-2026.mp3",
     "generatedAt": "2026-05-12T00:00:00.000Z",
     "provider": "manual-elevenlabs"
+  },
+  "tackling-homelessness-2025-05-12": {
+    "src": "/audio/stories/tackling-homelessness.mp3",
+    "generatedAt": "2026-05-14T00:00:00.000Z",
+    "provider": "manual"
   }
 }

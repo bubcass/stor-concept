@@ -1,7 +1,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { onDestroy, onMount } from 'svelte';
-  import type { Story } from '$lib/content/types';
+  import type { Story, StoryBlock } from '$lib/content/types';
   import { BOOKMARK_KEY, readBookmarks } from './bookmarks';
   import { plainText, storyBlockCopy } from './storyToolbar';
 
@@ -17,7 +17,8 @@
   let isPlaying = $state(false);
   let isBookmarked = $state(false);
   let isLoadingAudio = $state(false);
-  let shareFeedback = $state('');
+  let citationCopied = $state(false);
+  let toolbarFeedback = $state('');
   let generatedAudioSrc = $state<string | null>(null);
   let utterance: SpeechSynthesisUtterance | null = null;
   let audio: HTMLAudioElement | null = null;
@@ -58,8 +59,93 @@
 
   function clearFeedbackSoon() {
     window.setTimeout(() => {
-      shareFeedback = '';
+      toolbarFeedback = '';
     }, 1800);
+  }
+
+  function clearCitationSoon() {
+    window.setTimeout(() => {
+      citationCopied = false;
+    }, 1800);
+  }
+
+  function citationUrl() {
+    if (!isClient) return `https://bubcass.github.io${base}/stories/${story.slug}/`;
+    return window.location.href;
+  }
+
+  function mlaCitation() {
+    const author = story.researcher?.name ?? story.byline;
+    const title = story.title;
+    const siteName = 'Stór';
+    const publisher = 'Houses of the Oireachtas';
+    const date = story.date;
+    const url = citationUrl();
+
+    return `${author}. "${title}." ${siteName}, ${publisher}, ${date}, ${url}.`;
+  }
+
+  function escapeHtml(value: string) {
+    return value
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;');
+  }
+
+  function renderPrintableBlock(block: StoryBlock) {
+    switch (block.type) {
+      case 'text':
+        return [
+          block.heading ? `<h2>${escapeHtml(block.heading)}</h2>` : '',
+          ...block.paragraphs.map((paragraph) => `<p>${escapeHtml(plainText(paragraph))}</p>`)
+        ].join('');
+      case 'media-text':
+        return [
+          block.heading ? `<h2>${escapeHtml(block.heading)}</h2>` : '',
+          ...block.paragraphs.map((paragraph) => `<p>${escapeHtml(plainText(paragraph))}</p>`)
+        ].join('');
+      case 'quote':
+        return [
+          '<blockquote>',
+          `<p>${escapeHtml(block.text)}</p>`,
+          block.attribution ? `<footer>${escapeHtml(block.attribution)}</footer>` : '',
+          '</blockquote>'
+        ].join('');
+      case 'scrolly':
+        return [
+          `<h2>${escapeHtml(block.title)}</h2>`,
+          block.intro ? `<p>${escapeHtml(block.intro)}</p>` : '',
+          ...block.steps.flatMap((step) => [
+            `<h3>${escapeHtml(step.title)}</h3>`,
+            `<p>${escapeHtml(step.body)}</p>`
+          ])
+        ].join('');
+      case 'scene-scrolly':
+        return [
+          block.title ? `<h2>${escapeHtml(block.title)}</h2>` : '',
+          block.intro ? `<p>${escapeHtml(block.intro)}</p>` : '',
+          ...block.steps.flatMap((step) => [
+            `<h3>${escapeHtml(step.title)}</h3>`,
+            `<p>${escapeHtml(step.body)}</p>`
+          ])
+        ].join('');
+      case 'link-list':
+        return [
+          block.heading ? `<h2>${escapeHtml(block.heading)}</h2>` : '',
+          '<ul>',
+          ...block.links.map(
+            (link) =>
+              `<li><strong>${escapeHtml(link.label)}</strong>${
+                link.description ? `: ${escapeHtml(link.description)}` : ''
+              }</li>`
+          ),
+          '</ul>'
+        ].join('');
+      default:
+        return '';
+    }
   }
 
   function stopSpeechPlayback() {
@@ -221,9 +307,151 @@
 
     if (navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(shareData.url);
-      shareFeedback = 'Link copied';
+      toolbarFeedback = 'Link copied';
       clearFeedbackSoon();
     }
+  }
+
+  function printArticle() {
+    if (!isClient) return;
+
+    const printWindow = window.open('', '_blank', 'noopener,noreferrer');
+    if (!printWindow) return;
+
+    const author = story.researcher?.name ?? story.byline;
+    const researcherLine = story.researcher
+      ? [story.researcher.role, story.researcher.organisation].filter(Boolean).join(' | ')
+      : '';
+    const articleBody = story.blocks.map(renderPrintableBlock).filter(Boolean).join('');
+
+    const printableHtml = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>${escapeHtml(story.title)} | Stór</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        color: #24211a;
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 2.5rem 0;
+      }
+      main {
+        margin: 0 auto;
+        max-width: 42rem;
+        padding: 0 1.5rem;
+      }
+      .eyebrow {
+        color: #6b5922;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin: 0 0 0.75rem;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: 2.4rem;
+        line-height: 1.05;
+        margin: 0 0 1rem;
+      }
+      .dek,
+      .meta,
+      .researcher {
+        color: #5f5a50;
+      }
+      .dek {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        margin: 0 0 1rem;
+      }
+      .meta,
+      .researcher {
+        font-size: 0.95rem;
+        margin: 0.35rem 0;
+      }
+      hr {
+        border: 0;
+        border-top: 1px solid #d4ccb8;
+        margin: 2rem 0;
+      }
+      h2 {
+        font-size: 1.4rem;
+        line-height: 1.15;
+        margin: 2rem 0 0.8rem;
+      }
+      h3 {
+        font-size: 1.05rem;
+        line-height: 1.2;
+        margin: 1.3rem 0 0.55rem;
+      }
+      p,
+      li,
+      blockquote footer {
+        font-size: 1rem;
+      }
+      p,
+      ul,
+      blockquote {
+        margin: 0 0 1rem;
+      }
+      ul {
+        padding-left: 1.3rem;
+      }
+      blockquote {
+        border-left: 3px solid #d4ccb8;
+        margin-left: 0;
+        padding-left: 1rem;
+      }
+      @media print {
+        body {
+          padding: 0;
+        }
+        main {
+          max-width: none;
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">${escapeHtml(story.eyebrow)}</p>
+      <h1>${escapeHtml(story.title)}</h1>
+      <p class="dek">${escapeHtml(plainText(story.dek))}</p>
+      <p class="meta">${escapeHtml(author)} · ${escapeHtml(story.date)} · ${escapeHtml(story.readingTime)}</p>
+      ${researcherLine ? `<p class="researcher">${escapeHtml(researcherLine)}</p>` : ''}
+      <hr />
+      ${articleBody}
+    </main>
+    <script>
+      window.addEventListener('load', () => {
+        window.print();
+      });
+      window.addEventListener('afterprint', () => {
+        window.close();
+      });
+    <\/script>
+  </body>
+</html>`;
+
+    printWindow.document.open();
+    printWindow.document.write(printableHtml);
+    printWindow.document.close();
+  }
+
+  async function copyCitation() {
+    if (!isClient || !navigator.clipboard?.writeText) return;
+
+    await navigator.clipboard.writeText(mlaCitation());
+    citationCopied = true;
+    toolbarFeedback = 'Citation copied';
+    clearFeedbackSoon();
+    clearCitationSoon();
   }
 
   function writeBookmarks(next: string[]) {
@@ -354,6 +582,65 @@
       <button
         type="button"
         class="icon-button icon-button--labelled"
+        onclick={printArticle}
+        aria-label="Download a printable PDF version"
+      >
+        <span aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none">
+            <path
+              d="M6 6.25V4.75C6 4.34 6.34 4 6.75 4H13.25C13.66 4 14 4.34 14 4.75V6.25M6.25 11.75H13.75M7 14.25H13M5.5 8H14.5C15.33 8 16 8.67 16 9.5V13.5C16 14.33 15.33 15 14.5 15H5.5C4.67 15 4 14.33 4 13.5V9.5C4 8.67 4.67 8 5.5 8Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </span>
+        <span>Download PDF</span>
+      </button>
+
+      <button
+        type="button"
+        class="icon-button icon-button--labelled"
+        onclick={copyCitation}
+        aria-label="Copy MLA citation"
+        class:is-success={citationCopied}
+      >
+        <span aria-hidden="true">
+          {#if citationCopied}
+            <svg viewBox="0 0 20 20" fill="none">
+              <path
+                d="M4.75 10.5L8.25 14L15.25 7"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          {:else}
+            <svg viewBox="0 0 20 20" fill="none">
+              <path
+                d="M7 5.25H13.5C14.33 5.25 15 5.92 15 6.75V15.25C15 16.08 14.33 16.75 13.5 16.75H7C6.17 16.75 5.5 16.08 5.5 15.25V6.75C5.5 5.92 6.17 5.25 7 5.25Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M8 3.25H11.75C12.58 3.25 13.25 3.92 13.25 4.75V5.25H7.5V4.75C7.5 3.92 8.17 3.25 9 3.25"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          {/if}
+        </span>
+        <span>{citationCopied ? 'Citation copied' : 'Cite this article'}</span>
+      </button>
+
+      <button
+        type="button"
+        class="icon-button icon-button--labelled"
         onclick={toggleBookmark}
         aria-pressed={isBookmarked}
         aria-label={isBookmarked ? 'Remove bookmark' : 'Save this story'}
@@ -374,8 +661,8 @@
     </div>
   </div>
 
-  {#if shareFeedback}
-    <p class="story-toolbar__feedback" aria-live="polite">{shareFeedback}</p>
+  {#if toolbarFeedback}
+    <p class="story-toolbar__feedback" aria-live="polite">{toolbarFeedback}</p>
   {/if}
 </section>
 
@@ -430,6 +717,12 @@
   .icon-button:focus-visible {
     border-color: var(--color-line-strong);
     color: var(--link-hover);
+  }
+
+  .icon-button.is-success {
+    background: color-mix(in srgb, var(--color-soft) 78%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 28%, var(--color-line));
+    color: var(--color-accent);
   }
 
   .listen-button:disabled {
