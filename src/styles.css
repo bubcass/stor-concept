@@ -52,7 +52,7 @@
   --font-weight-meta: 600;
   --measure: 42rem;
   --measure-prose: 42rem;
-  --measure-hero: 37rem;
+  --measure-hero: 44rem;
   --measure-card: 34rem;
   --wide: 68.75rem;
   --gutter: clamp(var(--space-4), 4vw, var(--space-8));

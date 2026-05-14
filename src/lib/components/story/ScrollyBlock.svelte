@@ -104,7 +104,7 @@
     font-weight: var(--font-weight-heading);
     line-height: var(--line-height-heading);
     margin: 0 0 var(--space-3);
-    text-wrap: balance;
+    text-wrap: pretty;
   }
 
   .scrolly-intro > p:last-child {

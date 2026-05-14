@@ -426,7 +426,7 @@
         font-weight: var(--font-weight-heading);
         line-height: var(--line-height-heading);
         margin: 0 0 var(--space-2);
-        text-wrap: balance;
+        text-wrap: pretty;
     }
 
     .chart-block__intro .caption {

@@ -40,7 +40,7 @@
   });
 
   function storyUrl() {
-    if (!isClient) return `${base}/stories/${story.slug}/`;
+    if (!isClient) return `${base}/articles/${story.slug}/`;
     return window.location.href;
   }
 
@@ -70,7 +70,7 @@
   }
 
   function citationUrl() {
-    if (!isClient) return `https://bubcass.github.io${base}/stories/${story.slug}/`;
+    if (!isClient) return `https://bubcass.github.io${base}/articles/${story.slug}/`;
     return window.location.href;
   }
 
@@ -531,7 +531,7 @@
   });
 </script>
 
-<section class="story-toolbar" aria-label="Story actions">
+<section class="story-toolbar" aria-label="Article actions">
   <div class="story-toolbar__inner">
     <div class="story-toolbar__actions">
       <button
@@ -647,7 +647,7 @@
         class="icon-button icon-button--labelled"
         onclick={toggleBookmark}
         aria-pressed={isBookmarked}
-        aria-label={isBookmarked ? 'Remove bookmark' : 'Save this story'}
+        aria-label={isBookmarked ? 'Remove bookmark' : 'Save this article'}
       >
         <span aria-hidden="true">
           <svg viewBox="0 0 20 20" fill="none">

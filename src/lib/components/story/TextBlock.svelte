@@ -33,7 +33,7 @@
     line-height: var(--line-height-heading);
     margin: 0 0 var(--space-stack);
     scroll-margin-top: calc(var(--site-header-height, 3.25rem) + var(--space-5));
-    text-wrap: balance;
+    text-wrap: pretty;
   }
 
   p {

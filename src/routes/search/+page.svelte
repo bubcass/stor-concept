@@ -120,13 +120,18 @@
         <div class="results-list">
           {#each sortedResults as result}
             <article class="result-card">
-              <a href="{base}/stories/{result.story.slug}/">
+              <a href="{base}/articles/{result.story.slug}/">
                 <div class="result-topline">
                   <span>{result.story.date}</span>
                   <span>{result.story.readingTime}</span>
                 </div>
                 <div class="result-chip-row">
-                  <span class="section-chip">
+                  <span
+                    class="section-chip"
+                    style={getStorySection(result.story.section)?.accentColor
+                      ? `--section-chip-accent: ${getStorySection(result.story.section)?.accentColor};`
+                      : undefined}
+                  >
                     {getStorySection(result.story.section)?.title}
                   </span>
                 </div>
@@ -283,10 +288,19 @@
 
   .section-chip {
     align-items: center;
-    background: color-mix(in srgb, var(--color-soft) 82%, transparent);
-    border: 1px solid color-mix(in srgb, var(--color-line) 76%, transparent);
+    background: color-mix(
+      in srgb,
+      var(--section-chip-accent, var(--color-soft)) 12%,
+      var(--color-soft)
+    );
+    border: 1px solid
+      color-mix(in srgb, var(--section-chip-accent, var(--color-line)) 24%, var(--color-line));
     border-radius: 999px;
-    color: var(--color-accent-2);
+    color: color-mix(
+      in srgb,
+      var(--section-chip-accent, var(--color-accent-2)) 82%,
+      var(--color-accent-2)
+    );
     display: inline-flex;
     font-size: 0.76rem;
     font-weight: 700;

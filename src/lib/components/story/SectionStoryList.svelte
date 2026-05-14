@@ -29,7 +29,10 @@
   });
 </script>
 
-<section class="page-shell section-page">
+<section
+  class="page-shell section-page"
+  style={section.accentColor ? `--section-accent: ${section.accentColor};` : undefined}
+>
   <header>
     {#if section.eyebrow}
       <p class="eyebrow">{section.eyebrow}</p>
@@ -45,7 +48,7 @@
 
   {#if featuredStory}
     <article class="featured-story">
-      <a href="{base}/stories/{featuredStory.slug}/">
+      <a href="{base}/articles/{featuredStory.slug}/">
         <div class="featured-copy">
             <div class="story-context">
               <p>{featuredStory.eyebrow}</p>
@@ -72,7 +75,7 @@
     <div class="secondary-grid">
       {#each secondaryStories as story}
         <article class="secondary-story">
-          <a href="{base}/stories/{story.slug}/">
+          <a href="{base}/articles/{story.slug}/">
             {#if isVideoHero(story.hero.src)}
               <video autoplay muted loop playsinline aria-hidden="true">
                 <source src="{base}{story.hero.src}" type="video/mp4" />
@@ -101,6 +104,10 @@
 <style>
   .section-page {
     padding-top: clamp(var(--space-7), 7vw, 4.5rem);
+  }
+
+  header :global(.eyebrow) {
+    color: var(--section-accent, var(--color-accent));
   }
 
   header {

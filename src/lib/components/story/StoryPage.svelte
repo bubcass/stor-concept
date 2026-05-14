@@ -181,7 +181,7 @@
           {/if}
           <h1>{story.title}</h1>
           <p class="lede overlay-dek">{@html story.dek}</p>
-          <div class="meta overlay-meta" aria-label="Story details">
+          <div class="meta overlay-meta" aria-label="Article details">
             <span>{story.date}</span>
             <span>{story.readingTime}</span>
           </div>
@@ -190,7 +190,7 @@
 
       <div class="mobile-immersive-copy">
         <p class="lede">{@html story.dek}</p>
-        <div class="meta" aria-label="Story details">
+        <div class="meta" aria-label="Article details">
           <span>{story.date}</span>
           <span>{story.readingTime}</span>
         </div>
@@ -211,7 +211,7 @@
         {/if}
         <h1>{story.title}</h1>
         <p class="lede">{@html story.dek}</p>
-        <div class="meta" aria-label="Story details">
+        <div class="meta" aria-label="Article details">
           <span>{story.date}</span>
           <span>{story.readingTime}</span>
         </div>
@@ -240,7 +240,7 @@
   <StoryToolbar {story} />
 
   {#if story.researcher || story.abstract}
-    <section class="story-intro" aria-label="Story introduction">
+    <section class="story-intro" aria-label="Article introduction">
       {#if story.researcher}
         <div class="story-researcher" aria-label="Researcher information">
           <div class="researcher-shell">
@@ -374,7 +374,7 @@
     letter-spacing: 0;
     line-height: var(--line-height-heading);
     margin: 0 0 var(--space-stack);
-    text-wrap: balance;
+    text-wrap: pretty;
   }
 
   .lede {

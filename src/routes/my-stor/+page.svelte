@@ -2,7 +2,7 @@
     import { base } from "$app/paths";
     import { onMount } from "svelte";
     import { readBookmarks } from "$lib/components/story/bookmarks";
-    import { stories } from "$lib/content/stories";
+    import { getStorySection, stories } from "$lib/content/stories";
     import { plainTextFromHtml } from "$lib/content/text";
 
     const isVideoHero = (src: string) => src.toLowerCase().endsWith(".mp4");
@@ -24,13 +24,13 @@
     <title>My Stór | Stór | Oireachtas Research Repository</title>
     <meta
         name="description"
-        content="Your saved stories and repository items from Stór."
+        content="Your saved articles and repository items from Stór."
     />
 </svelte:head>
 
 <section class="page-shell my-stor-page">
     <header>
-        <p class="eyebrow">Saved stories</p>
+        <p class="eyebrow">Saved articles</p>
         <h1>My Stór</h1>
         <p class="lede">
             Save the research you need with a personalised collection of pieces.
@@ -38,16 +38,16 @@
     </header>
 
     {#if !hydrated}
-        <p class="status-copy">Loading your saved stories…</p>
+        <p class="status-copy">Loading your saved articles…</p>
     {:else if !bookmarkedStories.length}
         <section class="empty-state">
             <h2>Nothing saved yet</h2>
             <p>
-                Use the "Save" button on any story page to collect material for
+                Use the "Save" button on any article page to collect material for
                 later.
             </p>
             <p>
-                Saved stories are stored in your browser and won't appear on
+                Saved articles are stored in your browser and won't appear on
                 other devices. They do not require a sign-on but may be cleared
                 if your browser data is removed.
             </p>
@@ -64,8 +64,9 @@
     {:else}
         <div class="archive-list">
             {#each bookmarkedStories as story}
+                {@const sectionMeta = getStorySection(story.section)}
                 <article>
-                    <a href="{base}/stories/{story.slug}/">
+                    <a href="{base}/articles/{story.slug}/">
                         {#if isVideoHero(story.hero.src)}
                             <video
                                 autoplay
@@ -91,11 +92,24 @@
                                 <p>{story.eyebrow}</p>
                                 <span class="saved-chip">Saved</span>
                             </div>
-                            <h2>{story.title}</h2>
+                            <div class="headline-row">
+                                <h2>{story.title}</h2>
+                                <span
+                                    class="section-chip"
+                                    style={sectionMeta?.accentColor
+                                        ? `--section-chip-accent: ${sectionMeta.accentColor};`
+                                        : undefined}
+                                >
+                                    {sectionMeta?.title}
+                                </span>
+                            </div>
                             <span class="summary"
                                 >{plainTextFromHtml(story.dek)}</span
                             >
-                            <small>{story.date} · {story.readingTime}</small>
+                            <small class="story-meta">
+                                <span>{story.date}</span>
+                                <span>{story.readingTime}</span>
+                            </small>
                         </div>
                     </a>
                 </article>
@@ -182,13 +196,47 @@
         white-space: nowrap;
     }
 
+    .section-chip {
+        align-items: center;
+        background: color-mix(
+            in srgb,
+            var(--section-chip-accent, var(--color-soft)) 12%,
+            var(--color-soft)
+        );
+        border: 1px solid
+            color-mix(in srgb, var(--section-chip-accent, var(--color-line)) 24%, var(--color-line));
+        border-radius: 999px;
+        color: color-mix(
+            in srgb,
+            var(--section-chip-accent, var(--color-accent-2)) 82%,
+            var(--color-accent-2)
+        );
+        display: inline-flex;
+        flex: 0 0 auto;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        padding: 0.25rem 0.5rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    .headline-row {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem 0.75rem;
+        margin: 0 0 var(--space-3);
+    }
+
     h2 {
         color: var(--color-accent-2);
         font-family: var(--font-sans);
         font-size: var(--font-size-h3);
         font-weight: var(--font-weight-heading);
         line-height: 1.18;
-        margin: 0 0 var(--space-3);
+        margin: 0;
     }
 
     .summary {
@@ -209,11 +257,21 @@
         line-height: var(--line-height-small);
     }
 
-    small {
+    .story-meta {
+        color: var(--color-muted);
+        display: flex;
+        flex-wrap: wrap;
         font-weight: var(--font-weight-meta);
+        gap: 0.35rem 0.65rem;
         letter-spacing: 0.07em;
         margin-top: 1.25rem;
         text-transform: uppercase;
+    }
+
+    .story-meta span:not(:last-child)::after {
+        color: var(--color-faint);
+        content: "·";
+        margin-left: 0.65rem;
     }
 
     .empty-state {

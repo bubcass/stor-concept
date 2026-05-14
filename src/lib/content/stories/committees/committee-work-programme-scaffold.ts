@@ -25,7 +25,7 @@ export const committeeWorkProgrammeScaffold: Story = {
     {
       type: "text",
       paragraphs: [
-        "This scaffold story is a stand-in for a future committee repository feature in <strong>Stór</strong>.",
+        "This scaffold article is a stand-in for a future committee repository feature in <strong>Stór</strong>.",
         "It mirrors the editorial structure of the source prototype while shifting the copy toward publications, evidence sessions and committee work programmes.",
         "Use this file as a template for future committee highlights, curated briefings or publication landing pieces.",
       ],

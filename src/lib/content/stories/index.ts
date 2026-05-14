@@ -6,6 +6,7 @@ export interface StorySectionMeta {
   title: string;
   eyebrow?: string;
   intro: string;
+  accentColor?: string;
 }
 
 export const storySections: StorySectionMeta[] = [
@@ -17,12 +18,14 @@ export const storySections: StorySectionMeta[] = [
   {
     slug: "parliamentary-budget-office",
     title: "Parliamentary Budget Office",
+    accentColor: "#670048",
     intro:
       "Cut through the numbers with the PBO's fiscal, budgetary and economic analysis",
   },
   {
     slug: "library-research-service",
     title: "Library & Research Service",
+    accentColor: "#1c3194",
     intro:
       "Explore research briefings, explainers and notes from the Library & Research Service.",
   },

@@ -12,7 +12,7 @@
     </h1>
     <p class="lede">
         Stór demonstrates a clean static architecture for repository content,
-        with typed stories, reusable blocks, local media and a build path for
+        with typed articles, reusable blocks, local media and a build path for
         deployment.
     </p>
 </section>

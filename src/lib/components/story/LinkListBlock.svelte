@@ -37,7 +37,7 @@
     font-weight: var(--font-weight-heading);
     line-height: var(--line-height-heading);
     margin: 0 0 var(--space-stack);
-    text-wrap: balance;
+    text-wrap: pretty;
   }
 
   .links {

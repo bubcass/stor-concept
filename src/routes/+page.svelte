@@ -4,7 +4,7 @@
     import StorySearch from "$lib/components/story/StorySearch.svelte";
     import { readBookmarks } from "$lib/components/story/bookmarks";
     import type { Story } from "$lib/content/types";
-    import { stories } from "$lib/content/stories";
+    import { getStorySection, stories } from "$lib/content/stories";
     import { plainTextFromHtml } from "$lib/content/text";
 
     const featuredStory = $derived(stories.find((story) => story.featured) ?? stories[0]);
@@ -27,26 +27,15 @@
     />
 </svelte:head>
 
-<section class="home-hero page-shell">
-    <div>
-        <p class="eyebrow">Stór</p>
-        <h1>Independent parliamentary research</h1>
-    </div>
-    <p class="lede">
-        Across the Houses of the Oireachtas our experts give insight through
-        reports, explainers and analyses to inform parliamentary debate and
-        decision-making.
-    </p>
-</section>
-
 <section class="story-index page-shell">
     <div class="search-wrap">
         <StorySearch />
     </div>
 
     {#if featuredStory}
+        {@const featuredSection = getStorySection(featuredStory.section)}
         <article class="featured-story">
-            <a href="{base}/stories/{featuredStory.slug}/">
+            <a href="{base}/articles/{featuredStory.slug}/">
                 <div class="featured-copy">
                     <div class="story-context">
                         <p>{featuredStory.eyebrow}</p>
@@ -54,13 +43,24 @@
                             <span class="saved-chip">Saved</span>
                         {/if}
                     </div>
-                    <h3>{featuredStory.title}</h3>
+                    <div class="headline-row">
+                        <h3>{featuredStory.title}</h3>
+                        <span
+                            class="section-chip"
+                            style={featuredSection?.accentColor
+                                ? `--section-chip-accent: ${featuredSection.accentColor};`
+                                : undefined}
+                        >
+                            {featuredSection?.title}
+                        </span>
+                    </div>
                     <span class="featured-summary">
                         {plainTextFromHtml(featuredStory.dek)}
                     </span>
-                    <small
-                        >{featuredStory.date} · {featuredStory.readingTime}</small
-                    >
+                    <small class="story-meta">
+                        <span>{featuredStory.date}</span>
+                        <span>{featuredStory.readingTime}</span>
+                    </small>
                 </div>
                 {#if isVideoHero(featuredStory.hero.src)}
                     <video autoplay muted loop playsinline aria-hidden="true">
@@ -82,8 +82,9 @@
 
     <div class="secondary-grid">
         {#each secondaryStories as story}
+            {@const sectionMeta = getStorySection(story.section)}
             <article class="secondary-story">
-                <a href="{base}/stories/{story.slug}/">
+                <a href="{base}/articles/{story.slug}/">
                     {#if isVideoHero(story.hero.src)}
                         <video
                             autoplay
@@ -111,11 +112,24 @@
                                 <span class="saved-chip">Saved</span>
                             {/if}
                         </div>
-                        <h3>{story.title}</h3>
+                        <div class="headline-row">
+                            <h3>{story.title}</h3>
+                            <span
+                                class="section-chip"
+                                style={sectionMeta?.accentColor
+                                    ? `--section-chip-accent: ${sectionMeta.accentColor};`
+                                    : undefined}
+                            >
+                                {sectionMeta?.title}
+                            </span>
+                        </div>
                         <span class="secondary-summary"
                             >{plainTextFromHtml(story.dek)}</span
                         >
-                        <small>{story.date} · {story.readingTime}</small>
+                        <small class="story-meta">
+                            <span>{story.date}</span>
+                            <span>{story.readingTime}</span>
+                        </small>
                     </div>
                 </a>
             </article>
@@ -124,37 +138,8 @@
 </section>
 
 <style>
-    .home-hero {
-        align-items: end;
-        border-bottom: 1px solid
-            color-mix(in srgb, var(--color-line) 55%, transparent);
-        display: grid;
-        gap: var(--space-6);
-        grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
-        min-height: 0;
-        padding-bottom: var(--space-8);
-        padding-top: clamp(var(--space-8), 8vw, 5rem);
-    }
-
-    h1 {
-        color: var(--color-accent-2);
-        font-family: var(--font-sans);
-        font-size: var(--font-size-h1);
-        font-weight: var(--font-weight-heading);
-        letter-spacing: 0;
-        line-height: var(--line-height-heading);
-        margin: 0;
-        max-width: 14ch;
-        text-wrap: balance;
-    }
-
-    .home-hero .lede {
-        max-width: 38rem;
-        text-wrap: balance;
-    }
-
     .story-index {
-        padding-top: var(--space-8);
+        padding-top: clamp(var(--space-5), 4vw, var(--space-6));
     }
 
     .search-wrap {
@@ -216,13 +201,47 @@
         white-space: nowrap;
     }
 
+    .section-chip {
+        align-items: center;
+        background: color-mix(
+            in srgb,
+            var(--section-chip-accent, var(--color-soft)) 12%,
+            var(--color-soft)
+        );
+        border: 1px solid
+            color-mix(in srgb, var(--section-chip-accent, var(--color-line)) 24%, var(--color-line));
+        border-radius: 999px;
+        color: color-mix(
+            in srgb,
+            var(--section-chip-accent, var(--color-accent-2)) 82%,
+            var(--color-accent-2)
+        );
+        display: inline-flex;
+        flex: 0 0 auto;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        padding: 0.25rem 0.5rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    .headline-row {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem 0.75rem;
+        margin: 0 0 var(--space-4);
+    }
+
     .featured-story h3 {
         color: var(--color-accent-2);
         font-family: var(--font-sans);
         font-size: clamp(1.7rem, 2.85vw, 2.35rem);
         font-weight: var(--font-weight-heading);
         line-height: 1.08;
-        margin: 0 0 var(--space-4);
+        margin: 0;
         max-width: 13ch;
         text-wrap: balance;
     }
@@ -276,7 +295,7 @@
         font-size: var(--font-size-h3);
         font-weight: var(--font-weight-heading);
         line-height: 1.18;
-        margin: 0 0 var(--space-3);
+        margin: 0;
         max-width: 18ch;
         text-wrap: balance;
     }
@@ -291,15 +310,23 @@
         white-space: pre-line;
     }
 
-    small {
+    .story-meta {
         color: var(--color-muted);
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
         font-size: var(--font-size-small);
         font-weight: var(--font-weight-meta);
+        gap: 0.35rem 0.65rem;
         letter-spacing: 0.07em;
         line-height: var(--line-height-small);
         margin-top: 1.25rem;
         text-transform: uppercase;
+    }
+
+    .story-meta span:not(:last-child)::after {
+        color: var(--color-faint);
+        content: "·";
+        margin-left: 0.65rem;
     }
 
     @media (max-width: 900px) {
@@ -309,14 +336,6 @@
     }
 
     @media (max-width: 760px) {
-        .home-hero {
-            display: block;
-        }
-
-        .home-hero .lede {
-            margin-top: 1.5rem;
-        }
-
         .featured-story a {
             gap: var(--space-5);
             padding-bottom: var(--space-6);

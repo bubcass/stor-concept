@@ -8,7 +8,7 @@
   let activeIndex = $state(0);
   let stepNodes: HTMLElement[] = [];
   let activeStep = $derived(block.steps[activeIndex] ?? block.steps[0]);
-  let headingText = $derived(block.title?.trim() || 'Story scenes');
+  let headingText = $derived(block.title?.trim() || 'Article scenes');
   let headingId = $derived(
     `scene-scrolly-${headingText
       .toLowerCase()
@@ -182,7 +182,7 @@
     font-weight: var(--font-weight-heading);
     line-height: var(--line-height-heading);
     margin: 0 0 var(--space-3);
-    text-wrap: balance;
+    text-wrap: pretty;
   }
 
   .scene-intro > p:last-child {
