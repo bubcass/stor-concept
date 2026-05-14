@@ -4,6 +4,7 @@ export type StoryBlock =
   | ImageBlock
   | VideoBlock
   | FlourishStoryBlock
+  | ArcGISMapStoryBlock
   | ChartStoryBlock
   | VoteMapStoryBlock
   | LinkListBlock
@@ -108,6 +109,20 @@ export interface FlourishStoryBlock {
   thumbnail?: string;
   alt?: string;
   caption?: string;
+}
+
+export interface ArcGISMapStoryBlock {
+  type: 'arcgis-map';
+  itemId: string;
+  title?: string;
+  caption?: string;
+  height?: string;
+  theme?: 'light' | 'dark';
+  legendEnabled?: boolean;
+  headingEnabled?: boolean;
+  informationEnabled?: boolean;
+  layout?: 'wide' | 'prose';
+  wrapperClass?: string;
 }
 
 export interface ChartStoryBlock {

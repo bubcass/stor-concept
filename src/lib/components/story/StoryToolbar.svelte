@@ -143,6 +143,11 @@
           ),
           '</ul>'
         ].join('');
+      case 'arcgis-map':
+        return [
+          block.title ? `<h2>${escapeHtml(block.title)}</h2>` : '',
+          block.caption ? `<p>${escapeHtml(block.caption)}</p>` : ''
+        ].join('');
       default:
         return '';
     }

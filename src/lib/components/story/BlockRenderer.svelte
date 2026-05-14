@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { StoryBlock } from '$lib/content/types';
+  import ArcGISMapBlock from './blocks/ArcGISMapBlock.svelte';
   import ChartBlock from './blocks/ChartBlock.svelte';
   import FlourishBlock from './blocks/FlourishBlock.svelte';
   import VoteMapBlock from './blocks/VoteMapBlock.svelte';
@@ -29,6 +30,8 @@
   <ChartBlock {block} />
 {:else if block.type === 'flourish'}
   <FlourishBlock {block} {flourishWidth} />
+{:else if block.type === 'arcgis-map'}
+  <ArcGISMapBlock {block} />
 {:else if block.type === 'vote-map'}
   <VoteMapBlock {block} />
 {:else if block.type === 'media-text'}

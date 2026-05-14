@@ -11,7 +11,7 @@ export const researchBriefing: Story = {
   dek: "Ireland is a key hub for data centres and although technology multinationals bring large corporation tax takings, the growing energy needs of data centres poses a challenge for the country's climate ambitions.",
   byline: "Kate Walsh",
   abstract:
-    "<strong>Summary:</strong> Ireland’s growing data centre sector is a key challenge, pitting climate goals against growth of the digital economy. Amidst a global boom in digitalisation and artificial intelligence, Ireland has become a leading hub for data centres which are viewed as anchors for foreign direct investment. Aside banning them altogether, what policy avenues are ahead?",
+    "<strong>Summary:</strong> Ireland’s growing data centre sector is a key challenge, pitting climate goals against growth of the digital economy. Amidst a global boom in digitalisation and artificial intelligence, Ireland has become a leading hub for data centres which are viewed as anchors for foreign direct investment. Aside from banning them altogether, what policy avenues are ahead?",
   researcher: {
     name: "Kate Walsh",
     role: "Senior Researcher",
@@ -29,72 +29,56 @@ export const researchBriefing: Story = {
     {
       type: "text",
       paragraphs: [
-        "Homelessness is one of the most challenging issues facing policy makers. As of October 2024, there were 14,966 people accessing emergency accommodation, including 4,645 children (around 30% of the total).",
-        "This figure represents an increase of 1,787 people when compared with October 2023, and an increase of 206 people when compared with September 2024. Some 53% of adults accessing emergency accommodation were between the age of 25 and 44, while 61% were male.",
+        "Ireland is a leading hub for data centres, attracting the likes of Microsoft, Meta, Google, and Amazon. Technology multinationals bring significant corporation tax takings, yet data centres are power-hungry and their growing energy needs pose a challenge for Ireland’s climate ambitions. Using carbon-free energy would be the optimum solution. However, Ireland’s progress on doubling its renewable electricity (RES-E) to 80% by 2030 is mismatched by the growing power demand faced today.",
+        `<strong>Data centres currently consume one fifth of Ireland’s electricity</strong> and are projected to use one-third in the next few years. This rise mostly relates to expansion by existing data centres, rather than new centres in the pipeline. Ireland’s current strategy (since 2021) is to essentially pause new electricity grid connections especially around Dublin pending a new decision on ‘large energy users’ by the Commission for Regulation of Utilities (CRU). Beyond a complete ban on new data centre sites in the future, there is a series of policy avenues ahead.`,
+      ],
+    },
+    {
+      type: "text",
+      heading: "Electricity demand is outpacing generation",
+      paragraphs: [
+        "Electricity supply and grid stability are real concerns. Central to Ireland’s national climate action plan is energy decarbonisation via widespread electrification – of transport, homes, heating, and industry. In the Dublin area in particular, these sectors are all putting additional strain on the grid, but data centres are by far the most demanding. To date, the pace of renewable electricity development has lagged behind the rapid growth in data centre power consumption (see Figure 1).",
       ],
     },
     {
       type: "flourish",
       embedType: "chart",
-      dataSrc: "visualisation/20815059?657582",
-      thumbnail: "https://public.flourish.studio/story/20815059/thumbnail",
+      dataSrc: "visualisation/20888306?657582",
+      thumbnail:
+        "https://public.flourish.studio/visualisation/20888306/thumbnail",
       alt: "Flourish visualisation",
-      caption:
-        "The trend in the number of people living in emergency accommodation since 2015. Except for a period during COVID-19, the figures have been rising every year since 2015.",
     },
     {
       type: "text",
-      heading: "Reasons for homelessness",
+      heading: "Data centres across Ireland",
       paragraphs: [
-        "The reasons people become homeless are complex and are often made up of many factors, including:",
-        `<ul>
-          <li><strong>Structural</strong>, for example, lack of affordable housing, and issues in the private rental market.</li>
-          <li><strong>Personal circumstances</strong>, for example, mental health, and drug addiction.</li>
-          <li><strong>Institutional</strong>, for example, those leaving prisons and direct provision centres.</li>
-          <li><strong>Relationship</strong>, for example, domestic violence and financial stress.</li>
-        </ul>`,
-        "This mix of factors can be seen in Figure 2 below, which shows the primary reasons for homelessness given by new entrants to emergency accommodation in quarter 3 2024. 'Notice of termination' was the main reason given (as represented by the bubble size), followed closely by 'relationship breakdown and family circumstance'.",
+        `Every year, EirGrid publishes a ten-year forecast for the electricity market of the island of Ireland. In 2024, it said <strong>89% of the growth in total electricity needed in the next decade is attributed to data centres</strong>.`,
+        "Data centres (orange symbols) are located close to the ESB Telecoms high-capacity fibre network (blue lines.) Of these, 16 data centre sites (grey symbols) are licensed by the Environmental Protection Agency for industrial emissions associated with on-site power generation capacity (as at November 2024.)",
       ],
     },
     {
-      type: "flourish",
-      embedType: "chart",
-      dataSrc: "visualisation/20262746?657582",
-      thumbnail: "https://public.flourish.studio/story/20262746/thumbnail",
-      alt: "Flourish visualisation",
+      type: "arcgis-map",
+      itemId: "2e251089a58d4944ad16017808b25083",
+      caption: "Figure 2: Data centres and communications networks in Ireland.",
+      height: "600px",
+      theme: "light",
+      legendEnabled: true,
+      headingEnabled: true,
+      informationEnabled: true,
+      layout: "wide",
     },
     {
       type: "text",
-      heading: "Types of emergency accommodation for homeless households",
+      heading: "Development of data centres outside Dublin",
       paragraphs: [
-        "Currently, most newly homeless households in Ireland are provided with private emergency accommodation until long-term housing is found. The different types of emergency accommodation used are:",
-        `<ul>
-          <li><strong>Private accommodation:</strong>such as hotels, B&Bs and other residential facilities that are used on an emergency basis.</li>
-          <li><strong>Supported accommodation:</strong> such as family hubs and hostels, with onsite professional support.</li>
-          <li><strong>Temporary accommodation:</strong> emergency accommodation with no (or minimal) support, operated both by NGOs and private operators.</li>
-        </ul>`,
-        "As shown in Figure 3, most homeless adults availing of emergency accommodation are in Dublin (7,388), and in many regions homeless adults are more likely to be staying in Private Emergency Accommodation.",
+        `Capacity constraints in the Dublin region are a key concern of the regulator, CRU. One strategy would be a <strong>plan-based approach, for new clusters of data centres in other regions</strong> that are close to coastal landing points for subsea power and communications interconnections. There is scope to develop infrastructure along existing road and rail conduits, making the likes of Cork, Limerick, and Waterford new candidate data centre hubs. Figure 2 shows maps of data centres and the existing high-capacity communications network.`,
       ],
     },
     {
-      type: "flourish",
-      embedType: "chart",
-      dataSrc: "visualisation/20816049?657582",
-      thumbnail: "https://public.flourish.studio/story/20816049/thumbnail",
-      alt: "Flourish visualisation",
-    },
-    {
       type: "text",
-      heading: "Tackling homelessness",
+      heading: "Long-term strategic infrastructure development",
       paragraphs: [
-        "Ireland signed up to the Lisbon Declaration on the European Platform on Combatting Homelessness in June 2021. The Declaration commits all signatories to working towards ending homelessness by 2030. To this end, the ‘Housing for All’ strategy aims to reduce the number of families and individuals that experience homelessness in Ireland. It seeks to end homelessness by 2030 through a range of measures, including increasing social housing.",
-        "The Organisation for Economic Cooperation and Development (OECD) has developed a toolkit that aims to provide guidance to policy makers to:",
-        `<ul>
-          <li>prevent people from becoming homeless;</li>
-          <li>support people who are experiencing homelessness;</li>
-          <li>provide effective, sustainable pathways out of homelessness.</li>
-        </ul>`,
-        "The toolkit features nine ‘building blocks’. Each block represents a key area for action towards tackling homelessness. The toolkit aims to support policy makers throughout the policy design, implementation, and management phases. The OECD toolkit is outlined in Figure 4 below.",
+        `Recently there have been a series of <strong>data centre planning application refusals</strong>, many citing energy concerns. Currently, all planning applications are made to local authorities. However, Section 49 of the <em>Planning and Development (Amendment) Act 2018</em> adds large data centres (defined by land footprint not energy demands) to the list of <strong>strategic infrastructure development</strong>.`,
       ],
     },
     {
