@@ -33,7 +33,7 @@
   let playbackLabel = $derived.by(() => {
     if (generatedAudioSrc) {
       if (isLoadingAudio) return 'Loading audio';
-      return isPlaying ? 'Pause story' : 'Play story';
+      return isPlaying ? 'Pause listening' : 'Listen';
     }
 
     return isPlaying ? 'Stop listening' : 'Listen to the article';
@@ -675,7 +675,10 @@
     border-top: 1px solid var(--color-line);
     margin: 0 auto;
     max-width: calc(var(--measure-prose) + (var(--gutter) * 2));
-    padding: var(--space-3) var(--gutter) var(--space-2);
+    padding:
+      clamp(var(--space-4), 3vw, var(--space-5))
+      var(--gutter)
+      var(--space-3);
   }
 
   .story-toolbar__inner {
