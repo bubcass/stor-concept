@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-    <title>Inside Parliament</title>
+    <title>Stór | Oireachtas Research Repository</title>
     <meta
         name="description"
-        content="Get to know the work of the Houses of the Oireachtas."
+        content="Research, committee and budget repository content from the Houses of the Oireachtas."
     />
 </svelte:head>
 
@@ -17,7 +17,7 @@
 
 <header class="site-header" aria-label="Site header">
     <nav class="site-nav" aria-label="Primary navigation">
-        <a class="brand" href="{base}/" aria-label="Inside Parliament home">
+        <a class="brand" href="{base}/" aria-label="Stór | Oireachtas Research Repository home">
             <span class="brand-mark" aria-hidden="true">
                 <svg viewBox="0 0 64 28" xmlns="http://www.w3.org/2000/svg" fill="none" role="presentation" focusable="false">
                     <path d="M12 9H26L32 5L38 9H52" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
@@ -44,13 +44,16 @@
                     <line x1="12" y1="24" x2="52" y2="24" stroke="currentColor" stroke-width="1.2" />
                 </svg>
             </span>
-            <span>Inside Parliament</span>
+            <span class="brand-copy">
+                <span class="brand-title">Stór</span>
+                <span class="brand-subtitle">Oireachtas Research Repository</span>
+            </span>
         </a>
         <div class="nav-links">
-            <a href="{base}/parliament-now/">Parliament Now</a>
-            <a href="{base}/parliament-explained/">Parliament Explained</a>
-            <a href="{base}/parliament-at-work/">Parliament at Work</a>
-            <a href="{base}/my-parliament/">My Parliament</a>
+            <a href="{base}/committees/">Committees</a>
+            <a href="{base}/parliamentary-budget-office/">Parliamentary Budget Office</a>
+            <a href="{base}/library-research-service/">Library & Research Service</a>
+            <a href="{base}/my-stor/">My Stór</a>
         </div>
     </nav>
 </header>
@@ -60,5 +63,5 @@
 </main>
 
 <footer class="site-footer">
-    <p>Inside Parliament | Houses of the Oireachtas</p>
+    <p>Stór | Oireachtas Research Repository</p>
 </footer>

@@ -12,19 +12,27 @@
   import TextBlock from './TextBlock.svelte';
   import VideoBlock from './VideoBlock.svelte';
 
-  let { block }: { block: StoryBlock } = $props();
+  let {
+    block,
+    headingId,
+    flourishWidth
+  }: {
+    block: StoryBlock;
+    headingId?: string;
+    flourishWidth?: 'wide' | 'prose';
+  } = $props();
 </script>
 
 {#if block.type === 'text'}
-  <TextBlock {block} />
+  <TextBlock {block} {headingId} />
 {:else if block.type === 'chart'}
   <ChartBlock {block} />
 {:else if block.type === 'flourish'}
-  <FlourishBlock {block} />
+  <FlourishBlock {block} {flourishWidth} />
 {:else if block.type === 'vote-map'}
   <VoteMapBlock {block} />
 {:else if block.type === 'media-text'}
-  <MediaTextBlock {block} />
+  <MediaTextBlock {block} {headingId} />
 {:else if block.type === 'image'}
   <ImageBlock {block} />
 {:else if block.type === 'video'}

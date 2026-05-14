@@ -9,7 +9,7 @@ export async function shareVideoAsset(options: {
   const url = new URL(`${base}${options.src}`, window.location.origin).toString();
 
   const shareData = {
-    title: options.title ?? 'Inside Parliament video',
+    title: options.title ?? 'Stór video',
     text: options.text ? plainText(options.text) : undefined,
     url
   };

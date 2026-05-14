@@ -2,11 +2,20 @@
   import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import { readBookmarks } from '$lib/components/story/bookmarks';
+  import StorySearch from '$lib/components/story/StorySearch.svelte';
   import type { Story } from '$lib/content/types';
   import type { StorySectionMeta } from '$lib/content/stories';
   import { plainTextFromHtml } from '$lib/content/text';
 
-  let { section, stories }: { section: StorySectionMeta; stories: Story[] } = $props();
+  let {
+    section,
+    stories,
+    enableSearch = false
+  }: {
+    section: StorySectionMeta;
+    stories: Story[];
+    enableSearch?: boolean;
+  } = $props();
 
   let featuredStory = $derived(stories.find((story) => story.featured) ?? stories[0]);
   let secondaryStories = $derived(
@@ -27,6 +36,11 @@
     {/if}
     <h1>{section.title}</h1>
     <p class="lede">{section.intro}</p>
+    {#if enableSearch}
+      <div class="search-wrap">
+        <StorySearch section={section.slug} />
+      </div>
+    {/if}
   </header>
 
   {#if featuredStory}
@@ -95,6 +109,11 @@
     padding-bottom: var(--space-6);
   }
 
+  .search-wrap {
+    margin-top: var(--space-5);
+    max-width: 52rem;
+  }
+
   h1 {
     color: var(--color-accent-2);
     font-family: var(--font-sans);
@@ -102,6 +121,7 @@
     font-weight: var(--font-weight-heading);
     line-height: var(--line-height-heading);
     margin: 0 0 var(--space-stack-tight);
+    max-width: 20ch;
     text-wrap: balance;
   }
 
@@ -110,7 +130,7 @@
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     margin: 0;
-    max-width: var(--measure-card);
+    max-width: 52rem;
   }
 
   .featured-story {

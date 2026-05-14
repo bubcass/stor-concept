@@ -1,12 +1,167 @@
 <script lang="ts">
   import { base } from '$app/paths';
-  import type { Story } from '$lib/content/types';
+  import { onDestroy, onMount } from 'svelte';
+  import type { Story, StoryBlock } from '$lib/content/types';
   import BlockRenderer from './BlockRenderer.svelte';
   import StoryToolbar from './StoryToolbar.svelte';
 
   let { story }: { story: Story } = $props();
   let heroLayout = $derived(story.heroLayout ?? 'contained');
   let heroIsVideo = $derived(story.hero.src.toLowerCase().endsWith('.mp4'));
+  let storyFlourishWidth = $derived(story.flourishWidth ?? 'wide');
+  let researcherInitials = $derived.by(() => {
+    const source = story.researcher?.name ?? story.byline;
+    return source
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part[0]?.toUpperCase() ?? '')
+      .join('');
+  });
+
+  type ContentsEntry = {
+    id: string;
+    label: string;
+    blockIndex: number;
+  };
+
+  function headingForBlock(block: StoryBlock) {
+    if (block.type === 'text' || block.type === 'media-text') {
+      return block.heading;
+    }
+
+    return undefined;
+  }
+
+  function slugifyHeading(value: string) {
+    return value
+      .toLowerCase()
+      .replace(/&/g, ' and ')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '') || 'section';
+  }
+
+  let contentsEntries = $derived.by<ContentsEntry[]>(() => {
+    if (!story.showContents) return [];
+
+    const counts = new Map<string, number>();
+
+    return story.blocks.flatMap((block, blockIndex) => {
+      const heading = headingForBlock(block);
+      if (!heading) return [];
+
+      const baseId = slugifyHeading(heading);
+      const count = counts.get(baseId) ?? 0;
+      counts.set(baseId, count + 1);
+
+      return [
+        {
+          id: count === 0 ? baseId : `${baseId}-${count + 1}`,
+          label: heading,
+          blockIndex
+        }
+      ];
+    });
+  });
+
+  let contentsIdMap = $derived.by(() => {
+    return new Map(contentsEntries.map((entry) => [entry.blockIndex, entry.id]));
+  });
+
+  let showContentsRail = $derived(story.showContents && contentsEntries.length > 1);
+  let activeContentsId = $state<string | null>(null);
+  let teardownContentsObserver: (() => void) | null = null;
+
+  function setupContentsObserver() {
+    teardownContentsObserver?.();
+    teardownContentsObserver = null;
+
+    if (!showContentsRail || typeof window === 'undefined' || typeof document === 'undefined') {
+      activeContentsId = null;
+      return;
+    }
+
+    const headingElements = contentsEntries
+      .map((entry) => ({
+        id: entry.id,
+        element: document.getElementById(entry.id)
+      }))
+      .filter((entry): entry is { id: string; element: HTMLElement } => Boolean(entry.element));
+
+    if (!headingElements.length) {
+      activeContentsId = null;
+      return;
+    }
+
+    activeContentsId = headingElements[0].id;
+
+    const visible = new Map<string, number>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const id = (entry.target as HTMLElement).id;
+
+          if (entry.isIntersecting) {
+            visible.set(id, entry.boundingClientRect.top);
+          } else {
+            visible.delete(id);
+          }
+        }
+
+        if (visible.size > 0) {
+          const nextId = [...visible.entries()].sort((a, b) => a[1] - b[1])[0]?.[0];
+          activeContentsId = nextId ?? activeContentsId;
+          return;
+        }
+
+        const threshold = window.innerHeight * 0.3;
+        let fallbackId = headingElements[0].id;
+
+        for (const heading of headingElements) {
+          if (heading.element.getBoundingClientRect().top <= threshold) {
+            fallbackId = heading.id;
+          } else {
+            break;
+          }
+        }
+
+        activeContentsId = fallbackId;
+      },
+      {
+        root: null,
+        rootMargin: `-${Math.round(window.innerHeight * 0.2)}px 0px -55% 0px`,
+        threshold: [0, 0.1, 0.25, 0.5, 1]
+      }
+    );
+
+    for (const heading of headingElements) {
+      observer.observe(heading.element);
+    }
+
+    teardownContentsObserver = () => {
+      observer.disconnect();
+      visible.clear();
+    };
+  }
+
+  onMount(() => {
+    setupContentsObserver();
+  });
+
+  $effect(() => {
+    showContentsRail;
+    contentsEntries;
+
+    if (typeof window === 'undefined') return;
+
+    queueMicrotask(() => {
+      setupContentsObserver();
+    });
+  });
+
+  onDestroy(() => {
+    teardownContentsObserver?.();
+  });
 </script>
 
 <article class="story">
@@ -27,7 +182,6 @@
           <h1>{story.title}</h1>
           <p class="lede overlay-dek">{@html story.dek}</p>
           <div class="meta overlay-meta" aria-label="Story details">
-            <span>By {story.byline}</span>
             <span>{story.date}</span>
             <span>{story.readingTime}</span>
           </div>
@@ -37,7 +191,6 @@
       <div class="mobile-immersive-copy">
         <p class="lede">{@html story.dek}</p>
         <div class="meta" aria-label="Story details">
-          <span>By {story.byline}</span>
           <span>{story.date}</span>
           <span>{story.readingTime}</span>
         </div>
@@ -59,7 +212,6 @@
         <h1>{story.title}</h1>
         <p class="lede">{@html story.dek}</p>
         <div class="meta" aria-label="Story details">
-          <span>By {story.byline}</span>
           <span>{story.date}</span>
           <span>{story.readingTime}</span>
         </div>
@@ -87,10 +239,83 @@
 
   <StoryToolbar {story} />
 
-  <div class="story-body">
-    {#each story.blocks as block}
-      <BlockRenderer {block} />
-    {/each}
+  {#if story.researcher || story.abstract}
+    <section class="story-intro" aria-label="Story introduction">
+      {#if story.researcher}
+        <div class="story-researcher" aria-label="Researcher information">
+          <div class="researcher-shell">
+            {#if story.researcher.image}
+              <img
+                class="researcher-avatar"
+                src="{base}{story.researcher.image}"
+                alt={story.researcher.imageAlt ?? `${story.researcher.name ?? story.byline} portrait`}
+                loading="lazy"
+              />
+            {:else}
+              <div class="researcher-avatar researcher-avatar--fallback" aria-hidden="true">
+                <span>{researcherInitials}</span>
+              </div>
+            {/if}
+
+            <div class="researcher-copy">
+              <p class="researcher-name">{story.researcher.name ?? story.byline}</p>
+              <p class="researcher-roleline">
+                {story.researcher.role}
+                {#if story.researcher.organisation}
+                  <span>{story.researcher.organisation}</span>
+                {/if}
+              </p>
+              {#if story.researcher.bio}
+                <p class="researcher-bio">{story.researcher.bio}</p>
+              {/if}
+              {#if story.researcher.profileLink}
+                <p class="researcher-link-row">
+                  <a class="researcher-link" href={story.researcher.profileLink.href}>
+                    {story.researcher.profileLink.label}
+                  </a>
+                </p>
+              {/if}
+            </div>
+          </div>
+        </div>
+      {/if}
+
+      {#if story.abstract}
+        <div class="story-abstract" aria-label="Summary">
+          <p>{@html story.abstract}</p>
+        </div>
+      {/if}
+    </section>
+  {/if}
+
+  <div class="story-content" class:with-contents={showContentsRail}>
+    {#if showContentsRail}
+      <aside class="story-contents" aria-label="Table of contents">
+        <p class="story-contents-label">Contents</p>
+        <nav class="story-contents-nav">
+          {#each contentsEntries as entry}
+            <a
+              class="story-contents-link"
+              class:is-active={activeContentsId === entry.id}
+              href={`#${entry.id}`}
+              aria-current={activeContentsId === entry.id ? 'location' : undefined}
+            >
+              {entry.label}
+            </a>
+          {/each}
+        </nav>
+      </aside>
+    {/if}
+
+    <div class="story-body">
+      {#each story.blocks as block, index}
+        <BlockRenderer
+          {block}
+          headingId={contentsIdMap.get(index)}
+          flourishWidth={storyFlourishWidth}
+        />
+      {/each}
+    </div>
   </div>
 </article>
 
@@ -194,6 +419,133 @@
     color: var(--color-faint);
     content: "/";
     margin-left: 0.65rem;
+  }
+
+  .story-intro {
+    margin: 0 auto;
+    max-width: calc(var(--measure-prose) + (var(--gutter) * 2));
+    padding-top: var(--space-5);
+    padding-bottom: clamp(var(--space-6), 5vw, var(--space-8));
+  }
+
+  .story-researcher {
+    margin: 0 auto;
+    max-width: calc(var(--measure-prose) + (var(--gutter) * 2));
+    padding: 0 var(--gutter);
+  }
+
+  .researcher-shell {
+    border-top: 1px solid color-mix(in srgb, var(--color-line) 72%, transparent);
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: auto minmax(0, 1fr);
+    max-width: 42rem;
+    padding-top: var(--space-4);
+  }
+
+  .researcher-avatar {
+    background: var(--color-soft);
+    border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
+    border-radius: 999px;
+    height: 4.25rem;
+    min-height: 4.25rem;
+    min-width: 4.25rem;
+    object-fit: cover;
+    width: 4.25rem;
+  }
+
+  .researcher-avatar--fallback {
+    align-items: center;
+    color: var(--color-accent-2);
+    display: flex;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+  }
+
+  .researcher-copy {
+    min-width: 0;
+  }
+
+  .researcher-name,
+  .researcher-roleline,
+  .researcher-bio,
+  .researcher-link-row {
+    margin: 0;
+  }
+
+  .researcher-name {
+    color: var(--color-accent-2);
+    font-family: var(--font-sans);
+    font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .researcher-roleline {
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-top: 0.3rem;
+  }
+
+  .researcher-roleline span::before {
+    color: var(--color-faint);
+    content: "|";
+    margin: 0 0.45rem;
+  }
+
+  .researcher-bio {
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-top: 0.7rem;
+    max-width: 36rem;
+  }
+
+  .researcher-link-row {
+    margin-top: 0.9rem;
+  }
+
+  .researcher-link {
+    color: var(--color-accent-2);
+    font-family: var(--font-sans);
+    font-size: 0.98rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .researcher-link:hover,
+  .researcher-link:focus-visible {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+
+  .story-abstract {
+    margin: var(--space-5) auto 0;
+    max-width: calc(var(--measure-prose) + (var(--gutter) * 2));
+    padding: 0 var(--gutter);
+  }
+
+  .story-abstract p {
+    background: color-mix(in srgb, var(--color-soft) 72%, transparent);
+    border-left: 3px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+    color: var(--color-accent-2);
+    font-family: var(--font-sans);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 40rem;
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .story-abstract p :global(strong) {
+    font-weight: 700;
   }
 
   .hero-media {
@@ -332,7 +684,8 @@
   }
 
   .story-body {
-    padding: 0 var(--gutter) 0;
+    min-width: 0;
+    width: 100%;
   }
 
   .story-hero.split + .story-body,
@@ -342,6 +695,74 @@
 
   .story-body > :global(:first-child) {
     margin-top: 0;
+  }
+
+  .story-content {
+    margin: 0 auto;
+    max-width: calc(var(--wide) + (var(--gutter) * 2));
+    padding: 0 var(--gutter) var(--space-8);
+  }
+
+  .story-content.with-contents {
+    align-items: start;
+    display: grid;
+    gap: clamp(var(--space-6), 5vw, var(--space-8));
+    grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+  }
+
+  .story-contents {
+    position: sticky;
+    top: calc(var(--site-header-height) + var(--space-5));
+  }
+
+  .story-contents-label {
+    color: var(--color-accent-2);
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: var(--line-height-small);
+    margin: 0 0 var(--space-3);
+    text-transform: uppercase;
+  }
+
+  .story-contents-nav {
+    border-top: 1px solid color-mix(in srgb, var(--color-line) 76%, transparent);
+    display: grid;
+  }
+
+  .story-contents-link {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-line) 68%, transparent);
+    color: var(--color-accent-2);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+    padding: 1rem 0;
+    text-decoration: none;
+  }
+
+  .story-contents-link:hover,
+  .story-contents-link:focus-visible {
+    color: var(--link-hover);
+    text-decoration: none;
+  }
+
+  .story-contents-link.is-active {
+    color: var(--link-hover);
+    padding-left: 0.7rem;
+    position: relative;
+  }
+
+  .story-contents-link.is-active::before {
+    background: var(--color-accent);
+    border-radius: 999px;
+    content: '';
+    height: 1.1rem;
+    left: 0;
+    position: absolute;
+    top: 1rem;
+    width: 0.18rem;
   }
 
   @media (max-width: 860px) {
@@ -436,6 +857,37 @@
 
     .story-hero.immersive .mobile-immersive-copy .meta span:not(:last-child)::after {
       color: var(--color-faint);
+    }
+
+    .story-intro {
+      padding-bottom: var(--space-6);
+    }
+
+    .story-content {
+      padding-bottom: var(--space-7);
+    }
+
+    .story-content.with-contents {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .story-contents {
+      position: static;
+    }
+
+    .researcher-shell {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .researcher-avatar {
+      height: 3.75rem;
+      min-height: 3.75rem;
+      min-width: 3.75rem;
+      width: 3.75rem;
+    }
+
+    .story-abstract p {
+      padding: var(--space-4);
     }
   }
 </style>

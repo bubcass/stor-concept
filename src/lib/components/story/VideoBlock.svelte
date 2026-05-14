@@ -16,7 +16,7 @@
   async function shareVideo() {
     const result = await shareVideoAsset({
       src: block.video.src,
-      title: 'Inside Parliament video',
+      title: 'Stór video',
       text: block.video.caption ?? undefined
     });
 

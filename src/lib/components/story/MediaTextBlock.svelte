@@ -4,7 +4,7 @@
   import { autoplayWhileVisible } from './videoAutoplayViewport';
   import { shareVideoAsset } from './videoShare';
 
-  let { block }: { block: MediaTextBlock } = $props();
+  let { block, headingId }: { block: MediaTextBlock; headingId?: string } = $props();
   let mediaSide = $derived(block.mediaSide ?? 'right');
   let image = $derived(block.media.type === 'image' ? (block.media.asset as ImageAsset) : undefined);
   let video = $derived(block.media.type === 'video' ? (block.media.asset as VideoAsset) : undefined);
@@ -21,7 +21,7 @@
 
     const result = await shareVideoAsset({
       src: video.src,
-      title: 'Inside Parliament video',
+      title: 'Stór video',
       text: video.caption ?? undefined
     });
 
@@ -38,7 +38,7 @@
       <p class="eyebrow">{block.eyebrow}</p>
     {/if}
     {#if block.heading}
-      <h2>{block.heading}</h2>
+      <h2 id={headingId}>{block.heading}</h2>
     {/if}
     {#each block.paragraphs as paragraph}
       <p>{@html paragraph}</p>
@@ -126,6 +126,7 @@
     font-weight: var(--font-weight-heading);
     line-height: var(--line-height-heading);
     margin: 0 0 var(--space-stack);
+    scroll-margin-top: calc(var(--site-header-height, 3.25rem) + var(--space-5));
     text-wrap: balance;
   }
 

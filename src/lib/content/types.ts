@@ -11,7 +11,10 @@ export type StoryBlock =
   | ScrollyBlock
   | SceneScrollyBlock;
 
-export type StorySection = 'parliament-now' | 'parliament-explained' | 'parliament-at-work';
+export type StorySection =
+  | 'committees'
+  | 'parliamentary-budget-office'
+  | 'library-research-service';
 export type StoryHeroLayout = 'contained' | 'split' | 'immersive';
 
 export interface Story {
@@ -19,15 +22,35 @@ export interface Story {
   section: StorySection;
   featured?: boolean;
   heroLayout?: StoryHeroLayout;
+  showContents?: boolean;
+  flourishWidth?: 'wide' | 'prose';
   title: string;
   /** Trusted inline HTML is supported for the story-page dek. */
   dek: string;
   eyebrow: string;
   byline: string;
+  /** Optional trusted inline HTML for an abstract/summary shown before the article body. */
+  abstract?: string;
+  researcher?: ResearcherProfile;
   date: string;
   readingTime: string;
   hero: ImageAsset;
   blocks: StoryBlock[];
+}
+
+export interface ResearcherProfileLink {
+  href: string;
+  label: string;
+}
+
+export interface ResearcherProfile {
+  name?: string;
+  role: string;
+  organisation?: string;
+  bio?: string;
+  image?: string;
+  imageAlt?: string;
+  profileLink?: ResearcherProfileLink;
 }
 
 export interface ImageAsset {
@@ -80,6 +103,7 @@ export interface VideoBlock {
 export interface FlourishStoryBlock {
   type: 'flourish';
   embedType?: 'chart' | 'story' | 'visualisation';
+  width?: 'wide' | 'prose';
   dataSrc: string;
   thumbnail?: string;
   alt?: string;

@@ -1,15 +1,16 @@
 <script lang="ts">
     import { base } from "$app/paths";
     import { onMount } from "svelte";
+    import StorySearch from "$lib/components/story/StorySearch.svelte";
     import { readBookmarks } from "$lib/components/story/bookmarks";
     import type { Story } from "$lib/content/types";
     import { stories } from "$lib/content/stories";
     import { plainTextFromHtml } from "$lib/content/text";
 
-    const featuredStory = stories.find((story) => story.featured) ?? stories[0];
-    const secondaryStories = featuredStory
-        ? stories.filter((story) => story.slug !== featuredStory.slug)
-        : stories;
+    const featuredStory = $derived(stories.find((story) => story.featured) ?? stories[0]);
+    const secondaryStories = $derived(
+        featuredStory ? stories.filter((story) => story.slug !== featuredStory.slug) : [],
+    );
     const isVideoHero = (src: string) => src.toLowerCase().endsWith(".mp4");
     let bookmarked = $state<Set<string>>(new Set());
 
@@ -19,25 +20,30 @@
 </script>
 
 <svelte:head>
-    <title>Inside Parliament | Get to know the Houses of the Oireachtas</title>
+    <title>Stór | Oireachtas Research Repository</title>
     <meta
         name="description"
-        content="SvelteKit static site prototype for longform editorial media stories."
+        content="SvelteKit static site prototype for a Stór research repository."
     />
 </svelte:head>
 
 <section class="home-hero page-shell">
     <div>
-        <p class="eyebrow">See for yourself</p>
-        <h1>Inside Parliament</h1>
+        <p class="eyebrow">Stór</p>
+        <h1>Independent parliamentary research</h1>
     </div>
     <p class="lede">
-        Get to know the work of the Houses of the Oireachtas with our news
-        updates, explainers and in-depth features of how your Parliament works.
+        Across the Houses of the Oireachtas our experts give insight through
+        reports, explainers and analyses to inform parliamentary debate and
+        decision-making.
     </p>
 </section>
 
 <section class="story-index page-shell">
+    <div class="search-wrap">
+        <StorySearch />
+    </div>
+
     {#if featuredStory}
         <article class="featured-story">
             <a href="{base}/stories/{featuredStory.slug}/">
@@ -52,11 +58,16 @@
                     <span class="featured-summary">
                         {plainTextFromHtml(featuredStory.dek)}
                     </span>
-                    <small>{featuredStory.date} · {featuredStory.readingTime}</small>
+                    <small
+                        >{featuredStory.date} · {featuredStory.readingTime}</small
+                    >
                 </div>
                 {#if isVideoHero(featuredStory.hero.src)}
                     <video autoplay muted loop playsinline aria-hidden="true">
-                        <source src="{base}{featuredStory.hero.src}" type="video/mp4" />
+                        <source
+                            src="{base}{featuredStory.hero.src}"
+                            type="video/mp4"
+                        />
                     </video>
                 {:else}
                     <img
@@ -74,11 +85,24 @@
             <article class="secondary-story">
                 <a href="{base}/stories/{story.slug}/">
                     {#if isVideoHero(story.hero.src)}
-                        <video autoplay muted loop playsinline aria-hidden="true">
-                            <source src="{base}{story.hero.src}" type="video/mp4" />
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            aria-hidden="true"
+                        >
+                            <source
+                                src="{base}{story.hero.src}"
+                                type="video/mp4"
+                            />
                         </video>
                     {:else}
-                        <img src="{base}{story.hero.src}" alt="" loading="lazy" />
+                        <img
+                            src="{base}{story.hero.src}"
+                            alt=""
+                            loading="lazy"
+                        />
                     {/if}
                     <div class="secondary-copy">
                         <div class="story-context">
@@ -88,7 +112,9 @@
                             {/if}
                         </div>
                         <h3>{story.title}</h3>
-                        <span class="secondary-summary">{plainTextFromHtml(story.dek)}</span>
+                        <span class="secondary-summary"
+                            >{plainTextFromHtml(story.dek)}</span
+                        >
                         <small>{story.date} · {story.readingTime}</small>
                     </div>
                 </a>
@@ -100,7 +126,8 @@
 <style>
     .home-hero {
         align-items: end;
-        border-bottom: 1px solid color-mix(in srgb, var(--color-line) 55%, transparent);
+        border-bottom: 1px solid
+            color-mix(in srgb, var(--color-line) 55%, transparent);
         display: grid;
         gap: var(--space-6);
         grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
@@ -121,8 +148,17 @@
         text-wrap: balance;
     }
 
+    .home-hero .lede {
+        max-width: 38rem;
+        text-wrap: balance;
+    }
+
     .story-index {
         padding-top: var(--space-8);
+    }
+
+    .search-wrap {
+        margin-bottom: clamp(var(--space-6), 4vw, var(--space-7));
     }
 
     .featured-story {
@@ -130,7 +166,8 @@
     }
 
     .featured-story a {
-        border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
+        border-bottom: 1px solid
+            color-mix(in srgb, var(--color-line) 62%, transparent);
         display: grid;
         gap: clamp(var(--space-6), 4vw, var(--space-8));
         grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
@@ -164,7 +201,8 @@
     .saved-chip {
         -webkit-text-size-adjust: 100%;
         align-self: center;
-        border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+        border: 1px solid
+            color-mix(in srgb, var(--color-accent) 35%, transparent);
         border-radius: 999px;
         color: var(--color-muted);
         display: inline-flex;

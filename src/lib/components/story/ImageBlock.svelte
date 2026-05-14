@@ -4,10 +4,11 @@
 
   let { block }: { block: ImageBlock } = $props();
   let layout = $derived(block.layout ?? 'inline');
+  let isSvg = $derived(block.image.src.toLowerCase().endsWith('.svg'));
 </script>
 
 <figure class="image-block {layout}">
-  <img src="{base}{block.image.src}" alt={block.image.alt} loading="lazy" />
+  <img class:svg-image={isSvg} src="{base}{block.image.src}" alt={block.image.alt} loading="lazy" />
   {#if block.image.caption || block.image.credit}
     <figcaption class="caption">
       {block.image.caption}
@@ -50,6 +51,11 @@
 
   .inline img {
     aspect-ratio: 4 / 3;
+  }
+
+  img.svg-image {
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 
   figcaption {

@@ -2,9 +2,16 @@
   import { onMount } from 'svelte';
   import type { FlourishStoryBlock } from '$lib/content/types';
 
-  let { block }: { block: FlourishStoryBlock } = $props();
+  let {
+    block,
+    flourishWidth = 'wide'
+  }: {
+    block: FlourishStoryBlock;
+    flourishWidth?: 'wide' | 'prose';
+  } = $props();
 
   let embedRoot: HTMLDivElement | null = null;
+  let resolvedWidth = $derived(block.width ?? flourishWidth);
 
   let flourishClass = $derived(
     `flourish-embed ${
@@ -80,7 +87,7 @@
   });
 </script>
 
-<figure class="flourish-block">
+<figure class="flourish-block {resolvedWidth}">
   <div
     bind:this={embedRoot}
     class={flourishClass}
@@ -100,15 +107,29 @@
 
 <style>
   .flourish-block {
+    display: block;
     margin: var(--space-block) auto;
-    max-width: var(--wide);
     padding: 0 var(--gutter);
+    width: 100%;
+  }
+
+  .flourish-block.wide {
+    max-width: var(--wide);
+  }
+
+  .flourish-block.prose {
+    max-width: calc(var(--measure-prose) + (var(--gutter) * 2));
   }
 
   .flourish-block :global(iframe),
   .flourish-block :global(svg),
   .flourish-block :global(canvas) {
+    display: block;
     max-width: 100%;
+  }
+
+  .flourish-block :global(iframe) {
+    width: 100% !important;
   }
 
   .flourish-block .caption {

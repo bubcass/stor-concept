@@ -13,20 +13,20 @@
 </script>
 
 <svelte:head>
-    <title>Inside Parliament</title>
+    <title>Stories | Stór | Oireachtas Research Repository</title>
     <meta
         name="description"
-        content="Browse our stories from Inside Parliament."
+        content="Browse scaffold repository stories and research features from Stór."
     />
 </svelte:head>
 
 <section class="page-shell stories-page">
     <header>
         <p class="eyebrow">Explore</p>
-        <h1>Parliament at work</h1>
+        <h1>Repository stories</h1>
         <p class="lede">
-            There's more to the work of the Houses of Oireachtas. Explore it
-            with our explanatory notes and features.
+            Browse the current Stór scaffold content across committees and
+            research services.
         </p>
     </header>
 

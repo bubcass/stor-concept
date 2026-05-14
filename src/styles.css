@@ -154,13 +154,8 @@ a:focus-visible {
   align-items: center;
   color: var(--color-accent-2);
   display: inline-flex;
-  font-size: 0.92rem;
-  font-weight: 600;
   gap: 0.62rem;
-  letter-spacing: 0.01em;
-  line-height: 1;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .brand-mark {
@@ -172,6 +167,29 @@ a:focus-visible {
   justify-content: center;
   transform: translateY(-0.05em);
   width: 42px;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+  line-height: 1;
+}
+
+.brand-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.brand-subtitle {
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  text-transform: none;
 }
 
 .brand-mark svg {
@@ -208,8 +226,8 @@ a:focus-visible {
     padding-top: var(--space-3);
   }
 
-  .brand {
-    font-size: 0.88rem;
+  .brand-copy {
+    gap: 0.1rem;
   }
 
   .nav-links {
@@ -285,6 +303,15 @@ a:focus-visible {
 @media (max-width: 620px) {
   .site-nav {
     min-height: 3.4rem;
+  }
+
+  .brand-title {
+    font-size: 0.88rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.64rem;
+    letter-spacing: 0.03em;
   }
 
   .nav-links {

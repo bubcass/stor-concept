@@ -35,7 +35,7 @@
       return isPlaying ? 'Pause story' : 'Play story';
     }
 
-    return isPlaying ? 'Stop listening' : 'Listen to the story';
+    return isPlaying ? 'Stop listening' : 'Listen to the article';
   });
 
   function storyUrl() {
@@ -93,13 +93,13 @@
 
     navigator.mediaSession.metadata = new MediaMetadata({
       title: story.title,
-      artist: 'Inside Parliament',
-      album: 'Inside Parliament',
+      artist: 'Stór',
+      album: 'Stór',
       artwork: [
         {
-          src: assetUrl('/brand/Inside Parliament.png', artworkVersion),
-          sizes: '1080x1350',
-          type: 'image/png'
+          src: assetUrl('/brand/inside-parliament-lockup.svg', artworkVersion),
+          sizes: '980x220',
+          type: 'image/svg+xml'
         }
       ]
     });
@@ -307,7 +307,7 @@
         class="listen-button"
         onclick={togglePlayback}
         aria-pressed={isPlaying}
-        aria-label={generatedAudioSrc ? playbackLabel : (isPlaying ? 'Stop listening to the story' : 'Listen to the story')}
+        aria-label={generatedAudioSrc ? playbackLabel : (isPlaying ? 'Stop listening to the article' : 'Listen to the article')}
         disabled={!generatedAudioSrc && !storyAudioText}
       >
         <span class="listen-button__icon" aria-hidden="true">
@@ -332,7 +332,7 @@
           {/if}
         </span>
         <span class="listen-button__label">
-          {generatedAudioSrc ? playbackLabel : (isPlaying ? 'Stop listening' : 'Listen to the story')}
+          {generatedAudioSrc ? playbackLabel : (isPlaying ? 'Stop listening' : 'Listen to the article')}
         </span>
       </button>
 

@@ -1,19 +1,19 @@
 <svelte:head>
-    <title>About | Inside Parliament</title>
-    <meta name="description" content="About the Inside Parliament prototype." />
+    <title>About | Stór | Oireachtas Research Repository</title>
+    <meta name="description" content="About the Stór prototype." />
 </svelte:head>
 
 <section class="page-shell about">
     <p class="eyebrow">About</p>
     <h1>
-        A prototype for a reworked news and press section on <em
+        A prototype for a reworked research repository on <em
             >www.oireachtas.ie</em
         >
     </h1>
     <p class="lede">
-        Inside Parliament demonstrates a clean static architecture for longform
-        editorial work, with typed content, reusable blocks, local media and a
-        build path for deployment.
+        Stór demonstrates a clean static architecture for repository content,
+        with typed stories, reusable blocks, local media and a build path for
+        deployment.
     </p>
 </section>
 

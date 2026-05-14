@@ -21,20 +21,19 @@
 </script>
 
 <svelte:head>
-    <title>My Parliament | Inside Parliament</title>
+    <title>My Stór | Stór | Oireachtas Research Repository</title>
     <meta
         name="description"
-        content="Your saved stories from Inside Parliament."
+        content="Your saved stories and repository items from Stór."
     />
 </svelte:head>
 
-<section class="page-shell my-parliament-page">
+<section class="page-shell my-stor-page">
     <header>
         <p class="eyebrow">Saved stories</p>
-        <h1>My Parliament</h1>
+        <h1>My Stór</h1>
         <p class="lede">
-            Save the stories important to you and keep in the loop with what
-            happens in the Oireachtas.
+            Save the research you need with a personalised collection of pieces.
         </p>
     </header>
 
@@ -44,21 +43,21 @@
         <section class="empty-state">
             <h2>Nothing saved yet</h2>
             <p>
-                Use the "Save" button on any story page to add it here for
+                Use the "Save" button on any story page to collect material for
                 later.
             </p>
             <p>
-                Saved stories are storied in your browser and won't appear on
+                Saved stories are stored in your browser and won't appear on
                 other devices. They do not require a sign-on but may be cleared
                 if your browser data is removed.
             </p>
             <div class="empty-state__links">
-                <a href="{base}/parliament-now/">Browse Parliament Now</a>
-                <a href="{base}/parliament-explained/"
-                    >Browse Parliament Explained</a
+                <a href="{base}/committees/">Browse Committees</a>
+                <a href="{base}/parliamentary-budget-office/"
+                    >Browse Parliamentary Budget Office</a
                 >
-                <a href="{base}/parliament-at-work/"
-                    >Browse Parliament at Work</a
+                <a href="{base}/library-research-service/"
+                    >Browse Library &amp; Research Service</a
                 >
             </div>
         </section>
@@ -106,7 +105,7 @@
 </section>
 
 <style>
-    .my-parliament-page {
+    .my-stor-page {
         padding-top: clamp(var(--space-7), 7vw, 4.75rem);
     }
 
