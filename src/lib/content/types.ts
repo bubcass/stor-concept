@@ -23,6 +23,7 @@ export interface Story {
   section: StorySection;
   featured?: boolean;
   heroLayout?: StoryHeroLayout;
+  heroImagePosition?: string;
   showContents?: boolean;
   flourishWidth?: 'wide' | 'prose';
   title: string;
@@ -73,6 +74,7 @@ export interface VideoAsset {
 export interface TextBlock {
   type: 'text';
   heading?: string;
+  headingLevel?: 2 | 3;
   /** Trusted inline HTML is supported for links and emphasis. */
   paragraphs: string[];
 }
@@ -92,8 +94,9 @@ export interface MediaTextBlock {
 
 export interface ImageBlock {
   type: 'image';
+  heading?: string;
   image: ImageAsset;
-  layout?: 'inline' | 'wide' | 'full';
+  layout?: 'inline' | 'wide' | 'full' | 'portrait';
 }
 
 export interface VideoBlock {

@@ -1,5 +1,6 @@
 import type {
   ArcGISMapStoryBlock,
+  ImageBlock,
   LinkListBlock,
   MediaTextBlock,
   QuoteBlock,
@@ -53,6 +54,10 @@ function arcgisMapCopy(block: ArcGISMapStoryBlock) {
   return [block.title, block.caption].filter(Boolean).map((part) => stripHtml(part!)).join(' ');
 }
 
+function imageBlockCopy(block: ImageBlock) {
+  return [block.heading, block.image.caption].filter(Boolean).map((part) => stripHtml(part!)).join(' ');
+}
+
 export function storyBlockCopy(block: StoryBlock) {
   switch (block.type) {
     case 'text':
@@ -69,6 +74,8 @@ export function storyBlockCopy(block: StoryBlock) {
       return linkListCopy(block);
     case 'arcgis-map':
       return arcgisMapCopy(block);
+    case 'image':
+      return imageBlockCopy(block);
     default:
       return '';
   }

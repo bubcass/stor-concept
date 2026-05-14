@@ -7,6 +7,7 @@
 
   let { story }: { story: Story } = $props();
   let heroLayout = $derived(story.heroLayout ?? 'contained');
+  let heroImagePosition = $derived(story.heroImagePosition ?? 'center');
   let heroIsVideo = $derived(story.hero.src.toLowerCase().endsWith('.mp4'));
   let storyFlourishWidth = $derived(story.flourishWidth ?? 'wide');
   let researcherInitials = $derived.by(() => {
@@ -26,7 +27,11 @@
   };
 
   function headingForBlock(block: StoryBlock) {
-    if (block.type === 'text' || block.type === 'media-text') {
+    if (block.type === 'text') {
+      return (block.headingLevel ?? 2) === 2 ? block.heading : undefined;
+    }
+
+    if (block.type === 'media-text' || block.type === 'image') {
       return block.heading;
     }
 
@@ -173,7 +178,12 @@
             <source src="{base}{story.hero.src}" type="video/mp4" />
           </video>
         {:else}
-          <img src="{base}{story.hero.src}" alt={story.hero.alt} fetchpriority="high" />
+          <img
+            src="{base}{story.hero.src}"
+            alt={story.hero.alt}
+            fetchpriority="high"
+            style:object-position={heroImagePosition}
+          />
         {/if}
         <div class="hero-overlay">
           {#if story.eyebrow}
@@ -223,7 +233,12 @@
             <source src="{base}{story.hero.src}" type="video/mp4" />
           </video>
         {:else}
-          <img src="{base}{story.hero.src}" alt={story.hero.alt} fetchpriority="high" />
+          <img
+            src="{base}{story.hero.src}"
+            alt={story.hero.alt}
+            fetchpriority="high"
+            style:object-position={heroImagePosition}
+          />
         {/if}
         {#if story.hero.caption || story.hero.credit}
           <figcaption class="caption">

@@ -4,11 +4,12 @@
   let { block, headingId }: { block: TextBlock; headingId?: string } = $props();
 
   const isListMarkup = (paragraph: string) => /^\s*<(ul|ol)\b/i.test(paragraph);
+  const headingTag = $derived(block.headingLevel === 3 ? 'h3' : 'h2');
 </script>
 
 <section class="text-block story-flow" aria-label={block.heading ?? undefined}>
   {#if block.heading}
-    <h2 id={headingId}>{block.heading}</h2>
+    <svelte:element this={headingTag} id={headingId}>{block.heading}</svelte:element>
   {/if}
   {#each block.paragraphs as paragraph}
     {#if isListMarkup(paragraph)}
@@ -25,15 +26,25 @@
     max-width: var(--measure-prose);
   }
 
-  h2 {
+  h2,
+  h3 {
     color: var(--color-accent-2);
     font-family: var(--font-sans);
-    font-size: var(--font-size-h2);
     font-weight: var(--font-weight-heading);
-    line-height: var(--line-height-heading);
     margin: 0 0 var(--space-stack);
     scroll-margin-top: calc(var(--site-header-height, 3.25rem) + var(--space-5));
     text-wrap: pretty;
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-heading);
+  }
+
+  h3 {
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+    line-height: 1.2;
+    margin-top: var(--space-6);
   }
 
   p {

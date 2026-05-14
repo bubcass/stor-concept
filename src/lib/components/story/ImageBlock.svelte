@@ -2,30 +2,46 @@
   import { base } from '$app/paths';
   import type { ImageBlock } from '$lib/content/types';
 
-  let { block }: { block: ImageBlock } = $props();
+  let { block, headingId }: { block: ImageBlock; headingId?: string } = $props();
   let layout = $derived(block.layout ?? 'inline');
   let isSvg = $derived(block.image.src.toLowerCase().endsWith('.svg'));
 </script>
 
-<figure class="image-block {layout}">
-  <img class:svg-image={isSvg} src="{base}{block.image.src}" alt={block.image.alt} loading="lazy" />
-  {#if block.image.caption || block.image.credit}
-    <figcaption class="caption">
-      {block.image.caption}
-      {#if block.image.credit}
-        <span>{block.image.credit}</span>
-      {/if}
-    </figcaption>
+<section class="image-block story-flow" aria-label={block.heading ?? undefined}>
+  {#if block.heading}
+    <h2 id={headingId}>{block.heading}</h2>
   {/if}
-</figure>
+
+  <figure class="image-figure {layout}">
+    <img class:svg-image={isSvg} src="{base}{block.image.src}" alt={block.image.alt} loading="lazy" />
+    {#if block.image.caption || block.image.credit}
+      <figcaption class="caption">
+        {block.image.caption}
+        {#if block.image.credit}
+          <span>{block.image.credit}</span>
+        {/if}
+      </figcaption>
+    {/if}
+  </figure>
+</section>
 
 <style>
   .image-block {
     margin: var(--block-space) auto;
   }
 
+  .image-figure {
+    margin: 0;
+  }
+
   .inline {
     max-width: var(--measure);
+  }
+
+  .portrait {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: min(34rem, calc(100vw - (var(--gutter) * 2)));
   }
 
   .wide {
@@ -51,6 +67,11 @@
 
   .inline img {
     aspect-ratio: 4 / 3;
+  }
+
+  .portrait img {
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 
   img.svg-image {

@@ -79,67 +79,72 @@ export const researchBriefing: Story = {
       heading: "Long-term strategic infrastructure development",
       paragraphs: [
         `Recently there have been a series of <strong>data centre planning application refusals</strong>, many citing energy concerns. Currently, all planning applications are made to local authorities. However, Section 49 of the <em>Planning and Development (Amendment) Act 2018</em> adds large data centres (defined by land footprint not energy demands) to the list of <strong>strategic infrastructure development</strong>.`,
+        "Once Section 49 is commenced, planning applications for any large data centre will be lodged directly with An Coimisiún Pleanála (formerly An Bord Pleanála.) A strategic national approach to planning any new data centres might serve to better balance competing energy, greenhouse gas emissions and digital infrastructure challenges.",
+      ],
+    },
+    {
+      type: "text",
+      heading: "Interim measures",
+      paragraphs: [
+        `Planned data centres must obtain a contract to connect to the grid before they are built. There is no moratorium on new data centres, but there are more hurdles than ever. The Dublin region grid is near maxed out in terms of its capacity. Since 2021, the CRU require that a data centre seeking a <strong>new connection to the electricity grid must provide on-site power generation or storage</strong> to match its power load needs. Industry and environmental campaigners are critical of this approach. In the short-term, bigger data centres are installing large generators on-site, making each an industrial greenhouse gas emitter.  Figure 2 displays data centres with an industrial emissions licence from the EPA.`,
+      ],
+    },
+    {
+      type: "text",
+      heading: "Renewables and power purchase agreements (PPAs)",
+      paragraphs: [
+        `The 2024 Climate Action Plan sets ambitions to <strong>develop Irish renewable electricity sources in the next five years</strong>. Key 2030 targets are to:`,
+        `<ul>
+          <li>build offshore wind generation capacity to 5 Gigawatts (GW) – enough to power over 3.5 million homes;</li>
+          <li>grow onshore wind power to 9 GW (from 4.5 GW today);</li>
+          <li>target solar power of 8 GW (currently 1.2 GW); and</li>
+          <li>secure 15% of renewable electricity via Power Purchase Agreements (PPAs).</li>
+        </ul>`,
+        "Should the 2030 targets be reached, the planned generation capacity is enough to cover the anticipated growth in demand by data centres. Further, energy analysts argue that large electricity users including data centres would be necessary to balance the grid load.",
+        "Today, many data centre operators are pursuing corporate PPAs to shore up their renewable energy needs, improve their sustainability credentials and underpin their social licence to operate. There is currently no requirement for data centres to adopt PPAs, yet there is pent up demand amongst larger operators with hard decarbonisation targets. It is anticipated that future energy supply from wind and solar farms would be ‘gobbled up’ by the sector as a result.",
+      ],
+    },
+    {
+      type: "text",
+      heading: "Going off-grid",
+      paragraphs: [
+        `Data centre operators complain that they cannot innovate their own energy solutions, as all electricity transmission is via a single national grid. In response to connection restrictions, new data centres plan to use natural gas which has a much worse carbon footprint than the grid electricity mix.`,
+        `<strong>Legislating for private wire connections</strong> would free large energy users to connect directly to renewable sources such as wind and solar farms and bypass the national grid. Such connections could enable the establishment of <strong>energy parks</strong>, where data centres co-locate with renewable power sources and buy their power directly (via PPA). Some envisage islanded hubs of data centres that are independent of the grid altogether. However, such an approach would likely not meet the requirements of the top-tier data centre operators for power backup and data security. A national Private Wires Policy Framework is in development.`,
+      ],
+    },
+    {
+      type: "text",
+      heading: "Energy Efficiency Directive and making use of waste heat",
+      paragraphs: [
+        `Under the recast Energy Efficiency Directive (EU/2023/1791) from May 2025 data centres will be required to <strong>report on their energy use</strong> and environmental impact annually.`,
+        "The goal is greater transparency and comparable sustainability metrics. Ireland needs to transpose the Directive by October 2025.",
+        `Data centres provide an opportunity for <strong>recovery of low-grade heat</strong>. The Heat (Networks and Miscellaneous Provisions) Bill (not yet initiated) is expected to set out a framework for district heating and use of waste heat in communities. Such systems offer potential for low-cost and constant heat in residential and business sectors, that reduce overall greenhouse gas emissions.`,
+      ],
+    },
+    {
+      type: "text",
+      heading: "Data centres: where climate goals clash with economic growth",
+      paragraphs: [
+        `Future developments of the data centre sector will need to align with Ireland's climate objectives, <strong>focusing on decarbonising the energy supply</strong>. Data centres are considered vital to Ireland’s digital economy: they are anchors for numerous multinational ICT companies and their associated corporation and employment taxes. Whilst there are no specific figures published for data centre operating companies, it is noteworthy that Ireland is currently enjoying record incomes, with <strong>corporation tax nearly doubling since 2020</strong> to €24 billion in 2023.`,
+        "The policy options explored above are key and one risk of inaction is departure of new data centres business altogether. There are key decision crossroads now for the State to consider, including whether to:",
+        `<ul>
+          <li><strong>Ban</strong> new data centres – at least while the State addresses the energy and grid infrastructure deficit</li>
+          <li><strong>Restrict</strong> electricity grid access but exacerbate the carbon footprint of data centres that turn to natural gas in their own power generators</li>
+          <li><strong>Accelerate</strong> build-out of electricity capacity, achieve the 2030 renewables goals, and promote new strategically located data centres around the country.</li>
+          <li><strong>Legislate</strong> for measures that enhance and do not harm Ireland’s legally binding low-carbon targets, such as utilising waste heat, energy parks, PPAs and private renewable energy installations.</li>
+        </ul>`,
       ],
     },
     {
       type: "image",
-      layout: "wide",
+      heading: "Data centres at a glance",
+      layout: "portrait",
       image: {
-        src: "/media/homelessness-policy-framework.svg",
-        alt: "Diagram showing nine homelessness policy actions across policy design and monitoring, policy implementation, and policy management.",
+        src: "/media/data-centres.jpg",
+        alt: "Infographic summarising key facts and figures about data centres in Ireland, including electricity demand, emissions and renewable energy targets.",
+        caption:
+          "Figure 3: Key facts and figures on data centres, electricity demand and Ireland's renewable energy targets.",
       },
-    },
-    {
-      type: "text",
-      heading: "Prioritising prevention",
-      paragraphs: [
-        "Homelessness prevention can be grouped into the following categories:",
-        `<ul>
-          <li>Primary prevention, which includes activities that reduce the risk of homelessness among the general population, for example, housing, and social protection policy.</li>
-          <li>Secondary prevention, targeted on ‘at risk’ populations, such as those leaving state institutions like prisons, those with mental health issues or experiencing drug abuse, or those facing eviction.</li>
-          <li>Tertiary prevention, which includes rapid rehousing services that try to reduce the period of homelessness once it has occurred, and services designed to prevent repeated experiences of homelessness.</li>
-        </ul>`,
-        "Norway provides a notable example, having successfully reduced homelessness by 47% between 2012 and 2020. This was achieved through, in part, a housing-led approach along with sustained investment in affordable housing. Since 2010, homelessness prevention has been included as a key pillar in Norway’s national strategies. It has targets to reduce evictions, end homelessness, and limit stays in temporary accommodations.",
-      ],
-    },
-    {
-      type: "text",
-      heading: "Tailoring supports",
-      paragraphs: [
-        "The increasing diversity of the homeless population requires varied housing and service solutions. For example, in addition to housing support, homeless populations such as youths, veterans, migrants and domestic violence victims need specific social supports, including health services, counselling, childcare, language classes, or support finding a job.",
-        "The ‘Housing First’ policy approach is an internationally recognised way of addressing homelessness. It seeks to house people who have high and complex needs, as well as providing access to recovery-oriented supports. This is different from approaches that expect individuals to show that they are ‘housing ready’ before they are rehoused. The Housing First model is becoming more widespread. However, its implementation can vary widely across countries which have adopted this approach.",
-        "In Ireland, Housing First initially became active in the Dublin region in 2011, where it began as a demonstration project. To assist with the national rollout of the Housing First programme, a Housing First National Implementation Plan was published in September 2018. The latest plan covers the period 2022 to 2026, with the Housing Agency tasked with overseeing a national, cross-government approach to implementation.",
-      ],
-    },
-    {
-      type: "text",
-      heading: "Long-term political support and funding: the Finnish approach",
-      paragraphs: [
-        "Countries that have successfully reduced homelessness have highlighted the importance of long-term political commitment, at all levels of government, along with sustained investment. In Finland, single homelessness (homeless people who live alone) fell by 57% between 2008 and 2023.",
-        "This success was driven by a Housing First approach, launched in 2008, as part of the National Programme to End Long-term Homelessness (Paavo). A key aspect of the strategy was to replace shelters and temporary accommodation with permanent rental housing for the long-term homeless population.",
-        "Finland’s Housing First model has four guiding principles:",
-        `<ol>
-          <li><strong>Housing enables independent lives</strong> – the person who is homeless can go straight to living in a rental apartment without temporary arrangements.</li>
-          <li><strong>Respect of choice</strong> – the client has the opportunity to choose treatments and services.</li>
-          <li><strong>Rehabilitation and empowerment of the resident</strong> – staff meet and treat the client as an equal.</li>
-          <li><strong>Integration into the community and society</strong> – in supported housing units, significant neighbourhood work is done with residents, such as holding information meetings or through taking security precautions, to relieve any fears they may have.</li>
-        </ol>`,
-        "The Finnish experience demonstrates the effectiveness of tackling homelessness through a mix of policy levers. These include financial assistance, integrated and targeted support services, and more housing supply.",
-      ],
-    },
-    {
-      type: "text",
-      heading: "Lessons for Ireland",
-      paragraphs: [
-        "Some key aspects of Finland’s approach which could be considered for Ireland include:",
-        `<ul>
-          <li><strong>Sufficient supply of affordable and social housing</strong> – a non-profit organisation called the Y-Foundation acquires and builds affordable rental accommodation and is the fourth largest landlord in Finland. The municipality of Helsinki also owns around 70% of its land area and is therefore able to play a major role in providing and promoting affordable housing. Funding has been provided in the past from the Finnish Slot Machine Association and a government agency (ARA).</li>
-          <li><strong>Type of Housing First model</strong> – Finnish 'Housing First' is a housing-led approach across all elements of strategy, combined with harm-reduction services. An emphasis is placed on choice and control for people experiencing homelessness associated with multiple and complex needs.</li>
-          <li><strong>Governance</strong> – cooperation between local authorities, NGOs providing homelessness services, Y-Foundation and the central government has proven essential. It resulted in developing a mix of better access to social housing, preventative services, less concentrated supported accommodation using flats scattered throughout apartment complexes, and the Housing First services that reduced long-term homelessness.</li>
-          <li><strong>Prevention</strong> – in Finland, 'housing councillors' or 'housing social workers' can perform multi-level assessments, bringing in other agencies as necessary that triage people to eviction prevention, rapid rehousing or rapid rehousing with support/treatment packages.</li>
-          <li><strong>Wider definition of homelessness</strong> – accounting for 'hidden homelessness', such as those sofa-surfing with friends and family, means that broader interventions are developed.</li>
-        </ul>`,
-      ],
     },
     {
       type: "link-list",
@@ -152,9 +157,10 @@ export const researchBriefing: Story = {
             "Discover our curated collection of research articles to inform parliamentary debate",
         },
         {
-          label: "Research focus | Housing and homelessness",
-          href: "https://www.oireachtas.ie/en/publications/?q=housing&date=&term=%2Fie%2Foireachtas%2Fhouse%2Fdail%2F34&fromDate=14%2F05%2F2026&toDate=14%2F05%2F2026",
-          description: "Further research from across Stór",
+          label: "Spotlight | Data centres",
+          href: "https://data.oireachtas.ie/ie/oireachtas/libraryResearch/2024/2024-07-23_spotlight-data-centres-and-energy_en.pdf",
+          description:
+            "A detailed research note on data centres and their use of energy",
         },
       ],
     },

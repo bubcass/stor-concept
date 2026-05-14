@@ -148,6 +148,11 @@
           block.title ? `<h2>${escapeHtml(block.title)}</h2>` : '',
           block.caption ? `<p>${escapeHtml(block.caption)}</p>` : ''
         ].join('');
+      case 'image':
+        return [
+          block.heading ? `<h2>${escapeHtml(block.heading)}</h2>` : '',
+          block.image.caption ? `<p>${escapeHtml(block.image.caption)}</p>` : ''
+        ].join('');
       default:
         return '';
     }
@@ -592,7 +597,7 @@
         type="button"
         class="icon-button icon-button--labelled"
         onclick={printArticle}
-        aria-label="Download a printable PDF version"
+        aria-label="Print this article"
       >
         <span aria-hidden="true">
           <svg viewBox="0 0 20 20" fill="none">
@@ -605,7 +610,7 @@
             ></path>
           </svg>
         </span>
-        <span>Download PDF</span>
+        <span>Print</span>
       </button>
 
       <button

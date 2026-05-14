@@ -37,7 +37,7 @@
 {:else if block.type === 'media-text'}
   <MediaTextBlock {block} {headingId} />
 {:else if block.type === 'image'}
-  <ImageBlock {block} />
+  <ImageBlock {block} {headingId} />
 {:else if block.type === 'video'}
   <VideoBlock {block} />
 {:else if block.type === 'link-list'}
