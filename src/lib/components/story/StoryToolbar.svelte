@@ -315,7 +315,7 @@
   function printArticle() {
     if (!isClient) return;
 
-    const printWindow = window.open('', '_blank', 'noopener,noreferrer');
+    const printWindow = window.open('', '_blank');
     if (!printWindow) return;
 
     const author = story.researcher?.name ?? story.byline;
@@ -428,20 +428,24 @@
       <hr />
       ${articleBody}
     </main>
-    <script>
-      window.addEventListener('load', () => {
-        window.print();
-      });
-      window.addEventListener('afterprint', () => {
-        window.close();
-      });
-    <\/script>
   </body>
 </html>`;
 
     printWindow.document.open();
     printWindow.document.write(printableHtml);
     printWindow.document.close();
+    printWindow.opener = null;
+
+    const triggerPrint = () => {
+      printWindow.focus();
+      printWindow.print();
+    };
+
+    printWindow.addEventListener('afterprint', () => {
+      printWindow.close();
+    }, { once: true });
+
+    window.setTimeout(triggerPrint, 150);
   }
 
   async function copyCitation() {
