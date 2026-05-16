@@ -3,7 +3,7 @@ import type { Story } from "../../types";
 export const researchBriefing: Story = {
   slug: "the-future-of-data-centres-in-ireland-2025-05-14",
   section: "library-research-service",
-  featured: true,
+  featured: false,
   heroLayout: "split",
   showContents: true,
   flourishWidth: "prose",
