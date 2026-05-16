@@ -33,6 +33,26 @@
     });
   }
 
+  function delay(ms: number) {
+    return new Promise<void>((resolve) => {
+      window.setTimeout(() => resolve(), ms);
+    });
+  }
+
+  async function triggerFlourishLoad() {
+    await tick();
+    await nextFrame();
+    await nextFrame();
+
+    if (!embedRoot?.isConnected) return;
+
+    const flourish = (window as typeof window & {
+      Flourish?: { loadEmbeds?: () => void };
+    }).Flourish;
+
+    flourish?.loadEmbeds?.();
+  }
+
   function loadFlourishScript() {
     if (scriptPromise) return scriptPromise;
 
@@ -81,16 +101,11 @@
 
     void loadFlourishScript()
       .then(async () => {
-        await tick();
-        await nextFrame();
-
-        if (!embedRoot?.isConnected) return;
-
-        const flourish = (window as typeof window & {
-          Flourish?: { loadEmbeds?: () => void };
-        }).Flourish;
-
-        flourish?.loadEmbeds?.();
+        await triggerFlourishLoad();
+        await delay(180);
+        await triggerFlourishLoad();
+        await delay(500);
+        await triggerFlourishLoad();
       })
       .catch((error) => {
         console.error(error);
