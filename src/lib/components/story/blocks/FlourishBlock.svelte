@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import type { FlourishStoryBlock } from '$lib/content/types';
 
   let {
@@ -26,6 +26,12 @@
   let scriptUrl = 'https://public.flourish.studio/resources/embed.js';
 
   let scriptPromise: Promise<void> | null = null;
+
+  function nextFrame() {
+    return new Promise<void>((resolve) => {
+      requestAnimationFrame(() => resolve());
+    });
+  }
 
   function loadFlourishScript() {
     if (scriptPromise) return scriptPromise;
@@ -74,7 +80,12 @@
     if (!embedRoot) return;
 
     void loadFlourishScript()
-      .then(() => {
+      .then(async () => {
+        await tick();
+        await nextFrame();
+
+        if (!embedRoot?.isConnected) return;
+
         const flourish = (window as typeof window & {
           Flourish?: { loadEmbeds?: () => void };
         }).Flourish;
