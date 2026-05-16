@@ -91,10 +91,10 @@ export function renderList(node: ProseMirrorNode): string {
 }
 
 export interface CommitteeReportNode {
-  type: 'heading' | 'paragraph' | 'flourish';
+  type: 'heading' | 'paragraph' | 'flourish' | 'image' | 'table';
   level?: number;
   text: string;
-  block?: Extract<StoryBlock, { type: 'flourish' }>;
+  block?: Extract<StoryBlock, { type: 'flourish' | 'image' | 'table' }>;
 }
 
 function parseFlourishMarker(text: string) {
@@ -109,6 +109,60 @@ function parseFlourishMarker(text: string) {
     embedType: 'chart' as const,
     dataSrc,
     alt: 'Flourish visualisation',
+  };
+}
+
+function imageBlockFromNode(node: ProseMirrorNode) {
+  const src = String(node.attrs?.src ?? '').trim();
+  if (!src) return null;
+
+  return {
+    type: 'image' as const,
+    image: {
+      src,
+      alt: String(node.attrs?.alt ?? '').trim() || 'Image',
+      caption: String(node.attrs?.caption ?? '').trim() || null,
+      credit: String(node.attrs?.credit ?? '').trim() || null,
+    },
+    layout:
+      (String(node.attrs?.layout ?? '').trim() as
+        | 'inline'
+        | 'wide'
+        | 'full'
+        | 'portrait') || 'inline',
+  };
+}
+
+function flourishBlockFromNode(node: ProseMirrorNode) {
+  const dataSrc = String(node.attrs?.dataSrc ?? '').trim();
+  if (!dataSrc) return null;
+
+  const width = String(node.attrs?.width ?? '').trim();
+  const embedType = String(node.attrs?.embedType ?? '').trim();
+
+  return {
+    type: 'flourish' as const,
+    dataSrc,
+    alt: String(node.attrs?.alt ?? '').trim() || 'Flourish visualisation',
+    ...(String(node.attrs?.caption ?? '').trim()
+      ? { caption: String(node.attrs?.caption ?? '').trim() }
+      : {}),
+    ...(embedType === 'story' || embedType === 'visualisation' || embedType === 'chart'
+      ? { embedType: embedType as 'chart' | 'story' | 'visualisation' }
+      : {}),
+    ...(width === 'prose' || width === 'wide'
+      ? { width: width as 'prose' | 'wide' }
+      : {}),
+  };
+}
+
+function tableBlockFromNode(node: ProseMirrorNode) {
+  const html = String(node.attrs?.html ?? '').trim();
+  if (!html) return null;
+
+  return {
+    type: 'table' as const,
+    html,
   };
 }
 
@@ -155,6 +209,42 @@ export function proseMirrorToCommitteeNodes(
       nodes.push({
         type: 'paragraph',
         text: renderList(node),
+      });
+      continue;
+    }
+
+    if (node.type === 'flourishBlock') {
+      const block = flourishBlockFromNode(node);
+      if (!block) continue;
+
+      nodes.push({
+        type: 'flourish',
+        text: block.caption ?? block.alt ?? block.dataSrc,
+        block,
+      });
+      continue;
+    }
+
+    if (node.type === 'imageBlock') {
+      const block = imageBlockFromNode(node);
+      if (!block) continue;
+
+      nodes.push({
+        type: 'image',
+        text: block.image.alt,
+        block,
+      });
+      continue;
+    }
+
+    if (node.type === 'tableBlock') {
+      const block = tableBlockFromNode(node);
+      if (!block) continue;
+
+      nodes.push({
+        type: 'table',
+        text: 'Table',
+        block,
       });
     }
   }
@@ -233,6 +323,35 @@ export function proseMirrorToNarrativeBlocks(
       encounteredBodyContent = true;
       currentParagraphs.push(renderList(node));
       continue;
+    }
+
+    if (node.type === 'flourishBlock') {
+      const flourish = flourishBlockFromNode(node);
+      if (!flourish) continue;
+
+      flush();
+      blocks.push(flourish);
+      encounteredBodyContent = true;
+      continue;
+    }
+
+    if (node.type === 'imageBlock') {
+      const image = imageBlockFromNode(node);
+      if (!image) continue;
+
+      flush();
+      blocks.push(image);
+      encounteredBodyContent = true;
+      continue;
+    }
+
+    if (node.type === 'tableBlock') {
+      const table = tableBlockFromNode(node);
+      if (!table) continue;
+
+      flush();
+      blocks.push(table);
+      encounteredBodyContent = true;
     }
   }
 

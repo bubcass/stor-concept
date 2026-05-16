@@ -7,8 +7,10 @@
 
   let { story }: { story: Story } = $props();
   let heroLayout = $derived(story.heroLayout ?? 'contained');
+  let hasHeroMedia = $derived(Boolean(story.hero?.src?.trim()));
+  let effectiveHeroLayout = $derived(hasHeroMedia ? heroLayout : 'contained');
   let heroImagePosition = $derived(story.heroImagePosition ?? 'center');
-  let heroIsVideo = $derived(story.hero.src.toLowerCase().endsWith('.mp4'));
+  let heroIsVideo = $derived((story.hero?.src ?? '').toLowerCase().endsWith('.mp4'));
   let storyFlourishWidth = $derived(story.flourishWidth ?? 'wide');
   let researcherInitials = $derived.by(() => {
     const source = story.researcher?.name ?? story.byline;
@@ -215,8 +217,8 @@
 </script>
 
 <article class="story">
-  <header class={`story-hero ${heroLayout}`}>
-    {#if heroLayout === 'immersive'}
+  <header class={`story-hero ${effectiveHeroLayout}`} class:no-hero={!hasHeroMedia}>
+    {#if effectiveHeroLayout === 'immersive'}
       <figure class="hero-media">
         {#if heroIsVideo}
           <video autoplay muted loop playsinline aria-label={story.hero.alt}>
@@ -272,28 +274,30 @@
         </div>
       </div>
 
-      <figure class="hero-media">
-        {#if heroIsVideo}
-          <video autoplay muted loop playsinline aria-label={story.hero.alt}>
-            <source src="{base}{story.hero.src}" type="video/mp4" />
-          </video>
-        {:else}
-          <img
-            src="{base}{story.hero.src}"
-            alt={story.hero.alt}
-            fetchpriority="high"
-            style:object-position={heroImagePosition}
-          />
-        {/if}
-        {#if story.hero.caption || story.hero.credit}
-          <figcaption class="caption">
-            {story.hero.caption}
-            {#if story.hero.credit}
-              <span>{story.hero.credit}</span>
-            {/if}
-          </figcaption>
-        {/if}
-      </figure>
+      {#if hasHeroMedia}
+        <figure class="hero-media">
+          {#if heroIsVideo}
+            <video autoplay muted loop playsinline aria-label={story.hero.alt}>
+              <source src="{base}{story.hero.src}" type="video/mp4" />
+            </video>
+          {:else}
+            <img
+              src="{base}{story.hero.src}"
+              alt={story.hero.alt}
+              fetchpriority="high"
+              style:object-position={heroImagePosition}
+            />
+          {/if}
+          {#if story.hero.caption || story.hero.credit}
+            <figcaption class="caption">
+              {story.hero.caption}
+              {#if story.hero.credit}
+                <span>{story.hero.credit}</span>
+              {/if}
+            </figcaption>
+          {/if}
+        </figure>
+      {/if}
     {/if}
   </header>
 
@@ -327,12 +331,16 @@
               {:else}
                 <p class="researcher-name">{story.researcher.name ?? story.byline}</p>
               {/if}
-              <p class="researcher-roleline">
-                {story.researcher.role}
-                {#if story.researcher.organisation}
-                  <span>{story.researcher.organisation}</span>
-                {/if}
-              </p>
+              {#if story.researcher.role || story.researcher.organisation}
+                <p class="researcher-roleline">
+                  {#if story.researcher.role}
+                    {story.researcher.role}
+                  {/if}
+                  {#if story.researcher.organisation}
+                    <span>{story.researcher.organisation}</span>
+                  {/if}
+                </p>
+              {/if}
               {#if story.researcher.bio}
                 <p class="researcher-bio">{story.researcher.bio}</p>
               {/if}
@@ -425,6 +433,18 @@
   .story-hero.contained .hero-copy {
     max-width: var(--measure-hero);
     padding: 0;
+  }
+
+  .story-hero.no-hero {
+    min-height: 0;
+  }
+
+  .story-hero.contained.no-hero {
+    padding-bottom: clamp(var(--space-6), 5vw, var(--space-7));
+  }
+
+  .story-hero.no-hero .hero-copy {
+    max-width: var(--measure-prose);
   }
 
   .story-hero.contained h1,

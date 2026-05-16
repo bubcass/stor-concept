@@ -17,6 +17,13 @@ export const storySections: StorySectionMeta[] = [
     intro: "Track committee publications and research outputs.",
   },
   {
+    slug: "houses-of-the-oireachtas",
+    title: "Houses of the Oireachtas",
+    accentColor: "#4b5563",
+    intro:
+      "Browse recent publications produced across the Houses of the Oireachtas.",
+  },
+  {
     slug: "parliamentary-budget-office",
     title: "Parliamentary Budget Office",
     accentColor: "#670048",

@@ -1,10 +1,10 @@
 import type { LinkListBlock, Story, StoryBlock, VideoAsset } from "../../types";
 
 export interface CommitteeReportNode {
-  type: "heading" | "paragraph" | "flourish";
+  type: "heading" | "paragraph" | "flourish" | "image" | "table";
   level?: number;
   text: string;
-  block?: Extract<StoryBlock, { type: "flourish" }>;
+  block?: Extract<StoryBlock, { type: "flourish" | "image" | "table" }>;
 }
 
 export interface CommitteeReportDocument {
@@ -588,7 +588,7 @@ function buildReportBlocks(
       continue;
     }
 
-    if (node.type === "flourish") {
+    if (node.type === "flourish" || node.type === "image" || node.type === "table") {
       flush();
 
       if (node.block) {

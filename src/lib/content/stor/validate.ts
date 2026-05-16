@@ -38,5 +38,13 @@ export function validateStorDocument(value: StorDocument) {
     );
   }
 
+  if (value.language && value.language.trim().length < 2) {
+    throw new Error('Invalid Stór document: "language" must be a language code.');
+  }
+
+  if (value.keywords && !Array.isArray(value.keywords)) {
+    throw new Error('Invalid Stór document: "keywords" must be an array when provided.');
+  }
+
   return value;
 }

@@ -22,6 +22,7 @@
   function isStorySection(value: string | null): value is StorySection {
     return (
       value === "committees" ||
+      value === "houses-of-the-oireachtas" ||
       value === "parliamentary-budget-office" ||
       value === "library-research-service"
     );

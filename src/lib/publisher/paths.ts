@@ -17,6 +17,8 @@ export function destinationFolder(destination: StorDestination) {
   switch (destination) {
     case 'committee-reports':
       return 'committee-reports';
+    case 'houses-of-the-oireachtas':
+      return 'houses-of-the-oireachtas';
     case 'library-research-service':
       return 'library-research-service';
     case 'parliamentary-budget-office':

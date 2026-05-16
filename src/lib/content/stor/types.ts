@@ -2,6 +2,7 @@ import type { Story, StoryBlock, StorySection, VideoAsset } from '../types';
 
 export type StorDestination =
   | 'committee-reports'
+  | 'houses-of-the-oireachtas'
   | 'library-research-service'
   | 'parliamentary-budget-office';
 
@@ -12,6 +13,9 @@ export interface StorContributor {
   role: string;
   affiliation?: string;
   showAsAuthor?: boolean;
+  profileRole?: string;
+  profileImage?: string;
+  bio?: string;
 }
 
 export interface StorHero {
@@ -51,7 +55,10 @@ export interface ProseMirrorNode {
     | 'bulletList'
     | 'listItem'
     | 'blockquote'
-    | 'codeBlock';
+    | 'codeBlock'
+    | 'imageBlock'
+    | 'flourishBlock'
+    | 'tableBlock';
   attrs?: Record<string, unknown> & {
     level?: number;
     start?: number;
@@ -91,6 +98,12 @@ export interface StorDocument {
   topics?: string[];
   layout?: 'standard';
   status?: 'draft' | 'published' | 'archived';
+  language?: string;
+  version?: string;
+  keywords?: string[];
+  license?: string;
+  doi?: string;
+  publisher?: string;
   contributors?: StorContributor[];
   publishedDate?: string | null;
   hero?: StorHero;

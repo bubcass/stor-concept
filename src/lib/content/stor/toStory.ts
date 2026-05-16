@@ -13,6 +13,8 @@ function destinationToSection(document: StorDocument): StorySection {
   switch (document.destination) {
     case 'committee-reports':
       return 'committees';
+    case 'houses-of-the-oireachtas':
+      return 'houses-of-the-oireachtas';
     case 'library-research-service':
       return 'library-research-service';
     case 'parliamentary-budget-office':
@@ -106,22 +108,26 @@ function narrativeStoryFromStorDocument(document: StorDocument): Story {
     eyebrow:
       document.eyebrow ??
       document.committeeName ??
-      (section === 'library-research-service'
-        ? 'Library & Research Service'
-        : section === 'parliamentary-budget-office'
-          ? 'Parliamentary Budget Office'
-          : 'Stór'),
+      (section === 'houses-of-the-oireachtas'
+        ? 'Houses of the Oireachtas'
+        : section === 'library-research-service'
+          ? 'Library & Research Service'
+          : section === 'parliamentary-budget-office'
+            ? 'Parliamentary Budget Office'
+            : 'Stór'),
     title: document.title,
     dek: document.dek,
     byline:
       document.byline ??
       contributor?.name ??
       document.committeeName ??
-      (section === 'library-research-service'
-        ? 'Library & Research Service'
-        : section === 'parliamentary-budget-office'
-          ? 'Parliamentary Budget Office'
-          : 'Oireachtas Research'),
+      (section === 'houses-of-the-oireachtas'
+        ? 'Houses of the Oireachtas'
+        : section === 'library-research-service'
+          ? 'Library & Research Service'
+          : section === 'parliamentary-budget-office'
+            ? 'Parliamentary Budget Office'
+            : 'Oireachtas Research'),
     abstract: document.abstract,
     researcher: document.researcher,
     date: formatDate(document.publishedDate),
@@ -129,7 +135,7 @@ function narrativeStoryFromStorDocument(document: StorDocument): Story {
     readingTime: estimateReadingTime(document),
     heroImagePosition: document.hero?.position ?? 'center center',
     hero: {
-      src: document.hero?.src ?? '/media/report_launch.jpg',
+      src: document.hero?.src ?? '',
       alt: document.hero?.alt ?? document.title,
       caption: document.hero?.caption ?? null,
       credit: document.hero?.credit ?? null,
@@ -155,7 +161,7 @@ export function storDocumentToStory(document: StorDocument): StorRenderResult {
       eyebrow: document.eyebrow,
       byline: document.byline ?? document.committeeName,
       hero: {
-        src: document.hero?.src ?? '/media/committee-members-speak-at-a-report-launch.jpg',
+        src: document.hero?.src ?? '',
         alt: document.hero?.alt ?? document.title,
         caption: document.hero?.caption ?? null,
         credit: document.hero?.credit ?? null,

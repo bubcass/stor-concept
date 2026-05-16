@@ -1,5 +1,6 @@
 export type StoryBlock =
   | TextBlock
+  | TableStoryBlock
   | MediaTextBlock
   | ImageBlock
   | VideoBlock
@@ -15,6 +16,7 @@ export type StoryBlock =
 
 export type StorySection =
   | 'committees'
+  | 'houses-of-the-oireachtas'
   | 'parliamentary-budget-office'
   | 'library-research-service';
 export type StoryHeroLayout = 'contained' | 'split' | 'immersive';
@@ -49,7 +51,7 @@ export interface ResearcherProfileLink {
 
 export interface ResearcherProfile {
   name?: string;
-  role: string;
+  role?: string;
   organisation?: string;
   bio?: string;
   image?: string;
@@ -79,6 +81,11 @@ export interface TextBlock {
   headingLevel?: 2 | 3;
   /** Trusted inline HTML is supported for links and emphasis. */
   paragraphs: string[];
+}
+
+export interface TableStoryBlock {
+  type: 'table';
+  html: string;
 }
 
 export interface MediaTextBlock {

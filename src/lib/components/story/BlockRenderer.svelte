@@ -12,6 +12,7 @@
   import ScrollyBlock from './ScrollyBlock.svelte';
   import SceneScrollyBlock from './SceneScrollyBlock.svelte';
   import TextBlock from './TextBlock.svelte';
+  import TableBlock from './TableBlock.svelte';
   import VideoBlock from './VideoBlock.svelte';
 
   let {
@@ -27,6 +28,8 @@
 
 {#if block.type === 'text'}
   <TextBlock {block} {headingId} />
+{:else if block.type === 'table'}
+  <TableBlock {block} />
 {:else if block.type === 'chart'}
   <ChartBlock {block} />
 {:else if block.type === 'flourish'}

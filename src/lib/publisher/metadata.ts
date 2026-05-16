@@ -45,6 +45,7 @@ export const DESTINATION_OPTIONS: Array<{
   label: string;
 }> = [
   { value: 'committee-reports', label: 'Committee reports' },
+  { value: 'houses-of-the-oireachtas', label: 'Houses of the Oireachtas' },
   { value: 'library-research-service', label: 'Library & Research Service' },
   {
     value: 'parliamentary-budget-office',
@@ -57,6 +58,10 @@ export const TYPE_OPTIONS: Record<
   Array<{ value: StorDocument['type']; label: string }>
 > = {
   'committee-reports': [{ value: 'committee-report', label: 'Committee report' }],
+  'houses-of-the-oireachtas': [
+    { value: 'article', label: 'Article' },
+    { value: 'briefing', label: 'Briefing' },
+  ],
   'library-research-service': [
     { value: 'article', label: 'Article' },
     { value: 'briefing', label: 'Briefing' },

@@ -22,6 +22,7 @@
     featuredStory ? stories.filter((story) => story.slug !== featuredStory.slug) : []
   );
   const isVideoHero = (src: string) => src.toLowerCase().endsWith('.mp4');
+  const hasHero = (src: string | undefined) => Boolean(src?.trim());
   let bookmarked = $state<Set<string>>(new Set());
 
   onMount(() => {
@@ -60,12 +61,14 @@
           <span class="featured-summary">{plainTextFromHtml(featuredStory.dek)}</span>
           <small>{featuredStory.date} · {featuredStory.readingTime}</small>
         </div>
-        {#if isVideoHero(featuredStory.hero.src)}
-          <video autoplay muted loop playsinline aria-hidden="true">
-            <source src="{base}{featuredStory.hero.src}" type="video/mp4" />
-          </video>
-        {:else}
-          <img src="{base}{featuredStory.hero.src}" alt="" loading="eager" />
+        {#if hasHero(featuredStory.hero.src)}
+          {#if isVideoHero(featuredStory.hero.src)}
+            <video autoplay muted loop playsinline aria-hidden="true">
+              <source src="{base}{featuredStory.hero.src}" type="video/mp4" />
+            </video>
+          {:else}
+            <img src="{base}{featuredStory.hero.src}" alt="" loading="eager" />
+          {/if}
         {/if}
       </a>
     </article>
@@ -76,12 +79,14 @@
       {#each secondaryStories as story}
         <article class="secondary-story">
           <a href="{base}/articles/{story.slug}/">
-            {#if isVideoHero(story.hero.src)}
-              <video autoplay muted loop playsinline aria-hidden="true">
-                <source src="{base}{story.hero.src}" type="video/mp4" />
-              </video>
-            {:else}
-              <img src="{base}{story.hero.src}" alt="" loading="lazy" />
+            {#if hasHero(story.hero.src)}
+              {#if isVideoHero(story.hero.src)}
+                <video autoplay muted loop playsinline aria-hidden="true">
+                  <source src="{base}{story.hero.src}" type="video/mp4" />
+                </video>
+              {:else}
+                <img src="{base}{story.hero.src}" alt="" loading="lazy" />
+              {/if}
             {/if}
             <div class="secondary-copy">
               <div class="story-context">
