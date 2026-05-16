@@ -303,7 +303,7 @@
     );
     display: inline-flex;
     font-size: 0.76rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.08em;
     line-height: 1;
     padding: 0.42rem 0.62rem;

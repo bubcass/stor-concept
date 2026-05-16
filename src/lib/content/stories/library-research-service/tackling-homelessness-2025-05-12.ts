@@ -19,7 +19,8 @@ export const researchBriefing: Story = {
     organisation: "Parliamentary Research Service",
     bio: "",
   },
-  date: "May 12, 2025",
+  date: "12 May 2026",
+  publishedDate: "2026-05-12",
   readingTime: "8 min read",
   hero: {
     src: "/media/housing.mp4",

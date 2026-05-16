@@ -1,4 +1,5 @@
 import type { Story, StorySection } from "../types";
+import { storStories } from "../stor";
 import { plainTextFromHtml } from "../text";
 
 export interface StorySectionMeta {
@@ -32,11 +33,11 @@ export const storySections: StorySectionMeta[] = [
 ];
 
 function storyDateValue(story: Story) {
-  const timestamp = Date.parse(story.date);
+  const timestamp = Date.parse(story.publishedDate ?? story.date);
   return Number.isNaN(timestamp) ? 0 : timestamp;
 }
 
-const storyModules = import.meta.glob("./**/*.ts", {
+const storyModules = import.meta.glob(["./**/*.ts", "!./**/reportBuilder.ts"], {
   eager: true,
   import: "default",
 }) as Record<string, Story>;
@@ -45,7 +46,11 @@ const storyList: Story[] = Object.entries(storyModules)
   .filter(([path]) => !path.endsWith("/index.ts"))
   .map(([, story]) => story);
 
-export const stories: Story[] = [...storyList].sort(
+const mergedStories = [...storyList, ...storStories];
+
+export const stories: Story[] = Array.from(
+  new Map(mergedStories.map((story) => [story.slug, story])).values(),
+).sort(
   (a, b) => storyDateValue(b) - storyDateValue(a),
 );
 

@@ -2,6 +2,7 @@
   import type { StoryBlock } from '$lib/content/types';
   import ArcGISMapBlock from './blocks/ArcGISMapBlock.svelte';
   import ChartBlock from './blocks/ChartBlock.svelte';
+  import CommitteeMembersBlock from './CommitteeMembersBlock.svelte';
   import FlourishBlock from './blocks/FlourishBlock.svelte';
   import VoteMapBlock from './blocks/VoteMapBlock.svelte';
   import ImageBlock from './ImageBlock.svelte';
@@ -40,6 +41,8 @@
   <ImageBlock {block} {headingId} />
 {:else if block.type === 'video'}
   <VideoBlock {block} />
+{:else if block.type === 'committee-members'}
+  <CommitteeMembersBlock {block} />
 {:else if block.type === 'link-list'}
   <LinkListBlock {block} />
 {:else if block.type === 'quote'}

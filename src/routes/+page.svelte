@@ -193,7 +193,7 @@
         display: inline-flex;
         flex: 0 0 auto;
         font-size: 0.72rem;
-        font-weight: 600;
+        font-weight: 500;
         letter-spacing: 0.08em;
         line-height: 1;
         padding: 0.25rem 0.5rem;
@@ -219,7 +219,7 @@
         display: inline-flex;
         flex: 0 0 auto;
         font-size: 0.72rem;
-        font-weight: 700;
+        font-weight: 600;
         letter-spacing: 0.08em;
         line-height: 1;
         padding: 0.25rem 0.5rem;

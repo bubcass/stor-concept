@@ -3,6 +3,7 @@ import type { Story } from "../../types";
 export const researchBriefing: Story = {
   slug: "the-future-of-data-centres-in-ireland-2025-05-14",
   section: "library-research-service",
+  featured: true,
   heroLayout: "split",
   showContents: true,
   flourishWidth: "prose",
@@ -20,6 +21,7 @@ export const researchBriefing: Story = {
     bio: "",
   },
   date: "May 14, 2025",
+  publishedDate: "2026-05-14",
   readingTime: "9 min read",
   hero: {
     src: "/media/server.jpg",

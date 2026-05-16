@@ -19,6 +19,18 @@
       .map((part) => part[0]?.toUpperCase() ?? '')
       .join('');
   });
+  let researcherProfileLink = $derived.by(() => {
+    const explicitLink = story.researcher?.profileLink;
+    if (explicitLink) return explicitLink;
+
+    const researcherName = story.researcher?.name?.trim();
+    if (!researcherName) return null;
+
+    return {
+      href: `${base}/search/?q=${encodeURIComponent(researcherName)}`,
+      label: `Browse work by ${researcherName}`
+    };
+  });
 
   type ContentsEntry = {
     id: string;
@@ -75,7 +87,9 @@
 
   let showContentsRail = $derived(story.showContents && contentsEntries.length > 1);
   let activeContentsId = $state<string | null>(null);
+  let showBackToTop = $state(false);
   let teardownContentsObserver: (() => void) | null = null;
+  let teardownScrollListener: (() => void) | null = null;
 
   function setupContentsObserver() {
     teardownContentsObserver?.();
@@ -149,8 +163,38 @@
     };
   }
 
+  function scrollToTop() {
+    if (typeof window === 'undefined') return;
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  function setupBackToTopObserver() {
+    teardownScrollListener?.();
+    teardownScrollListener = null;
+
+    if (typeof window === 'undefined') {
+      showBackToTop = false;
+      return;
+    }
+
+    const toggleVisibility = () => {
+      showBackToTop = window.scrollY > 640;
+    };
+
+    toggleVisibility();
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    teardownScrollListener = () => {
+      window.removeEventListener('scroll', toggleVisibility);
+    };
+  }
+
   onMount(() => {
     setupContentsObserver();
+    setupBackToTopObserver();
   });
 
   $effect(() => {
@@ -166,6 +210,7 @@
 
   onDestroy(() => {
     teardownContentsObserver?.();
+    teardownScrollListener?.();
   });
 </script>
 
@@ -273,7 +318,15 @@
             {/if}
 
             <div class="researcher-copy">
-              <p class="researcher-name">{story.researcher.name ?? story.byline}</p>
+              {#if researcherProfileLink}
+                <p class="researcher-name">
+                  <a class="researcher-name-link" href={researcherProfileLink.href}>
+                    {story.researcher.name ?? story.byline}
+                  </a>
+                </p>
+              {:else}
+                <p class="researcher-name">{story.researcher.name ?? story.byline}</p>
+              {/if}
               <p class="researcher-roleline">
                 {story.researcher.role}
                 {#if story.researcher.organisation}
@@ -282,13 +335,6 @@
               </p>
               {#if story.researcher.bio}
                 <p class="researcher-bio">{story.researcher.bio}</p>
-              {/if}
-              {#if story.researcher.profileLink}
-                <p class="researcher-link-row">
-                  <a class="researcher-link" href={story.researcher.profileLink.href}>
-                    {story.researcher.profileLink.label}
-                  </a>
-                </p>
               {/if}
             </div>
           </div>
@@ -332,6 +378,12 @@
       {/each}
     </div>
   </div>
+
+  {#if showBackToTop}
+    <button class="back-to-top" type="button" onclick={scrollToTop} aria-label="Back to top">
+      <span class="back-to-top-chevron" aria-hidden="true">⌃</span>
+    </button>
+  {/if}
 </article>
 
 <style>
@@ -485,8 +537,7 @@
 
   .researcher-name,
   .researcher-roleline,
-  .researcher-bio,
-  .researcher-link-row {
+  .researcher-bio {
     margin: 0;
   }
 
@@ -496,6 +547,19 @@
     font-size: clamp(1.15rem, 1.4vw, 1.35rem);
     font-weight: 700;
     line-height: 1.2;
+  }
+
+  .researcher-name-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .researcher-name-link:hover,
+  .researcher-name-link:focus-visible {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
   }
 
   .researcher-roleline {
@@ -519,26 +583,6 @@
     line-height: 1.6;
     margin-top: 0.7rem;
     max-width: 36rem;
-  }
-
-  .researcher-link-row {
-    margin-top: 0.9rem;
-  }
-
-  .researcher-link {
-    color: var(--color-accent-2);
-    font-family: var(--font-sans);
-    font-size: 0.98rem;
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .researcher-link:hover,
-  .researcher-link:focus-visible {
-    color: var(--link-hover);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.16em;
   }
 
   .story-abstract {
@@ -718,6 +762,40 @@
     padding: 0 var(--gutter) var(--space-8);
   }
 
+  .back-to-top {
+    align-items: center;
+    background: var(--color-paper);
+    border: 4px solid color-mix(in srgb, var(--color-accent) 72%, white 28%);
+    border-radius: 999px;
+    bottom: max(var(--space-4), env(safe-area-inset-bottom));
+    box-shadow: 0 0.35rem 1rem rgb(17 15 13 / 0.12);
+    color: var(--color-accent-2);
+    cursor: pointer;
+    display: grid;
+    height: 2.7rem;
+    padding: 0;
+    position: fixed;
+    right: max(var(--space-4), env(safe-area-inset-right));
+    place-items: center;
+    transition: box-shadow 160ms ease, transform 160ms ease;
+    width: 2.7rem;
+    z-index: 30;
+  }
+
+  .back-to-top:hover,
+  .back-to-top:focus-visible {
+    box-shadow: 0 0.6rem 1.2rem rgb(17 15 13 / 0.16);
+    transform: translateY(-1px);
+  }
+
+  .back-to-top-chevron {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1;
+    transform: translateY(0.02em);
+  }
+
   .story-content.with-contents {
     align-items: start;
     display: grid;
@@ -726,7 +804,10 @@
   }
 
   .story-contents {
+    max-height: calc(100svh - var(--site-header-height) - (var(--space-5) * 2));
+    overflow-y: auto;
     position: sticky;
+    scrollbar-gutter: stable;
     top: calc(var(--site-header-height) + var(--space-5));
   }
 
@@ -880,6 +961,17 @@
 
     .story-content {
       padding-bottom: var(--space-7);
+    }
+
+    .back-to-top {
+      bottom: max(var(--space-3), env(safe-area-inset-bottom));
+      height: 2.4rem;
+      right: max(var(--space-3), env(safe-area-inset-right));
+      width: 2.4rem;
+    }
+
+    .back-to-top-chevron {
+      font-size: 1.08rem;
     }
 
     .story-content.with-contents {

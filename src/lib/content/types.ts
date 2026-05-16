@@ -3,6 +3,7 @@ export type StoryBlock =
   | MediaTextBlock
   | ImageBlock
   | VideoBlock
+  | CommitteeMembersBlock
   | FlourishStoryBlock
   | ArcGISMapStoryBlock
   | ChartStoryBlock
@@ -35,6 +36,7 @@ export interface Story {
   abstract?: string;
   researcher?: ResearcherProfile;
   date: string;
+  publishedDate?: string | null;
   readingTime: string;
   hero: ImageAsset;
   blocks: StoryBlock[];
@@ -102,6 +104,19 @@ export interface ImageBlock {
 export interface VideoBlock {
   type: 'video';
   video: VideoAsset;
+}
+
+export interface CommitteeMemberCard {
+  name: string;
+  image?: string;
+  href?: string;
+  role?: string;
+}
+
+export interface CommitteeMembersBlock {
+  type: 'committee-members';
+  heading?: string;
+  members: CommitteeMemberCard[];
 }
 
 export interface FlourishStoryBlock {
