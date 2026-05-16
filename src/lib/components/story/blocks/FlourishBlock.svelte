@@ -26,6 +26,7 @@
   let scriptUrl = 'https://public.flourish.studio/resources/embed.js';
 
   let scriptPromise: Promise<void> | null = null;
+  let embedLoaded = false;
 
   function nextFrame() {
     return new Promise<void>((resolve) => {
@@ -39,12 +40,28 @@
     });
   }
 
+  function hasRenderedEmbed() {
+    if (!embedRoot) return false;
+
+    return Boolean(
+      embedRoot.querySelector(
+        'iframe, svg, canvas, object, .flourish-chart, .flourish-visualisation, .flourish-story'
+      )
+    );
+  }
+
   async function triggerFlourishLoad() {
+    if (embedLoaded) return;
+
     await tick();
     await nextFrame();
     await nextFrame();
 
     if (!embedRoot?.isConnected) return;
+    if (hasRenderedEmbed()) {
+      embedLoaded = true;
+      return;
+    }
 
     const flourish = (window as typeof window & {
       Flourish?: {
@@ -55,10 +72,12 @@
 
     if (flourish?.loadEmbed) {
       flourish.loadEmbed(embedRoot);
+      embedLoaded = true;
       return;
     }
 
     flourish?.loadEmbeds?.();
+    embedLoaded = true;
   }
 
   function loadFlourishScript() {
@@ -120,10 +139,7 @@
 
     void loadFlourishScript()
       .then(async () => {
-        await triggerFlourishLoad();
         await delay(180);
-        await triggerFlourishLoad();
-        await delay(500);
         await triggerFlourishLoad();
       })
       .catch((error) => {

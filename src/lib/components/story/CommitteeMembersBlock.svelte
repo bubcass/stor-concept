@@ -23,9 +23,11 @@
       {#if member.href}
         <a class="member-card" href={member.href}>
           {#if member.image}
-            <img class="member-avatar" src={member.image} alt={member.name} loading="lazy" />
+            <div class="member-avatar-shell" aria-hidden="true">
+              <img class="member-avatar" src={member.image} alt={member.name} loading="lazy" />
+            </div>
           {:else}
-            <div class="member-avatar member-avatar--fallback" aria-hidden="true">
+            <div class="member-avatar-shell member-avatar--fallback" aria-hidden="true">
               <span>{initialsFor(member.name)}</span>
             </div>
           {/if}
@@ -34,9 +36,11 @@
       {:else}
         <div class="member-card">
           {#if member.image}
-            <img class="member-avatar" src={member.image} alt={member.name} loading="lazy" />
+            <div class="member-avatar-shell" aria-hidden="true">
+              <img class="member-avatar" src={member.image} alt={member.name} loading="lazy" />
+            </div>
           {:else}
-            <div class="member-avatar member-avatar--fallback" aria-hidden="true">
+            <div class="member-avatar-shell member-avatar--fallback" aria-hidden="true">
               <span>{initialsFor(member.name)}</span>
             </div>
           {/if}
@@ -85,24 +89,32 @@
     color: var(--link-hover);
   }
 
-  .member-avatar {
-    aspect-ratio: 1;
+  .member-avatar-shell {
+    align-items: center;
     background: var(--color-soft);
     border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
     border-radius: 999px;
+    display: flex;
     height: 4.5rem;
-    object-fit: cover;
+    justify-content: center;
+    overflow: hidden;
     width: 4.5rem;
   }
 
+  .member-avatar {
+    display: block;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center 18%;
+    width: 100%;
+  }
+
   .member-avatar--fallback {
-    align-items: center;
     color: var(--color-accent-2);
-    display: flex;
     font-family: var(--font-sans);
     font-size: 1rem;
     font-weight: 700;
-    justify-content: center;
   }
 
   .member-name {
@@ -125,7 +137,7 @@
       gap: var(--space-2);
     }
 
-    .member-avatar {
+    .member-avatar-shell {
       height: 4rem;
       width: 4rem;
     }
