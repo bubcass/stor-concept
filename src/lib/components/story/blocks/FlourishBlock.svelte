@@ -47,8 +47,16 @@
     if (!embedRoot?.isConnected) return;
 
     const flourish = (window as typeof window & {
-      Flourish?: { loadEmbeds?: () => void };
+      Flourish?: {
+        loadEmbed?: (placeholder: HTMLDivElement) => void;
+        loadEmbeds?: () => void;
+      };
     }).Flourish;
+
+    if (flourish?.loadEmbed) {
+      flourish.loadEmbed(embedRoot);
+      return;
+    }
 
     flourish?.loadEmbeds?.();
   }
@@ -57,6 +65,17 @@
     if (scriptPromise) return scriptPromise;
 
     scriptPromise = new Promise((resolve, reject) => {
+      const flourishWindow = window as typeof window & {
+        Flourish?: {
+          disable_autoload?: boolean;
+          loadEmbed?: (placeholder: HTMLDivElement) => void;
+          loadEmbeds?: () => void;
+        };
+      };
+
+      flourishWindow.Flourish = flourishWindow.Flourish ?? {};
+      flourishWindow.Flourish.disable_autoload = true;
+
       const existing = document.querySelector<HTMLScriptElement>(
         `script[src="${scriptUrl}"]`
       );
