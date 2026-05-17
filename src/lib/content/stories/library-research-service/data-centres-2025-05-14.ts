@@ -20,8 +20,8 @@ export const researchBriefing: Story = {
     organisation: "Parliamentary Research Service",
     bio: "",
   },
-  date: "May 14, 2025",
-  publishedDate: "2026-05-14",
+  date: "May 2, 2025",
+  publishedDate: "2026-05-02",
   readingTime: "9 min read",
   hero: {
     src: "/media/server.jpg",

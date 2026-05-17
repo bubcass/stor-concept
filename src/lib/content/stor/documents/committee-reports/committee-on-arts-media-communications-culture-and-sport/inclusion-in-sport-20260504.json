@@ -1,16 +1,33 @@
 {
-  "id": "inclusion-in-sport-20260505",
-  "slug": "inclusion-in-sport-20260505",
+  "id": "inclusion-in-sport-20260504",
+  "slug": "inclusion-in-sport-20260504",
   "type": "committee-report",
   "destination": "committee-reports",
   "featured": false,
+  "heroLayout": "contained",
+  "showContents": true,
+  "flourishWidth": "prose",
   "title": "Inclusion in Sport",
   "dek": "Certain societal groups experience lower participation rates in sport, highlighting the need for inclusive practices.",
+  "eyebrow": "Committee on Arts, Media, Communications, Culture and Sport",
   "committeeName": "Committee on Arts, Media, Communications, Culture and Sport",
-  "topics": ["inclusion", "sport", "disability"],
+  "topics": [
+    "inclusion",
+    "disability",
+    "sport"
+  ],
   "layout": "standard",
   "status": "published",
-  "publishedDate": "2026-05-05",
+  "language": "en",
+  "version": "1.0",
+  "keywords": [
+    "inclusion",
+    "disability",
+    "sport"
+  ],
+  "license": "Oireachtas PSI Licence",
+  "publisher": "Houses of the Oireachtas",
+  "publishedDate": "2026-05-04",
   "contributors": [
     {
       "name": "Darren Lawlor",
@@ -25,9 +42,13 @@
       "showAsAuthor": false
     }
   ],
+  "researcher": {
+    "name": "Darren Lawlor",
+    "organisation": "Committee secretariat"
+  },
   "hero": {
     "src": "/media/inclusion-in-sport.jpg",
-    "alt": "Cover of the Inclusion in Sport report from May 2026",
+    "alt": "Inclusion in Sport report cover",
     "position": "left center"
   },
   "content": {
@@ -35,26 +56,20 @@
     "content": [
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "An Comhchoiste um Thurasóireacht, Cultúr, Ealaíona, Spórt agus Meáin",
             "marks": [
               {
                 "type": "bold"
               }
-            ]
+            ],
+            "text": "An Comhchoiste um Thurasóireacht, Cultúr, Ealaíona, Spórt agus Meáin"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -64,9 +79,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -75,32 +87,22 @@
         ]
       },
       {
-        "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "\t"
-          }
-        ]
+        "type": "paragraph"
       },
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
           {
             "type": "text",
-            "text": "Joint Committee on Tourism, Culture, Arts, Sport and Media",
             "marks": [
               {
                 "type": "bold"
               }
-            ]
+            ],
+            "text": "Joint Committee on Tourism, Culture, Arts, Sport and Media"
           },
           {
             "type": "text",
@@ -110,9 +112,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -122,9 +121,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -134,9 +130,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -146,13 +139,9 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Related information\t4",
             "marks": [
               {
                 "type": "link",
@@ -160,22 +149,20 @@
                   "href": "#_Toc157159775",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Related information 4"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Publications\t4",
             "marks": [
               {
                 "type": "link",
@@ -183,22 +170,20 @@
                   "href": "#_Toc157159776",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Publications 4"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Committee videos\t4",
             "marks": [
               {
                 "type": "link",
@@ -206,22 +191,20 @@
                   "href": "#_Toc157159777",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Committee videos 4"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Contact details\t4",
             "marks": [
               {
                 "type": "link",
@@ -229,22 +212,20 @@
                   "href": "#_Toc157159778",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Contact details 4"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Terms of reference\t4",
             "marks": [
               {
                 "type": "link",
@@ -252,22 +233,20 @@
                   "href": "#_Toc157159779",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Terms of reference 4"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Committee Membership\t5",
             "marks": [
               {
                 "type": "link",
@@ -275,22 +254,20 @@
                   "href": "#_Toc157159780",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Committee Membership 5"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Cathaoirleach\t5",
             "marks": [
               {
                 "type": "link",
@@ -298,22 +275,20 @@
                   "href": "#_Toc157159781",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Cathaoirleach 5"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Leas-Cathaoirleach\t5",
             "marks": [
               {
                 "type": "link",
@@ -321,22 +296,20 @@
                   "href": "#_Toc157159782",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Leas-Cathaoirleach 5"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Members\t5",
             "marks": [
               {
                 "type": "link",
@@ -344,22 +317,20 @@
                   "href": "#_Toc157159783",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Members 5"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Executive summary\t8",
             "marks": [
               {
                 "type": "link",
@@ -367,22 +338,20 @@
                   "href": "#_Toc157159784",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Executive summary 8"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Key Recommendations\t9",
             "marks": [
               {
                 "type": "link",
@@ -390,22 +359,20 @@
                   "href": "#_Toc157159785",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Key Recommendations 9"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Background\t13",
             "marks": [
               {
                 "type": "link",
@@ -413,22 +380,20 @@
                   "href": "#_Toc157159786",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Background 13"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Policy Framework\t13",
             "marks": [
               {
                 "type": "link",
@@ -436,22 +401,20 @@
                   "href": "#_Toc157159787",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Policy Framework 13"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Stakeholder contributions\t15",
             "marks": [
               {
                 "type": "link",
@@ -459,22 +422,20 @@
                   "href": "#_Toc157159788",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Stakeholder contributions 15"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Cross cutting issues\t15",
             "marks": [
               {
                 "type": "link",
@@ -482,22 +443,20 @@
                   "href": "#_Toc157159789",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Cross cutting issues 15"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Sport and women\t16",
             "marks": [
               {
                 "type": "link",
@@ -505,22 +464,20 @@
                   "href": "#_Toc157159790",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Sport and women 16"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Sport and disability\t22",
             "marks": [
               {
                 "type": "link",
@@ -528,22 +485,20 @@
                   "href": "#_Toc157159791",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Sport and disability 22"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Sport and LGBTQIA+ communities\t26",
             "marks": [
               {
                 "type": "link",
@@ -551,22 +506,20 @@
                   "href": "#_Toc157159792",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Sport and LGBTQIA+ communities 26"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Sport and ethnic minority\t29",
             "marks": [
               {
                 "type": "link",
@@ -574,22 +527,20 @@
                   "href": "#_Toc157159793",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Sport and ethnic minority 29"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Grassroots sport and socioeconomic diversity\t31",
             "marks": [
               {
                 "type": "link",
@@ -597,22 +548,20 @@
                   "href": "#_Toc157159794",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Grassroots sport and socioeconomic diversity 31"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Sport and older people\t32",
             "marks": [
               {
                 "type": "link",
@@ -620,22 +569,20 @@
                   "href": "#_Toc157159795",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Sport and older people 32"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Intersectionality in sport\t35",
             "marks": [
               {
                 "type": "link",
@@ -643,22 +590,20 @@
                   "href": "#_Toc157159796",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Intersectionality in sport 35"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Appendix 1\t38",
             "marks": [
               {
                 "type": "link",
@@ -666,22 +611,20 @@
                   "href": "#_Toc157159797",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Appendix 1 38"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "List of public oral hearings\t38",
             "marks": [
               {
                 "type": "link",
@@ -689,22 +632,20 @@
                   "href": "#_Toc157159798",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "List of public oral hearings 38"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "List of witnesses\t38",
             "marks": [
               {
                 "type": "link",
@@ -712,22 +653,20 @@
                   "href": "#_Toc157159799",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "List of witnesses 38"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Appendix 2\t40",
             "marks": [
               {
                 "type": "link",
@@ -735,22 +674,20 @@
                   "href": "#_Toc157159800",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Appendix 2 40"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "List of written submissions\t40",
             "marks": [
               {
                 "type": "link",
@@ -758,17 +695,18 @@
                   "href": "#_Toc157159801",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "List of written submissions 40"
           }
         ]
       },
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
@@ -781,7 +719,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -793,9 +730,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -803,7 +737,6 @@
           },
           {
             "type": "text",
-            "text": "Oireachtas website",
             "marks": [
               {
                 "type": "link",
@@ -811,10 +744,12 @@
                   "href": "https://www.oireachtas.ie/en/publications/?q=&date=&term=%2Fie%2Foireachtas%2Fhouse%2Fdail%2F33&fromDate=&toDate=&committee%5B%5D=%2Fen%2Fcommittees%2F33%2Ftourism-culture-arts-sport-and-media%2F",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Oireachtas website"
           },
           {
             "type": "text",
@@ -825,7 +760,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -837,9 +771,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -847,7 +778,6 @@
           },
           {
             "type": "text",
-            "text": "Committee videos page",
             "marks": [
               {
                 "type": "link",
@@ -855,21 +785,22 @@
                   "href": "https://www.oireachtas.ie/en/committees/33/tourism-culture-arts-sport-and-media/videos/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Committee videos page"
           },
           {
             "type": "text",
-            "text": ". "
+            "text": "."
           }
         ]
       },
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -881,9 +812,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -891,7 +819,6 @@
           },
           {
             "type": "text",
-            "text": "Committee page",
             "marks": [
               {
                 "type": "link",
@@ -899,21 +826,22 @@
                   "href": "https://www.oireachtas.ie/en/committees/33/tourism-culture-arts-sport-and-media/#contact",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Committee page"
           },
           {
             "type": "text",
-            "text": ". "
+            "text": "."
           }
         ]
       },
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -925,9 +853,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -935,7 +860,6 @@
           },
           {
             "type": "text",
-            "text": "terms of reference",
             "marks": [
               {
                 "type": "link",
@@ -943,10 +867,12 @@
                   "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/committee_on_standing_orders_and_dail_reform/reports/2020/2020-07-22_report-on-amendments-to-standing-orders-relating-to-committees_en.pdf",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "terms of reference"
           },
           {
             "type": "text",
@@ -957,7 +883,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
@@ -970,7 +895,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -982,13 +906,9 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Niamh Smyth TD",
             "marks": [
               {
                 "type": "link",
@@ -996,10 +916,12 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Niamh-Smyth.D.2016-10-03/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Niamh Smyth TD"
           },
           {
             "type": "text",
@@ -1010,7 +932,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -1022,13 +943,9 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Alan Dillon TD",
             "marks": [
               {
                 "type": "link",
@@ -1036,39 +953,36 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Alan-Dillon.D.2020-02-08/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Alan Dillon TD"
           },
           {
             "type": "text",
-            "text": ",  Fine Gael"
+            "text": ", Fine Gael"
           }
         ]
       },
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
           {
             "type": "text",
-            "text": "Members\t"
+            "text": "Members"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Chris Andrews TD",
             "marks": [
               {
                 "type": "link",
@@ -1076,26 +990,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Chris-Andrews.D.2007-06-14/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Chris Andrews TD"
           },
           {
             "type": "text",
-            "text": ", Sinn Féin\t"
+            "text": ", Sinn Féin"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Ciaran Cannon TD",
             "marks": [
               {
                 "type": "link",
@@ -1103,26 +1015,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Ciaran-Cannon.S.2007-07-23/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Ciaran Cannon TD"
           },
           {
             "type": "text",
-            "text": ", Fine Gael\t"
+            "text": ", Fine Gael"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Peter Fitzpatrick TD",
             "marks": [
               {
                 "type": "link",
@@ -1130,26 +1040,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Peter-Fitzpatrick.D.2011-03-09/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Peter Fitzpatrick TD"
           },
           {
             "type": "text",
-            "text": ", Independent\t"
+            "text": ", Independent"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Brendan Griffin TD",
             "marks": [
               {
                 "type": "link",
@@ -1157,26 +1065,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Brendan-Griffin.D.2011-03-09/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Brendan Griffin TD"
           },
           {
             "type": "text",
-            "text": ", Fine Gael\t"
+            "text": ", Fine Gael"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Mattie McGrath TD",
             "marks": [
               {
                 "type": "link",
@@ -1184,26 +1090,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Mattie-McGrath.D.2007-06-14/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Mattie McGrath TD"
           },
           {
             "type": "text",
-            "text": ", Independent\t"
+            "text": ", Independent"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Imelda Munster TD",
             "marks": [
               {
                 "type": "link",
@@ -1211,26 +1115,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Imelda-Munster.D.2016-10-03/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Imelda Munster TD"
           },
           {
             "type": "text",
-            "text": ", Sinn Féin\t"
+            "text": ", Sinn Féin"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Christopher O'Sullivan TD",
             "marks": [
               {
                 "type": "link",
@@ -1238,26 +1140,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Christopher-O'Sullivan.D.2020-02-08/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Christopher O'Sullivan TD"
           },
           {
             "type": "text",
-            "text": ", Fianna Fáil "
+            "text": ", Fianna Fáil"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Senator Malcolm Byrne",
             "marks": [
               {
                 "type": "link",
@@ -1265,26 +1165,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Malcolm-Byrne.D.2019-11-29/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Senator Malcolm Byrne"
           },
           {
             "type": "text",
-            "text": ", Fianna Fáil "
+            "text": ", Fianna Fáil"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Senator Micheál Carrigy",
             "marks": [
               {
                 "type": "link",
@@ -1292,26 +1190,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Miche%C3%A1l-Carrigy.S.2020-03-30/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Senator Micheál Carrigy"
           },
           {
             "type": "text",
-            "text": ", Fine Gael\t"
+            "text": ", Fine Gael"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Senator Shane Cassells",
             "marks": [
               {
                 "type": "link",
@@ -1319,26 +1215,24 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Shane-Cassells.D.2016-10-03/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Senator Shane Cassells"
           },
           {
             "type": "text",
-            "text": ", Fianna Fáil "
+            "text": ", Fianna Fáil"
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Senator Annie Hoey",
             "marks": [
               {
                 "type": "link",
@@ -1346,10 +1240,12 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Annie-Hoey.S.2020-03-30/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Senator Annie Hoey"
           },
           {
             "type": "text",
@@ -1359,13 +1255,9 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Senator Fintan Warfield",
             "marks": [
               {
                 "type": "link",
@@ -1373,10 +1265,12 @@
                   "href": "https://www.oireachtas.ie/en/members/member/Fintan-Warfield.S.2016-04-25/",
                   "target": "_blank",
                   "rel": "noopener noreferrer nofollow",
-                  "class": null
+                  "class": null,
+                  "title": null
                 }
               }
-            ]
+            ],
+            "text": "Senator Fintan Warfield"
           },
           {
             "type": "text",
@@ -1387,7 +1281,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
@@ -1399,9 +1292,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -1411,45 +1301,33 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "The Joint Committee on Tourism, Culture, Arts, Sport and Media therefore identified inclusion in sport as an important topic for examination. We are concerned that certain societal groups experience lower participation rates than others and consider it important to identify and address barriers to participation in sports policy in Ireland. "
+            "text": "The Joint Committee on Tourism, Culture, Arts, Sport and Media therefore identified inclusion in sport as an important topic for examination. We are concerned that certain societal groups experience lower participation rates than others and consider it important to identify and address barriers to participation in sports policy in Ireland."
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "This report includes several conclusions addressing the major themes arising from the evidence presented to the Committee. These themes include the importance of broad based funding and accountability for use of funds, co-design of programmes and policies affecting marginalised communities, the importance of accessible and fit for purpose facilities with appropriate transport links, appropriate procedures for dealing with discriminatory conduct, messaging and visibility measures, hosting of major tournaments, supporting the growth of LGBTQIA+ orientated sports clubs, the need for guidance on transgender and non-binary inclusion in sport, and the importance of support, training and education for club leaders, volunteers, coaches and P.E. teachers, and others working in sport. "
+            "text": "This report includes several conclusions addressing the major themes arising from the evidence presented to the Committee. These themes include the importance of broad based funding and accountability for use of funds, co-design of programmes and policies affecting marginalised communities, the importance of accessible and fit for purpose facilities with appropriate transport links, appropriate procedures for dealing with discriminatory conduct, messaging and visibility measures, hosting of major tournaments, supporting the growth of LGBTQIA+ orientated sports clubs, the need for guidance on transgender and non-binary inclusion in sport, and the importance of support, training and education for club leaders, volunteers, coaches and P.E. teachers, and others working in sport."
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "In preparing this report, the Committee engaged with a broad range of stakeholders with expertise and experience on the issue of inclusion in sport. On behalf of the Committee, I would like to thank all stakeholders for their contributions. I also wish to express my appreciation for my Committee colleagues and to the Committee secretariat for its assistance in compiling the report. "
+            "text": "In preparing this report, the Committee engaged with a broad range of stakeholders with expertise and experience on the issue of inclusion in sport. On behalf of the Committee, I would like to thank all stakeholders for their contributions. I also wish to express my appreciation for my Committee colleagues and to the Committee secretariat for its assistance in compiling the report."
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -1459,26 +1337,20 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
-            "text": "Niamh Smyth T.D.",
             "marks": [
               {
                 "type": "bold"
               }
-            ]
+            ],
+            "text": "Niamh Smyth T.D."
           }
         ]
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -1488,9 +1360,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -1501,7 +1370,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
@@ -1514,7 +1382,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -1522,13 +1391,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "The benefits of wide participation in sport, both to individuals and the country as a whole, are manifold and include community development and social cohesion, health and wellbeing, economic activity, education and lifelong learning. It is concerning therefore that there are groups within Irish society that participate in sports at lower rates and who experience barriers to participation. "
+                    "text": "The benefits of wide participation in sport, both to individuals and the country as a whole, are manifold and include community development and social cohesion, health and wellbeing, economic activity, education and lifelong learning. It is concerning therefore that there are groups within Irish society that participate in sports at lower rates and who experience barriers to participation."
                   }
                 ]
               }
@@ -1539,9 +1405,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -1549,7 +1412,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Appendix 1",
                     "marks": [
                       {
                         "type": "link",
@@ -1557,10 +1419,12 @@
                           "href": "#_APPENDIX_1",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Appendix 1"
                   },
                   {
                     "type": "text",
@@ -1568,7 +1432,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Appendix 2",
                     "marks": [
                       {
                         "type": "link",
@@ -1576,10 +1439,12 @@
                           "href": "#_APPENDIX_2",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Appendix 2"
                   },
                   {
                     "type": "text",
@@ -1594,9 +1459,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -1612,9 +1474,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -1629,9 +1488,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -1646,9 +1502,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -1663,9 +1516,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -1680,9 +1530,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -1697,9 +1544,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -1714,9 +1558,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -1735,7 +1576,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
@@ -1747,9 +1587,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -1758,169 +1595,14 @@
         ]
       },
       {
-        "type": "paragraph",
+        "type": "tableBlock",
         "attrs": {
-          "textAlign": null
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "No."
-          },
-          {
-            "type": "text",
-            "text": "Recommendation"
-          },
-          {
-            "type": "text",
-            "text": "1"
-          },
-          {
-            "type": "text",
-            "text": "Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media policy regarding inclusion in sport should be underpinned by adequate funding on a broad basis, with particular regard to the support needs of smaller volunteer-led national governing bodies and with regard to the furthest behind first principle. Public funding to sporting organisations should take account of public sector duty legislation and rights-based and outcomes-driven approaches to sport provision. "
-          },
-          {
-            "type": "text",
-            "text": "2"
-          },
-          {
-            "type": "text",
-            "text": "The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media should invest in robust research and outcome oriented disaggregated data to inform evidence-based policymaking, advocacy, and impact assessment across the multiple policies in Ireland that focus on or use sport, physical activity, health, education, and inclusion of specific groups, including but not limited to women, LGBTQIA+ individuals, disabled individuals, racially and ethnically diverse individuals. This will help orient sports investments as an enabler of sustainable development. Convergence with cross-cutting data developments on SDGs, Well-being Index and Equality should be examined. Policies and programmes affecting those belonging to marginalised communities should be co-designed in consultation with members of those communities and Disabled Persons’ Organisations (DPOs) where possible. While implementation of this co-design principle is relevant to all vectors of inclusion in sport, the Department should have specific regard to the State’s responsibility under Article 30 of the UN Convention on the Rights of Persons with Disabilities to ensure that disabled people have the opportunity to organise, develop and participate in disability-specific sports."
-          },
-          {
-            "type": "text",
-            "text": "3"
-          },
-          {
-            "type": "text",
-            "text": "The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media’s Major Sports Events Policy should, in its methodology for assessing proposals for state support in the hosting of major sports events, consider the inclusion in sport dividends of such events."
-          },
-          {
-            "type": "text",
-            "text": "4"
-          },
-          {
-            "type": "text",
-            "text": "Investment in the development of accessible and fit-for-purpose facilities is an important prerequisite to removal of barriers to inclusion in sport across a range of vectors, and new public-private funding streams to support this development should be explored. Funding for accessible facilities should be holistic in nature in order to avoid the risk of inclusive projects being deferred or cancelled due to a lack of joined-up assessment (eg funding for accessible equipment at a sports facility being granted through one scheme but funding for accessible toilets at the same sports facility being denied through another)."
-          },
-          {
-            "type": "text",
-            "text": "5"
-          },
-          {
-            "type": "text",
-            "text": "The Minister for Tourism, Culture, Arts, Gaeltacht, Sport and Media should engage with cabinet colleagues in order to ensure that accessible facilities are located with accessible transport options. In respect of the fact that training and competition windows often fall outside of standard peak public transport hours, there should be an expanded transport support for participants with additional mobility needs."
-          },
-          {
-            "type": "text",
-            "text": "6"
-          },
-          {
-            "type": "text",
-            "text": "The "
-          },
-          {
-            "type": "text",
-            "text": "Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media should support the development of leadership positions in the space of inclusion in sport within sporting organisations, including at corporate governance or board level. Existing funding streams such as the Dormant Accounts Fund could be utilised to support training and staffing for leadership positions. Existing schemes for the funding of Sport Inclusion Disability Officers and Community Sport Development Officers to local sports partnerships should be rolled out to a broader range of recipients including national governing bodies."
-          },
-          {
-            "type": "text",
-            "text": "7"
-          },
-          {
-            "type": "text",
-            "text": "Club volunteers have a crucial role in delivering on inclusion in sport on the ground. "
-          },
-          {
-            "type": "text",
-            "text": "The Minister for Tourism, Culture, Arts, Gaeltacht, Sport and Media should engage with cabinet colleagues to support education and capacity-building measures to support volunteers in delivering on inclusion and diversity. Sport Ireland should work with National Governing Bodies to support and promote the roll-out of such training."
-          },
-          {
-            "type": "text",
-            "text": "8"
-          },
-          {
-            "type": "text",
-            "text": "The Minister for Tourism, Culture, Arts, Gaeltacht, Sport and Media should engage with cabinet colleagues to ensure Coaches and Physical Educators working with women receive training on issues impacting on the performance and participation of women in sport, including on the impacts of the menstrual cycle."
-          },
-          {
-            "type": "text",
-            "text": "9"
-          },
-          {
-            "type": "text",
-            "text": "The Minister for Tourism, Culture, Arts, Gaeltacht, Sport and Media should engage with cabinet colleagues to support the development and rollout of core modules in inclusive practices in sports as a part of all advanced qualifications in sports so that such values can be embedded throughout higher education sports learning."
-          },
-          {
-            "type": "text",
-            "text": "10"
-          },
-          {
-            "type": "text",
-            "text": "The Criminal Justice (Incitement to Violence or Hatred and Hate Offences) Bill 2022, once enacted, should be used as a basis for providing sporting organisations with certainty and clarity around their responsibilities in dealing with discriminatory conduct in sport."
-          },
-          {
-            "type": "text",
-            "text": "11"
-          },
-          {
-            "type": "text",
-            "text": "There should be a consistency of messaging across sports regarding acceptable behaviour. National governing bodies should be encouraged to share best practice examples that can be rolled out on a multisports basis."
-          },
-          {
-            "type": "text",
-            "text": "12"
-          },
-          {
-            "type": "text",
-            "text": "There is a need for accountability mechanisms for sporting organisations in receipt of public funds that do not meet high standards of inclusion. Such organisations must adopt robust procedures as part of their governance codes regarding discriminatory or abusive conduct."
-          },
-          {
-            "type": "text",
-            "text": "13"
-          },
-          {
-            "type": "text",
-            "text": "Visibility is critical to removing barriers to inclusion in sport. Public service media should commit to broadcasting women’s sport on an equal basis to men’s sport. Broadcasting of disability sports should not be limited to the Paralympic Games."
-          },
-          {
-            "type": "text",
-            "text": "14"
-          },
-          {
-            "type": "text",
-            "text": "The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media and Sport Ireland should work with National Governing Bodies to promote and increase visibility of athletes from marginalised communities or minority groups, including but not limited to women, LGBTQIA+ individuals, disabled individuals, racially and ethnically diverse individuals."
-          },
-          {
-            "type": "text",
-            "text": "15"
-          },
-          {
-            "type": "text",
-            "text": "The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media, national governing bodies and Sport Ireland should support the growth of LQBTQIA+ orientated sports clubs."
-          },
-          {
-            "type": "text",
-            "text": "16"
-          },
-          {
-            "type": "text",
-            "text": "The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media and Sport Ireland should support the hosting of a major international LGBTQIA+ multi sport tournament. "
-          },
-          {
-            "type": "text",
-            "text": "17"
-          },
-          {
-            "type": "text",
-            "text": "The Committee notes that Sport Ireland is finalising guidance in the area of transgender and non-binary inclusion in sport and physical activity. The Committee calls for the expedition of this guidance. The Department, Sport Ireland and national governing bodies should work with transgender community members and organisations to develop policies and programmes for individual sports."
-          }
-        ]
+          "html": "<table><thead><tr><th scope=\"col\"><p>No.</p></th><th scope=\"col\"><p>Recommendation</p></th></tr></thead><tbody><tr><td><p>1</p></td><td><p><a id=\"_Hlk149816594\"></a>Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media policy regarding inclusion in sport should be underpinned by adequate funding on a broad basis, with particular regard to the support needs of smaller volunteer-led national governing bodies and with regard to the furthest behind first principle. Public funding to sporting organisations should take account of public sector duty legislation and rights-based and outcomes-driven approaches to sport provision. </p></td></tr><tr><td><p>2</p></td><td><p><a id=\"_Hlk149816788\"></a>The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media should invest in robust research and outcome oriented disaggregated data to inform evidence-based policymaking, advocacy, and impact assessment across the multiple policies in Ireland that focus on or use sport, physical activity, health, education, and inclusion of specific groups, including but not limited to women, LGBTQIA+ individuals, disabled individuals, racially and ethnically diverse individuals. This will help orient sports investments as an enabler of sustainable development. Convergence with cross-cutting data developments on SDGs, Well-being Index and Equality should be examined. Policies and programmes affecting those belonging to marginalised communities should be co-designed in consultation with members of those communities and Disabled Persons’ Organisations (DPOs) where possible. While implementation of this co-design principle is relevant to all vectors of inclusion in sport, the Department should have specific regard to the State’s responsibility under Article 30 of the UN Convention on the Rights of Persons with Disabilities to ensure that disabled people have the opportunity to organise, develop and participate in disability-specific sports.</p></td></tr><tr><td><p>3</p></td><td><p><a id=\"_Hlk149816819\"></a>The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media’s Major Sports Events Policy should, in its methodology for assessing proposals for state support in the hosting of major sports events, consider the inclusion in sport dividends of such events.</p></td></tr><tr><td><p>4</p></td><td><p><a id=\"_Hlk149816848\"></a>Investment in the development of accessible and fit-for-purpose facilities is an important prerequisite to removal of barriers to inclusion in sport across a range of vectors, and new public-private funding streams to support this development should be explored. Funding for accessible facilities should be holistic in nature in order to avoid the risk of inclusive projects being deferred or cancelled due to a lack of joined-up assessment (eg funding for accessible equipment at a sports facility being granted through one scheme but funding for accessible toilets at the same sports facility being denied through another).</p></td></tr><tr><td><p>5</p></td><td><p><a id=\"_Hlk149816879\"></a>The Minister for Tourism, Culture, Arts, Gaeltacht, Sport and Media should engage with cabinet colleagues in order to ensure that accessible facilities are located with accessible transport options. In respect of the fact that training and competition windows often fall outside of standard peak public transport hours, there should be an expanded transport support for participants with additional mobility needs.</p></td></tr><tr><td><p>6</p></td><td><p><a id=\"_Hlk149816995\"></a>The <a id=\"_Hlk150267118\"></a>Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media should support the development of leadership positions in the space of inclusion in sport within sporting organisations, including at corporate governance or board level. Existing funding streams such as the Dormant Accounts Fund could be utilised to support training and staffing for leadership positions. Existing schemes for the funding of Sport Inclusion Disability Officers and Community Sport Development Officers to local sports partnerships should be rolled out to a broader range of recipients including national governing bodies.</p></td></tr><tr><td><p>7</p></td><td><p><a id=\"_Hlk149816911\"></a>Club volunteers have a crucial role in delivering on inclusion in sport on the ground. <a id=\"_Hlk150267147\"></a>The Minister for Tourism, Culture, Arts, Gaeltacht, Sport and Media should engage with cabinet colleagues to support education and capacity-building measures to support volunteers in delivering on inclusion and diversity. Sport Ireland should work with National Governing Bodies to support and promote the roll-out of such training.</p></td></tr><tr><td><p>8</p></td><td><p><a id=\"_Hlk150267178\"></a>The Minister for Tourism, Culture, Arts, Gaeltacht, Sport and Media should engage with cabinet colleagues to ensure Coaches and Physical Educators working with women receive training on issues impacting on the performance and participation of women in sport, including on the impacts of the menstrual cycle.</p></td></tr><tr><td><p>9</p></td><td><p>The Minister for Tourism, Culture, Arts, Gaeltacht, Sport and Media should engage with cabinet colleagues to support the development and rollout of core modules in inclusive practices in sports as a part of all advanced qualifications in sports so that such values can be embedded throughout higher education sports learning.</p></td></tr><tr><td><p>10</p></td><td><p><a id=\"_Hlk149817039\"></a>The Criminal Justice (Incitement to Violence or Hatred and Hate Offences) Bill 2022, once enacted, should be used as a basis for providing sporting organisations with certainty and clarity around their responsibilities in dealing with discriminatory conduct in sport.</p></td></tr><tr><td><p>11</p></td><td><p>There should be a consistency of messaging across sports regarding acceptable behaviour. National governing bodies should be encouraged to share best practice examples that can be rolled out on a multisports basis.</p></td></tr><tr><td><p>12</p></td><td><p>There is a need for accountability mechanisms for sporting organisations in receipt of public funds that do not meet high standards of inclusion. Such organisations must adopt robust procedures as part of their governance codes regarding discriminatory or abusive conduct.</p></td></tr><tr><td><p>13</p></td><td><p>Visibility is critical to removing barriers to inclusion in sport. Public service media should commit to broadcasting women’s sport on an equal basis to men’s sport. Broadcasting of disability sports should not be limited to the Paralympic Games.</p></td></tr><tr><td><p>14</p></td><td><p>The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media and Sport Ireland should work with National Governing Bodies to promote and increase visibility of athletes from marginalised communities or minority groups, including but not limited to women, LGBTQIA+ individuals, disabled individuals, racially and ethnically diverse individuals.</p></td></tr><tr><td><p>15</p></td><td><p>The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media, national governing bodies and Sport Ireland should support the growth of LQBTQIA+ orientated sports clubs.</p></td></tr><tr><td><p>16</p></td><td><p>The Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media and Sport Ireland should support the hosting of a major international LGBTQIA+ multi sport tournament. </p></td></tr><tr><td><p>17</p></td><td><p>The Committee notes that Sport Ireland is finalising guidance in the area of transgender and non-binary inclusion in sport and physical activity. The Committee calls for the expedition of this guidance. The Department, Sport Ireland and national governing bodies should work with transgender community members and organisations to develop policies and programmes for individual sports.</p></td></tr></tbody></table>"
+        }
       },
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
@@ -1933,7 +1615,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -1946,7 +1627,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -1954,9 +1636,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -1964,7 +1643,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "National Sports Policy 2018-2027",
                     "marks": [
                       {
                         "type": "link",
@@ -1972,10 +1650,12 @@
                           "href": "https://www.gov.ie/en/publication/aaa7d9-national-sports-policy-2018-2027/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "National Sports Policy 2018-2027"
                   },
                   {
                     "type": "text",
@@ -1983,7 +1663,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Programme for Government",
                     "marks": [
                       {
                         "type": "link",
@@ -1991,10 +1670,12 @@
                           "href": "https://www.gov.ie/en/publication/7e05d-programme-for-government-our-shared-future/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Programme for Government"
                   },
                   {
                     "type": "text",
@@ -2002,7 +1683,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Sports Action Plan 2021-2023",
                     "marks": [
                       {
                         "type": "link",
@@ -2010,10 +1690,12 @@
                           "href": "https://www.gov.ie/en/publication/93232-sports-action-plan-2021-2023/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Sports Action Plan 2021-2023"
                   },
                   {
                     "type": "text",
@@ -2028,13 +1710,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "At international level, Ireland has general commitments under the Treaty on the European Union and the Treaty on the Functioning of the European Union to prohibit discrimination on grounds such as race, colour, ethnic or social origin, genetic features, language, religion or belief, political opinion or any other opinion, membership of a national minority, property, birth, disability, age or sexual orientation. Ireland has specific commitments on inclusion in sport under Article 30 of the UN Convention on the Rights of Persons with Disabilities to safeguard the participation of persons with disabilities in cultural life, recreation, leisure and sport.  "
+                    "text": "At international level, Ireland has general commitments under the Treaty on the European Union and the Treaty on the Functioning of the European Union to prohibit discrimination on grounds such as race, colour, ethnic or social origin, genetic features, language, religion or belief, political opinion or any other opinion, membership of a national minority, property, birth, disability, age or sexual orientation. Ireland has specific commitments on inclusion in sport under Article 30 of the UN Convention on the Rights of Persons with Disabilities to safeguard the participation of persons with disabilities in cultural life, recreation, leisure and sport."
                   }
                 ]
               }
@@ -2045,9 +1724,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2055,7 +1731,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Diversity and Inclusion in Sport Policy",
                     "marks": [
                       {
                         "type": "link",
@@ -2063,10 +1738,12 @@
                           "href": "https://www.sportireland.ie/sites/default/files/media/document/2023-05/Sport%20Ireland%20Policy%20on%20Diversity%20and%20Inclusion%20in%20Sport%20%281%29.pdf",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Diversity and Inclusion in Sport Policy"
                   },
                   {
                     "type": "text",
@@ -2074,7 +1751,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Women in Sport Policy",
                     "marks": [
                       {
                         "type": "link",
@@ -2082,10 +1758,12 @@
                           "href": "https://www.sportireland.ie/sites/default/files/2019-11/wis_policy.pdf",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Women in Sport Policy"
                   },
                   {
                     "type": "text",
@@ -2093,7 +1771,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Policy on Participation in Sport by People with Disabilities",
                     "marks": [
                       {
                         "type": "link",
@@ -2101,10 +1778,12 @@
                           "href": "https://www.sportireland.ie/sites/default/files/media/document/2020-05/sport-ireland-policy-on-participation-in-sport-by-people-with-disabilities.pdf",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Policy on Participation in Sport by People with Disabilities"
                   },
                   {
                     "type": "text",
@@ -2119,7 +1798,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
@@ -2132,7 +1810,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -2145,7 +1822,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -2153,9 +1831,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2170,9 +1845,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2187,9 +1859,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2204,9 +1873,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2221,13 +1887,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Across all vectors of inclusion in sport, collaboration is an important means of removing barriers. The Committee has received evidence on a broad range of successful examples of collaboration between stakeholders including national governing bodies, local sports partnerships, clubs and schools and advocacy organisations in order to deliver inclusion programmes. "
+                    "text": "Across all vectors of inclusion in sport, collaboration is an important means of removing barriers. The Committee has received evidence on a broad range of successful examples of collaboration between stakeholders including national governing bodies, local sports partnerships, clubs and schools and advocacy organisations in order to deliver inclusion programmes."
                   }
                 ]
               }
@@ -2238,9 +1901,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2255,7 +1915,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -2268,7 +1927,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -2276,13 +1936,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Women in Sport states that the inclusion or exclusion of women from sport does not exist in a vacuum, as sport is a reflection of wider society; Women in Sport therefore states that one significant barrier to women being and feeling included in sport is the prevalence of misogyny and sexism in wider society. "
+                    "text": "Women in Sport states that the inclusion or exclusion of women from sport does not exist in a vacuum, as sport is a reflection of wider society; Women in Sport therefore states that one significant barrier to women being and feeling included in sport is the prevalence of misogyny and sexism in wider society."
                   }
                 ]
               }
@@ -2293,9 +1950,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2303,7 +1957,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Dream Deficit survey",
                     "marks": [
                       {
                         "type": "link",
@@ -2311,10 +1964,12 @@
                           "href": "https://womeninsport.org/press-release/more-sporty-girls-now-dream-of-reaching-the-top-in-sport/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Dream Deficit survey"
                   },
                   {
                     "type": "text",
@@ -2322,7 +1977,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "research concerning primary school-aged girls",
                     "marks": [
                       {
                         "type": "link",
@@ -2330,10 +1984,12 @@
                           "href": "https://womeninsport.org/wp-content/uploads/2023/03/SportStereotypes-and-Stolen-Dreams_exec-Summary.pdf",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "research concerning primary school-aged girls"
                   },
                   {
                     "type": "text",
@@ -2348,13 +2004,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Sport Ireland observes that, despite similar levels of weekly sports participation in primary school between boys and girls, primary school boys tend to play sport more frequently than girls, contributing to a gender difference in meeting the World Health Organisation guidelines for physical activity between primary school girls (13%) and primary school boys (23%). Sport Ireland states that this gap persists into post-primary schooling, with 14% of boys meeting the guidelines of daily activity, compared to 7% of girls. "
+                    "text": "Sport Ireland observes that, despite similar levels of weekly sports participation in primary school between boys and girls, primary school boys tend to play sport more frequently than girls, contributing to a gender difference in meeting the World Health Organisation guidelines for physical activity between primary school girls (13%) and primary school boys (23%). Sport Ireland states that this gap persists into post-primary schooling, with 14% of boys meeting the guidelines of daily activity, compared to 7% of girls."
                   }
                 ]
               }
@@ -2365,9 +2018,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2375,7 +2025,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "2021 Adolescent Girls Get Active research report",
                     "marks": [
                       {
                         "type": "link",
@@ -2383,10 +2032,12 @@
                           "href": "https://www.sportireland.ie/GirlsGetActive",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "2021 Adolescent Girls Get Active research report"
                   },
                   {
                     "type": "text",
@@ -2401,9 +2052,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2418,9 +2066,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2435,13 +2080,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Her Sport remarks that, through a lack of equitable visibility, the portrayal of women’s sport in media outlets conveys that women are undervalued and insignificant. Sport Ireland cites the success of campaigns such as the 20x20 campaign in promoting awareness of women in sport and reaching a breadth of women not reached by previous campaigns. However Sport Ireland also notes that the campaign was commercially resourced with a defined end date, and that effort is needed to follow on from it with implementation and actions. "
+                    "text": "Her Sport remarks that, through a lack of equitable visibility, the portrayal of women’s sport in media outlets conveys that women are undervalued and insignificant. Sport Ireland cites the success of campaigns such as the 20x20 campaign in promoting awareness of women in sport and reaching a breadth of women not reached by previous campaigns. However Sport Ireland also notes that the campaign was commercially resourced with a defined end date, and that effort is needed to follow on from it with implementation and actions."
                   }
                 ]
               }
@@ -2452,9 +2094,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2469,13 +2108,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Two students from St Joseph’s Mercy Secondary School in Navan, Co. Meath submitted details of their BT Young Scientist Award-winning research project on the impact of menstruation on performance and participation in physical education. The pupils highlight the potential benefits of physical activity and sport to athletes who menstruate, and recommend that menstruation awareness training be delivered to physical educators and sports coaches. The Camogie Association outlines its work in delivering workshops to coaches on meeting the needs of teenage girls and notes its intention to make participation in such workshops mandatory for coaches working with teenagers. "
+                    "text": "Two students from St Joseph’s Mercy Secondary School in Navan, Co. Meath submitted details of their BT Young Scientist Award-winning research project on the impact of menstruation on performance and participation in physical education. The pupils highlight the potential benefits of physical activity and sport to athletes who menstruate, and recommend that menstruation awareness training be delivered to physical educators and sports coaches. The Camogie Association outlines its work in delivering workshops to coaches on meeting the needs of teenage girls and notes its intention to make participation in such workshops mandatory for coaches working with teenagers."
                   }
                 ]
               }
@@ -2486,9 +2122,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2504,9 +2137,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2521,9 +2151,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2538,9 +2165,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2555,9 +2179,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2572,9 +2193,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2589,9 +2207,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2606,9 +2221,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2627,13 +2239,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "The FAI identifies facilities as a barrier to inclusion of women in sport, noting more than 30% of our grassroots clubs do not have toilet facilities or changing facilities that are designated for female players. The FAI further notes that the large proportion of clubs that do not own their own facilities can prevent them drawing down on sports capital funding, and outlines its work in developing a proposed facilities investment strategy. The Camogie Association notes that female players do not get the same recognition and access to Gaelic Games facilities, and that planning requirements and declarations should be enforced to ensure this does not happen. "
+                    "text": "The FAI identifies facilities as a barrier to inclusion of women in sport, noting more than 30% of our grassroots clubs do not have toilet facilities or changing facilities that are designated for female players. The FAI further notes that the large proportion of clubs that do not own their own facilities can prevent them drawing down on sports capital funding, and outlines its work in developing a proposed facilities investment strategy. The Camogie Association notes that female players do not get the same recognition and access to Gaelic Games facilities, and that planning requirements and declarations should be enforced to ensure this does not happen."
                   }
                 ]
               }
@@ -2644,9 +2253,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2654,7 +2260,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "National Sports Policy’s",
                     "marks": [
                       {
                         "type": "link",
@@ -2662,10 +2267,12 @@
                           "href": "https://www.gov.ie/en/publication/aaa7d9-national-sports-policy-2018-2027/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "National Sports Policy’s"
                   },
                   {
                     "type": "text",
@@ -2680,9 +2287,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2690,7 +2294,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Sports Action Plan’s",
                     "marks": [
                       {
                         "type": "link",
@@ -2698,14 +2301,16 @@
                           "href": "https://www.gov.ie/en/publication/93232-sports-action-plan-2021-2023/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Sports Action Plan’s"
                   },
                   {
                     "type": "text",
-                    "text": " target for all National Governing Bodies to achieve a minimum of 40% representation of women on their boards by the end of 2023, and iterates that it is a priority to enable women to increasingly reach leadership positions in sporting organisations. D/TCAGSM and the Federation of Irish Sport state that Sport Ireland’s December 2022 Board Composition Snapshot demonstrates that the average percentage of women on NGB boards has increased from 24% in 2019 to 36% in 2022; the snapshot also shows that 33 sporting organisations have already achieved 40% or more female representation on their boards. D/TCAGSM further notes that the responsible Ministers are examining supports and funding streams currently available to sporting organisations at all levels, with a view to stipulating repercussions for organisations which do not reach the 40% target. "
+                    "text": " target for all National Governing Bodies to achieve a minimum of 40% representation of women on their boards by the end of 2023, and iterates that it is a priority to enable women to increasingly reach leadership positions in sporting organisations. D/TCAGSM and the Federation of Irish Sport state that Sport Ireland’s December 2022 Board Composition Snapshot demonstrates that the average percentage of women on NGB boards has increased from 24% in 2019 to 36% in 2022; the snapshot also shows that 33 sporting organisations have already achieved 40% or more female representation on their boards. D/TCAGSM further notes that the responsible Ministers are examining supports and funding streams currently available to sporting organisations at all levels, with a view to stipulating repercussions for organisations which do not reach the 40% target."
                   }
                 ]
               }
@@ -2716,9 +2321,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2733,9 +2335,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2743,7 +2342,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Policy on Women in Sport",
                     "marks": [
                       {
                         "type": "link",
@@ -2751,10 +2349,12 @@
                           "href": "https://www.sportireland.ie/women-in-sport/women-in-sport-policy",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Policy on Women in Sport"
                   },
                   {
                     "type": "text",
@@ -2769,9 +2369,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2786,9 +2383,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2796,7 +2390,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Towards More Gender Equality in Sport",
                     "marks": [
                       {
                         "type": "link",
@@ -2804,10 +2397,12 @@
                           "href": "https://op.europa.eu/en/publication-detail/-/publication/684ab3af-9f57-11ec-83e1-01aa75ed71a1/language-en/format-PDF/source-253030231",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Towards More Gender Equality in Sport"
                   },
                   {
                     "type": "text",
@@ -2822,9 +2417,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2839,9 +2431,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2856,7 +2445,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -2869,7 +2457,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -2877,9 +2466,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2894,9 +2480,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -2912,9 +2495,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2929,9 +2509,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2946,9 +2523,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2963,9 +2537,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -2980,13 +2551,10 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
-                            "text": "Lack of prioritisation of social and spectator accessibility for sport; "
+                            "text": "Lack of prioritisation of social and spectator accessibility for sport;"
                           }
                         ]
                       }
@@ -2997,9 +2565,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3014,9 +2579,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3031,9 +2593,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3048,9 +2607,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3065,9 +2621,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3082,9 +2635,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3103,9 +2653,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3120,9 +2667,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3130,7 +2674,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Sports Inclusion Disability Charter",
                     "marks": [
                       {
                         "type": "link",
@@ -3138,10 +2681,12 @@
                           "href": "https://caracentre.ie/sport-inclusion-disability-charter/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Sports Inclusion Disability Charter"
                   },
                   {
                     "type": "text",
@@ -3149,7 +2694,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "Xcessible",
                     "marks": [
                       {
                         "type": "link",
@@ -3157,14 +2701,16 @@
                           "href": "https://caracentre.ie/xcessible/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "Xcessible"
                   },
                   {
                     "type": "text",
-                    "text": " programme in this regard, which aims to positively and meaningfully provide opportunities for disabled people to participate in sport and physical activity. "
+                    "text": " programme in this regard, which aims to positively and meaningfully provide opportunities for disabled people to participate in sport and physical activity."
                   }
                 ]
               }
@@ -3175,13 +2721,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Dedicated programmes for making sports accessible to people with disabilities play an important role in facilitating greater inclusion. The Gaelic Athletic Association points to its All Star programme and its wheelchair codes, which provides playing and game experiences for persons across a broad spectrum of intellectual and physical disabilities. The Irish Rugby Football Union provides rugby activities to 1,000 people with disabilities, while Sport Ireland notes the broad range of sports that offer inclusive opportunities and that 17,773 people with disabilities took part in Local Sports Partnership programmes in 2022. The Federation of Irish Sport highlighted a successful case study of a Badminton Ireland project regarding autism awareness that can be a model for other national governing bodies. "
+                    "text": "Dedicated programmes for making sports accessible to people with disabilities play an important role in facilitating greater inclusion. The Gaelic Athletic Association points to its All Star programme and its wheelchair codes, which provides playing and game experiences for persons across a broad spectrum of intellectual and physical disabilities. The Irish Rugby Football Union provides rugby activities to 1,000 people with disabilities, while Sport Ireland notes the broad range of sports that offer inclusive opportunities and that 17,773 people with disabilities took part in Local Sports Partnership programmes in 2022. The Federation of Irish Sport highlighted a successful case study of a Badminton Ireland project regarding autism awareness that can be a model for other national governing bodies."
                   }
                 ]
               }
@@ -3192,9 +2735,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3209,9 +2749,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3226,9 +2763,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3243,13 +2777,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Paralympics Ireland states that disabled people face additional challenges in everyday life when compared to those without disabilities, including access to sporting opportunities, coaches qualified in disability issues, access to transport, and access to sporting facilities. Sport Ireland identifies enhancing club environments as key to facilitating disability inclusion. "
+                    "text": "Paralympics Ireland states that disabled people face additional challenges in everyday life when compared to those without disabilities, including access to sporting opportunities, coaches qualified in disability issues, access to transport, and access to sporting facilities. Sport Ireland identifies enhancing club environments as key to facilitating disability inclusion."
                   }
                 ]
               }
@@ -3260,9 +2791,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3277,9 +2805,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3294,9 +2819,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3312,9 +2834,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3329,9 +2848,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3346,9 +2862,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3363,9 +2876,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3380,9 +2890,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3397,9 +2904,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3414,9 +2918,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3431,9 +2932,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3452,9 +2950,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3469,9 +2964,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3486,7 +2978,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -3499,7 +2990,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -3507,9 +2999,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3524,9 +3013,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3541,9 +3027,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3551,7 +3034,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "International Olympic Committee Framework on Fairness, Inclusion, and Non-Discrimination on the Basis of Gender Identity and Sex Variations",
                     "marks": [
                       {
                         "type": "link",
@@ -3559,10 +3041,12 @@
                           "href": "https://stillmed.olympics.com/media/Documents/Beyond-the-Games/Human-Rights/IOC-Framework-Fairness-Inclusion-Non-discrimination-2021.pdf",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "International Olympic Committee Framework on Fairness, Inclusion, and Non-Discrimination on the Basis of Gender Identity and Sex Variations"
                   },
                   {
                     "type": "text",
@@ -3577,13 +3061,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Sporting Pride Ireland notes that it is a volunteer organisation that has had responsibility for working with national governing bodies and local sports partnerships on delivering inclusion for sport and questions the lack of direct funding for measures supporting LGBTQIA+ inclusion in sport. "
+                    "text": "Sporting Pride Ireland notes that it is a volunteer organisation that has had responsibility for working with national governing bodies and local sports partnerships on delivering inclusion for sport and questions the lack of direct funding for measures supporting LGBTQIA+ inclusion in sport."
                   }
                 ]
               }
@@ -3594,9 +3075,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3612,9 +3090,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3629,9 +3104,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3646,9 +3118,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3663,9 +3132,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3680,9 +3146,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3697,9 +3160,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3714,9 +3174,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3735,9 +3192,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3753,9 +3207,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3770,9 +3221,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3787,9 +3235,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3804,9 +3249,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3821,9 +3263,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3838,9 +3277,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3855,9 +3291,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3876,9 +3309,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -3894,9 +3324,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3911,9 +3338,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3928,9 +3352,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3945,9 +3366,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3962,9 +3380,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -3983,9 +3398,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4000,9 +3412,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4017,7 +3426,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -4030,7 +3438,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -4038,9 +3447,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4055,9 +3461,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4072,13 +3475,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "SARI emphasises that inclusion in sport, while a worthy objective in itself, has a wider significance in challenging broader racism and discrimination in society. Further, inclusion in sport can be leveraged to support relationships between communities, especially where there may be a language barrier, and can be used as a means to include integration in the curriculum. The GAA likewise emphasises the role of its clubs in welcoming refugees from Ukraine and living in direct provision into the local community, and the potential for sport in general, and the GAA in particular, can be a catalyst and an entry point for inclusion in broader Irish life. As put by SARI representative Ms Amina Moustafa: "
+                    "text": "SARI emphasises that inclusion in sport, while a worthy objective in itself, has a wider significance in challenging broader racism and discrimination in society. Further, inclusion in sport can be leveraged to support relationships between communities, especially where there may be a language barrier, and can be used as a means to include integration in the curriculum. The GAA likewise emphasises the role of its clubs in welcoming refugees from Ukraine and living in direct provision into the local community, and the potential for sport in general, and the GAA in particular, can be a catalyst and an entry point for inclusion in broader Irish life. As put by SARI representative Ms Amina Moustafa:"
                   }
                 ]
               }
@@ -4088,9 +3488,6 @@
       },
       {
         "type": "paragraph",
-        "attrs": {
-          "textAlign": null
-        },
         "content": [
           {
             "type": "text",
@@ -4101,7 +3498,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -4109,13 +3507,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Among SARI’s recommendations is the creation of opportunities for members of marginalised communities to feed into the design and implementation of sports projects and programmes that are designed for them. SARI cites its Hijabs and Hat tricks programme as an example of how this approach can ensure issues such as kit design and training schedule takes accounts of the distinct needs of particular groups, and can influence the development of young leaders. "
+                    "text": "Among SARI’s recommendations is the creation of opportunities for members of marginalised communities to feed into the design and implementation of sports projects and programmes that are designed for them. SARI cites its Hijabs and Hat tricks programme as an example of how this approach can ensure issues such as kit design and training schedule takes accounts of the distinct needs of particular groups, and can influence the development of young leaders."
                   }
                 ]
               }
@@ -4126,9 +3521,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4144,9 +3536,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4161,9 +3550,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4178,9 +3564,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4195,9 +3578,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4216,9 +3596,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4233,9 +3610,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4250,9 +3624,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4267,9 +3638,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4284,7 +3652,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -4297,7 +3664,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -4305,9 +3673,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4322,13 +3687,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Furthermore, Sport Ireland notes its role in funding the Urban Outdoor Adventure Initiative in support of the actions from the National Sports Policy and the National Physical Activity Plan to implement and support participation programmes with a focus on disadvantaged communities, so as to create greater opportunities for people living in urban areas to participate in physical activity through outdoor adventure sports. Sports Against Racism Ireland outlines how sports participation can tackle socio-economic inequalities, citing the football for unity programme as one that ties in with the social and economic regeneration of the north east inner city of Dublin. The Federation of Irish Sport cites community sports hubs as a means to provide information, support, and advice on a wide range of sports and physical activities to make it easier for people in disadvantaged areas to engage in a more active lifestyle.  "
+                    "text": "Furthermore, Sport Ireland notes its role in funding the Urban Outdoor Adventure Initiative in support of the actions from the National Sports Policy and the National Physical Activity Plan to implement and support participation programmes with a focus on disadvantaged communities, so as to create greater opportunities for people living in urban areas to participate in physical activity through outdoor adventure sports. Sports Against Racism Ireland outlines how sports participation can tackle socio-economic inequalities, citing the football for unity programme as one that ties in with the social and economic regeneration of the north east inner city of Dublin. The Federation of Irish Sport cites community sports hubs as a means to provide information, support, and advice on a wide range of sports and physical activities to make it easier for people in disadvantaged areas to engage in a more active lifestyle."
                   }
                 ]
               }
@@ -4339,13 +3701,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "There is clear potential for inclusion in sport to be utilised as a means to support the social exclusion of those experiencing issues such as homeless, addiction, and a history of criminal offending. The GAA and the FAI are among the sporting bodies that run programmes targeted at such issues. "
+                    "text": "There is clear potential for inclusion in sport to be utilised as a means to support the social exclusion of those experiencing issues such as homeless, addiction, and a history of criminal offending. The GAA and the FAI are among the sporting bodies that run programmes targeted at such issues."
                   }
                 ]
               }
@@ -4356,7 +3715,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -4369,7 +3727,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -4377,9 +3736,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4394,9 +3750,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4411,9 +3764,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4428,9 +3778,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4445,9 +3792,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4462,9 +3806,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4472,7 +3813,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "National Positive Ageing Strategy",
                     "marks": [
                       {
                         "type": "link",
@@ -4480,14 +3820,16 @@
                           "href": "https://www.gov.ie/en/publication/737780-national-positive-ageing-strategy/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "National Positive Ageing Strategy"
                   },
                   {
                     "type": "text",
-                    "text": ", so as to halt or slow the decline in social and active participation among older people. Sport Ireland observes that the utilisation of expertise of older and experienced individuals in coaching, working, and mentorship is important, as is recognition of the role of physical activity in the promotion of positive mental health, active citizenship, and community activities. "
+                    "text": ", so as to halt or slow the decline in social and active participation among older people. Sport Ireland observes that the utilisation of expertise of older and experienced individuals in coaching, working, and mentorship is important, as is recognition of the role of physical activity in the promotion of positive mental health, active citizenship, and community activities."
                   }
                 ]
               }
@@ -4498,9 +3840,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4515,9 +3854,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4532,9 +3868,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4549,9 +3882,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4566,7 +3896,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -4579,7 +3908,8 @@
       {
         "type": "orderedList",
         "attrs": {
-          "start": 1
+          "start": 1,
+          "type": null
         },
         "content": [
           {
@@ -4587,13 +3917,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "The Federation of Irish Sport states that, when considering sport and development initiatives, it is important to apply an intersectional lens; the Federation of Irish Sport notes that, for instance, gender differences in participation are exacerbated when other factors are considered, such as ethnicity, disability, or socioeconomic status. Sport Ireland iterates its recognition of the wider societal, structural, and systemic challenges faced by marginalised groups in modern-day Ireland, and its recognition of the intersectionality of people’s identities and the compounding impact of same on the marginalisation that people experience. "
+                    "text": "The Federation of Irish Sport states that, when considering sport and development initiatives, it is important to apply an intersectional lens; the Federation of Irish Sport notes that, for instance, gender differences in participation are exacerbated when other factors are considered, such as ethnicity, disability, or socioeconomic status. Sport Ireland iterates its recognition of the wider societal, structural, and systemic challenges faced by marginalised groups in modern-day Ireland, and its recognition of the intersectionality of people’s identities and the compounding impact of same on the marginalisation that people experience."
                   }
                 ]
               }
@@ -4604,9 +3931,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4621,13 +3945,10 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Sport Ireland states its commitment to a two-fold approach to intersectionality through targeted interventions that are co-designed with communities with specific needs and requirements, and through a broader approach to the promotion of equality, diversity, and inclusion in and through sport and physical activity. "
+                    "text": "Sport Ireland states its commitment to a two-fold approach to intersectionality through targeted interventions that are co-designed with communities with specific needs and requirements, and through a broader approach to the promotion of equality, diversity, and inclusion in and through sport and physical activity."
                   }
                 ]
               }
@@ -4638,9 +3959,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4648,7 +3966,6 @@
                   },
                   {
                     "type": "text",
-                    "text": "National Outdoor Recreation Strategy 2023-2027",
                     "marks": [
                       {
                         "type": "link",
@@ -4656,10 +3973,12 @@
                           "href": "https://www.gov.ie/en/policy-information/43eee-embracing-irelands-outdoors-national-outdoor-recreation-strategy-2023-2027/",
                           "target": "_blank",
                           "rel": "noopener noreferrer nofollow",
-                          "class": null
+                          "class": null,
+                          "title": null
                         }
                       }
-                    ]
+                    ],
+                    "text": "National Outdoor Recreation Strategy 2023-2027"
                   },
                   {
                     "type": "text",
@@ -4674,9 +3993,6 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": {
-                  "textAlign": null
-                },
                 "content": [
                   {
                     "type": "text",
@@ -4692,9 +4008,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4709,9 +4022,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4726,9 +4036,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4743,9 +4050,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4760,9 +4064,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4777,9 +4078,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4794,9 +4092,6 @@
                     "content": [
                       {
                         "type": "paragraph",
-                        "attrs": {
-                          "textAlign": null
-                        },
                         "content": [
                           {
                             "type": "text",
@@ -4815,20 +4110,18 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
           {
             "type": "text",
-            "text": "Appendix 1 "
+            "text": "Appendix 1"
           }
         ]
       },
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -4839,63 +4132,14 @@
         ]
       },
       {
-        "type": "paragraph",
+        "type": "tableBlock",
         "attrs": {
-          "textAlign": null
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Date"
-          },
-          {
-            "type": "text",
-            "text": "Transcript"
-          },
-          {
-            "type": "text",
-            "text": "21 June 2023"
-          },
-          {
-            "type": "text",
-            "text": "Meeting transcript",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://www.oireachtas.ie/en/debates/debate/joint_committee_on_tourism_culture_arts_sport_and_media/2023-06-21/2/",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "11 October 2023"
-          },
-          {
-            "type": "text",
-            "text": "Meeting transcript",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://www.oireachtas.ie/en/debates/debate/joint_committee_on_tourism_culture_arts_sport_and_media/2023-10-11/3/",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          }
-        ]
+          "html": "<table><thead><tr><th scope=\"col\"><p>Date</p></th><th scope=\"col\"><p>Transcript</p></th></tr></thead><tbody><tr><td><p>21 June 2023</p></td><td><p><a href=\"https://www.oireachtas.ie/en/debates/debate/joint_committee_on_tourism_culture_arts_sport_and_media/2023-06-21/2/\">Meeting transcript</a></p></td></tr><tr><td><p>11 October 2023</p></td><td><p><a href=\"https://www.oireachtas.ie/en/debates/debate/joint_committee_on_tourism_culture_arts_sport_and_media/2023-10-11/3/\">Meeting transcript</a></p></td></tr></tbody></table>"
+        }
       },
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -4906,366 +4150,14 @@
         ]
       },
       {
-        "type": "paragraph",
+        "type": "tableBlock",
         "attrs": {
-          "textAlign": null
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Date"
-          },
-          {
-            "type": "text",
-            "text": "Witness"
-          },
-          {
-            "type": "text",
-            "text": "Opening statements"
-          },
-          {
-            "type": "text",
-            "text": "21 June 2023 "
-          },
-          {
-            "type": "text",
-            "text": "St Joseph’s Mercy Secondary School Navan. Co. Meath"
-          },
-          {
-            "type": "text",
-            "text": "Ms Mya Doocey"
-          },
-          {
-            "type": "text",
-            "text": "Ms Mia Gilligan"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opening-statement-mya-doocey-student-st-joseph-s-mercy-secondary-school-navan-co-meath_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "21 June 2023 "
-          },
-          {
-            "type": "text",
-            "text": "Disabled Persons Organisation Network"
-          },
-          {
-            "type": "text",
-            "text": "Mr Derek Maguire, President of Deaf Sports Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Dr John Bosco Conama, Irish Deaf Society"
-          },
-          {
-            "type": "text",
-            "text": "Ms Jacqui Browne, Chairperson"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opening-statement-jacqui-browne-chairperson-disabled-person-s-organisation-network_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "21 June 2023 "
-          },
-          {
-            "type": "text",
-            "text": "Sport Against Racism"
-          },
-          {
-            "type": "text",
-            "text": "Amina Moustafa, Board member"
-          },
-          {
-            "type": "text",
-            "text": "Fintan Drury, Acting chair"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opening-statement-amina-moustafa-general-manager-sport-against-racism_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "21 June 2023 "
-          },
-          {
-            "type": "text",
-            "text": "Sporting Pride Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Mr Aidan Walsh, Chair and national governing body liaison"
-          },
-          {
-            "type": "text",
-            "text": "Ms Karina Murray, Events coordinator"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opeining-statement-aidan-walsh-chairperson-sporting-pride-ireland_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "21 June 2023"
-          },
-          {
-            "type": "text",
-            "text": "TRUST Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Ms Sarah Carney, UNESCO Chair at Munster Technological University and lead Trust Ireland Partner"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opening-statement-sarah-carney-unesco-chair-at-munster-technological-university-and-lead-trust-ireland-partner-trust-ireland_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "11 October 2023"
-          },
-          {
-            "type": "text",
-            "text": "Federation of Irish Sport"
-          },
-          {
-            "type": "text",
-            "text": "Ms Mary O’Connor, CEO"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-mary-o-connor-ceo-federation-of-irish-sport_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "11 October 2023"
-          },
-          {
-            "type": "text",
-            "text": "Football Association of Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Ms Aoife Rafferty, People and culture director"
-          },
-          {
-            "type": "text",
-            "text": "Mr Ger McDermott, Grassroots director"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-aoife-rafferty-people-and-culture-director-football-association-of-ireland_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "11 October 2023"
-          },
-          {
-            "type": "text",
-            "text": "Gaelic Athletic Association"
-          },
-          {
-            "type": "text",
-            "text": "Mr Tom Ryan, Director General"
-          },
-          {
-            "type": "text",
-            "text": "Mr Ger McTavish, National diversity and inclusion manager"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-tom-ryan-director-general-gaelic-athletic-association_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "11 October 2023"
-          },
-          {
-            "type": "text",
-            "text": "Irish Rugby Football Union"
-          },
-          {
-            "type": "text",
-            "text": "Ms Anne Marie Hughes, Head of equity, diversity and inclusivity"
-          },
-          {
-            "type": "text",
-            "text": "Mr Ultan O’Callaghan, Head of rugby development"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-anne-marie-hughes-head-of-equity-diversity-and-inclusivity-irish-rugby-football-union_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "11 October 2023"
-          },
-          {
-            "type": "text",
-            "text": "Sport Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Dr Una May, CEO"
-          },
-          {
-            "type": "text",
-            "text": "Ms Helen McHugh, Diversity and inclusion manager"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-dr-una-may-ceo-sport-ireland_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "11 October 2023"
-          },
-          {
-            "type": "text",
-            "text": "Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media"
-          },
-          {
-            "type": "text",
-            "text": "Mr Micheál Ó Conaire, Principal officer with responsibility for sports policy, "
-          },
-          {
-            "type": "text",
-            "text": "Mr James Lavelle, Assistant principal officer with responsibility for sports policy"
-          },
-          {
-            "type": "text",
-            "text": "Opening statement",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-miche-l-conaire-principal-officer-sports-policy-unit-department-of-tourism-culture-arts-gaeltacht-sport-and-media_en.pdf",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null
-                }
-              }
-            ]
-          }
-        ]
+          "html": "<table><thead><tr><th scope=\"col\"><p>Date</p></th><th scope=\"col\"><p>Witness</p></th><th scope=\"col\"><p>Opening statements</p></th></tr></thead><tbody><tr><td><p>21 June 2023 </p></td><td><p>St Joseph’s Mercy Secondary School Navan. Co. Meath</p><ul><li>Ms Mya Doocey</li><li>Ms Mia Gilligan</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opening-statement-mya-doocey-student-st-joseph-s-mercy-secondary-school-navan-co-meath_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>21 June 2023 </p></td><td><p>Disabled Persons Organisation Network</p><ul><li>Mr Derek Maguire, President of Deaf Sports Ireland</li><li>Dr John Bosco Conama, Irish Deaf Society</li><li>Ms Jacqui Browne, Chairperson</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opening-statement-jacqui-browne-chairperson-disabled-person-s-organisation-network_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>21 June 2023 </p></td><td><p>Sport Against Racism</p><ul><li>Amina Moustafa, Board member</li><li>Fintan Drury, Acting chair</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opening-statement-amina-moustafa-general-manager-sport-against-racism_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>21 June 2023 </p></td><td><p>Sporting Pride Ireland</p><ul><li>Mr Aidan Walsh, Chair and national governing body liaison</li><li>Ms Karina Murray, Events coordinator</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opeining-statement-aidan-walsh-chairperson-sporting-pride-ireland_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>21 June 2023</p></td><td><p>TRUST Ireland</p><ul><li>Ms Sarah Carney, UNESCO Chair at Munster Technological University and lead Trust Ireland Partner</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-06-21_opening-statement-sarah-carney-unesco-chair-at-munster-technological-university-and-lead-trust-ireland-partner-trust-ireland_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>11 October 2023</p></td><td><p>Federation of Irish Sport</p><ul><li>Ms Mary O’Connor, CEO</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-mary-o-connor-ceo-federation-of-irish-sport_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>11 October 2023</p></td><td><p>Football Association of Ireland</p><ul><li>Ms Aoife Rafferty, People and culture director</li><li>Mr Ger McDermott, Grassroots director</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-aoife-rafferty-people-and-culture-director-football-association-of-ireland_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>11 October 2023</p></td><td><p>Gaelic Athletic Association</p><ul><li>Mr Tom Ryan, Director General</li><li>Mr Ger McTavish, National diversity and inclusion manager</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-tom-ryan-director-general-gaelic-athletic-association_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>11 October 2023</p></td><td><p>Irish Rugby Football Union</p><ul><li>Ms Anne Marie Hughes, Head of equity, diversity and inclusivity</li><li>Mr Ultan O’Callaghan, Head of rugby development</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-anne-marie-hughes-head-of-equity-diversity-and-inclusivity-irish-rugby-football-union_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>11 October 2023</p></td><td><p>Sport Ireland</p><ul><li>Dr Una May, CEO</li><li>Ms Helen McHugh, Diversity and inclusion manager</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-dr-una-may-ceo-sport-ireland_en.pdf\">Opening statement</a></p></td></tr><tr><td><p>11 October 2023</p></td><td><p>Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media</p><ul><li>Mr Micheál Ó Conaire, Principal officer with responsibility for sports policy, </li><li>Mr James Lavelle, Assistant principal officer with responsibility for sports policy</li></ul></td><td><p><a href=\"https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_tourism_culture_arts_sport_and_media/submissions/2023/2023-10-11_opening-statement-miche-l-conaire-principal-officer-sports-policy-unit-department-of-tourism-culture-arts-gaeltacht-sport-and-media_en.pdf\">Opening statement</a></p></td></tr></tbody></table>"
+        }
       },
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 1
         },
         "content": [
@@ -5278,7 +4170,6 @@
       {
         "type": "heading",
         "attrs": {
-          "textAlign": null,
           "level": 2
         },
         "content": [
@@ -5289,100 +4180,13 @@
         ]
       },
       {
-        "type": "paragraph",
+        "type": "tableBlock",
         "attrs": {
-          "textAlign": null
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Stakeholder"
-          },
-          {
-            "type": "text",
-            "text": "Stakeholder"
-          },
-          {
-            "type": "text",
-            "text": "Age Action"
-          },
-          {
-            "type": "text",
-            "text": "Her Sport"
-          },
-          {
-            "type": "text",
-            "text": "Age and Opportunity"
-          },
-          {
-            "type": "text",
-            "text": "Irish Rugby Football Union"
-          },
-          {
-            "type": "text",
-            "text": "Camogie Association"
-          },
-          {
-            "type": "text",
-            "text": "Irish Wheelchair Association"
-          },
-          {
-            "type": "text",
-            "text": "Cara"
-          },
-          {
-            "type": "text",
-            "text": "Olympic Federation of Ireland"
-          },
-          {
-            "type": "text",
-            "text": "City and County Management Association"
-          },
-          {
-            "type": "text",
-            "text": "Paralympics Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media"
-          },
-          {
-            "type": "text",
-            "text": "Sport Against Racism Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Disabled Persons Organisation Network"
-          },
-          {
-            "type": "text",
-            "text": "Sport Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Federation of Irish Sport"
-          },
-          {
-            "type": "text",
-            "text": "Sporting Pride Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Football Association of Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Trust Ireland"
-          },
-          {
-            "type": "text",
-            "text": "Gaelic Athletic Association"
-          },
-          {
-            "type": "text",
-            "text": "Women in Sport"
-          }
-        ]
+          "html": "<table><thead><tr><th scope=\"col\"><p>Stakeholder</p></th><th scope=\"col\"><p>Stakeholder</p></th></tr></thead><tbody><tr><td><p>Age Action</p></td><td><p>Her Sport</p></td></tr><tr><td><p>Age and Opportunity</p></td><td><p>Irish Rugby Football Union</p></td></tr><tr><td><p>Camogie Association</p></td><td><p>Irish Wheelchair Association</p></td></tr><tr><td><p>Cara</p></td><td><p>Olympic Federation of Ireland</p></td></tr><tr><td><p>City and County Management Association</p></td><td><p>Paralympics Ireland</p></td></tr><tr><td><p>Department of Tourism, Culture, Arts, Gaeltacht, Sport and Media</p></td><td><p>Sport Against Racism Ireland</p></td></tr><tr><td><p>Disabled Persons Organisation Network</p></td><td><p>Sport Ireland</p></td></tr><tr><td><p>Federation of Irish Sport</p></td><td><p>Sporting Pride Ireland</p></td></tr><tr><td><p>Football Association of Ireland</p></td><td><p>Trust Ireland</p></td></tr><tr><td><p>Gaelic Athletic Association</p></td><td><p>Women in Sport</p></td></tr></tbody></table>"
+        }
+      },
+      {
+        "type": "paragraph"
       }
     ]
   }

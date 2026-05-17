@@ -74,6 +74,12 @@
 
   const PUBLISHER_DRAFT_KEY = 'stor/publisher-draft';
 
+  function todayLocalIsoDate() {
+    const now = new Date();
+    const offsetMs = now.getTimezoneOffset() * 60_000;
+    return new Date(now.getTime() - offsetMs).toISOString().slice(0, 10);
+  }
+
   const defaultState: PublisherState = {
     destination: 'committee-reports',
     type: 'committee-report',
@@ -86,7 +92,7 @@
     eyebrow: '',
     abstract: '',
     committeeName: '',
-    publishedDate: new Date().toISOString().slice(0, 10),
+    publishedDate: todayLocalIsoDate(),
     status: 'draft',
     language: 'en',
     keywords: '',
@@ -865,6 +871,30 @@
     URL.revokeObjectURL(url);
   }
 
+  async function publishCanonicalJson() {
+    if (!canonicalDocument || !suggestedPath || !validation.ok) return;
+
+    try {
+      const response = await fetch('/api/publish-document', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          path: suggestedPath,
+          document: canonicalDocument,
+        }),
+      });
+
+      if (!response.ok) return;
+
+      importMessage = `Published locally to ${suggestedPath}.`;
+      importError = null;
+    } catch {
+      // Silent no-op for static/GitHub Pages environments where no server route exists.
+    }
+  }
+
   async function copyProseMirrorJson() {
     if (!editorDocument) return;
     await navigator.clipboard.writeText(JSON.stringify(editorDocument, null, 2));
@@ -1234,6 +1264,35 @@
         </div>
       {/if}
     </div>
+
+    {#if openStage === 'preview'}
+      <div class="publish-panel publish-panel--top">
+        <div class="publish-panel__copy">
+          <strong>Preview and export</strong>
+          <span>
+            Review the rendered output and publish or export the canonical artefacts derived from
+            the current PM document.
+          </span>
+        </div>
+        <div class="publish-panel__actions">
+          <button type="button" onclick={() => (openStage = 'edit')}>Back</button>
+          <div class="publish-panel__actions-right">
+            <button type="button" onclick={copyProseMirrorJson} disabled={!editorDocument}>
+              Copy ProseMirror JSON
+            </button>
+            <button type="button" onclick={downloadCanonicalXml} disabled={!canonicalXml || !canonicalDocument}>
+              Download XML
+            </button>
+            <button type="button" onclick={downloadCanonicalJson} disabled={!canonicalDocument}>
+              Download JSON
+            </button>
+            <button type="button" class="publish-button" onclick={publishCanonicalJson} disabled={!canonicalDocument || !suggestedPath || !validation.ok}>
+              Publish
+            </button>
+          </div>
+        </div>
+      </div>
+    {/if}
 
     <section class="stage-section wizard-panel">
       <header class="stage-heading">
@@ -1916,30 +1975,6 @@
             </div>
           </details>
 
-          <div class="publish-panel">
-            <div class="publish-panel__copy">
-              <strong>Preview and export</strong>
-              <span>
-                Review the rendered output and download the canonical JSON/XML artefacts derived
-                from the current PM document.
-              </span>
-            </div>
-            <div class="publish-panel__actions">
-              <button type="button" onclick={() => (openStage = 'edit')}>Back</button>
-              <div class="publish-panel__actions-right">
-                <button type="button" class="primary-button" onclick={downloadCanonicalJson} disabled={!canonicalDocument}>
-                  Download JSON
-                </button>
-                <button type="button" onclick={downloadCanonicalXml} disabled={!canonicalXml || !canonicalDocument}>
-                  Download XML
-                </button>
-                <button type="button" onclick={copyProseMirrorJson} disabled={!editorDocument}>
-                  Copy ProseMirror JSON
-                </button>
-              </div>
-            </div>
-          </div>
-
           {#if suggestedPath}
             <p class="path-hint">
               Suggested repo path:
@@ -2128,6 +2163,20 @@
     background: #f1f3ef;
   }
 
+  .publish-message {
+    display: flex;
+    align-items: center;
+    min-height: 2.85rem;
+    padding: 0.7rem 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .publish-message strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .draft-status-bar {
     display: flex;
     align-items: center;
@@ -2138,18 +2187,24 @@
     border: 1px solid #c6ccc1;
     border-radius: 4px;
     color: #394239;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    min-height: 2.85rem;
   }
 
   .draft-status-bar span {
     font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
   }
 
   .draft-status-actions {
     display: flex;
     align-items: center;
     gap: 0.65rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
   }
 
   .status-panel.warning {
@@ -2272,6 +2327,17 @@
     background: #262626 !important;
     border-color: #262626 !important;
     color: #fafaf8 !important;
+  }
+
+  .publish-button {
+    background: #e6f1e8 !important;
+    border-color: #7fa086 !important;
+    color: #24462b !important;
+  }
+
+  .publish-button:hover {
+    background: #d7e8da !important;
+    border-color: #5f8267 !important;
   }
 
   .destructive-button {
@@ -2569,6 +2635,10 @@
     background: #f7f7f4;
   }
 
+  .publish-panel--top {
+    margin-top: 0.8rem;
+  }
+
   .publish-panel__copy {
     display: grid;
     gap: 0.25rem;
@@ -2583,6 +2653,7 @@
     display: flex;
     gap: 0.65rem;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .path-hint {
@@ -2778,6 +2849,20 @@
     .wizard-nav {
       align-items: flex-start;
       flex-direction: column;
+    }
+
+    .draft-status-bar,
+    .publish-message {
+      white-space: normal;
+    }
+
+    .draft-status-bar {
+      flex-wrap: wrap;
+    }
+
+    .draft-status-actions,
+    .publish-panel__actions-right {
+      flex-wrap: wrap;
     }
   }
 </style>

@@ -2,6 +2,7 @@ import type {
   ProseMirrorDocument,
   ProseMirrorMark,
   ProseMirrorNode,
+  StorContributor,
   StorDocument,
 } from './types';
 
@@ -14,79 +15,134 @@ function esc(value: string | number | null | undefined) {
     .replace(/'/g, '&apos;');
 }
 
-function safeTagName(tagName: string) {
-  return tagName.toLowerCase();
+function slugifyTitle(title = '') {
+  return (
+    String(title)
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-zA-Z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '')
+      .toLowerCase()
+      .slice(0, 60) || 'section'
+  );
 }
 
-function inlineText(text: string, marks: ProseMirrorMark[] = []) {
-  let output = esc(text);
+function makeUniqueIdFactory() {
+  const used = new Set<string>();
 
-  for (const mark of marks) {
-    switch (mark.type) {
-      case 'bold':
-        output = `<b>${output}</b>`;
-        break;
-      case 'italic':
-        output = `<i>${output}</i>`;
-        break;
-      case 'underline':
-        output = `<u>${output}</u>`;
-        break;
-      case 'strike':
-        output = `<strike>${output}</strike>`;
-        break;
-      case 'code':
-        output = `<code>${output}</code>`;
-        break;
-      case 'superscript':
-        output = `<sup>${output}</sup>`;
-        break;
-      case 'subscript':
-        output = `<sub>${output}</sub>`;
-        break;
-      case 'link':
-        if (mark.attrs?.href) {
-          output = `<a href="${esc(mark.attrs.href)}">${output}</a>`;
-        }
-        break;
+  return (base: string) => {
+    let id = base || 'section';
+    if (!used.has(id)) {
+      used.add(id);
+      return id;
     }
-  }
 
-  return output;
+    let counter = 2;
+    while (used.has(`${id}-${counter}`)) counter += 1;
+    id = `${id}-${counter}`;
+    used.add(id);
+    return id;
+  };
 }
 
-function serializeInline(node: ProseMirrorNode): string {
-  switch (node.type) {
-    case 'text':
-      return inlineText(node.text ?? '', node.marks);
-    case 'hardBreak':
-      return '<br/>';
-    default:
-      return (node.content ?? []).map(serializeInline).join('');
+function inlineText(node: ProseMirrorNode): string {
+  if (node.type === 'text') {
+    let output = esc(node.text ?? '');
+
+    for (const mark of node.marks ?? []) {
+      switch (mark.type) {
+        case 'bold':
+          output = `<emphasis role="strong">${output}</emphasis>`;
+          break;
+        case 'italic':
+          output = `<emphasis>${output}</emphasis>`;
+          break;
+        case 'underline':
+          output = `<emphasis role="underline">${output}</emphasis>`;
+          break;
+        case 'strike':
+          output = `<emphasis role="strikethrough">${output}</emphasis>`;
+          break;
+        case 'code':
+          output = `<code>${output}</code>`;
+          break;
+        case 'superscript':
+          output = `<superscript>${output}</superscript>`;
+          break;
+        case 'subscript':
+          output = `<subscript>${output}</subscript>`;
+          break;
+        case 'link':
+          if (mark.attrs?.href) {
+            output = `<ulink url="${esc(mark.attrs.href)}">${output}</ulink>`;
+          }
+          break;
+      }
+    }
+
+    return output;
   }
+
+  if (node.type === 'hardBreak') return '&#10;';
+  return (node.content ?? []).map(inlineText).join('');
 }
 
-function serializeListNode(node: ProseMirrorNode): string {
-  const tag = node.type === 'orderedList' ? 'list' : 'list';
-  const typeAttr = node.type === 'orderedList' ? 'ordered' : 'bullet';
+function plainText(node: ProseMirrorNode): string {
+  if (node.type === 'text') return node.text ?? '';
+  if (node.type === 'hardBreak') return '\n';
+  return (node.content ?? []).map(plainText).join('');
+}
+
+function normalizeWhitespace(value: string) {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+function paragraphPlainText(node: ProseMirrorNode) {
+  return normalizeWhitespace(plainText(node));
+}
+
+function paragraphHasSubstance(node: ProseMirrorNode) {
+  return paragraphPlainText(node).length > 0;
+}
+
+function paragraphLooksLikeContentsHeading(node: ProseMirrorNode) {
+  return paragraphPlainText(node).toLowerCase() === 'contents';
+}
+
+function nodeHasInternalLink(node: ProseMirrorNode): boolean {
+  if (node.marks?.some((mark) => mark.type === 'link' && String(mark.attrs?.href ?? '').startsWith('#'))) {
+    return true;
+  }
+
+  return (node.content ?? []).some((child) => nodeHasInternalLink(child));
+}
+
+function paragraphLooksLikeTocEntry(node: ProseMirrorNode) {
+  const text = paragraphPlainText(node);
+  return nodeHasInternalLink(node) && /\d+$/.test(text);
+}
+
+function serializeParagraph(node: ProseMirrorNode) {
+  return `<para>${inlineText(node)}</para>`;
+}
+
+function serializeList(node: ProseMirrorNode): string {
+  const tag = node.type === 'orderedList' ? 'orderedlist' : 'itemizedlist';
   const items = (node.content ?? [])
     .map((item) => {
       const body = (item.content ?? [])
         .map((child) => {
-          if (child.type === 'paragraph') {
-            return `<p>${serializeInline(child)}</p>`;
-          }
-          if (child.type === 'orderedList' || child.type === 'bulletList') {
-            return serializeListNode(child);
-          }
-          return serializeInline(child);
+          if (child.type === 'paragraph') return serializeParagraph(child);
+          if (child.type === 'bulletList' || child.type === 'orderedList') return serializeList(child);
+          return serializeStandaloneNode(child);
         })
         .join('');
-      return `<item>${body}</item>`;
+
+      return `<listitem>${body}</listitem>`;
     })
     .join('');
 
-  return `<${tag} type="${typeAttr}">${items}</${tag}>`;
+  return `<${tag}>${items}</${tag}>`;
 }
 
 function serializeHtmlChildren(node: Node, document: Document): string {
@@ -94,35 +150,44 @@ function serializeHtmlChildren(node: Node, document: Document): string {
     return esc(node.textContent ?? '');
   }
 
-  if (node.nodeType !== document.ELEMENT_NODE) {
-    return '';
-  }
+  if (node.nodeType !== document.ELEMENT_NODE) return '';
 
   const element = node as HTMLElement;
-  const tag = safeTagName(element.tagName);
+  const tag = element.tagName.toLowerCase();
   const children = Array.from(element.childNodes)
     .map((child) => serializeHtmlChildren(child, document))
     .join('');
 
-  if (tag === 'br') return '<br/>';
-
-  if (tag === 'a') {
-    const href = element.getAttribute('href') ?? '';
-    return `<a href="${esc(href)}">${children}</a>`;
+  switch (tag) {
+    case 'br':
+      return '&#10;';
+    case 'a':
+      return `<ulink url="${esc(element.getAttribute('href') ?? '')}">${children}</ulink>`;
+    case 'strong':
+    case 'b':
+      return `<emphasis role="strong">${children}</emphasis>`;
+    case 'em':
+    case 'i':
+      return `<emphasis>${children}</emphasis>`;
+    case 'u':
+      return `<emphasis role="underline">${children}</emphasis>`;
+    case 'code':
+      return `<code>${children}</code>`;
+    case 'sup':
+      return `<superscript>${children}</superscript>`;
+    case 'sub':
+      return `<subscript>${children}</subscript>`;
+    case 'p':
+      return `<para>${children}</para>`;
+    case 'ul':
+      return `<itemizedlist>${children}</itemizedlist>`;
+    case 'ol':
+      return `<orderedlist>${children}</orderedlist>`;
+    case 'li':
+      return `<listitem><para>${children}</para></listitem>`;
+    default:
+      return children;
   }
-
-  if (tag === 'strong' || tag === 'b') return `<b>${children}</b>`;
-  if (tag === 'em' || tag === 'i') return `<i>${children}</i>`;
-  if (tag === 'u') return `<u>${children}</u>`;
-  if (tag === 'sup') return `<sup>${children}</sup>`;
-  if (tag === 'sub') return `<sub>${children}</sub>`;
-  if (tag === 'code') return `<code>${children}</code>`;
-  if (tag === 'p') return `<p>${children}</p>`;
-  if (tag === 'ul') return `<list type="bullet">${children}</list>`;
-  if (tag === 'ol') return `<list type="ordered">${children}</list>`;
-  if (tag === 'li') return `<item>${children}</item>`;
-
-  return children;
 }
 
 function serializeTableHtml(html: string) {
@@ -130,179 +195,316 @@ function serializeTableHtml(html: string) {
   const table = document.querySelector('table');
   if (!table) return '';
 
-  const theadRows = Array.from(table.querySelectorAll('thead > tr')).map((row) => {
-    const cells = Array.from(row.children)
-      .map((cell) => {
-        const attrs = [`header="true"`];
-        const colspan = cell.getAttribute('colspan');
-        const rowspan = cell.getAttribute('rowspan');
-        const scope = cell.getAttribute('scope');
-        if (colspan) attrs.push(`colspan="${esc(colspan)}"`);
-        if (rowspan) attrs.push(`rowspan="${esc(rowspan)}"`);
-        if (scope) attrs.push(`scope="${esc(scope)}"`);
-        const content = Array.from(cell.childNodes)
-          .map((child) => serializeHtmlChildren(child, document))
-          .join('');
-        return `<cell ${attrs.join(' ')}>${content}</cell>`;
-      })
-      .join('');
-    return `<row>${cells}</row>`;
-  });
+  const rows = Array.from(table.querySelectorAll('tr'));
+  const columnCount = Math.max(
+    1,
+    ...rows.map((row) =>
+      Array.from(row.children).reduce((sum, cell) => {
+        const colspan = Number.parseInt(cell.getAttribute('colspan') ?? '1', 10);
+        return sum + (Number.isFinite(colspan) ? colspan : 1);
+      }, 0),
+    ),
+  );
 
-  const bodySource =
+  const headRows = Array.from(table.querySelectorAll('thead > tr'));
+  const bodyRows =
     table.querySelectorAll('tbody > tr').length > 0
       ? Array.from(table.querySelectorAll('tbody > tr'))
-      : Array.from(table.querySelectorAll(':scope > tr'));
+      : rows.slice(headRows.length);
 
-  const tbodyRows = bodySource.map((row) => {
+  const serializeRow = (row: HTMLTableRowElement) => {
     const cells = Array.from(row.children)
       .map((cell) => {
         const attrs: string[] = [];
         const colspan = cell.getAttribute('colspan');
         const rowspan = cell.getAttribute('rowspan');
-        const scope = cell.getAttribute('scope');
-        if (colspan) attrs.push(`colspan="${esc(colspan)}"`);
-        if (rowspan) attrs.push(`rowspan="${esc(rowspan)}"`);
-        if (scope) attrs.push(`scope="${esc(scope)}"`);
+        if (colspan) attrs.push(`namest="c1" nameend="c${esc(colspan)}"`);
+        if (rowspan) attrs.push(`morerows="${Math.max(0, Number.parseInt(rowspan, 10) - 1)}"`);
         const content = Array.from(cell.childNodes)
           .map((child) => serializeHtmlChildren(child, document))
           .join('');
-        return `<cell${attrs.length ? ` ${attrs.join(' ')}` : ''}>${content}</cell>`;
+        return `<entry${attrs.length ? ` ${attrs.join(' ')}` : ''}>${content}</entry>`;
       })
       .join('');
     return `<row>${cells}</row>`;
-  });
+  };
 
-  return `<table>${theadRows.length ? `<thead>${theadRows.join('')}</thead>` : ''}<tbody>${tbodyRows.join('')}</tbody></table>`;
+  const thead = headRows.length
+    ? `<thead>${headRows.map((row) => serializeRow(row as HTMLTableRowElement)).join('')}</thead>`
+    : '';
+  const tbody = `<tbody>${bodyRows.map((row) => serializeRow(row as HTMLTableRowElement)).join('')}</tbody>`;
+
+  return `<table><tgroup cols="${columnCount}">${thead}${tbody}</tgroup></table>`;
 }
 
-function serializeBodyNode(node: ProseMirrorNode): string {
+function serializeImageBlock(node: ProseMirrorNode) {
+  const src = esc(String(node.attrs?.src ?? ''));
+  const alt = esc(String(node.attrs?.alt ?? ''));
+  const layout = esc(String(node.attrs?.layout ?? 'inline'));
+  const caption = node.attrs?.caption ? `<title>${esc(String(node.attrs.caption))}</title>` : '';
+  const credit = node.attrs?.credit
+    ? `<caption><para>Credit: ${esc(String(node.attrs.credit))}</para></caption>`
+    : '';
+
+  return `<figure role="image" condition="${layout}">${caption}<mediaobject><imageobject><imagedata fileref="${src}"/></imageobject>${
+    alt ? `<textobject><phrase>${alt}</phrase></textobject>` : ''
+  }</mediaobject>${credit}</figure>`;
+}
+
+function serializeFlourishBlock(node: ProseMirrorNode) {
+  const dataSrc = esc(String(node.attrs?.dataSrc ?? ''));
+  const alt = esc(String(node.attrs?.alt ?? ''));
+  const embedType = esc(String(node.attrs?.embedType ?? 'chart'));
+  const width = esc(String(node.attrs?.width ?? 'wide'));
+  const caption = node.attrs?.caption ? `<title>${esc(String(node.attrs.caption))}</title>` : '';
+
+  return `<figure role="flourish" condition="${width}">${caption}<mediaobject><textobject><phrase>${
+    alt || 'Embedded Flourish visualisation'
+  }</phrase></textobject></mediaobject><remark><para>Flourish ${embedType}: <ulink url="${dataSrc}">${dataSrc}</ulink></para></remark></figure>`;
+}
+
+function serializeStandaloneNode(node: ProseMirrorNode): string {
   switch (node.type) {
-    case 'heading':
-      return `<heading level="${esc(node.attrs?.level ?? 1)}">${serializeInline(node)}</heading>`;
     case 'paragraph':
-      return `<p>${serializeInline(node)}</p>`;
+      return serializeParagraph(node);
     case 'blockquote':
       return `<blockquote>${(node.content ?? [])
         .map((child) => {
-          if (child.type === 'paragraph') return `<p>${serializeInline(child)}</p>`;
-          return serializeInline(child);
+          if (child.type === 'paragraph') return serializeParagraph(child);
+          return serializeStandaloneNode(child);
         })
         .join('')}</blockquote>`;
     case 'bulletList':
     case 'orderedList':
-      return serializeListNode(node);
+      return serializeList(node);
+    case 'codeBlock':
+      return `<programlisting>${esc(node.text ?? '')}</programlisting>`;
     case 'imageBlock':
-      return `<image src="${esc(String(node.attrs?.src ?? ''))}" alt="${esc(
-        String(node.attrs?.alt ?? ''),
-      )}" layout="${esc(String(node.attrs?.layout ?? 'inline'))}">${
-        node.attrs?.caption ? `<caption>${esc(String(node.attrs.caption))}</caption>` : ''
-      }${node.attrs?.credit ? `<credit>${esc(String(node.attrs.credit))}</credit>` : ''}</image>`;
+      return serializeImageBlock(node);
     case 'flourishBlock':
-      return `<flourish dataSrc="${esc(String(node.attrs?.dataSrc ?? ''))}" embedType="${esc(
-        String(node.attrs?.embedType ?? 'chart'),
-      )}" width="${esc(String(node.attrs?.width ?? 'wide'))}" alt="${esc(
-        String(node.attrs?.alt ?? ''),
-      )}">${
-        node.attrs?.caption ? `<caption>${esc(String(node.attrs.caption))}</caption>` : ''
-      }</flourish>`;
+      return serializeFlourishBlock(node);
     case 'tableBlock':
       return serializeTableHtml(String(node.attrs?.html ?? ''));
-    case 'codeBlock':
-      return `<codeblock>${esc((node.text ?? '') || '')}</codeblock>`;
     default:
       return '';
   }
 }
 
-function serializeKeywords(keywords: string[] | undefined) {
-  if (!keywords?.length) return '';
-  return `<keywords>${keywords
-    .map((keyword) => `<keyword>${esc(keyword)}</keyword>`)
-    .join('')}</keywords>`;
-}
+type SectionNode = {
+  level: number;
+  title: string | null;
+  titlePlain: string | null;
+  blocks: string[];
+  children: SectionNode[];
+};
 
-function serializeContributors(document: StorDocument) {
-  if (!document.contributors?.length) return '';
+function pmToSections(document: ProseMirrorDocument): SectionNode {
+  const root: SectionNode = { level: 0, title: null, titlePlain: null, blocks: [], children: [] };
+  const stack = [root];
+  let skippingContents = false;
 
-  return `<contributors>${document.contributors
-    .map((contributor) => {
-      const attrs = [`role="${esc(contributor.role)}"`];
-      if (typeof contributor.showAsAuthor === 'boolean') {
-        attrs.push(`showAsAuthor="${contributor.showAsAuthor ? 'true' : 'false'}"`);
+  for (const node of document.content ?? []) {
+    if (node.type === 'heading') {
+      skippingContents = false;
+      const level = Math.max(1, Math.min(6, Number(node.attrs?.level ?? 1)));
+      while (stack.length > 1 && stack[stack.length - 1].level >= level) {
+        stack.pop();
       }
 
-      return `<contributor ${attrs.join(' ')}><name>${esc(contributor.name)}</name>${
-        contributor.affiliation
-          ? `<affiliation>${esc(contributor.affiliation)}</affiliation>`
-          : ''
-      }${contributor.profileRole ? `<profileRole>${esc(contributor.profileRole)}</profileRole>` : ''}${
-        contributor.profileImage ? `<profileImage>${esc(contributor.profileImage)}</profileImage>` : ''
-      }${contributor.bio ? `<bio>${esc(contributor.bio)}</bio>` : ''
-      }</contributor>`;
-    })
-    .join('')}</contributors>`;
+      const section: SectionNode = {
+        level,
+        title: inlineText(node) || 'Untitled',
+        titlePlain: normalizeWhitespace(plainText(node)) || 'Untitled',
+        blocks: [],
+        children: [],
+      };
+      stack[stack.length - 1].children.push(section);
+      stack.push(section);
+      continue;
+    }
+
+    if (node.type === 'paragraph') {
+      if (!paragraphHasSubstance(node)) continue;
+
+      if (paragraphLooksLikeContentsHeading(node)) {
+        skippingContents = true;
+        continue;
+      }
+
+      if (skippingContents && paragraphLooksLikeTocEntry(node)) {
+        continue;
+      }
+
+      skippingContents = false;
+    }
+
+    const serialized = serializeStandaloneNode(node);
+    if (serialized) {
+      stack[stack.length - 1].blocks.push(serialized);
+    }
+  }
+
+  return root;
 }
 
-function serializeTopics(topics: string[] | undefined) {
-  if (!topics?.length) return '';
-  return `<topics>${topics.map((topic) => `<topic>${esc(topic)}</topic>`).join('')}</topics>`;
+function renderSections(root: SectionNode, fallbackTitle: string) {
+  const uniqueId = makeUniqueIdFactory();
+
+  function renderSection(section: SectionNode): string {
+    const id = uniqueId(slugifyTitle(section.titlePlain ?? section.title ?? 'section'));
+    const title = section.title ? `<title>${section.title}</title>` : '';
+    const body: string = [...section.blocks, ...section.children.map(renderSection)].join('');
+    return `<section xml:id="${id}">${title}${body}</section>`;
+  }
+
+  if (!root.children.length) {
+    const id = uniqueId(slugifyTitle(fallbackTitle));
+    return `<section xml:id="${id}"><title>${esc(fallbackTitle)}</title>${root.blocks.join('')}</section>`;
+  }
+
+  if (root.blocks.length) {
+    const id = uniqueId(slugifyTitle(fallbackTitle));
+    const leadSection = `<section xml:id="${id}"><title>${esc(fallbackTitle)}</title>${root.blocks.join('')}</section>`;
+    return [leadSection, ...root.children.map(renderSection)].join('');
+  }
+
+  return root.children.map(renderSection).join('');
 }
 
-function serializeResearcher(document: StorDocument) {
-  if (!document.researcher) return '';
-  const researcher = document.researcher;
+function contributorXml(contributor: StorContributor, tag: 'author' | 'othercredit') {
+  const role = contributor.role ? `<role>${esc(contributor.role)}</role>` : '';
+  const affiliation = contributor.affiliation
+    ? `<affiliation>${esc(contributor.affiliation)}</affiliation>`
+    : '';
+  const jobTitle = contributor.profileRole ? `<jobtitle>${esc(contributor.profileRole)}</jobtitle>` : '';
+  const bio = contributor.bio ? `<personblurb><para>${esc(contributor.bio)}</para></personblurb>` : '';
 
-  return `<researcher>${researcher.name ? `<name>${esc(researcher.name)}</name>` : ''}<role>${esc(
-    researcher.role,
-  )}</role>${
-    researcher.organisation
-      ? `<organisation>${esc(researcher.organisation)}</organisation>`
-      : ''
-  }${researcher.bio ? `<bio>${esc(researcher.bio)}</bio>` : ''}${
-    researcher.image ? `<image>${esc(researcher.image)}</image>` : ''
-  }</researcher>`;
+  return `<${tag}><personname>${esc(contributor.name)}</personname>${role}${jobTitle}${affiliation}${bio}</${tag}>`;
 }
 
-function serializeHero(document: StorDocument) {
-  if (!document.hero) return '';
-  return `<hero src="${esc(document.hero.src)}" alt="${esc(document.hero.alt)}">${
-    document.hero.caption ? `<caption>${esc(document.hero.caption)}</caption>` : ''
-  }${document.hero.credit ? `<credit>${esc(document.hero.credit)}</credit>` : ''}${
-    document.hero.position ? `<position>${esc(document.hero.position)}</position>` : ''
-  }</hero>`;
+function contributorsXml(contributors: StorContributor[] | undefined) {
+  if (!contributors?.length) return '';
+
+  const authors = contributors.filter((contributor) => contributor.role.toLowerCase() === 'author');
+  const others = contributors.filter((contributor) => contributor.role.toLowerCase() !== 'author');
+
+  return [
+    ...authors.map((contributor) => contributorXml(contributor, 'author')),
+    ...others.map((contributor) => contributorXml(contributor, 'othercredit')),
+  ].join('');
+}
+
+function keywordsetXml(values: string[] | undefined) {
+  if (!values?.length) return '';
+  return `<keywordset>${values.map((value) => `<keyword>${esc(value)}</keyword>`).join('')}</keywordset>`;
+}
+
+function uniqueKeywordValues(values: Array<string | null | undefined>) {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const value of values) {
+    const trimmed = String(value ?? '').trim();
+    if (!trimmed) continue;
+
+    const key = trimmed.toLowerCase();
+    if (seen.has(key)) continue;
+
+    seen.add(key);
+    result.push(trimmed);
+  }
+
+  return result;
+}
+
+function oorMetaXml(document: StorDocument) {
+  const parts = [
+    `<oor:destination>${esc(document.destination)}</oor:destination>`,
+    `<oor:contentType>${esc(document.type)}</oor:contentType>`,
+    document.committeeName ? `<oor:committeeName>${esc(document.committeeName)}</oor:committeeName>` : '',
+    typeof document.featured === 'boolean'
+      ? `<oor:featured>${document.featured ? 'true' : 'false'}</oor:featured>`
+      : '',
+    document.heroLayout ? `<oor:heroLayout>${esc(document.heroLayout)}</oor:heroLayout>` : '',
+    typeof document.showContents === 'boolean'
+      ? `<oor:showContents>${document.showContents ? 'true' : 'false'}</oor:showContents>`
+      : '',
+    document.flourishWidth ? `<oor:flourishWidth>${esc(document.flourishWidth)}</oor:flourishWidth>` : '',
+  ].filter(Boolean);
+
+  if (document.hero) {
+    parts.push(
+      `<oor:hero src="${esc(document.hero.src)}" alt="${esc(document.hero.alt)}">${
+        document.hero.position ? `<oor:position>${esc(document.hero.position)}</oor:position>` : ''
+      }</oor:hero>`,
+    );
+  }
+
+  if (document.launchVideo) {
+    parts.push(
+      `<oor:launchVideo src="${esc(document.launchVideo.src)}">${
+        document.launchVideo.poster ? `<oor:poster>${esc(document.launchVideo.poster)}</oor:poster>` : ''
+      }${
+        document.launchVideo.caption ? `<oor:caption>${esc(document.launchVideo.caption)}</oor:caption>` : ''
+      }${
+        document.launchVideo.credit ? `<oor:credit>${esc(document.launchVideo.credit)}</oor:credit>` : ''
+      }</oor:launchVideo>`,
+    );
+  }
+
+  return parts.length ? `<oor:meta>${parts.join('')}</oor:meta>` : '';
 }
 
 export function storDocumentToXml(document: StorDocument) {
-  const pmDocument: ProseMirrorDocument = document.content;
-  const body = (pmDocument.content ?? []).map(serializeBodyNode).join('');
+  const sectionTree = pmToSections(document.content);
+  const body = renderSections(sectionTree, document.title);
+  const title = esc(document.title);
+  const subtitle = document.dek ? `<subtitle>${esc(document.dek)}</subtitle>` : '';
+  const abstract = document.abstract ? `<abstract><para>${esc(document.abstract)}</para></abstract>` : '';
+  const date = document.publishedDate ? `<date>${esc(document.publishedDate)}</date>` : '';
+  const publisher = document.publisher
+    ? `<publisher><publishername>${esc(document.publisher)}</publishername></publisher>`
+    : '';
+  const revhistory = document.version
+    ? `<revhistory><revision><revnumber>${esc(document.version)}</revnumber>${date}${
+        document.status ? `<revremark>${esc(document.status)}</revremark>` : ''
+      }</revision></revhistory>`
+    : '';
+  const legalnotice = document.license
+    ? `<legalnotice><para>${esc(document.license)}</para></legalnotice>`
+    : '';
+  const pubidentifier = document.doi
+    ? `<pubidentifier type="doi">${esc(document.doi)}</pubidentifier>`
+    : '';
+  const keywords = keywordsetXml(
+    uniqueKeywordValues([
+      ...(document.keywords ?? []),
+      ...(document.topics ?? []),
+      ...(document.eyebrow ? [document.eyebrow] : []),
+    ]),
+  );
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<storDocument version="${esc(document.version ?? '0.1')}" xml:lang="${esc(
-    document.language ?? 'en',
-  )}">
-  <metadata>
-    <id>${esc(document.id)}</id>
-    <slug>${esc(document.slug)}</slug>
-    <destination>${esc(document.destination)}</destination>
-    <type>${esc(document.type)}</type>
-    <title>${esc(document.title)}</title>
-    <dek>${esc(document.dek)}</dek>
-    ${document.eyebrow ? `<eyebrow>${esc(document.eyebrow)}</eyebrow>` : ''}
-    ${document.byline ? `<byline>${esc(document.byline)}</byline>` : ''}
-    ${document.abstract ? `<abstract>${esc(document.abstract)}</abstract>` : ''}
-    ${document.committeeName ? `<committeeName>${esc(document.committeeName)}</committeeName>` : ''}
-    ${document.status ? `<status>${esc(document.status)}</status>` : ''}
-    ${document.publishedDate ? `<publishedDate>${esc(document.publishedDate)}</publishedDate>` : ''}
-    ${document.license ? `<license>${esc(document.license)}</license>` : ''}
-    ${document.doi ? `<doi>${esc(document.doi)}</doi>` : ''}
-    ${document.publisher ? `<publisher>${esc(document.publisher)}</publisher>` : ''}
-    ${serializeKeywords(document.keywords)}
-    ${serializeTopics(document.topics)}
-    ${serializeContributors(document)}
-    ${serializeResearcher(document)}
-    ${serializeHero(document)}
-  </metadata>
-  <body>${body}</body>
-</storDocument>`;
+<article xmlns="http://docbook.org/ns/docbook"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:oor="https://oireachtas.ie/ns/docbook-oireachtas"
+         version="5.0"
+         xml:lang="${esc(document.language ?? 'en')}"
+         xsi:schemaLocation="http://docbook.org/ns/docbook http://docbook.org/xml/5.0/rng/docbook.rng">
+  <info>
+    <title>${title}</title>
+    ${subtitle}
+    ${contributorsXml(document.contributors)}
+    ${pubidentifier}
+    ${date}
+    ${revhistory}
+    ${publisher}
+    ${legalnotice}
+    ${abstract}
+    ${keywords}
+    ${oorMetaXml(document)}
+  </info>
+  ${body}
+</article>`;
 }
