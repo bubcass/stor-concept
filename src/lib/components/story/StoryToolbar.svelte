@@ -193,9 +193,9 @@
       album: 'Stór',
       artwork: [
         {
-          src: assetUrl('/brand/inside-parliament-lockup.svg', artworkVersion),
-          sizes: '980x220',
-          type: 'image/svg+xml'
+          src: assetUrl('/brand/Stór.png', artworkVersion),
+          sizes: '1080x1350',
+          type: 'image/png'
         }
       ]
     });
