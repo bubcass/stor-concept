@@ -12,7 +12,9 @@ const config = {
       assets: 'build',
       fallback: undefined,
       precompress: false,
-      strict: true
+      // Allow the local-only publish endpoint to exist in dev without
+      // blocking static GitHub Pages builds, where that route is unavailable.
+      strict: false
     }),
     paths: {
       base
