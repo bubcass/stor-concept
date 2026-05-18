@@ -180,6 +180,7 @@
     let draftStatus = $state<string | null>(null);
     let draftPersistenceReady = false;
     let editorDraftSaveTimeout: number | null = null;
+    const DOCX_IMPORT_RELOAD_KEY = "stor-docx-import-reload-attempted";
 
     const stageItems = [
         { id: "start", label: "1. Start", summary: "Import or begin a draft" },
@@ -849,6 +850,9 @@
 
         try {
             const mammoth = await import("mammoth/mammoth.browser");
+            if (typeof window !== "undefined") {
+                window.sessionStorage.removeItem(DOCX_IMPORT_RELOAD_KEY);
+            }
             const arrayBuffer = await file.arrayBuffer();
             const result = await mammoth.convertToHtml(
                 { arrayBuffer },
@@ -951,6 +955,25 @@
             importMessage = `Imported ${file.name}. Review and adjust the metadata before exporting.`;
             openStage = "details";
         } catch (error) {
+            if (
+                typeof window !== "undefined" &&
+                error instanceof Error &&
+                error.message.includes("Failed to fetch dynamically imported module")
+            ) {
+                const alreadyRetried =
+                    window.sessionStorage.getItem(DOCX_IMPORT_RELOAD_KEY) ===
+                    "true";
+
+                if (!alreadyRetried) {
+                    window.sessionStorage.setItem(
+                        DOCX_IMPORT_RELOAD_KEY,
+                        "true",
+                    );
+                    window.location.reload();
+                    return;
+                }
+            }
+
             console.error(error);
             importError =
                 error instanceof Error ? error.message : String(error);
