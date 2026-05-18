@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-    <title>Stór | Oireachtas Research Repository</title>
+    <title>Stór | Independent Parliamentary Research</title>
     <meta
         name="description"
         content="SvelteKit static site prototype for a Stór research repository."

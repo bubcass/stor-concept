@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-  <title>Stór Pipeline Preview | Oireachtas Research Repository</title>
+  <title>Stór Pipeline Preview | Independent Parliamentary Research</title>
   <meta
     name="description"
     content="Preview canonical Stór documents backed by metadata and raw ProseMirror content."

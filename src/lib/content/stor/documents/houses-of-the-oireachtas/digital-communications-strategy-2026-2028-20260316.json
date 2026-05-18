@@ -11,20 +11,12 @@
   "dek": "This strategy will guide the work to create trusted, engaging and innovative digital experiences that make Parliament accessible, relatable and relevant to all audiences. The work is vital in reinforcing democratic accountability and transparency.",
   "eyebrow": "Houses of the Oireachtas Service",
   "abstract": "This strategy sets out how the Digital Communications Team will deliver cohesive, narrative-driven and accessible messaging that will engage people with their Parliament in meaningful ways.\nIt will evolve our communications on parliamentary updates and move towards planning storytelling in our digital outputs It moves digital output from primarily procedural updates to planned storytelling, using a newsroom style workflow with clear editorial pipelines and priorities paired with consistent brand standards.\nIt strengthens trust and transparency through robust accessibility, bilingual delivery as standard, and adoption of content integrity standards (e.g., C2PA) where appropriate.\nIt supports continued improvements to Oireachtas.ie.\nSuccess will be tracked through a small set of performance measures across reach, engagement, service quality, accessibility compliance and delivery efficiency, with regular reporting and review.",
-  "topics": [
-    "digital",
-    "strategy",
-    "corporate"
-  ],
+  "topics": ["digital", "strategy", "corporate"],
   "layout": "standard",
   "status": "published",
   "language": "en",
   "version": "1.0",
-  "keywords": [
-    "digital",
-    "strategy",
-    "corporate"
-  ],
+  "keywords": ["digital", "strategy", "corporate"],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
   "publishedDate": "2026-03-16",

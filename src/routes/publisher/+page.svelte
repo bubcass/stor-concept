@@ -1199,7 +1199,7 @@
 </script>
 
 <svelte:head>
-  <title>Stór Publisher | Oireachtas Research Repository</title>
+  <title>Stór Publisher | Independent Parliamentary Research</title>
   <meta
     name="description"
     content="Import Word documents, enrich them with Stór metadata, and export canonical metadata-wrapped ProseMirror JSON."

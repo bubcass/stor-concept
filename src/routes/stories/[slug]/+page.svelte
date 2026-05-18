@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-    <title>{story.title} | Stór | Oireachtas Research Repository</title>
+    <title>{story.title} | Stór | Independent Parliamentary Research</title>
     <meta name="description" content={plainTextFromHtml(story.dek)} />
 </svelte:head>
 

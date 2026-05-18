@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-    <title>{data.story.title} | Stór | Oireachtas Research Repository</title>
+    <title>{data.story.title} | Stór | Independent Parliamentary Research</title>
     <meta name="description" content={plainTextFromHtml(data.story.dek)} />
 </svelte:head>
 

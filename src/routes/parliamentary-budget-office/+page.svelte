@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>Parliamentary Budget Office | Stór | Oireachtas Research Repository</title>
+  <title>Parliamentary Budget Office | Stór | Independent Parliamentary Research</title>
   <meta name="description" content={section?.intro} />
 </svelte:head>
 

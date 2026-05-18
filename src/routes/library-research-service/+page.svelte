@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>Library &amp; Research Service | Stór | Oireachtas Research Repository</title>
+  <title>Library &amp; Research Service | Stór | Independent Parliamentary Research</title>
   <meta name="description" content={section?.intro} />
 </svelte:head>
 

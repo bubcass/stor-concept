@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>About | Stór | Oireachtas Research Repository</title>
+    <title>About | Stór | Independent Parliamentary Research</title>
     <meta name="description" content="About the Stór prototype." />
 </svelte:head>
 

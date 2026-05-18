@@ -69,7 +69,7 @@
 </script>
 
 <svelte:head>
-  <title>Search | Stór | Oireachtas Research Repository</title>
+  <title>Search | Stór | Independent Parliamentary Research</title>
   <meta
     name="description"
     content="Search Stór articles by title, author and core article metadata."
