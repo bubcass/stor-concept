@@ -5,6 +5,7 @@
     import { stories } from "$lib/content/stories";
     import { plainTextFromHtml } from "$lib/content/text";
     const isVideoHero = (src: string) => src.toLowerCase().endsWith(".mp4");
+    const hasHero = (src: string | undefined) => Boolean(src?.trim());
     let bookmarked = $state<Set<string>>(new Set());
 
     onMount(() => {
@@ -33,26 +34,31 @@
     <div class="archive-list">
         {#each stories as story}
             <article>
-                <a href="{base}/articles/{story.slug}/">
-                    {#if isVideoHero(story.hero.src)}
-                        <video
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            aria-hidden="true"
-                        >
-                            <source
+                <a
+                    href="{base}/articles/{story.slug}/"
+                    class:no-media={!hasHero(story.hero?.src)}
+                >
+                    {#if hasHero(story.hero?.src)}
+                        {#if isVideoHero(story.hero.src)}
+                            <video
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                                aria-hidden="true"
+                            >
+                                <source
+                                    src="{base}{story.hero.src}"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        {:else}
+                            <img
                                 src="{base}{story.hero.src}"
-                                type="video/mp4"
+                                alt=""
+                                loading="lazy"
                             />
-                        </video>
-                    {:else}
-                        <img
-                            src="{base}{story.hero.src}"
-                            alt=""
-                            loading="lazy"
-                        />
+                        {/if}
                     {/if}
                     <div>
                         <div class="story-context">
@@ -103,6 +109,10 @@
         grid-template-columns: minmax(12rem, 0.48fr) minmax(0, 1fr);
         padding: var(--space-5) 0;
         text-decoration: none;
+    }
+
+    article a.no-media {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     img,

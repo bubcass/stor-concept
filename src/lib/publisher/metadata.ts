@@ -65,10 +65,14 @@ export const TYPE_OPTIONS: Record<
   'library-research-service': [
     { value: 'article', label: 'Article' },
     { value: 'briefing', label: 'Briefing' },
+    { value: 'visual-data-analysis', label: 'Visual data analysis' },
+    { value: 'bill-digest', label: 'Bill digest' },
   ],
   'parliamentary-budget-office': [
     { value: 'article', label: 'Article' },
     { value: 'briefing', label: 'Briefing' },
+    { value: 'visual-data-analysis', label: 'Visual data analysis' },
+    { value: 'research-note', label: 'Research note' },
   ],
 };
 

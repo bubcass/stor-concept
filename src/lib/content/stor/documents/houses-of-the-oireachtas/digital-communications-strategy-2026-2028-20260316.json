@@ -4,19 +4,18 @@
   "type": "article",
   "destination": "houses-of-the-oireachtas",
   "featured": false,
-  "heroLayout": "contained",
   "showContents": true,
   "flourishWidth": "prose",
   "title": "Digital Communications Strategy 2026–2028",
-  "dek": "This strategy will guide the work to create trusted, engaging and innovative digital experiences that make Parliament accessible, relatable and relevant to all audiences. The work is vital in reinforcing democratic accountability and transparency.",
-  "eyebrow": "Houses of the Oireachtas Service",
+  "dek": "This strategy will guide the work to create trusted, engaging and innovative digital experiences that make Parliament accessible, relatable and relevant to all of its audiences. The work is vital in reinforcing democratic accountability and transparency.",
+  "eyebrow": "Strategy",
   "abstract": "This strategy sets out how the Digital Communications Team will deliver cohesive, narrative-driven and accessible messaging that will engage people with their Parliament in meaningful ways.\nIt will evolve our communications on parliamentary updates and move towards planning storytelling in our digital outputs It moves digital output from primarily procedural updates to planned storytelling, using a newsroom style workflow with clear editorial pipelines and priorities paired with consistent brand standards.\nIt strengthens trust and transparency through robust accessibility, bilingual delivery as standard, and adoption of content integrity standards (e.g., C2PA) where appropriate.\nIt supports continued improvements to Oireachtas.ie.\nSuccess will be tracked through a small set of performance measures across reach, engagement, service quality, accessibility compliance and delivery efficiency, with regular reporting and review.",
-  "topics": ["digital", "strategy", "corporate"],
+  "topics": ["digital", "communications", "strategy", "corporate"],
   "layout": "standard",
   "status": "published",
   "language": "en",
   "version": "1.0",
-  "keywords": ["digital", "strategy", "corporate"],
+  "keywords": ["digital", "communications", "strategy", "corporate"],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
   "publishedDate": "2026-03-16",
@@ -32,24 +31,21 @@
       "name": "Michelle Conville",
       "role": "contributor",
       "affiliation": "Communications",
-      "showAsAuthor": false
+      "showAsAuthor": false,
+      "profileRole": "Web manager"
     },
     {
-      "name": "Orla Donohoe",
+      "name": "Orla Donhoe",
       "role": "contributor",
       "affiliation": "Communications",
-      "showAsAuthor": false
+      "showAsAuthor": false,
+      "profileRole": "Social media manager"
     }
   ],
   "researcher": {
     "name": "Karin Whooley",
     "role": "Principal Officer",
     "organisation": "Communications"
-  },
-  "hero": {
-    "src": "/media/Leinster-House-gate.jpg",
-    "alt": "A front vista of Leinster House through the entrance gate looking in from the Kildare Street end",
-    "position": "left center"
   },
   "content": {
     "type": "doc",
@@ -63,126 +59,6 @@
           {
             "type": "text",
             "text": "Digital Communications Strategy 2026–2028"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 2
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Executive summary"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "This strategy sets out how the Digital Communications Team will deliver cohesive, narrative-driven and accessible messaging that will engage people with their Parliament in meaningful ways."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "It will evolve our communications on parliamentary updates and move towards planning storytelling in our digital outputs, using a newsroom style workflow with clear editorial pipelines and priorities paired with consistent brand standards."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "It strengthens trust and transparency through robust accessibility, bilingual delivery as standard, and adoption of content integrity standards (e.g., "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "link",
-                        "attrs": {
-                          "href": "https://www.w3.org/2023/09/pmwg-slides/CAI-C2PA.pdf",
-                          "target": "_blank",
-                          "rel": "noopener noreferrer nofollow",
-                          "class": null,
-                          "title": null
-                        }
-                      }
-                    ],
-                    "text": "C2PA"
-                  },
-                  {
-                    "type": "text",
-                    "text": ") where appropriate."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "It supports continued improvements to "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "italic"
-                      }
-                    ],
-                    "text": "Oireachtas.ie"
-                  },
-                  {
-                    "type": "text",
-                    "text": "."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Success will be tracked through a small set of performance measures across reach, engagement, service quality, accessibility compliance and delivery efficiency, with regular reporting and review."
-                  }
-                ]
-              }
-            ]
           }
         ]
       },

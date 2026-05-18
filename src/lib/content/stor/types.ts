@@ -6,7 +6,13 @@ export type StorDestination =
   | 'library-research-service'
   | 'parliamentary-budget-office';
 
-export type StorContentType = 'committee-report' | 'article' | 'briefing';
+export type StorContentType =
+  | 'committee-report'
+  | 'article'
+  | 'briefing'
+  | 'visual-data-analysis'
+  | 'research-note'
+  | 'bill-digest';
 
 export interface StorContributor {
   name: string;

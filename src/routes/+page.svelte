@@ -12,6 +12,7 @@
         featuredStory ? stories.filter((story) => story.slug !== featuredStory.slug) : [],
     );
     const isVideoHero = (src: string) => src.toLowerCase().endsWith(".mp4");
+    const hasHero = (src: string | undefined) => Boolean(src?.trim());
     let bookmarked = $state<Set<string>>(new Set());
 
     onMount(() => {
@@ -35,7 +36,10 @@
     {#if featuredStory}
         {@const featuredSection = getStorySection(featuredStory.section)}
         <article class="featured-story">
-            <a href="{base}/articles/{featuredStory.slug}/">
+            <a
+                href="{base}/articles/{featuredStory.slug}/"
+                class:no-media={!hasHero(featuredStory.hero?.src)}
+            >
                 <div class="featured-copy">
                     <div class="story-context">
                         <p>{featuredStory.eyebrow}</p>
@@ -62,19 +66,21 @@
                         <span>{featuredStory.readingTime}</span>
                     </small>
                 </div>
-                {#if isVideoHero(featuredStory.hero.src)}
-                    <video autoplay muted loop playsinline aria-hidden="true">
-                        <source
+                {#if hasHero(featuredStory.hero?.src)}
+                    {#if isVideoHero(featuredStory.hero.src)}
+                        <video autoplay muted loop playsinline aria-hidden="true">
+                            <source
+                                src="{base}{featuredStory.hero.src}"
+                                type="video/mp4"
+                            />
+                        </video>
+                    {:else}
+                        <img
                             src="{base}{featuredStory.hero.src}"
-                            type="video/mp4"
+                            alt=""
+                            loading="eager"
                         />
-                    </video>
-                {:else}
-                    <img
-                        src="{base}{featuredStory.hero.src}"
-                        alt=""
-                        loading="eager"
-                    />
+                    {/if}
                 {/if}
             </a>
         </article>
@@ -85,25 +91,27 @@
             {@const sectionMeta = getStorySection(story.section)}
             <article class="secondary-story">
                 <a href="{base}/articles/{story.slug}/">
-                    {#if isVideoHero(story.hero.src)}
-                        <video
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            aria-hidden="true"
-                        >
-                            <source
+                    {#if hasHero(story.hero?.src)}
+                        {#if isVideoHero(story.hero.src)}
+                            <video
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                                aria-hidden="true"
+                            >
+                                <source
+                                    src="{base}{story.hero.src}"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        {:else}
+                            <img
                                 src="{base}{story.hero.src}"
-                                type="video/mp4"
+                                alt=""
+                                loading="lazy"
                             />
-                        </video>
-                    {:else}
-                        <img
-                            src="{base}{story.hero.src}"
-                            alt=""
-                            loading="lazy"
-                        />
+                        {/if}
                     {/if}
                     <div class="secondary-copy">
                         <div class="story-context">
@@ -158,6 +166,10 @@
         grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
         padding-bottom: var(--space-7);
         text-decoration: none;
+    }
+
+    .featured-story a.no-media {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .featured-copy {
