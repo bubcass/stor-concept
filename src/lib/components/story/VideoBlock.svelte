@@ -27,53 +27,72 @@
   }
 </script>
 
-<figure class="video-block">
-  <video
-    use:autoplayWhileVisible={{ enabled: block.video.autoplay ?? true }}
-    autoplay={block.video.autoplay ?? true}
-    controls
-    controlslist="nodownload noremoteplayback"
-    disablepictureinpicture
-    disableremoteplayback
-    loop
-    muted
-    playsinline
-    preload="metadata"
-    poster={block.video.poster ? `${base}${block.video.poster}` : undefined}
-  >
-    <source src="{base}{block.video.src}" type="video/mp4" />
-    {#if block.video.captions}
-      <track
-        kind="captions"
-        label="English captions"
-        srclang="en"
-        src="{base}{block.video.captions}"
-        default
-      />
-    {/if}
-  </video>
-  <div class="video-actions">
-    <button type="button" class="video-action" onclick={shareVideo}>
-      Share video
-    </button>
-    {#if shareFeedback}
-      <span class="video-feedback" role="status">{shareFeedback}</span>
-    {/if}
-  </div>
-  {#if block.video.caption || block.video.credit}
-    <figcaption class="caption">
-      {block.video.caption}
-      {#if block.video.credit}
-        <span>{block.video.credit}</span>
+<section class="video-block story-flow" aria-label="Launch video">
+  <h2>Watch the launch</h2>
+
+  <figure class="video-figure">
+    <video
+      use:autoplayWhileVisible={{ enabled: block.video.autoplay ?? true }}
+      autoplay={block.video.autoplay ?? true}
+      controls
+      controlslist="nodownload noremoteplayback"
+      disablepictureinpicture
+      disableremoteplayback
+      loop
+      muted
+      playsinline
+      preload="metadata"
+      poster={block.video.poster ? `${base}${block.video.poster}` : undefined}
+    >
+      <source src="{base}{block.video.src}" type="video/mp4" />
+      {#if block.video.captions}
+        <track
+          kind="captions"
+          label="English captions"
+          srclang="en"
+          src="{base}{block.video.captions}"
+          default
+        />
       {/if}
-    </figcaption>
-  {/if}
-</figure>
+    </video>
+    <div class="video-actions">
+      <button type="button" class="video-action" onclick={shareVideo}>
+        Share video
+      </button>
+      {#if shareFeedback}
+        <span class="video-feedback" role="status">{shareFeedback}</span>
+      {/if}
+    </div>
+    {#if block.video.caption || block.video.credit}
+      <figcaption class="caption">
+        {block.video.caption}
+        {#if block.video.credit}
+          <span>{block.video.credit}</span>
+        {/if}
+      </figcaption>
+    {/if}
+  </figure>
+</section>
 
 <style>
   .video-block {
     margin: var(--block-space) auto;
     max-width: min(var(--wide), calc(100vw - (var(--gutter) * 2)));
+  }
+
+  h2 {
+    color: var(--color-accent-2);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-heading);
+    line-height: var(--line-height-heading);
+    margin: 0 0 var(--space-4);
+    scroll-margin-top: calc(var(--site-header-height, 3.25rem) + var(--space-5));
+    text-wrap: pretty;
+  }
+
+  .video-figure {
+    margin: 0;
   }
 
   video {

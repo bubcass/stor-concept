@@ -10,11 +10,19 @@
   let {
     section,
     stories,
-    enableSearch = false
+    enableSearch = false,
+    articlePathPrefix = `${base}/articles`,
+    showHeader = true,
+    searchLabel = 'Search articles',
+    searchAction
   }: {
     section: StorySectionMeta;
     stories: Story[];
     enableSearch?: boolean;
+    articlePathPrefix?: string;
+    showHeader?: boolean;
+    searchLabel?: string;
+    searchAction?: string;
   } = $props();
 
   let featuredStory = $derived(stories.find((story) => story.featured) ?? stories[0]);
@@ -34,22 +42,28 @@
   class="page-shell section-page"
   style={section.accentColor ? `--section-accent: ${section.accentColor};` : undefined}
 >
-  <header>
-    {#if section.eyebrow}
-      <p class="eyebrow">{section.eyebrow}</p>
-    {/if}
-    <h1>{section.title}</h1>
-    <p class="lede">{section.intro}</p>
-    {#if enableSearch}
-      <div class="search-wrap">
-        <StorySearch section={section.slug} />
-      </div>
-    {/if}
-  </header>
+  {#if showHeader}
+    <header>
+      {#if section.eyebrow}
+        <p class="eyebrow">{section.eyebrow}</p>
+      {/if}
+      <h1>{section.title}</h1>
+      <p class="lede">{section.intro}</p>
+      {#if enableSearch}
+        <div class="search-wrap">
+          <StorySearch section={section.slug} label={searchLabel} action={searchAction} />
+        </div>
+      {/if}
+    </header>
+  {:else if enableSearch}
+    <div class="search-wrap search-wrap--standalone">
+      <StorySearch section={section.slug} label={searchLabel} action={searchAction} />
+    </div>
+  {/if}
 
   {#if featuredStory}
     <article class="featured-story">
-      <a href="{base}/articles/{featuredStory.slug}/">
+      <a href="{articlePathPrefix}/{featuredStory.slug}/">
         <div class="featured-copy">
             <div class="story-context">
               <p>{featuredStory.eyebrow}</p>
@@ -78,7 +92,7 @@
     <div class="secondary-grid">
       {#each secondaryStories as story}
         <article class="secondary-story">
-          <a href="{base}/articles/{story.slug}/">
+          <a href="{articlePathPrefix}/{story.slug}/">
             {#if hasHero(story.hero.src)}
               {#if isVideoHero(story.hero.src)}
                 <video autoplay muted loop playsinline aria-hidden="true">
@@ -124,6 +138,13 @@
   .search-wrap {
     margin-top: var(--space-5);
     max-width: 52rem;
+  }
+
+  .search-wrap--standalone {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-line) 55%, transparent);
+    margin-bottom: clamp(var(--space-6), 5vw, var(--space-8));
+    max-width: min(100%, 60rem);
+    padding-bottom: clamp(var(--space-5), 4vw, var(--space-6));
   }
 
   h1 {
