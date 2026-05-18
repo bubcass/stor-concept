@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from "$app/paths";
     import { onMount } from "svelte";
     import { Editor } from "@tiptap/core";
     import StarterKit from "@tiptap/starter-kit";
@@ -28,6 +29,7 @@
     import { suggestedStorDocumentPath } from "$lib/publisher/paths";
     import type {
         ProseMirrorDocument,
+        ProseMirrorNode,
         StorContributor,
         StorDestination,
         StorDocument,
@@ -473,6 +475,42 @@
         };
     }
 
+    function resolveInspectorAssetSrc(value: unknown) {
+        const src = String(value ?? "").trim();
+        if (!src) return "";
+        if (/^(data:|https?:|blob:)/i.test(src)) return src;
+        return `${base}${src}`;
+    }
+
+    function embeddedImageStats(document: ProseMirrorDocument | null) {
+        if (!document) {
+            return { count: 0, totalChars: 0 };
+        }
+
+        let count = 0;
+        let totalChars = 0;
+
+        const visit = (node: ProseMirrorNode) => {
+            if (node.type === "imageBlock") {
+                const src = String(node.attrs?.src ?? "").trim();
+                if (src.startsWith("data:image/")) {
+                    count += 1;
+                    totalChars += src.length;
+                }
+            }
+
+            for (const child of node.content ?? []) {
+                visit(child);
+            }
+        };
+
+        for (const node of document.content ?? []) {
+            visit(node);
+        }
+
+        return { count, totalChars };
+    }
+
     function readPublisherDraft() {
         if (typeof window === "undefined") return null;
 
@@ -534,8 +572,21 @@
         };
     }
 
+    function draftContainsEmbeddedImages(draft: PublisherDraft | null) {
+        if (!draft?.editorDocument) return false;
+        return embeddedImageStats(draft.editorDocument).count > 0;
+    }
+
     function persistPublisherDraft() {
         if (!draftPersistenceReady || !editorDocument) return;
+
+        const imageStats = embeddedImageStats(editorDocument);
+        if (imageStats.count > 0) {
+            hasLocalDraft = false;
+            draftStatus =
+                "Draft autosave is paused while imported DOCX images remain embedded. Use Publish to materialise them as media files.";
+            return;
+        }
 
         const payload = buildPublisherDraftPayload();
         if (!payload) return;
@@ -711,6 +762,9 @@
 
     let renderedPreview = $derived.by(() => {
         if (!canonicalDocument) return null;
+        if (embeddedImageStats(canonicalDocument.content).count > 0) {
+            return null;
+        }
 
         try {
             const previewDocument: StorDocument =
@@ -740,6 +794,9 @@
 
     let canonicalXml = $derived.by(() => {
         if (!canonicalDocument) return null;
+        if (embeddedImageStats(canonicalDocument.content).count > 0) {
+            return null;
+        }
 
         try {
             return storDocumentToXml(canonicalDocument);
@@ -747,6 +804,11 @@
             return null;
         }
     });
+
+    let embeddedImportImages = $derived.by(() =>
+        embeddedImageStats(editorDocument),
+    );
+    let hasEmbeddedImportImages = $derived(embeddedImportImages.count > 0);
 
     let activeStage = $derived(
         stageItems.find((stage) => stage.id === openStage) ?? stageItems[0],
@@ -1027,7 +1089,20 @@
 
             if (!response.ok) return;
 
-            importMessage = `Published locally to ${suggestedPath}.`;
+            const payload = (await response.json()) as {
+                ok?: boolean;
+                path?: string;
+                document?: StorDocument;
+            };
+
+            if (payload.document?.content && editor) {
+                editor.commands.setContent(payload.document.content);
+                editorDocument = editor.getJSON() as ProseMirrorDocument;
+            }
+
+            importMessage = hasEmbeddedImportImages
+                ? `Converted imported images into local media files and published the document to ${suggestedPath}.`
+                : `Published locally to ${suggestedPath}.`;
             importError = null;
         } catch {
             // Silent no-op for static/GitHub Pages environments where no server route exists.
@@ -1066,7 +1141,7 @@
                     alt: "Describe the image",
                     caption: "",
                     credit: "",
-                    layout: "wide",
+                    layout: "inline",
                 },
             })
             .run();
@@ -1198,6 +1273,13 @@
 
         const savedDraft = readPublisherDraft();
         if (savedDraft) {
+            if (draftContainsEmbeddedImages(savedDraft)) {
+                clearPublisherDraft();
+                hasLocalDraft = false;
+                importMessage =
+                    "A previous local draft with embedded DOCX images was cleared to keep the publisher responsive.";
+                draftStatus = null;
+            } else {
             hasLocalDraft = true;
 
             metadata = { ...defaultState, ...(savedDraft.metadata ?? {}) };
@@ -1217,6 +1299,7 @@
             editorDocument = instance.getJSON() as ProseMirrorDocument;
             importMessage = `Restored local draft from ${formatDraftTimestamp(savedDraft.savedAt)}.`;
             draftStatus = `Draft saved locally on ${formatDraftTimestamp(savedDraft.savedAt)}.`;
+            }
         }
 
         draftPersistenceReady = true;
@@ -1408,9 +1491,16 @@
                 <div class="status-card">
                     <strong>Content</strong>
                     <span
-                        >{hasBodyContent(editorDocument)
-                            ? "Editor content available"
-                            : "No body content yet"}</span
+                        >{#if hasEmbeddedImportImages}
+                            {embeddedImportImages.count} imported image{embeddedImportImages.count ===
+                            1
+                                ? ""
+                                : "s"} pending publish
+                        {:else if hasBodyContent(editorDocument)}
+                            Editor content available
+                        {:else}
+                            No body content yet
+                        {/if}</span
                     >
                 </div>
                 <div class="status-card">
@@ -1467,21 +1557,25 @@
                         <button
                             type="button"
                             onclick={copyProseMirrorJson}
-                            disabled={!editorDocument}
+                            disabled={!editorDocument ||
+                                hasEmbeddedImportImages}
                         >
                             Copy ProseMirror JSON
                         </button>
                         <button
                             type="button"
                             onclick={downloadCanonicalXml}
-                            disabled={!canonicalXml || !canonicalDocument}
+                            disabled={!canonicalXml ||
+                                !canonicalDocument ||
+                                hasEmbeddedImportImages}
                         >
                             Download XML
                         </button>
                         <button
                             type="button"
                             onclick={downloadCanonicalJson}
-                            disabled={!canonicalDocument}
+                            disabled={!canonicalDocument ||
+                                hasEmbeddedImportImages}
                         >
                             Download JSON
                         </button>
@@ -1493,7 +1587,9 @@
                                 !suggestedPath ||
                                 !validation.ok}
                         >
-                            Publish
+                            {hasEmbeddedImportImages
+                                ? "Convert images and publish"
+                                : "Publish"}
                         </button>
                     </div>
                 </div>
@@ -2296,6 +2392,28 @@
                             <aside class="inspector-panel">
                                 {#if selectedStructuredBlock?.type === "imageBlock"}
                                     <h3>Image block</h3>
+                                    <div class="inspector-preview inspector-preview--image">
+                                        <div class="inspector-preview__media">
+                                            <img
+                                                src={resolveInspectorAssetSrc(
+                                                    selectedStructuredBlock.attrs
+                                                        .src,
+                                                )}
+                                                alt={String(
+                                                    selectedStructuredBlock.attrs
+                                                        .alt ?? "Selected image",
+                                                )}
+                                            />
+                                        </div>
+                                        <div class="inspector-preview__copy">
+                                            <strong>Currently selected image</strong>
+                                            <span>
+                                                Changes here apply to the image
+                                                block currently selected in the
+                                                editor.
+                                            </span>
+                                        </div>
+                                    </div>
                                     <label>
                                         <span>Image path</span>
                                         <input
@@ -2513,7 +2631,43 @@
                     <details class="export-preview" open>
                         <summary>Live preview</summary>
                         <div class="preview-frame">
-                            {#if renderedPreview}
+                            {#if hasEmbeddedImportImages}
+                                <div class="preview-placeholder">
+                                    <h2>Preview paused</h2>
+                                    <p>
+                                        This document contains
+                                        {embeddedImportImages.count} imported
+                                        DOCX image{embeddedImportImages.count ===
+                                        1
+                                            ? ""
+                                            : "s"} still embedded for editing.
+                                    </p>
+                                    <p>
+                                        Convert those imported images into local
+                                        media files first, then this preview and
+                                        the JSON/XML exports will unlock
+                                        automatically.
+                                    </p>
+                                    <div class="preview-placeholder__actions">
+                                        <button
+                                            type="button"
+                                            class="publish-button"
+                                            onclick={publishCanonicalJson}
+                                            disabled={!canonicalDocument ||
+                                                !suggestedPath ||
+                                                !validation.ok}
+                                        >
+                                            Convert images and continue
+                                        </button>
+                                        {#if suggestedPath}
+                                            <span>
+                                                Output:
+                                                <code>{suggestedPath}</code>
+                                            </span>
+                                        {/if}
+                                    </div>
+                                </div>
+                            {:else if renderedPreview}
                                 <StoryPage story={renderedPreview.story} />
                             {:else}
                                 <div class="preview-placeholder">
@@ -2534,23 +2688,52 @@
                         </p>
                     {/if}
 
+                    {#if embeddedImportImages.count > 0}
+                        <p class="path-hint">
+                            This document still contains {embeddedImportImages.count}
+                            imported DOCX image{embeddedImportImages.count === 1
+                                ? ""
+                                : "s"} stored inline for editing. Local
+                            <strong>Publish</strong> will write them out to
+                            <code>/media/imported/...</code>.
+                        </p>
+                    {/if}
+
                     {#if canonicalDocument}
                         <details class="export-preview">
                             <summary>Canonical JSON</summary>
-                            <pre>{JSON.stringify(
-                                    canonicalDocument,
-                                    null,
-                                    2,
-                                )}</pre>
+                            {#if embeddedImportImages.count > 0}
+                                <p class="export-preview__note">
+                                    Raw JSON preview is hidden while imported
+                                    DOCX images remain embedded, to keep the
+                                    publisher responsive.
+                                </p>
+                            {:else}
+                                <pre>{JSON.stringify(
+                                        canonicalDocument,
+                                        null,
+                                        2,
+                                    )}</pre>
+                            {/if}
                         </details>
                     {/if}
 
-                    {#if canonicalXml}
-                        <details class="export-preview">
-                            <summary>Canonical XML</summary>
+                    <details class="export-preview">
+                        <summary>Canonical XML</summary>
+                        {#if embeddedImportImages.count > 0}
+                            <p class="export-preview__note">
+                                XML preview is hidden while imported DOCX images
+                                remain embedded. Publish locally first to
+                                materialise them as media files.
+                            </p>
+                        {:else if canonicalXml}
                             <pre>{canonicalXml}</pre>
-                        </details>
-                    {/if}
+                        {:else}
+                            <p class="export-preview__note">
+                                XML is not available for the current document.
+                            </p>
+                        {/if}
+                    </details>
                 </div>
             {/if}
         </section>
@@ -3117,6 +3300,7 @@
     .editor-shell {
         display: grid;
         gap: 0.7rem;
+        min-height: 0;
     }
 
     .editor-menu {
@@ -3128,6 +3312,9 @@
         border: 1px solid #d7d7d2;
         border-radius: 4px;
         background: #f2f2ef;
+        position: sticky;
+        top: 0;
+        z-index: 2;
     }
 
     .editor-menu__label {
@@ -3146,6 +3333,7 @@
 
     .editor-stage {
         min-height: 0;
+        max-height: calc(100vh - 2rem);
         border: 1px solid #d7d7d2;
         border-radius: 4px;
         background: #fffdfa;
@@ -3165,12 +3353,16 @@
         border: 1px solid #d7d7d2;
         border-radius: 4px;
         background: #f7f7f4;
+        max-height: calc(100vh - 2rem);
+        overflow: auto;
     }
 
     .editor-sidebars {
         display: grid;
         gap: 0.85rem;
         align-content: start;
+        position: sticky;
+        top: 1rem;
     }
 
     .inspector-panel h3,
@@ -3181,6 +3373,46 @@
     .inspector-panel p {
         margin: 0;
         color: #555555;
+        line-height: 1.45;
+    }
+
+    .inspector-preview {
+        display: grid;
+        gap: 0.7rem;
+        padding: 0.75rem;
+        border: 1px solid #d7d7d2;
+        border-radius: 4px;
+        background: #fcfcfa;
+    }
+
+    .inspector-preview__media {
+        border: 1px solid #d7d7d2;
+        border-radius: 4px;
+        overflow: hidden;
+        background: #ffffff;
+    }
+
+    .inspector-preview__media img {
+        display: block;
+        width: 100%;
+        max-height: 14rem;
+        object-fit: contain;
+        background: #ffffff;
+    }
+
+    .inspector-preview__copy {
+        display: grid;
+        gap: 0.2rem;
+    }
+
+    .inspector-preview__copy strong {
+        font-size: 0.92rem;
+    }
+
+    .inspector-preview__copy span {
+        color: #555555;
+        font-size: 0.88rem;
+        font-weight: 400;
         line-height: 1.45;
     }
 
@@ -3274,6 +3506,14 @@
         background: #fafaf8;
     }
 
+    .export-preview__note {
+        margin: 0;
+        padding: 0.95rem;
+        color: #555555;
+        line-height: 1.5;
+        background: #fafaf8;
+    }
+
     .preview-frame {
         background: #ffffff;
     }
@@ -3284,6 +3524,30 @@
         padding: 2rem;
         text-align: center;
         color: #4c5967;
+    }
+
+    .preview-placeholder__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.85rem;
+        margin-top: 1.4rem;
+    }
+
+    .preview-placeholder__actions span {
+        color: #57534e;
+        font-size: 0.92rem;
+        line-height: 1.45;
+    }
+
+    .preview-placeholder__actions code {
+        display: inline-block;
+        margin-left: 0.35rem;
+        padding: 0.1rem 0.3rem;
+        background: #efefec;
+        border: 1px solid #d7d7d2;
+        border-radius: 4px;
+        font-size: 0.85rem;
     }
 
     :global(.publisher-editor__content) {
@@ -3304,6 +3568,13 @@
 
     :global(.publisher-editor__content p) {
         margin: 0 0 1.05rem;
+    }
+
+    :global(.publisher-editor__content .ProseMirror-selectednode) {
+        outline: 3px solid #8b6b1f;
+        outline-offset: 4px;
+        border-radius: 4px;
+        background: rgba(139, 107, 31, 0.04);
     }
 
     :global(.publisher-editor__content h1),
@@ -3367,6 +3638,16 @@
         .workflow-grid,
         .editor-layout {
             grid-template-columns: 1fr;
+        }
+
+        .editor-sidebars {
+            position: static;
+            top: auto;
+        }
+
+        .editor-stage,
+        .inspector-panel {
+            max-height: none;
         }
 
         .presentation-grid,

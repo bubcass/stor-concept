@@ -90,7 +90,10 @@
         {#each secondaryStories as story}
             {@const sectionMeta = getStorySection(story.section)}
             <article class="secondary-story">
-                <a href="{base}/articles/{story.slug}/">
+                <a
+                    href="{base}/articles/{story.slug}/"
+                    class:no-media={!hasHero(story.hero?.src)}
+                >
                     {#if hasHero(story.hero?.src)}
                         {#if isVideoHero(story.hero.src)}
                             <video
@@ -289,6 +292,12 @@
         text-decoration: none;
     }
 
+    .secondary-story a.no-media {
+        border-top: 1px solid color-mix(in srgb, var(--color-line) 55%, transparent);
+        padding-top: var(--space-5);
+        grid-column: 1 / -1;
+    }
+
     .secondary-story img,
     .secondary-story video {
         aspect-ratio: 4 / 3;
@@ -299,6 +308,14 @@
 
     .secondary-copy {
         max-width: var(--measure-card);
+    }
+
+    .secondary-story a.no-media .secondary-copy {
+        max-width: min(46rem, 100%);
+    }
+
+    .secondary-story a.no-media .headline-row {
+        margin-bottom: var(--space-3);
     }
 
     .secondary-story h3 {

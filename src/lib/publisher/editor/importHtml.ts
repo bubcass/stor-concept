@@ -2,6 +2,37 @@ function encodeHtmlAttribute(value: string) {
   return encodeURIComponent(value);
 }
 
+function normalizeImageElement(image: HTMLImageElement, document: Document) {
+  const storImage = document.createElement('stor-image');
+  storImage.setAttribute('data-src', image.getAttribute('src') || '');
+  storImage.setAttribute(
+    'data-alt',
+    image.getAttribute('alt') || image.getAttribute('title') || 'Imported DOCX image',
+  );
+
+  return storImage;
+}
+
+function paragraphContainsOnlyImage(paragraph: HTMLParagraphElement) {
+  const meaningfulNodes = Array.from(paragraph.childNodes).filter((node) => {
+    if (node.nodeType === paragraph.ownerDocument.TEXT_NODE) {
+      return Boolean(node.textContent?.trim());
+    }
+
+    if (node.nodeType !== paragraph.ownerDocument.ELEMENT_NODE) {
+      return false;
+    }
+
+    const element = node as HTMLElement;
+    return element.tagName.toLowerCase() !== 'br';
+  });
+
+  return (
+    meaningfulNodes.length === 1 &&
+    meaningfulNodes[0] instanceof HTMLImageElement
+  );
+}
+
 function normalizeTableHtml(tableHtml: string) {
   const document = new DOMParser().parseFromString(tableHtml, 'text/html');
   const table = document.querySelector('table');
@@ -67,8 +98,31 @@ function normalizeTableHtml(tableHtml: string) {
 }
 
 export function transformImportedHtml(html: string) {
-  return html.replace(/<table[\s\S]*?<\/table>/gi, (tableHtml) => {
-    const encoded = encodeHtmlAttribute(normalizeTableHtml(tableHtml));
-    return `<stor-table data-html="${encoded}"></stor-table>`;
-  });
+  const document = new DOMParser().parseFromString(html, 'text/html');
+
+  for (const table of Array.from(document.querySelectorAll('table'))) {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = `<stor-table data-html="${encodeHtmlAttribute(
+      normalizeTableHtml(table.outerHTML),
+    )}"></stor-table>`;
+    const storTable = wrapper.firstElementChild;
+    if (storTable) {
+      table.replaceWith(storTable);
+    }
+  }
+
+  for (const paragraph of Array.from(document.querySelectorAll('p'))) {
+    if (!paragraphContainsOnlyImage(paragraph)) continue;
+
+    const image = paragraph.querySelector('img');
+    if (!image) continue;
+
+    paragraph.replaceWith(normalizeImageElement(image, document));
+  }
+
+  for (const image of Array.from(document.querySelectorAll('img'))) {
+    image.replaceWith(normalizeImageElement(image, document));
+  }
+
+  return document.body.innerHTML;
 }

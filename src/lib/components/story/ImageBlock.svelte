@@ -4,7 +4,18 @@
 
   let { block, headingId }: { block: ImageBlock; headingId?: string } = $props();
   let layout = $derived(block.layout ?? 'inline');
-  let isSvg = $derived(block.image.src.toLowerCase().endsWith('.svg'));
+  let imageSrc = $derived.by(() => {
+    const src = block.image.src ?? '';
+    if (/^(data:|https?:|blob:)/i.test(src)) {
+      return src;
+    }
+
+    return `${base}${src}`;
+  });
+  let isSvg = $derived(
+    block.image.src.toLowerCase().endsWith('.svg') ||
+      block.image.src.toLowerCase().startsWith('data:image/svg+xml'),
+  );
 </script>
 
 <section class="image-block story-flow" aria-label={block.heading ?? undefined}>
@@ -13,7 +24,7 @@
   {/if}
 
   <figure class="image-figure {layout}">
-    <img class:svg-image={isSvg} src="{base}{block.image.src}" alt={block.image.alt} loading="lazy" />
+    <img class:svg-image={isSvg} src={imageSrc} alt={block.image.alt} loading="lazy" />
     {#if block.image.caption || block.image.credit}
       <figcaption class="caption">
         {block.image.caption}
@@ -56,17 +67,10 @@
   img {
     background: var(--color-soft);
     border: 1px solid var(--color-line);
-    object-fit: cover;
+    display: block;
+    height: auto;
+    object-fit: contain;
     width: 100%;
-  }
-
-  .wide img,
-  .full img {
-    aspect-ratio: 16 / 9;
-  }
-
-  .inline img {
-    aspect-ratio: 4 / 3;
   }
 
   .portrait img {
@@ -98,11 +102,6 @@
     .wide {
       max-width: none;
       width: 100%;
-    }
-
-    .wide img,
-    .full img {
-      aspect-ratio: 4 / 3;
     }
   }
 </style>
