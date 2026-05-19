@@ -8,23 +8,15 @@
   "showContents": true,
   "flourishWidth": "prose",
   "title": "Report on Adult Safeguarding",
-  "dek": "The Department of Health has not finished drafting the general scheme of the proposed safeguarding Bill, despite it being on the Government's legislative programme since Spring 2025. The delay cannot be accepted any longer because continued inaction will inevitably expose more adults to the risk of abuse and neglect.",
+  "dek": "The Department of Health has not finished drafting the general scheme of the proposed safeguarding Bill. Continued inaction will inevitably expose more adults to the risk of abuse and neglect.",
   "eyebrow": "Committee on Health",
   "committeeName": "Committee on Health",
-  "topics": [
-    "adult",
-    "safeguarding",
-    "legislation"
-  ],
+  "topics": ["adult", "safeguarding", "legislation"],
   "layout": "standard",
   "status": "published",
   "language": "en",
   "version": "1.0",
-  "keywords": [
-    "adult",
-    "safeguarding",
-    "legislation"
-  ],
+  "keywords": ["adult", "safeguarding", "legislation"],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
   "publishedDate": "2026-05-19",
