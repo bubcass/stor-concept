@@ -6,7 +6,6 @@
   "featured": false,
   "showContents": true,
   "flourishWidth": "prose",
-  "heroLayout": "contained",
   "title": "Digital Communications Strategy 2026–2028",
   "dek": "This strategy will guide the work to create trusted, engaging and innovative digital experiences that make Parliament accessible, relatable and relevant to all of its audiences. The work is vital in reinforcing democratic accountability and transparency.",
   "eyebrow": "Strategy",
@@ -47,11 +46,6 @@
     "name": "Karin Whooley",
     "role": "Principal Officer",
     "organisation": "Communications"
-  },
-  "hero": {
-    "src": "/media/Leinster-House-gate.jpg",
-    "alt": "Leinster House gate",
-    "position": "left center"
   },
   "content": {
     "type": "doc",

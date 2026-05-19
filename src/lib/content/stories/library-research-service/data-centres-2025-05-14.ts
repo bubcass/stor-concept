@@ -7,7 +7,7 @@ export const researchBriefing: Story = {
   heroLayout: "split",
   showContents: true,
   flourishWidth: "prose",
-  eyebrow: "Research Matters",
+  eyebrow: "Series | Research Matters",
   title: "The future of data centres in Ireland",
   dek: "Ireland is a key hub for data centres and although technology multinationals bring large corporation tax takings, the growing energy needs of data centres poses a challenge for the country's climate ambitions.",
   byline: "Kate Walsh",

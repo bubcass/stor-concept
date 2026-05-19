@@ -6,7 +6,7 @@ export const researchBriefing: Story = {
   heroLayout: "immersive",
   showContents: true,
   flourishWidth: "prose",
-  eyebrow: "Research Matters",
+  eyebrow: "Series | Research Matters",
   title: "Tackling homelessness",
   dek: "Homelessness is one of the most challenging issues facing policy makers. The Housing First approach as implemented in Finland shows a possible path to improvement.",
   byline: "Eoin McLoughlin",

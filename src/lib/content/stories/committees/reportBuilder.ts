@@ -263,6 +263,12 @@ function findHeadingIndex(nodes: CommitteeReportNode[], candidates: string[]) {
   );
 }
 
+function firstIndexAfter(start: number, candidates: number[]) {
+  const eligible = candidates.filter((index) => index >= 0 && index > start);
+  if (!eligible.length) return undefined;
+  return Math.min(...eligible);
+}
+
 function renderRecommendationItems(items: { body: string[]; nested: string[] }[]) {
   return `<ol>${items
     .map(({ body, nested }) => {
@@ -523,23 +529,14 @@ function buildReportBlocks(
   );
 
   const mainStart = startIndex >= 0 ? startIndex : 0;
-  const mainEnd =
-    appendixIndex >= 0
-      ? appendixIndex
-      : relatedIndex >= 0
-        ? relatedIndex
-        : undefined;
+  const mainEnd = firstIndexAfter(mainStart, [appendixIndex, relatedIndex]);
 
   const mainNodes = nodes.slice(mainStart, mainEnd);
   const appendixNodes =
-    appendixIndex >= 0
+    appendixIndex >= 0 && appendixIndex > mainStart
       ? nodes.slice(
           appendixIndex,
-          relatedIndex >= 0
-            ? relatedIndex
-            : membershipIndex >= 0
-              ? membershipIndex
-              : undefined,
+          firstIndexAfter(appendixIndex, [relatedIndex, membershipIndex]),
         )
       : [];
   const membershipNodes =

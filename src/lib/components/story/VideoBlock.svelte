@@ -6,6 +6,32 @@
 
   let { block }: { block: VideoBlock } = $props();
   let shareFeedback = $state('');
+  let videoSrc = $derived.by(() => {
+    const src = block.video.src ?? '';
+    if (/^(https?:|data:|blob:)/i.test(src)) {
+      return src;
+    }
+
+    return `${base}${src}`;
+  });
+  let posterSrc = $derived.by(() => {
+    const poster = block.video.poster;
+    if (!poster) return undefined;
+    if (/^(https?:|data:|blob:)/i.test(poster)) {
+      return poster;
+    }
+
+    return `${base}${poster}`;
+  });
+  let captionsSrc = $derived.by(() => {
+    const captions = block.video.captions;
+    if (!captions) return undefined;
+    if (/^(https?:|data:|blob:)/i.test(captions)) {
+      return captions;
+    }
+
+    return `${base}${captions}`;
+  });
 
   function clearFeedbackSoon() {
     window.setTimeout(() => {
@@ -42,15 +68,15 @@
       muted
       playsinline
       preload="metadata"
-      poster={block.video.poster ? `${base}${block.video.poster}` : undefined}
+      poster={posterSrc}
     >
-      <source src="{base}{block.video.src}" type="video/mp4" />
-      {#if block.video.captions}
+      <source src={videoSrc} type="video/mp4" />
+      {#if captionsSrc}
         <track
           kind="captions"
           label="English captions"
           srclang="en"
-          src="{base}{block.video.captions}"
+          src={captionsSrc}
           default
         />
       {/if}
