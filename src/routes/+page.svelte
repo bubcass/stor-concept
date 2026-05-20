@@ -7,13 +7,15 @@
     import { getStorySection, stories } from "$lib/content/stories";
     import { plainTextFromHtml } from "$lib/content/text";
 
-    const featuredStory = $derived(stories.find((story) => story.featured) ?? stories[0]);
-    const secondaryStories = $derived(
-        featuredStory ? stories.filter((story) => story.slug !== featuredStory.slug) : [],
-    );
-    const isVideoHero = (src: string) => src.toLowerCase().endsWith(".mp4");
-    const hasHero = (src: string | undefined) => Boolean(src?.trim());
-    let bookmarked = $state<Set<string>>(new Set());
+	const featuredStory = $derived(stories.find((story) => story.featured) ?? stories[0]);
+	const secondaryStories = $derived(
+		featuredStory ? stories.filter((story) => story.slug !== featuredStory.slug) : [],
+	);
+	const isVideoHero = (src: string) => src.toLowerCase().endsWith(".mp4");
+	const hasHero = (src: string | undefined) => Boolean(src?.trim());
+	const showSecondaryMedia = (index: number, story: Story) =>
+		index < 6 && hasHero(story.hero?.src);
+	let bookmarked = $state<Set<string>>(new Set());
 
     onMount(() => {
         bookmarked = new Set(readBookmarks());
@@ -87,16 +89,17 @@
     {/if}
 
     <div class="secondary-grid">
-        {#each secondaryStories as story}
-            {@const sectionMeta = getStorySection(story.section)}
-            <article class="secondary-story">
-                <a
-                    href="{base}/articles/{story.slug}/"
-                    class:no-media={!hasHero(story.hero?.src)}
-                >
-                    {#if hasHero(story.hero?.src)}
-                        {#if isVideoHero(story.hero.src)}
-                            <video
+		{#each secondaryStories as story, index}
+			{@const sectionMeta = getStorySection(story.section)}
+			{@const showsMedia = showSecondaryMedia(index, story)}
+			<article class="secondary-story">
+				<a
+					href="{base}/articles/{story.slug}/"
+					class:no-media={!showsMedia}
+				>
+					{#if showsMedia}
+						{#if isVideoHero(story.hero.src)}
+							<video
                                 autoplay
                                 muted
                                 loop

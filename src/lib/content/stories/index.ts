@@ -14,7 +14,7 @@ export const storySections: StorySectionMeta[] = [
   {
     slug: "committees",
     title: "Committees",
-    intro: "Track committee publications and research outputs.",
+    intro: "Find committee reports and research.",
   },
   {
     slug: "houses-of-the-oireachtas",
@@ -57,9 +57,7 @@ const mergedStories = [...storyList, ...storStories];
 
 export const stories: Story[] = Array.from(
   new Map(mergedStories.map((story) => [story.slug, story])).values(),
-).sort(
-  (a, b) => storyDateValue(b) - storyDateValue(a),
-);
+).sort((a, b) => storyDateValue(b) - storyDateValue(a));
 
 export function getStory(slug: string) {
   return stories.find((story) => story.slug === slug);

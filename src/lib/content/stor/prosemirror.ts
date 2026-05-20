@@ -90,6 +90,31 @@ export function renderList(node: ProseMirrorNode): string {
   return `<${tag}>${items.join('')}</${tag}>`;
 }
 
+function isOrderedListHtml(value: string) {
+  return /^\s*<ol>/i.test(value) && /<\/ol>\s*$/i.test(value);
+}
+
+function mergeOrderedListHtml(previous: string, current: string) {
+  if (!isOrderedListHtml(previous) || !isOrderedListHtml(current)) {
+    return null;
+  }
+
+  const previousItems = previous.replace(/^\s*<ol>/i, '').replace(/<\/ol>\s*$/i, '');
+  const currentItems = current.replace(/^\s*<ol>/i, '').replace(/<\/ol>\s*$/i, '');
+
+  return `<ol>${previousItems}${currentItems}</ol>`;
+}
+
+function appendParagraphToLastListItem(listHtml: string, paragraphHtml: string) {
+  if (!isOrderedListHtml(listHtml)) return null;
+
+  return listHtml.replace(/<\/li>(?![\s\S]*<\/li>)/i, `${paragraphHtml}</li>`);
+}
+
+function endsWithSentencePunctuation(value: string) {
+  return /[.!?;:]$/.test(stripHtml(value));
+}
+
 export interface CommitteeReportNode {
   type: 'heading' | 'paragraph' | 'flourish' | 'image' | 'table';
   level?: number;
@@ -198,6 +223,19 @@ export function proseMirrorToCommitteeNodes(
         continue;
       }
 
+      const previous = nodes.at(-1);
+      if (
+        previous?.type === 'paragraph' &&
+        isOrderedListHtml(previous.text) &&
+        !endsWithSentencePunctuation(previous.text)
+      ) {
+        const merged = appendParagraphToLastListItem(previous.text, text);
+        if (merged) {
+          previous.text = merged;
+          continue;
+        }
+      }
+
       nodes.push({
         type: 'paragraph',
         text,
@@ -206,9 +244,24 @@ export function proseMirrorToCommitteeNodes(
     }
 
     if (node.type === 'orderedList' || node.type === 'bulletList') {
+      const listHtml = renderList(node);
+      const previous = nodes.at(-1);
+
+      if (
+        node.type === 'orderedList' &&
+        previous?.type === 'paragraph' &&
+        isOrderedListHtml(previous.text)
+      ) {
+        const merged = mergeOrderedListHtml(previous.text, listHtml);
+        if (merged) {
+          previous.text = merged;
+          continue;
+        }
+      }
+
       nodes.push({
         type: 'paragraph',
-        text: renderList(node),
+        text: listHtml,
       });
       continue;
     }

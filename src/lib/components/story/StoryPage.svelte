@@ -767,11 +767,6 @@
     width: 100%;
   }
 
-  .story-hero.split + .story-body,
-  .story-hero.immersive + .story-body {
-    padding-top: 0;
-  }
-
   .story-body > :global(:first-child) {
     margin-top: 0;
   }
