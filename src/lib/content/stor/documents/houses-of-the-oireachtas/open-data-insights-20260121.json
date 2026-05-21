@@ -5,9 +5,9 @@
   "destination": "houses-of-the-oireachtas",
   "featured": false,
   "heroLayout": "split",
-  "showContents": true,
+  "showContents": false,
   "flourishWidth": "prose",
-  "title": "Open data insights.",
+  "title": "Open data insights",
   "dek": "Open data comes with a promise of transparency and making our information available and useful to the public. We need to bring that promise out in the work we do.",
   "eyebrow": "Digital communications",
   "topics": [
