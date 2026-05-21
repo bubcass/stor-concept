@@ -14,7 +14,9 @@
     articlePathPrefix = `${base}/articles`,
     showHeader = true,
     searchLabel = 'Search articles',
-    searchAction
+    searchAction,
+    hideMedia = false,
+    listMode = false
   }: {
     section: StorySectionMeta;
     stories: Story[];
@@ -23,6 +25,8 @@
     showHeader?: boolean;
     searchLabel?: string;
     searchAction?: string;
+    hideMedia?: boolean;
+    listMode?: boolean;
   } = $props();
 
   let featuredStory = $derived(stories.find((story) => story.featured) ?? stories[0]);
@@ -61,9 +65,36 @@
     </div>
   {/if}
 
-  {#if featuredStory}
+  {#if listMode}
+    <div class="repository-list">
+      {#each stories as story}
+        <article class="repository-item">
+          <a href="{articlePathPrefix}/{story.slug}/">
+            <div class="repository-copy">
+              <div class="repository-topline">
+                <span>{story.date}</span>
+                <span>{story.readingTime}</span>
+              </div>
+              <div class="story-context">
+                <p>{story.eyebrow}</p>
+                {#if bookmarked.has(story.slug)}
+                  <span class="saved-chip">Saved</span>
+                {/if}
+              </div>
+              <h2>{story.title}</h2>
+              <span class="repository-summary">{plainTextFromHtml(story.dek)}</span>
+            </div>
+            <span class="repository-cta" aria-hidden="true">Read report</span>
+          </a>
+        </article>
+      {/each}
+    </div>
+  {:else if featuredStory}
     <article class="featured-story">
-      <a href="{articlePathPrefix}/{featuredStory.slug}/">
+      <a
+        href="{articlePathPrefix}/{featuredStory.slug}/"
+        class:text-only={hideMedia || !hasHero(featuredStory.hero.src)}
+      >
         <div class="featured-copy">
             <div class="story-context">
               <p>{featuredStory.eyebrow}</p>
@@ -75,7 +106,7 @@
           <span class="featured-summary">{plainTextFromHtml(featuredStory.dek)}</span>
           <small>{featuredStory.date} · {featuredStory.readingTime}</small>
         </div>
-        {#if hasHero(featuredStory.hero.src)}
+        {#if !hideMedia && hasHero(featuredStory.hero.src)}
           {#if isVideoHero(featuredStory.hero.src)}
             <video autoplay muted loop playsinline aria-hidden="true">
               <source src="{base}{featuredStory.hero.src}" type="video/mp4" />
@@ -88,12 +119,12 @@
     </article>
   {/if}
 
-  {#if secondaryStories.length}
+  {#if !listMode && secondaryStories.length}
     <div class="secondary-grid">
       {#each secondaryStories as story}
-        <article class="secondary-story">
+        <article class="secondary-story" class:text-only={hideMedia || !hasHero(story.hero.src)}>
           <a href="{articlePathPrefix}/{story.slug}/">
-            {#if hasHero(story.hero.src)}
+            {#if !hideMedia && hasHero(story.hero.src)}
               {#if isVideoHero(story.hero.src)}
                 <video autoplay muted loop playsinline aria-hidden="true">
                   <source src="{base}{story.hero.src}" type="video/mp4" />
@@ -170,6 +201,84 @@
     margin-bottom: clamp(var(--space-7), 5vw, 3.5rem);
   }
 
+  .repository-list {
+    display: grid;
+  }
+
+  .repository-item a {
+    align-items: start;
+    border-top: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
+    color: inherit;
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: var(--space-5) 0;
+    text-decoration: none;
+  }
+
+  .repository-item:last-child a {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
+  }
+
+  .repository-topline {
+    color: var(--color-muted);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    gap: 0.35rem 0.65rem;
+    line-height: var(--line-height-small);
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+  }
+
+  .repository-topline span:not(:last-child)::after {
+    color: var(--color-faint);
+    content: "·";
+    margin-left: 0.65rem;
+  }
+
+  .repository-copy {
+    min-width: 0;
+    max-width: 64rem;
+  }
+
+  .repository-item h2 {
+    color: var(--color-accent-2);
+    font-family: var(--font-sans);
+    font-size: clamp(1.55rem, 2vw, 2rem);
+    font-weight: var(--font-weight-heading);
+    line-height: 1.08;
+    margin: 0 0 var(--space-3);
+    max-width: 24ch;
+    text-wrap: balance;
+  }
+
+  .repository-summary {
+    color: var(--color-muted);
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    max-width: 72ch;
+    white-space: pre-line;
+  }
+
+  .repository-cta {
+    align-self: center;
+    background: var(--color-ink);
+    border: 1px solid var(--color-ink);
+    border-radius: var(--radius);
+    color: var(--color-paper);
+    display: inline-flex;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.3;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
   .featured-story a {
     border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
     display: grid;
@@ -177,6 +286,10 @@
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     padding-bottom: var(--space-7);
     text-decoration: none;
+  }
+
+  .featured-story a.text-only {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .featured-copy {
@@ -252,6 +365,11 @@
     display: grid;
     gap: clamp(var(--space-6), 3vw, var(--space-7));
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secondary-story.text-only a {
+    border-top: 1px solid color-mix(in srgb, var(--color-line) 55%, transparent);
+    padding-top: var(--space-4);
   }
 
   .secondary-story a {
@@ -340,6 +458,14 @@
 
     .secondary-grid {
       grid-template-columns: minmax(0, 1fr);
+    }
+
+    .repository-item a {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .repository-cta {
+      justify-self: start;
     }
   }
 </style>

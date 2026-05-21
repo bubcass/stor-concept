@@ -4,7 +4,11 @@
   import { autoplayWhileVisible } from './videoAutoplayViewport';
   import { shareVideoAsset } from './videoShare';
 
-  let { block, headingId }: { block: MediaTextBlock; headingId?: string } = $props();
+  let {
+    block,
+    headingId,
+    hideMedia = false
+  }: { block: MediaTextBlock; headingId?: string; hideMedia?: boolean } = $props();
   let mediaSide = $derived(block.mediaSide ?? 'right');
   let image = $derived(block.media.type === 'image' ? (block.media.asset as ImageAsset) : undefined);
   let video = $derived(block.media.type === 'video' ? (block.media.asset as VideoAsset) : undefined);
@@ -32,7 +36,7 @@
   }
 </script>
 
-<section class="media-text {mediaSide}">
+<section class="media-text {mediaSide}" class:media-hidden={hideMedia}>
   <div class="copy">
     {#if block.eyebrow}
       <p class="eyebrow">{block.eyebrow}</p>
@@ -45,60 +49,62 @@
     {/each}
   </div>
 
-  <figure class:image-figure={!!image} class:video-figure={!!video}>
-    {#if image}
-      <img src="{base}{image.src}" alt={image.alt} loading="lazy" />
-      {#if image.caption || image.credit}
-        <figcaption class="caption">
-          {image.caption}
-          {#if image.credit}
-            <span>{image.credit}</span>
-          {/if}
-        </figcaption>
-      {/if}
-    {:else if video}
-      <video
-        use:autoplayWhileVisible={{ enabled: video.autoplay ?? true }}
-        autoplay={video.autoplay ?? true}
-        controls
-        controlslist="nodownload noremoteplayback"
-        disablepictureinpicture
-        disableremoteplayback
-        loop
-        muted
-        playsinline
-        preload="metadata"
-        poster={video.poster ? `${base}${video.poster}` : undefined}
-      >
-        <source src="{base}{video.src}" type="video/mp4" />
-        {#if video.captions}
-          <track
-            kind="captions"
-            label="English captions"
-            srclang="en"
-            src="{base}{video.captions}"
-            default
-          />
+  {#if !hideMedia}
+    <figure class:image-figure={!!image} class:video-figure={!!video}>
+      {#if image}
+        <img src="{base}{image.src}" alt={image.alt} loading="lazy" />
+        {#if image.caption || image.credit}
+          <figcaption class="caption">
+            {image.caption}
+            {#if image.credit}
+              <span>{image.credit}</span>
+            {/if}
+          </figcaption>
         {/if}
-      </video>
-      <div class="video-actions">
-        <button type="button" class="video-action" onclick={shareVideo}>
-          Share video
-        </button>
-        {#if shareFeedback}
-          <span class="video-feedback" role="status">{shareFeedback}</span>
-        {/if}
-      </div>
-      {#if video.caption || video.credit}
-        <figcaption class="caption">
-          {video.caption}
-          {#if video.credit}
-            <span>{video.credit}</span>
+      {:else if video}
+        <video
+          use:autoplayWhileVisible={{ enabled: video.autoplay ?? true }}
+          autoplay={video.autoplay ?? true}
+          controls
+          controlslist="nodownload noremoteplayback"
+          disablepictureinpicture
+          disableremoteplayback
+          loop
+          muted
+          playsinline
+          preload="metadata"
+          poster={video.poster ? `${base}${video.poster}` : undefined}
+        >
+          <source src="{base}{video.src}" type="video/mp4" />
+          {#if video.captions}
+            <track
+              kind="captions"
+              label="English captions"
+              srclang="en"
+              src="{base}{video.captions}"
+              default
+            />
           {/if}
-        </figcaption>
+        </video>
+        <div class="video-actions">
+          <button type="button" class="video-action" onclick={shareVideo}>
+            Share video
+          </button>
+          {#if shareFeedback}
+            <span class="video-feedback" role="status">{shareFeedback}</span>
+          {/if}
+        </div>
+        {#if video.caption || video.credit}
+          <figcaption class="caption">
+            {video.caption}
+            {#if video.credit}
+              <span>{video.credit}</span>
+            {/if}
+          </figcaption>
+        {/if}
       {/if}
-    {/if}
-  </figure>
+    </figure>
+  {/if}
 </section>
 
 <style>
@@ -113,6 +119,10 @@
 
   .media-text.left figure {
     order: -1;
+  }
+
+  .media-text.media-hidden {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .copy {

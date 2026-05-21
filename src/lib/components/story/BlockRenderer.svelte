@@ -18,11 +18,13 @@
   let {
     block,
     headingId,
-    flourishWidth
+    flourishWidth,
+    hideMedia = false
   }: {
     block: StoryBlock;
     headingId?: string;
     flourishWidth?: 'wide' | 'prose';
+    hideMedia?: boolean;
   } = $props();
 </script>
 
@@ -31,19 +33,31 @@
 {:else if block.type === 'table'}
   <TableBlock {block} />
 {:else if block.type === 'chart'}
-  <ChartBlock {block} />
+  {#if !hideMedia}
+    <ChartBlock {block} />
+  {/if}
 {:else if block.type === 'flourish'}
-  <FlourishBlock {block} {flourishWidth} />
+  {#if !hideMedia}
+    <FlourishBlock {block} {flourishWidth} />
+  {/if}
 {:else if block.type === 'arcgis-map'}
-  <ArcGISMapBlock {block} />
+  {#if !hideMedia}
+    <ArcGISMapBlock {block} />
+  {/if}
 {:else if block.type === 'vote-map'}
-  <VoteMapBlock {block} />
+  {#if !hideMedia}
+    <VoteMapBlock {block} />
+  {/if}
 {:else if block.type === 'media-text'}
-  <MediaTextBlock {block} {headingId} />
+  <MediaTextBlock {block} {headingId} {hideMedia} />
 {:else if block.type === 'image'}
-  <ImageBlock {block} {headingId} />
+  {#if !hideMedia}
+    <ImageBlock {block} {headingId} />
+  {/if}
 {:else if block.type === 'video'}
-  <VideoBlock {block} />
+  {#if !hideMedia}
+    <VideoBlock {block} />
+  {/if}
 {:else if block.type === 'committee-members'}
   <CommitteeMembersBlock {block} />
 {:else if block.type === 'link-list'}
@@ -51,7 +65,11 @@
 {:else if block.type === 'quote'}
   <QuoteBlock {block} />
 {:else if block.type === 'scrolly'}
-  <ScrollyBlock {block} />
+  {#if !hideMedia}
+    <ScrollyBlock {block} />
+  {/if}
 {:else if block.type === 'scene-scrolly'}
-  <SceneScrollyBlock {block} />
+  {#if !hideMedia}
+    <SceneScrollyBlock {block} />
+  {/if}
 {/if}

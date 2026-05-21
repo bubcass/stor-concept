@@ -255,7 +255,7 @@
 </script>
 
 <svelte:head>
-    <title>Search reports | Committee report repository</title>
+    <title>Search reports | Committee report wireframe</title>
     <meta
         name="description"
         content="Search committee reports in the committee report repository sandbox."

@@ -3,11 +3,16 @@
   import { onDestroy, onMount } from 'svelte';
   import type { Story, StoryBlock } from '$lib/content/types';
   import BlockRenderer from './BlockRenderer.svelte';
+  import CommitteeMembersBlock from './CommitteeMembersBlock.svelte';
   import StoryToolbar from './StoryToolbar.svelte';
 
-  let { story }: { story: Story } = $props();
+  let {
+    story,
+    hideMedia = false,
+    showToolbar = true
+  }: { story: Story; hideMedia?: boolean; showToolbar?: boolean } = $props();
   let heroLayout = $derived(story.heroLayout ?? 'contained');
-  let hasHeroMedia = $derived(Boolean(story.hero?.src?.trim()));
+  let hasHeroMedia = $derived(!hideMedia && Boolean(story.hero?.src?.trim()));
   let effectiveHeroLayout = $derived(hasHeroMedia ? heroLayout : 'contained');
   let heroImagePosition = $derived(story.heroImagePosition ?? 'center');
   let heroIsVideo = $derived((story.hero?.src ?? '').toLowerCase().endsWith('.mp4'));
@@ -65,7 +70,7 @@
 
     const counts = new Map<string, number>();
 
-    return story.blocks.flatMap((block, blockIndex) => {
+    return bodyBlocks.flatMap((block, blockIndex) => {
       const heading = headingForBlock(block);
       if (!heading) return [];
 
@@ -86,6 +91,15 @@
   let contentsIdMap = $derived.by(() => {
     return new Map(contentsEntries.map((entry) => [entry.blockIndex, entry.id]));
   });
+  let committeeMemberBlocks = $derived(
+    story.blocks.filter(
+      (block): block is Extract<StoryBlock, { type: 'committee-members' }> =>
+        block.type === 'committee-members'
+    )
+  );
+  let bodyBlocks = $derived(
+    story.blocks.filter((block) => block.type !== 'committee-members')
+  );
 
   let showContentsRail = $derived(story.showContents && contentsEntries.length > 1);
   let activeContentsId = $state<string | null>(null);
@@ -301,14 +315,16 @@
     {/if}
   </header>
 
-  <StoryToolbar {story} />
+  {#if showToolbar}
+    <StoryToolbar {story} />
+  {/if}
 
   {#if story.researcher || story.abstract}
     <section class="story-intro" aria-label="Article introduction">
       {#if story.researcher}
         <div class="story-researcher" aria-label="Researcher information">
           <div class="researcher-shell">
-            {#if story.researcher.image}
+            {#if !hideMedia && story.researcher.image}
               <img
                 class="researcher-avatar"
                 src="{base}{story.researcher.image}"
@@ -357,6 +373,14 @@
     </section>
   {/if}
 
+  {#if committeeMemberBlocks.length}
+    <section class="story-membership" aria-label="Committee membership">
+      {#each committeeMemberBlocks as block}
+        <CommitteeMembersBlock {block} constrained={true} />
+      {/each}
+    </section>
+  {/if}
+
   <div class="story-content" class:with-contents={showContentsRail}>
     {#if showContentsRail}
       <aside class="story-contents" aria-label="Table of contents">
@@ -377,11 +401,12 @@
     {/if}
 
     <div class="story-body">
-      {#each story.blocks as block, index}
+      {#each bodyBlocks as block, index}
         <BlockRenderer
           {block}
           headingId={contentsIdMap.get(index)}
           flourishWidth={storyFlourishWidth}
+          {hideMedia}
         />
       {/each}
     </div>
@@ -513,6 +538,13 @@
     max-width: calc(var(--measure-prose) + (var(--gutter) * 2));
     padding-top: var(--space-5);
     padding-bottom: clamp(var(--space-6), 5vw, var(--space-8));
+  }
+
+  .story-membership {
+    margin: 0 auto;
+    max-width: calc(var(--measure-prose) + (var(--gutter) * 2));
+    margin-top: clamp(var(--space-4), 3vw, var(--space-5));
+    padding-bottom: clamp(var(--space-4), 3vw, var(--space-5));
   }
 
   .story-researcher {

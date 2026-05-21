@@ -211,7 +211,7 @@
             <a
                 class="brand proof-brand-lockup"
                 href="{base}/proof-of-concept/"
-                aria-label="Committee report repository home"
+                aria-label="Committee report wireframe home"
             >
                 <span class="brand-mark" aria-hidden="true">
                     <svg
@@ -385,12 +385,11 @@
                     </svg>
                 </span>
                 <span class="brand-copy proof-brand-copy">
-                    <span class="proof-brand-title">Committee report repository</span>
+                    <span class="proof-brand-title">Committee report wireframe</span>
                 </span>
             </a>
             <div class="nav-links proof-nav-links">
-                <a href="{base}/proof-of-concept/committees/">Committees</a>
-                <a href="{base}/proof-of-concept/saved-reports/">Saved reports</a>
+                <a href="{base}/proof-of-concept/committees/">All reports</a>
             </div>
         </nav>
     </header>
@@ -722,5 +721,6 @@
             margin-left: 0;
             width: 100%;
         }
+
     }
 </style>

@@ -1,7 +1,10 @@
 <script lang="ts">
   import type { CommitteeMembersBlock } from '$lib/content/types';
 
-  let { block }: { block: CommitteeMembersBlock } = $props();
+  let {
+    block,
+    constrained = false
+  }: { block: CommitteeMembersBlock; constrained?: boolean } = $props();
 
   function initialsFor(name: string) {
     return name
@@ -13,7 +16,11 @@
   }
 </script>
 
-<section class="committee-members story-flow" aria-label={block.heading ?? 'Committee members'}>
+<section
+  class="committee-members story-flow"
+  class:constrained
+  aria-label={block.heading ?? 'Committee members'}
+>
   {#if block.heading}
     <h2>{block.heading}</h2>
   {/if}
@@ -55,6 +62,10 @@
   .committee-members {
     margin: var(--block-space) auto;
     max-width: min(var(--wide), calc(100vw - (var(--gutter) * 2)));
+  }
+
+  .committee-members.constrained {
+    max-width: calc(var(--measure-prose) + (var(--gutter) * 2));
   }
 
   h2 {

@@ -20,6 +20,8 @@
         {stories}
         {articlePathPrefix}
         enableSearch={true}
+        hideMedia={true}
+        listMode={true}
         showHeader={false}
         searchLabel="Search for reports"
         {searchAction}

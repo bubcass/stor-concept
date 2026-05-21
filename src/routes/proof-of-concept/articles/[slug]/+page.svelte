@@ -10,4 +10,4 @@
     <meta name="description" content={plainTextFromHtml(data.story.dek)} />
 </svelte:head>
 
-<StoryPage story={data.story} />
+<StoryPage story={data.story} hideMedia={true} showToolbar={false} />
