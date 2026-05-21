@@ -6,23 +6,15 @@
   "featured": false,
   "showContents": true,
   "flourishWidth": "prose",
-  "title": "Inside Parliament | Open data insights.",
+  "title": "Open data insights.",
   "dek": "Open data comes with a promise of transparency and making our information available and useful to the public. We need to bring that promise out in the work we do.",
   "eyebrow": "Digital communications",
-  "topics": [
-    "open data",
-    "transparency",
-    "digital communications"
-  ],
+  "topics": ["open data", "transparency", "digital communications"],
   "layout": "standard",
   "status": "published",
   "language": "en",
   "version": "1.0",
-  "keywords": [
-    "open data",
-    "transparency",
-    "digital communications"
-  ],
+  "keywords": ["open data", "transparency", "digital communications"],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
   "publishedDate": "2026-01-21",
@@ -60,7 +52,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Inside Parliament | Open Data Insights is not a specific project or plan but rather an editorial ethos adopted by the Houses of the Oireachtas web team focused on transforming parliamentary open data into accessible, visual and interactive public information experiences that puts users in control of what they need to see."
+            "text": "Inside Parliament | Open Data Insights is not a specific project or plan but rather an editorial ethos adopted by the Houses of the Oireachtas web team focused on transforming parliamentary open data into accessible, visual and interactive public information experiences that puts users in control of what they need to see. This can be as simple as showing our information in a sentence or as complicated as a fully-fledged interactive dashboard. The important aspect is getting a user involved and interested in the story."
           }
         ]
       },
@@ -69,7 +61,7 @@
         "attrs": {
           "dataSrc": "visualisation/26917154?2729416",
           "alt": "Flourish visualisation",
-          "caption": "",
+          "caption": "Data does not always equal a spreadsheet.",
           "thumbnail": "https://public.flourish.studio/visualisation/26917154/thumbnail",
           "embedType": "visualisation",
           "width": "prose"
