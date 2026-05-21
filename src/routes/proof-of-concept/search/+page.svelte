@@ -267,18 +267,11 @@
         <div class="search-copy">
             <p class="eyebrow">Search</p>
             <h1>Search for reports</h1>
-            <p class="lede">
-                Search within committee report outputs only.
-            </p>
         </div>
     </header>
 
     <div class="search-layout">
         <form class="search-form" method="GET" action={searchAction}>
-            <div class="search-copy">
-                <p class="search-panel-title">Refine search</p>
-            </div>
-
             <div class="search-query-group">
                 <label class="search-query-label" for="search-query"
                     >Search terms</label
@@ -299,11 +292,10 @@
                 <fieldset class="filter-group">
                     <legend>Committee</legend>
                     <label class="committee-select-group" for="committee-filter">
-                        <span>Specific committee</span>
                         <select
                             id="committee-filter"
                             name="committee"
-                            value={requestedCommittee}
+                            bind:value={requestedCommittee}
                         >
                             <option value="">All published committees</option>
                             {#each publishedCommitteeNames as committee}
@@ -321,7 +313,7 @@
                                 type="radio"
                                 name="date"
                                 value=""
-                                checked={datePreset === ""}
+                                bind:group={datePreset}
                             />
                             <span>All dates</span>
                         </label>
@@ -330,7 +322,7 @@
                                 type="radio"
                                 name="date"
                                 value="past-week"
-                                checked={datePreset === "past-week"}
+                                bind:group={datePreset}
                             />
                             <span>Past week</span>
                         </label>
@@ -339,7 +331,7 @@
                                 type="radio"
                                 name="date"
                                 value="past-month"
-                                checked={datePreset === "past-month"}
+                                bind:group={datePreset}
                             />
                             <span>Past month</span>
                         </label>
@@ -348,7 +340,7 @@
                                 type="radio"
                                 name="date"
                                 value="past-6-months"
-                                checked={datePreset === "past-6-months"}
+                                bind:group={datePreset}
                             />
                             <span>Past 6 months</span>
                         </label>
@@ -357,7 +349,7 @@
                                 type="radio"
                                 name="date"
                                 value="past-year"
-                                checked={datePreset === "past-year"}
+                                bind:group={datePreset}
                             />
                             <span>Past year</span>
                         </label>
@@ -366,7 +358,7 @@
                                 type="radio"
                                 name="date"
                                 value="custom"
-                                checked={datePreset === "custom"}
+                                bind:group={datePreset}
                             />
                             <span>Custom range</span>
                         </label>
@@ -376,11 +368,11 @@
                         <div class="date-range">
                             <label>
                                 <span>From</span>
-                                <input type="date" name="from" value={dateFrom} />
+                                <input type="date" name="from" bind:value={dateFrom} />
                             </label>
                             <label>
                                 <span>To</span>
-                                <input type="date" name="to" value={dateTo} />
+                                <input type="date" name="to" bind:value={dateTo} />
                             </label>
                         </div>
                     {/if}
@@ -555,14 +547,6 @@
         text-wrap: balance;
     }
 
-    .lede {
-        color: var(--color-muted);
-        font-size: var(--font-size-body);
-        line-height: var(--line-height-body);
-        margin: 0;
-        max-width: 52rem;
-    }
-
     .search-layout {
         align-items: start;
         display: grid;
@@ -584,7 +568,6 @@
         min-width: 0;
     }
 
-    .search-panel-title,
     .search-query-label,
     legend {
         color: var(--color-accent-3);
@@ -636,7 +619,6 @@
         gap: 0.5rem;
     }
 
-    .committee-select-group span,
     .date-range span {
         color: var(--color-muted);
         font-size: 0.9rem;
@@ -651,7 +633,8 @@
 
     .filter-group--date {
         border-top: 1px solid color-mix(in srgb, var(--color-line) 55%, transparent);
-        padding-top: var(--space-3);
+        margin-top: var(--space-2);
+        padding-top: var(--space-4);
     }
 
     .radio-group {
