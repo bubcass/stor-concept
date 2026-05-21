@@ -4,17 +4,26 @@
   "type": "article",
   "destination": "houses-of-the-oireachtas",
   "featured": false,
+  "heroLayout": "split",
   "showContents": true,
   "flourishWidth": "prose",
   "title": "Open data insights.",
   "dek": "Open data comes with a promise of transparency and making our information available and useful to the public. We need to bring that promise out in the work we do.",
   "eyebrow": "Digital communications",
-  "topics": ["open data", "transparency", "digital communications"],
+  "topics": [
+    "open data",
+    "transparency",
+    "digital communications"
+  ],
   "layout": "standard",
   "status": "published",
   "language": "en",
   "version": "1.0",
-  "keywords": ["open data", "transparency", "digital communications"],
+  "keywords": [
+    "open data",
+    "transparency",
+    "digital communications"
+  ],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
   "publishedDate": "2026-01-21",
@@ -31,6 +40,11 @@
     "name": "David Cass",
     "role": "Web content editor",
     "organisation": "Communications"
+  },
+  "hero": {
+    "src": "/media/election.mp4",
+    "alt": "People in a general election count centre",
+    "position": "left center"
   },
   "content": {
     "type": "doc",
@@ -119,7 +133,7 @@
         "attrs": {
           "dataSrc": "visualisation/26917154?2729416",
           "alt": "Flourish visualisation",
-          "caption": "Data does not necessarily have to be a spreadsheet",
+          "caption": "Data does not necessarily have to mean a spreadsheet. We should make our information accessible",
           "thumbnail": "https://public.flourish.studio/visualisation/26917154/thumbnail",
           "embedType": "visualisation",
           "width": "prose"
