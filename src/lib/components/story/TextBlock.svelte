@@ -81,6 +81,15 @@
     text-underline-offset: 0.18em;
   }
 
+  p :global(a)::after {
+    content: "↗";
+    display: inline-block;
+    font-size: 0.8em;
+    margin-left: 0.14em;
+    text-decoration: none;
+    transform: translateY(-0.08em);
+  }
+
   p :global(a:hover),
   p :global(a:focus-visible) {
     color: var(--link-hover);
@@ -98,6 +107,15 @@
     text-decoration-color: color-mix(in srgb, var(--link) 55%, transparent);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
+  }
+
+  .rich-block :global(a)::after {
+    content: "↗";
+    display: inline-block;
+    font-size: 0.8em;
+    margin-left: 0.14em;
+    text-decoration: none;
+    transform: translateY(-0.08em);
   }
 
   .rich-block :global(a:hover),

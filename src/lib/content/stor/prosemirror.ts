@@ -169,6 +169,9 @@ function flourishBlockFromNode(node: ProseMirrorNode) {
     type: 'flourish' as const,
     dataSrc,
     alt: String(node.attrs?.alt ?? '').trim() || 'Flourish visualisation',
+    ...(String(node.attrs?.thumbnail ?? '').trim()
+      ? { thumbnail: String(node.attrs?.thumbnail ?? '').trim() }
+      : {}),
     ...(String(node.attrs?.caption ?? '').trim()
       ? { caption: String(node.attrs?.caption ?? '').trim() }
       : {}),

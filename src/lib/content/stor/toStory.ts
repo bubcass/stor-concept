@@ -101,6 +101,8 @@ function narrativeStoryFromStorDocument(document: StorDocument): Story {
   return {
     slug: document.slug,
     section,
+    documentType: document.type,
+    committeeName: document.committeeName,
     featured: document.featured ?? false,
     heroLayout: document.heroLayout ?? 'contained',
     showContents: document.showContents ?? true,
@@ -177,6 +179,8 @@ export function storDocumentToStory(document: StorDocument): StorRenderResult {
       source: document,
       story: {
         ...story,
+        documentType: document.type,
+        committeeName: document.committeeName,
         blocks: applyEnhancements(story.blocks, document.enhancements),
       },
     };

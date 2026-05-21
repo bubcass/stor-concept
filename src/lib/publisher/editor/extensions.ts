@@ -94,6 +94,13 @@ export const FlourishBlock = Node.create({
           'data-caption': attributes.caption || '',
         }),
       },
+      thumbnail: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-thumbnail') || '',
+        renderHTML: (attributes) => ({
+          'data-thumbnail': attributes.thumbnail || '',
+        }),
+      },
       embedType: {
         default: 'chart',
         parseHTML: (element) => element.getAttribute('data-embed-type') || 'chart',

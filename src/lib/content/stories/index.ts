@@ -1,4 +1,4 @@
-import type { Story, StorySection } from "../types";
+import type { Story, StoryDocumentType, StorySection } from "../types";
 import { storStories } from "../stor";
 import { plainTextFromHtml } from "../text";
 
@@ -8,6 +8,11 @@ export interface StorySectionMeta {
   eyebrow?: string;
   intro: string;
   accentColor?: string;
+}
+
+export interface StoryDocumentTypeMeta {
+  value: StoryDocumentType;
+  label: string;
 }
 
 export const storySections: StorySectionMeta[] = [
@@ -39,9 +44,47 @@ export const storySections: StorySectionMeta[] = [
   },
 ];
 
+export const storyDocumentTypes: StoryDocumentTypeMeta[] = [
+  { value: "committee-report", label: "Committee report" },
+  { value: "article", label: "Article" },
+  { value: "briefing", label: "Briefing" },
+  { value: "visual-data-analysis", label: "Visual data analysis" },
+  { value: "research-note", label: "Research note" },
+  { value: "bill-digest", label: "Bill digest" },
+];
+
 function storyDateValue(story: Story) {
   const timestamp = Date.parse(story.publishedDate ?? story.date);
   return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+
+export function getStoryDateValue(story: Story) {
+  return storyDateValue(story);
+}
+
+export function getStoryDateIso(story: Story) {
+  if (story.publishedDate && /^\d{4}-\d{2}-\d{2}$/.test(story.publishedDate)) {
+    return story.publishedDate;
+  }
+
+  const timestamp = storyDateValue(story);
+  if (!timestamp) return null;
+
+  return new Date(timestamp).toISOString().slice(0, 10);
+}
+
+export function getEffectiveStoryDocumentType(story: Story): StoryDocumentType {
+  if (story.documentType) return story.documentType;
+
+  if (story.section === "committees") {
+    return "committee-report";
+  }
+
+  return "article";
+}
+
+export function getStoryDocumentTypeMeta(type: StoryDocumentType) {
+  return storyDocumentTypes.find((entry) => entry.value === type);
 }
 
 const storyModules = import.meta.glob(["./**/*.ts", "!./**/reportBuilder.ts"], {
@@ -58,6 +101,15 @@ const mergedStories = [...storyList, ...storStories];
 export const stories: Story[] = Array.from(
   new Map(mergedStories.map((story) => [story.slug, story])).values(),
 ).sort((a, b) => storyDateValue(b) - storyDateValue(a));
+
+export const publishedCommitteeNames = Array.from(
+  new Set(
+    stories
+      .filter((story) => story.section === "committees")
+      .map((story) => story.committeeName?.trim())
+      .filter((value): value is string => Boolean(value)),
+  ),
+).sort((a, b) => a.localeCompare(b));
 
 export function getStory(slug: string) {
   return stories.find((story) => story.slug === slug);

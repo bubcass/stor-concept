@@ -80,6 +80,15 @@
     text-underline-offset: 0.18em;
   }
 
+  .table-shell :global(a)::after {
+    content: "↗";
+    display: inline-block;
+    font-size: 0.8em;
+    margin-left: 0.14em;
+    text-decoration: none;
+    transform: translateY(-0.08em);
+  }
+
   .table-shell :global(a:hover),
   .table-shell :global(a:focus-visible) {
     color: var(--link-hover);

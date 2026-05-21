@@ -19,11 +19,20 @@ export type StorySection =
   | 'houses-of-the-oireachtas'
   | 'parliamentary-budget-office'
   | 'library-research-service';
+export type StoryDocumentType =
+  | 'committee-report'
+  | 'article'
+  | 'briefing'
+  | 'visual-data-analysis'
+  | 'research-note'
+  | 'bill-digest';
 export type StoryHeroLayout = 'contained' | 'split' | 'immersive';
 
 export interface Story {
   slug: string;
   section: StorySection;
+  documentType?: StoryDocumentType;
+  committeeName?: string;
   featured?: boolean;
   heroLayout?: StoryHeroLayout;
   heroImagePosition?: string;

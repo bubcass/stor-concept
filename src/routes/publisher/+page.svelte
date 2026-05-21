@@ -243,6 +243,53 @@
         );
     }
 
+    function normalizeFlourishDataSrc(value: string) {
+        const trimmed = value.trim();
+        if (!trimmed) return "";
+
+        const dataSrcMatch = trimmed.match(/data-src=(['"])([^'"]+)\1/i);
+        const rawSource = dataSrcMatch?.[2]?.trim() || trimmed;
+        const queryPart = rawSource.includes("?")
+            ? rawSource.slice(rawSource.indexOf("?"))
+            : "";
+
+        let source = rawSource
+            .replace(/^https?:\/\/flo\.uri\.sh\//i, "")
+            .replace(
+                /^https?:\/\/public\.flourish\.studio\//i,
+                "",
+            )
+            .replace(/^\/+/, "")
+            .replace(/\/embed\/?$/i, "")
+            .split("#")[0]
+            .trim();
+
+        const pathMatch = source.match(
+            /\b(story|visualisation)\/(\d+)\b/i,
+        );
+        if (pathMatch) {
+            source = `${pathMatch[1].toLowerCase()}/${pathMatch[2]}`;
+        }
+
+        return source ? `${source}${queryPart}` : "";
+    }
+
+    function inferFlourishEmbedType(
+        dataSrc: string,
+    ): "chart" | "story" | "visualisation" {
+        if (dataSrc.startsWith("story/")) return "story";
+        if (dataSrc.startsWith("visualisation/")) return "visualisation";
+        return "chart";
+    }
+
+    function flourishThumbnailFor(dataSrc: string) {
+        const normalized = normalizeFlourishDataSrc(dataSrc);
+        const thumbnailPath = normalized.split("?")[0];
+        return thumbnailPath
+            ? `https://public.flourish.studio/${thumbnailPath}/thumbnail`
+            : "";
+    }
+
     function findHeadingTexts(document: ProseMirrorDocument) {
         return document.content
             .filter((node) => node.type === "heading")
@@ -1156,14 +1203,24 @@
             .insertContent({
                 type: "flourishBlock",
                 attrs: {
-                    dataSrc: "https://flo.uri.sh/visualisation/00000000/embed",
+                    dataSrc: "",
                     alt: "Flourish visualisation",
                     caption: "",
-                    embedType: "chart",
+                    embedType: "visualisation",
                     width: metadata.flourishWidth,
+                    thumbnail: "",
                 },
             })
             .run();
+    }
+
+    function updateSelectedFlourishSource(value: string) {
+        const dataSrc = normalizeFlourishDataSrc(value);
+        updateSelectedStructuredBlock({
+            dataSrc,
+            embedType: inferFlourishEmbedType(dataSrc),
+            thumbnail: flourishThumbnailFor(dataSrc),
+        });
     }
 
     function updateSelectedStructuredBlock(patch: Record<string, unknown>) {
@@ -2501,20 +2558,27 @@
                                 {:else if selectedStructuredBlock?.type === "flourishBlock"}
                                     <h3>Flourish block</h3>
                                     <label>
-                                        <span>Embed URL</span>
+                                        <span>Flourish source</span>
                                         <input
                                             value={String(
                                                 selectedStructuredBlock.attrs
                                                     .dataSrc ?? "",
                                             )}
                                             oninput={(event) =>
-                                                updateSelectedStructuredBlock({
-                                                    dataSrc: (
+                                                updateSelectedFlourishSource(
+                                                    (
                                                         event.currentTarget as HTMLInputElement
                                                     ).value,
-                                                })}
+                                                )}
                                         />
                                     </label>
+                                    <p class="inspector-hint">
+                                        Paste the full Flourish embed snippet,
+                                        an embed URL, or just a value like
+                                        <code
+                                            >visualisation/26917154?2729416</code
+                                        >.
+                                    </p>
                                     <label>
                                         <span>Alt text</span>
                                         <input
@@ -2566,6 +2630,20 @@
                                             >
                                         </select>
                                     </label>
+                                    {#if String(
+                                        selectedStructuredBlock.attrs
+                                            .dataSrc ?? "",
+                                    )}
+                                        <p class="inspector-meta">
+                                            Normalised to
+                                            <code
+                                                >{String(
+                                                    selectedStructuredBlock
+                                                        .attrs.dataSrc,
+                                                )}</code
+                                            >
+                                        </p>
+                                    {/if}
                                     <label>
                                         <span>Width</span>
                                         <select
