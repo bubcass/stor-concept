@@ -1,6 +1,6 @@
 {
-  "id": "inside-parliament-open-data-insights-20260121",
-  "slug": "inside-parliament-open-data-insights-20260121",
+  "id": "open-data-insights-20260121",
+  "slug": "open-data-insights-20260121",
   "type": "article",
   "destination": "houses-of-the-oireachtas",
   "featured": false,
@@ -9,12 +9,20 @@
   "title": "Open data insights.",
   "dek": "Open data comes with a promise of transparency and making our information available and useful to the public. We need to bring that promise out in the work we do.",
   "eyebrow": "Digital communications",
-  "topics": ["open data", "transparency", "digital communications"],
+  "topics": [
+    "open data",
+    "transparency",
+    "digital communications"
+  ],
   "layout": "standard",
   "status": "published",
   "language": "en",
   "version": "1.0",
-  "keywords": ["open data", "transparency", "digital communications"],
+  "keywords": [
+    "open data",
+    "transparency",
+    "digital communications"
+  ],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
   "publishedDate": "2026-01-21",
@@ -52,20 +60,9 @@
         "content": [
           {
             "type": "text",
-            "text": "Inside Parliament | Open Data Insights is not a specific project or plan but rather an editorial ethos adopted by the Houses of the Oireachtas web team focused on transforming parliamentary open data into accessible, visual and interactive public information experiences that puts users in control of what they need to see. This can be as simple as showing our information in a sentence or as complicated as a fully-fledged interactive dashboard. The important aspect is getting a user involved and interested in the story."
+            "text": "Open Data Insights is not a specific project or plan but rather an editorial ethos adopted by the Houses of the Oireachtas web team focused on transforming parliamentary open data into accessible, visual and interactive public information experiences that puts users in control of what they need to see."
           }
         ]
-      },
-      {
-        "type": "flourishBlock",
-        "attrs": {
-          "dataSrc": "visualisation/26917154?2729416",
-          "alt": "Flourish visualisation",
-          "caption": "Data does not always equal a spreadsheet.",
-          "thumbnail": "https://public.flourish.studio/visualisation/26917154/thumbnail",
-          "embedType": "visualisation",
-          "width": "prose"
-        }
       },
       {
         "type": "paragraph",
@@ -121,9 +118,20 @@
         "content": [
           {
             "type": "text",
-            "text": "Inside Parliament | Open Data Insights seeks to bridge that gap by reimagining how parliamentary information is presented to the public. Through interactive visualisations, intuitive interfaces and data-driven storytelling, the initiative aims to bring Parliament closer to its people and make parliamentary activity more understandable, discoverable and engaging for all audiences."
+            "text": "Open Data Insights seeks to bridge that gap by reimagining how parliamentary information is presented to the public. Through interactive visualisations, intuitive interfaces and data-driven storytelling, the initiative aims to bring Parliament closer to its people and make parliamentary activity more understandable, discoverable and engaging for all audiences."
           }
         ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/26917154?2729416",
+          "alt": "Flourish visualisation",
+          "caption": "",
+          "thumbnail": "https://public.flourish.studio/visualisation/26917154/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
+        }
       },
       {
         "type": "paragraph",
@@ -284,7 +292,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Inside Parliament | Open Data Insights focuses on transforming these datasets into visual and interactive experiences that make parliamentary information more approachable and meaningful."
+            "text": "Open Data Insights focuses on transforming these datasets into visual and interactive experiences that make parliamentary information more approachable and meaningful."
           }
         ]
       },
@@ -296,6 +304,16 @@
             "text": "The initiative demonstrates that open data achieves greater public value when it is not only available, but understandable."
           }
         ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/vote-result.png",
+          "alt": "A visualisation of a vote in Dáil Éireann",
+          "caption": "The information is already there; it's a question of finding the right way to get the message across",
+          "credit": "",
+          "layout": "wide"
+        }
       },
       {
         "type": "heading",
@@ -557,7 +575,27 @@
         "content": [
           {
             "type": "text",
-            "text": "A map of the Dáil Chamber indicating the seating and voting position of Members has been published in PDF form on the website for many years. However, the PDF is a closed proprietary format with no easy way to reuse the data."
+            "text": "A map of the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://data.oireachtas.ie/ie/oireachtas/parliamentaryBusiness/other/2026-04-21_dail-chamber-seating-plan-21-april-2026_en.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Dáil Chamber"
+          },
+          {
+            "type": "text",
+            "text": " indicating the seating and voting position of Members has been published in PDF form on the website for many years. However, the PDF is a closed proprietary format with no easy way to reuse the data."
           }
         ]
       },
@@ -566,7 +604,27 @@
         "content": [
           {
             "type": "text",
-            "text": "The interactive Dáil Chamber Map transforms the parliamentary seating resource into an intuitive visual representation of the Chamber itself, integrating the existing rich member data available on the Oireachtas open data portal."
+            "text": "The interactive "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/dail-chamber/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Dáil Chamber map"
+          },
+          {
+            "type": "text",
+            "text": " transforms the parliamentary seating resource into an intuitive visual representation of the Chamber itself, integrating the existing rich member data available on the Oireachtas open data portal."
           }
         ]
       },
@@ -631,7 +689,27 @@
         "content": [
           {
             "type": "text",
-            "text": "A planned project will bring further benefit by layering in the voting data that is already available on the Oireachtas open data portal, allowing users to examine voting outcomes spatially and contextually."
+            "text": "A planned project will bring further benefit by "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://bubcass.github.io/chamber-vote-poc/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "layering in the voting data"
+          },
+          {
+            "type": "text",
+            "text": " that is already available on the Oireachtas open data portal, allowing users to examine voting outcomes spatially and contextually."
           }
         ]
       },
@@ -670,7 +748,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Inside Parliament | Open Data Insights explores how:"
+            "text": "Open Data Insights explores how:"
           }
         ]
       },
@@ -1056,7 +1134,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "expanding the current Dáil Chamber Map into a full Vote Explorer platform, enabling users to visually explore parliamentary voting behaviour and outcomes over time"
+                    "text": "expanding the current Dáil Chamber map into a full Vote Explorer platform, enabling users to visually explore parliamentary voting behaviour and outcomes over time"
                   }
                 ]
               }
@@ -1116,6 +1194,16 @@
         ]
       },
       {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/election-results.png",
+          "alt": "Election count result visualisation",
+          "caption": "Bridging the gap between our data and users is key to engaging people in the events that matter, including elections",
+          "credit": "",
+          "layout": "wide"
+        }
+      },
+      {
         "type": "paragraph",
         "content": [
           {
@@ -1129,7 +1217,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Inside Parliament | Open Data Insights therefore represents not simply a collection of individual projects, but the beginnings of a broader ecosystem for parliamentary open data engagement."
+            "text": "Open Data Insights therefore represents not simply a collection of individual projects, but the beginnings of a broader ecosystem for parliamentary open data engagement."
           }
         ]
       },
@@ -1150,7 +1238,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Inside Parliament | Open Data Insights demonstrates how with a driving ethos, open parliamentary data can be transformed into accessible, engaging and meaningful public information experiences by seeing our existing information in a new and innovative ways."
+            "text": "Open Data Insights demonstrates how with a driving ethos, open parliamentary data can be transformed into accessible, engaging and meaningful public information experiences by seeing our existing information in a new and innovative ways."
           }
         ]
       },

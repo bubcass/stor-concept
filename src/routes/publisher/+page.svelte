@@ -1229,7 +1229,6 @@
 
         editor
             .chain()
-            .focus()
             .command(({ tr, dispatch }) => {
                 const node = tr.doc.nodeAt(target.from);
                 if (!node) return false;
