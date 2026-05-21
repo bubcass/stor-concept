@@ -59,7 +59,7 @@
     appearance: none;
     background: color-mix(in srgb, var(--color-panel) 84%, transparent);
     border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
-    border-radius: 1rem;
+    border-radius: var(--radius);
     color: var(--color-accent-2);
     font: inherit;
     font-size: 1rem;

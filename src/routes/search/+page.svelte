@@ -19,12 +19,20 @@
     import type { StoryDocumentType, StorySection } from "$lib/content/types";
 
     type SortMode = "most-relevant" | "newest";
+    type DatePreset =
+        | ""
+        | "past-week"
+        | "past-month"
+        | "past-6-months"
+        | "past-year"
+        | "custom";
 
     let query = $state("");
     let sortMode = $state<SortMode>("most-relevant");
     let requestedSections = $state<StorySection[]>([]);
     let requestedTypes = $state<StoryDocumentType[]>([]);
     let requestedCommittee = $state("");
+    let datePreset = $state<DatePreset>("");
     let dateFrom = $state("");
     let dateTo = $state("");
 
@@ -65,10 +73,49 @@
         return true;
     }
 
+    function todayLocalIsoDate() {
+        const now = new Date();
+        const offsetMs = now.getTimezoneOffset() * 60_000;
+        return new Date(now.getTime() - offsetMs).toISOString().slice(0, 10);
+    }
+
+    function shiftIsoDate(isoDate: string, days: number) {
+        const [year, month, day] = isoDate.split("-").map(Number);
+        const date = new Date(Date.UTC(year, month - 1, day));
+        date.setUTCDate(date.getUTCDate() + days);
+        return date.toISOString().slice(0, 10);
+    }
+
+    function resolveDateRange(
+        preset: DatePreset,
+        from: string,
+        to: string,
+    ) {
+        if (preset === "custom") {
+            return { from, to };
+        }
+
+        const today = todayLocalIsoDate();
+
+        switch (preset) {
+            case "past-week":
+                return { from: shiftIsoDate(today, -7), to: today };
+            case "past-month":
+                return { from: shiftIsoDate(today, -30), to: today };
+            case "past-6-months":
+                return { from: shiftIsoDate(today, -183), to: today };
+            case "past-year":
+                return { from: shiftIsoDate(today, -365), to: today };
+            default:
+                return { from, to };
+        }
+    }
+
     function buildSearchHref(options?: {
         sections?: StorySection[];
         types?: StoryDocumentType[];
         committee?: string;
+        datePreset?: DatePreset;
         from?: string;
         to?: string;
         sort?: SortMode;
@@ -79,16 +126,23 @@
         const nextSections = options?.sections ?? requestedSections;
         const nextTypes = options?.types ?? requestedTypes;
         const nextCommittee = options?.committee ?? requestedCommittee;
+        const nextDatePreset = options?.datePreset ?? datePreset;
         const nextFrom = options?.from ?? dateFrom;
         const nextTo = options?.to ?? dateTo;
         const nextSort = options?.sort ?? sortMode;
+        const resolvedRange = resolveDateRange(
+            nextDatePreset,
+            nextFrom,
+            nextTo,
+        );
 
         if (nextQuery) params.set("q", nextQuery);
         for (const section of nextSections) params.append("section", section);
         for (const type of nextTypes) params.append("type", type);
         if (nextCommittee) params.set("committee", nextCommittee);
-        if (nextFrom) params.set("from", nextFrom);
-        if (nextTo) params.set("to", nextTo);
+        if (nextDatePreset) params.set("date", nextDatePreset);
+        if (resolvedRange.from) params.set("from", resolvedRange.from);
+        if (resolvedRange.to) params.set("to", resolvedRange.to);
         if (nextSort !== "most-relevant") params.set("sort", nextSort);
 
         const queryString = params.toString();
@@ -104,14 +158,18 @@
     let sectionMeta = $derived(
         sectionFilter ? getStorySection(sectionFilter) : undefined,
     );
+    let effectiveDateRange = $derived(
+        resolveDateRange(datePreset, dateFrom, dateTo),
+    );
     let hasActiveSearch = $derived(
         Boolean(
             query ||
             requestedSections.length ||
             requestedTypes.length ||
             requestedCommittee ||
-            dateFrom ||
-            dateTo,
+            datePreset ||
+            effectiveDateRange.from ||
+            effectiveDateRange.to,
         ),
     );
     let searchableStories = $derived(
@@ -137,7 +195,11 @@
     );
     let rankedResults = $derived.by<StorySearchResult[]>(() => {
         const dateFilteredStories = committeeFilteredStories.filter((story) =>
-            matchesDateRange(getStoryDateIso(story), dateFrom, dateTo),
+            matchesDateRange(
+                getStoryDateIso(story),
+                effectiveDateRange.from,
+                effectiveDateRange.to,
+            ),
         );
 
         if (!query) {
@@ -192,14 +254,42 @@
             if (dateFrom) {
                 chips.push({
                     label: `From ${dateFrom}`,
-                    href: buildSearchHref({ from: "" }),
+                    href: buildSearchHref({
+                        datePreset: "",
+                        from: "",
+                        to: "",
+                    }),
                 });
             }
 
             if (dateTo) {
                 chips.push({
                     label: `To ${dateTo}`,
-                    href: buildSearchHref({ to: "" }),
+                    href: buildSearchHref({
+                        datePreset: "",
+                        from: "",
+                        to: "",
+                    }),
+                });
+            }
+
+            if (datePreset && datePreset !== "custom") {
+                const label =
+                    datePreset === "past-week"
+                        ? "Past week"
+                        : datePreset === "past-month"
+                          ? "Past month"
+                          : datePreset === "past-6-months"
+                            ? "Past 6 months"
+                            : "Past year";
+
+                chips.push({
+                    label,
+                    href: buildSearchHref({
+                        datePreset: "",
+                        from: "",
+                        to: "",
+                    }),
                 });
             }
 
@@ -221,6 +311,15 @@
             publishedCommitteeNames.includes(params.get("committee") ?? "")
                 ? (params.get("committee") ?? "")
                 : "";
+        datePreset = (
+            params.get("date") === "past-week" ||
+                params.get("date") === "past-month" ||
+                params.get("date") === "past-6-months" ||
+                params.get("date") === "past-year" ||
+                params.get("date") === "custom"
+                ? params.get("date")
+                : ""
+        ) as DatePreset;
         sortMode = params.get("sort") === "newest" ? "newest" : "most-relevant";
         dateFrom = params.get("from") ?? "";
         dateTo = params.get("to") ?? "";
@@ -245,14 +344,20 @@
 
 <section class="page-shell search-page">
     <header class="search-header">
+        <div class="search-copy">
+            <p class="eyebrow">Search</p>
+            <h1>Search articles</h1>
+            <p class="lede">
+                Search across Stór with title, author and researcher
+                details.
+            </p>
+        </div>
+    </header>
+
+    <div class="search-layout">
         <form class="search-form" method="GET" action="{base}/search/">
             <div class="search-copy">
-                <p class="eyebrow">Search</p>
-                <h1>Search articles</h1>
-                <p class="lede">
-                    Search across Stór with title, author and researcher
-                    details.
-                </p>
+                <p class="search-panel-title">Refine search</p>
             </div>
 
             <div class="search-query-group">
@@ -272,56 +377,106 @@
             </div>
 
             <div class="filters-grid">
-                <details class="filter-accordion" open>
-                    <summary>Sections</summary>
-                    <fieldset class="filter-group">
-                        <div class="checkbox-group">
-                            {#each storySections as section}
-                                <label class="checkbox-option">
-                                    <input
-                                        type="checkbox"
-                                        name="section"
-                                        value={section.slug}
-                                        checked={requestedSections.includes(
-                                            section.slug,
-                                        )}
-                                    />
-                                    <span>{section.title}</span>
-                                </label>
-                            {/each}
-                        </div>
-
-                        {#if committeesSelected}
-                            <label
-                                class="committee-select-group"
-                                for="committee-filter"
-                            >
-                                <span>Specific committee</span>
-                                <select
-                                    id="committee-filter"
-                                    name="committee"
-                                    value={requestedCommittee}
-                                >
-                                    <option value=""
-                                        >All published committees</option
-                                    >
-                                    {#each publishedCommitteeNames as committee}
-                                        <option value={committee}
-                                            >{committee}</option
-                                        >
-                                    {/each}
-                                </select>
+                <fieldset class="filter-group">
+                    <legend>Sections</legend>
+                    <div class="checkbox-group">
+                        {#each storySections as section}
+                            <label class="checkbox-option">
+                                <input
+                                    type="checkbox"
+                                    name="section"
+                                    value={section.slug}
+                                    checked={requestedSections.includes(
+                                        section.slug,
+                                    )}
+                                />
+                                <span>{section.title}</span>
                             </label>
-                        {/if}
-                    </fieldset>
-                </details>
+                        {/each}
+                    </div>
 
-                <details class="filter-accordion">
-                    <summary>Publication date</summary>
-                    <fieldset class="filter-group">
-                        <p class="filter-hint">
-                            Leave blank to search across all publication dates.
-                        </p>
+                    {#if committeesSelected}
+                        <label
+                            class="committee-select-group"
+                            for="committee-filter"
+                        >
+                            <span>Committee</span>
+                            <select
+                                id="committee-filter"
+                                name="committee"
+                                value={requestedCommittee}
+                            >
+                                <option value=""
+                                    >All published committees</option
+                                >
+                                {#each publishedCommitteeNames as committee}
+                                    <option value={committee}>{committee}</option>
+                                {/each}
+                            </select>
+                        </label>
+                    {/if}
+                </fieldset>
+
+                <fieldset class="filter-group">
+                    <legend>Publication date</legend>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="date"
+                                value=""
+                                checked={datePreset === ""}
+                            />
+                            <span>All dates</span>
+                        </label>
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="date"
+                                value="past-week"
+                                checked={datePreset === "past-week"}
+                            />
+                            <span>Past week</span>
+                        </label>
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="date"
+                                value="past-month"
+                                checked={datePreset === "past-month"}
+                            />
+                            <span>Past month</span>
+                        </label>
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="date"
+                                value="past-6-months"
+                                checked={datePreset === "past-6-months"}
+                            />
+                            <span>Past 6 months</span>
+                        </label>
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="date"
+                                value="past-year"
+                                checked={datePreset === "past-year"}
+                            />
+                            <span>Past year</span>
+                        </label>
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="date"
+                                value="custom"
+                                checked={datePreset === "custom"}
+                            />
+                            <span>Custom range</span>
+                        </label>
+                    </div>
+
+                    {#if datePreset === "custom"}
                         <div class="date-range">
                             <label>
                                 <span>From</span>
@@ -336,29 +491,27 @@
                                 <input type="date" name="to" value={dateTo} />
                             </label>
                         </div>
-                    </fieldset>
-                </details>
+                    {/if}
+                </fieldset>
 
-                <details class="filter-accordion">
-                    <summary>Document type</summary>
-                    <fieldset class="filter-group">
-                        <div class="checkbox-group checkbox-group--types">
-                            {#each storyDocumentTypes as type}
-                                <label class="checkbox-option">
-                                    <input
-                                        type="checkbox"
-                                        name="type"
-                                        value={type.value}
-                                        checked={requestedTypes.includes(
-                                            type.value,
-                                        )}
-                                    />
-                                    <span>{type.label}</span>
-                                </label>
-                            {/each}
-                        </div>
-                    </fieldset>
-                </details>
+                <fieldset class="filter-group">
+                    <legend>Document type</legend>
+                    <div class="checkbox-group checkbox-group--types">
+                        {#each storyDocumentTypes as type}
+                            <label class="checkbox-option">
+                                <input
+                                    type="checkbox"
+                                    name="type"
+                                    value={type.value}
+                                    checked={requestedTypes.includes(
+                                        type.value,
+                                    )}
+                                />
+                                <span>{type.label}</span>
+                            </label>
+                        {/each}
+                    </div>
+                </fieldset>
             </div>
 
             <div class="filters-actions">
@@ -370,10 +523,9 @@
                 >
             </div>
         </form>
-    </header>
 
-    {#if hasActiveSearch}
-        <section class="search-results-shell">
+        {#if hasActiveSearch}
+            <section class="search-results-shell">
             <div class="search-results-bar">
                 <div>
                     <p class="results-count">{sortedResults.length} results</p>
@@ -401,10 +553,10 @@
                             Committee: {requestedCommittee}
                         </p>
                     {/if}
-                    {#if dateFrom || dateTo}
+                    {#if effectiveDateRange.from || effectiveDateRange.to}
                         <p class="results-scope">
-                            Published between {dateFrom || "start"} and {dateTo ||
-                                "today"}
+                            Published between {effectiveDateRange.from ||
+                                "start"} and {effectiveDateRange.to || "today"}
                         </p>
                     {/if}
                 </div>
@@ -424,11 +576,22 @@
                             value={requestedCommittee}
                         />
                     {/if}
-                    {#if dateFrom}
-                        <input type="hidden" name="from" value={dateFrom} />
+                    {#if datePreset}
+                        <input type="hidden" name="date" value={datePreset} />
                     {/if}
-                    {#if dateTo}
-                        <input type="hidden" name="to" value={dateTo} />
+                    {#if effectiveDateRange.from}
+                        <input
+                            type="hidden"
+                            name="from"
+                            value={effectiveDateRange.from}
+                        />
+                    {/if}
+                    {#if effectiveDateRange.to}
+                        <input
+                            type="hidden"
+                            name="to"
+                            value={effectiveDateRange.to}
+                        />
                     {/if}
                     <label for="sort-mode">Order by</label>
                     <select
@@ -512,12 +675,13 @@
                     </p>
                 </div>
             {/if}
-        </section>
-    {:else}
-        <div class="empty-state empty-state--prompt">
-            <p>Enter a search term to browse article results.</p>
-        </div>
-    {/if}
+            </section>
+        {:else}
+            <div class="empty-state empty-state--prompt">
+                <p>Enter a search term to browse article results.</p>
+            </div>
+        {/if}
+    </div>
 </section>
 
 <style>
@@ -528,17 +692,36 @@
     .search-header {
         border-bottom: 1px solid
             color-mix(in srgb, var(--color-line) 55%, transparent);
-        margin-bottom: var(--space-section);
-        padding-bottom: var(--space-6);
+        margin-bottom: var(--space-6);
+        padding-bottom: var(--space-5);
+    }
+
+    .search-layout {
+        align-items: start;
+        display: grid;
+        gap: clamp(var(--space-6), 4vw, var(--space-7));
+        grid-template-columns: minmax(17rem, 22rem) minmax(0, 1fr);
     }
 
     .search-form {
         background: color-mix(in srgb, var(--color-panel) 82%, transparent);
         border: 1px solid color-mix(in srgb, var(--color-line) 72%, transparent);
-        border-radius: 0.5rem;
+        border-radius: var(--radius);
         display: grid;
-        gap: var(--space-5);
-        padding: clamp(var(--space-5), 4vw, var(--space-6));
+        gap: 1rem;
+        position: sticky;
+        top: calc(var(--site-header-height, 3.25rem) + 1rem);
+        padding: clamp(0.95rem, 3vw, 1.2rem);
+    }
+
+    .search-panel-title {
+        color: var(--color-accent);
+        font-size: var(--font-size-small);
+        font-weight: var(--font-weight-meta);
+        letter-spacing: 0.11em;
+        line-height: var(--line-height-small);
+        margin: 0;
+        text-transform: uppercase;
     }
 
     h1 {
@@ -562,7 +745,7 @@
 
     .search-query-group {
         display: grid;
-        gap: var(--space-2);
+        gap: 0.35rem;
         max-width: 60rem;
     }
 
@@ -579,12 +762,12 @@
         appearance: none;
         background: color-mix(in srgb, var(--color-paper) 92%, transparent);
         border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
-        border-radius: 0.4rem;
+        border-radius: var(--radius);
         color: var(--color-accent-2);
         font: inherit;
-        font-size: 1rem;
+        font-size: 0.98rem;
         line-height: 1.2;
-        padding: 0.95rem 1.2rem;
+        padding: 0.8rem 0.95rem;
         width: 100%;
     }
 
@@ -604,54 +787,44 @@
     .search-results-shell {
         display: grid;
         gap: var(--space-6);
+        min-width: 0;
     }
 
     .filters-grid {
         display: grid;
-        gap: var(--space-5);
+        gap: 1.15rem;
         grid-template-columns: minmax(0, 1fr);
     }
 
     .filter-group {
         border: 0;
+        border-top: 1px solid
+            color-mix(in srgb, var(--color-line) 65%, transparent);
         margin: 0;
         min-width: 0;
-        padding: 0;
+        padding: 1rem 0 0;
     }
 
-    .filter-accordion {
-        background: color-mix(in srgb, var(--color-paper) 90%, transparent);
-        border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
-        border-radius: 0.4rem;
-        overflow: clip;
+    .filter-group:first-child {
+        border-top: 0;
+        padding-top: 0;
     }
 
-    .filter-accordion summary {
-        color: var(--color-accent-2);
-        cursor: pointer;
-        font-size: 0.98rem;
+    .filter-group legend {
+        color: var(--color-muted);
+        font-size: 0.86rem;
         font-weight: 600;
-        list-style: none;
-        padding: 0.9rem 1rem;
-    }
-
-    .filter-accordion summary::-webkit-details-marker {
-        display: none;
-    }
-
-    .filter-accordion[open] summary {
-        border-bottom: 1px solid
-            color-mix(in srgb, var(--color-line) 72%, transparent);
-    }
-
-    .filter-accordion .filter-group {
-        padding: 1rem;
+        letter-spacing: 0.05em;
+        line-height: 1.2;
+        margin-bottom: 0.8rem;
+        padding: 0;
+        text-transform: uppercase;
     }
 
     .date-range {
         display: grid;
-        gap: var(--space-3);
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .date-range label,
@@ -660,17 +833,9 @@
         gap: 0.45rem;
     }
 
-    .filter-hint {
-        color: var(--color-muted);
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin: 0 0 var(--space-3);
-        max-width: 36rem;
-    }
-
     .date-range span {
         color: var(--color-muted);
-        font-size: var(--font-size-small);
+        font-size: 0.78rem;
         font-weight: 600;
         line-height: var(--line-height-small);
     }
@@ -679,32 +844,38 @@
         appearance: none;
         background: color-mix(in srgb, var(--color-paper) 92%, transparent);
         border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
-        border-radius: 0.4rem;
+        border-radius: var(--radius);
         color: var(--color-accent-2);
         font: inherit;
-        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+        padding: 0.72rem 0.85rem;
     }
 
     .checkbox-group {
         display: grid;
-        gap: 0.8rem 1rem;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .checkbox-group--types {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .radio-group {
+        display: grid;
+        gap: 0.7rem;
     }
 
     .committee-select-group {
         display: grid;
         gap: 0.45rem;
-        margin-top: var(--space-4);
+        margin-top: 0.7rem;
         max-width: 32rem;
     }
 
     .committee-select-group span {
         color: var(--color-muted);
-        font-size: var(--font-size-small);
+        font-size: 0.78rem;
         font-weight: 600;
         line-height: var(--line-height-small);
     }
@@ -713,23 +884,41 @@
         appearance: none;
         background: color-mix(in srgb, var(--color-paper) 92%, transparent);
         border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
-        border-radius: 0.4rem;
+        border-radius: var(--radius);
         color: var(--color-accent-2);
         font: inherit;
-        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+        padding: 0.72rem 0.85rem;
     }
 
     .checkbox-option {
         align-items: center;
         color: var(--color-accent-2);
-        font-size: 0.98rem;
+        font-size: 0.92rem;
         font-weight: 500;
         grid-template-columns: auto minmax(0, 1fr);
+        line-height: 1.35;
+    }
+
+    .radio-option {
+        align-items: center;
+        color: var(--color-accent-2);
+        display: grid;
+        font-size: 0.92rem;
+        font-weight: 500;
+        gap: 0.45rem;
+        grid-template-columns: auto minmax(0, 1fr);
+        line-height: 1.35;
     }
 
     .checkbox-option input {
         accent-color: var(--color-focus);
-        margin: 0.1rem 0 0;
+        margin: 0.08rem 0 0;
+    }
+
+    .radio-option input {
+        accent-color: var(--color-focus);
+        margin: 0.08rem 0 0;
     }
 
     .filters-actions {
@@ -737,24 +926,25 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        gap: 0.9rem 1rem;
+        gap: 0.75rem 0.9rem;
     }
 
     .filters-apply {
         appearance: none;
         background: var(--color-ink);
         border: 1px solid var(--color-ink);
-        border-radius: 0.4rem;
+        border-radius: var(--radius);
         color: var(--color-paper);
         cursor: pointer;
         font: inherit;
         font-weight: 600;
-        padding: 0.85rem 1.2rem;
+        font-size: 0.95rem;
+        padding: 0.72rem 0.95rem;
     }
 
     .filters-clear {
         color: var(--color-muted);
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-weight: 600;
         text-decoration: none;
     }
@@ -790,11 +980,11 @@
         gap: 0.65rem;
     }
 
-    .active-filter-chip {
-        align-items: center;
-        background: color-mix(in srgb, var(--color-panel) 88%, transparent);
-        border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
-        border-radius: 999px;
+  .active-filter-chip {
+    align-items: center;
+    background: color-mix(in srgb, var(--color-panel) 88%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
+    border-radius: var(--radius);
         color: var(--color-accent-2);
         display: inline-flex;
         gap: 0.5rem;
@@ -842,7 +1032,7 @@
         appearance: none;
         background: color-mix(in srgb, var(--color-panel) 84%, transparent);
         border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
-        border-radius: 0.4rem;
+        border-radius: var(--radius);
         color: var(--color-accent-2);
         font: inherit;
         padding: 0.85rem 1rem;
@@ -967,6 +1157,14 @@
     }
 
     @media (max-width: 760px) {
+        .search-layout {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .search-form {
+            position: static;
+        }
+
         .filters-grid {
             grid-template-columns: minmax(0, 1fr);
         }
