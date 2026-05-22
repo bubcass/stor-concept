@@ -115,7 +115,7 @@
           },
           {
             "type": "text",
-            "text": " as transparent as possible. However, much of the information can remain abstract, technical or difficult for non-specialist audiences to engage with. There is a large amount of work done, with thousands of hours of debate translating to millions of words of written records and tens of thousands of parliamentary questions. A commitment to open data improves transparency but transparency alone does not guarantee public engagement or even understanding."
+            "text": " as transparent as possible. However, much of the information can remain abstract, technical or difficult for non-specialist audiences to engage with. Much work is done in Parliament, with thousands of hours of debate translating to millions of written words, including tens of thousands of parliamentary questions, each year. A commitment to open data improves transparency but transparency alone does not guarantee public engagement or even understanding."
           }
         ]
       },
@@ -133,7 +133,7 @@
         "attrs": {
           "dataSrc": "visualisation/26917154?2729416",
           "alt": "Flourish visualisation",
-          "caption": "Data does not necessarily have to mean a spreadsheet. We should make our information accessible",
+          "caption": "A Flourish ticker visual. Data does not necessarily have to mean a spreadsheet and we should make our information as accessible as possible",
           "thumbnail": "https://public.flourish.studio/visualisation/26917154/thumbnail",
           "embedType": "visualisation",
           "width": "prose"
@@ -162,7 +162,30 @@
         "content": [
           {
             "type": "text",
-            "text": "An initial proof-of-concept for the Open Data Insights initiative was delivered through PQ Explorer."
+            "text": "An initial proof-of-concept for the Open Data Insights initiative was delivered through "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/open-data/pq-explorer/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "PQ Explorer"
+          },
+          {
+            "type": "text",
+            "text": "."
           }
         ]
       },
@@ -171,7 +194,30 @@
         "content": [
           {
             "type": "text",
-            "text": "Arising from the positive response to PQ Explorer, a project to cover the Seanad elections of early 2025 with the Open Data Insight ethos delivered the Seanad Election Explorer, which for the first time saw Seanad election results displayed in a rich and data-driven user experience on the Oireachtas website in real time as counts progressed."
+            "text": "Arising from the positive response to PQ Explorer, a project to cover the Seanad elections of early 2025 with the Open Data Insight ethos delivered the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/elections/seanad-general-election/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Seanad Election Explorer"
+          },
+          {
+            "type": "text",
+            "text": ", which for the first time saw Seanad election results displayed in a rich and data-driven user experience on the Oireachtas website in real time as counts progressed."
           }
         ]
       },
@@ -180,7 +226,47 @@
         "content": [
           {
             "type": "text",
-            "text": "The Open Data Insight initiative has subsequently been applied to other elements of parliamentary business, including the election of the Ceann Comhairle and Leas-Cheann Comhairle, the displaying of party strengths and constituency make-up on the Oireachtas website and a resource for exploring the Dáil Chamber."
+            "text": "The Open Data Insight initiative has subsequently been applied to other elements of parliamentary business, including the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/elections/selection-of-the-ceann-comhairle/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "selection of the Ceann Comhairle"
+          },
+          {
+            "type": "text",
+            "text": " and Leas-Cheann Comhairle, the displaying of party strengths and constituency make-up on the Oireachtas website and a resource for "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/dail-chamber",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "exploring the Dáil Chamber"
+          },
+          {
+            "type": "text",
+            "text": "."
           }
         ]
       },
@@ -316,7 +402,7 @@
         "attrs": {
           "src": "/media/vote-result.png",
           "alt": "A visualisation of a vote in Dáil Éireann",
-          "caption": "The information is already there; it's a question of finding the right way to get the message across",
+          "caption": "Voting visualised. The information is already there; it's a question of finding the right way to get the message across",
           "credit": "",
           "layout": "wide"
         }
@@ -1140,7 +1226,27 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "expanding the current Dáil Chamber map into a full Vote Explorer platform, enabling users to visually explore parliamentary voting behaviour and outcomes over time"
+                    "text": "expanding the current Dáil Chamber map into a full "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://bubcass.github.io/chamber-vote-poc/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Vote Explorer"
+                  },
+                  {
+                    "type": "text",
+                    "text": " platform, enabling users to visually explore parliamentary voting behaviour and outcomes over time"
                   }
                 ]
               }
