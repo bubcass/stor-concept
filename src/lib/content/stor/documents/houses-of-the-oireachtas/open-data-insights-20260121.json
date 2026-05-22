@@ -66,7 +66,16 @@
         "content": [
           {
             "type": "text",
-            "text": "Open Data Insights is not a specific project or plan but rather an editorial ethos adopted by the Houses of the Oireachtas web team focused on transforming parliamentary open data into accessible, visual and interactive public information experiences that puts users in control of what they need to see."
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Open Data Insights"
+          },
+          {
+            "type": "text",
+            "text": " is not a specific project or plan but rather an editorial ethos adopted by the Houses of the Oireachtas web team focused on transforming parliamentary open data into accessible, visual and interactive public information experiences that puts users in control of what they need to see."
           }
         ]
       },
@@ -1368,7 +1377,7 @@
         "content": [
           {
             "type": "text",
-            "text": "By combining open data, visual communication and interactive exploration, the Open Data Insights approach seeks to strengthen the connection between Parliament and the public it serves — helping to bring parliamentary information to life for a wider audience and supporting a more open, accessible and understandable democratic process."
+            "text": "By combining open data, visual communication and interactive exploration, the Open Data Insights approach seeks to strengthen the connection between Parliament and the public it serves, helping to bring parliamentary information to life for a wider audience and supporting a more open, accessible and understandable democratic process."
           }
         ]
       }
