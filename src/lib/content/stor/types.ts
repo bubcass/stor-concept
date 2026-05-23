@@ -63,6 +63,7 @@ export interface ProseMirrorNode {
     | 'blockquote'
     | 'codeBlock'
     | 'imageBlock'
+    | 'mediaTextBlock'
     | 'flourishBlock'
     | 'tableBlock';
   attrs?: Record<string, unknown> & {

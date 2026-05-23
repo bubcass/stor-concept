@@ -263,6 +263,42 @@ function serializeFlourishBlock(node: ProseMirrorNode) {
   }</phrase></textobject></mediaobject><remark><para>Flourish ${embedType}: <ulink url="${dataSrc}">${dataSrc}</ulink></para></remark></figure>`;
 }
 
+function serializeMediaTextBlock(node: ProseMirrorNode) {
+  const src = esc(String(node.attrs?.src ?? ''));
+  const alt = esc(String(node.attrs?.alt ?? ''));
+  const mediaType = esc(String(node.attrs?.mediaType ?? 'image'));
+  const poster = esc(String(node.attrs?.poster ?? ''));
+  const captions = esc(String(node.attrs?.captions ?? ''));
+  const caption = String(node.attrs?.caption ?? '').trim();
+  const credit = String(node.attrs?.credit ?? '').trim();
+  const heading = String(node.attrs?.heading ?? '').trim();
+  const eyebrow = String(node.attrs?.eyebrow ?? '').trim();
+  const mediaSide = esc(String(node.attrs?.mediaSide ?? 'right'));
+  const paragraphs = Array.isArray(node.attrs?.paragraphs)
+    ? (node.attrs?.paragraphs as unknown[])
+        .map((value) => String(value ?? '').trim())
+        .filter(Boolean)
+    : [];
+
+  const textBody = [
+    eyebrow ? `<para role="eyebrow">${esc(eyebrow)}</para>` : '',
+    heading ? `<title>${esc(heading)}</title>` : '',
+    ...paragraphs.map((paragraph) => `<para>${esc(paragraph)}</para>`),
+  ].join('');
+  const captionXml = caption ? `<caption><para>${esc(caption)}</para></caption>` : '';
+  const creditXml = credit ? `<para role="credit">${esc(credit)}</para>` : '';
+  const mediaObject =
+    mediaType === 'video'
+      ? `<videoobject><videodata fileref="${src}"${
+          poster ? ` poster="${poster}"` : ''
+        }/></videoobject>${captions ? `<textobject><phrase>Captions: ${captions}</phrase></textobject>` : ''}`
+      : `<imageobject><imagedata fileref="${src}"/></imageobject>${
+          alt ? `<textobject><phrase>${alt}</phrase></textobject>` : ''
+        }`;
+
+  return `<informalfigure role="media-text" condition="${mediaSide}"><mediaobject>${mediaObject}</mediaobject>${captionXml}<sidebar>${textBody}${creditXml}</sidebar></informalfigure>`;
+}
+
 function serializeStandaloneNode(node: ProseMirrorNode): string {
   switch (node.type) {
     case 'paragraph':
@@ -281,6 +317,8 @@ function serializeStandaloneNode(node: ProseMirrorNode): string {
       return `<programlisting>${esc(node.text ?? '')}</programlisting>`;
     case 'imageBlock':
       return serializeImageBlock(node);
+    case 'mediaTextBlock':
+      return serializeMediaTextBlock(node);
     case 'flourishBlock':
       return serializeFlourishBlock(node);
     case 'tableBlock':

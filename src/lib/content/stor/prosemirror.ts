@@ -116,10 +116,10 @@ function endsWithSentencePunctuation(value: string) {
 }
 
 export interface CommitteeReportNode {
-  type: 'heading' | 'paragraph' | 'flourish' | 'image' | 'table';
+  type: 'heading' | 'paragraph' | 'flourish' | 'image' | 'table' | 'media-text';
   level?: number;
   text: string;
-  block?: Extract<StoryBlock, { type: 'flourish' | 'image' | 'table' }>;
+  block?: Extract<StoryBlock, { type: 'flourish' | 'image' | 'table' | 'media-text' }>;
 }
 
 function parseFlourishMarker(text: string) {
@@ -155,6 +155,57 @@ function imageBlockFromNode(node: ProseMirrorNode) {
         | 'wide'
         | 'full'
         | 'portrait') || 'inline',
+  };
+}
+
+function mediaTextBlockFromNode(
+  node: ProseMirrorNode,
+): Extract<StoryBlock, { type: 'media-text' }> | null {
+  const src = String(node.attrs?.src ?? '').trim();
+  if (!src) return null;
+  const mediaSide: 'left' | 'right' =
+    String(node.attrs?.mediaSide ?? '').trim() === 'left' ? 'left' : 'right';
+  const mediaType = String(node.attrs?.mediaType ?? '').trim() === 'video' ? 'video' : 'image';
+
+  const paragraphs = Array.isArray(node.attrs?.paragraphs)
+    ? (node.attrs?.paragraphs as unknown[])
+        .map((value) => String(value ?? '').trim())
+        .filter(Boolean)
+        .map((value) => escapeHtml(value))
+    : [];
+
+  return {
+    type: 'media-text' as const,
+    ...(String(node.attrs?.eyebrow ?? '').trim()
+      ? { eyebrow: String(node.attrs?.eyebrow ?? '').trim() }
+      : {}),
+    ...(String(node.attrs?.heading ?? '').trim()
+      ? { heading: String(node.attrs?.heading ?? '').trim() }
+      : {}),
+    paragraphs: paragraphs.length ? paragraphs : [''],
+    media: {
+      type: mediaType,
+      asset:
+        mediaType === 'video'
+          ? {
+              src,
+              ...(String(node.attrs?.poster ?? '').trim()
+                ? { poster: String(node.attrs?.poster ?? '').trim() }
+                : {}),
+              ...(String(node.attrs?.captions ?? '').trim()
+                ? { captions: String(node.attrs?.captions ?? '').trim() }
+                : {}),
+              caption: String(node.attrs?.caption ?? '').trim() || null,
+              credit: String(node.attrs?.credit ?? '').trim() || null,
+            }
+          : {
+              src,
+              alt: String(node.attrs?.alt ?? '').trim() || 'Image',
+              caption: String(node.attrs?.caption ?? '').trim() || null,
+              credit: String(node.attrs?.credit ?? '').trim() || null,
+            },
+    },
+    mediaSide,
   };
 }
 
@@ -281,6 +332,18 @@ export function proseMirrorToCommitteeNodes(
       continue;
     }
 
+    if (node.type === 'mediaTextBlock') {
+      const block = mediaTextBlockFromNode(node);
+      if (!block) continue;
+
+      nodes.push({
+        type: 'media-text',
+        text: block.heading ?? block.paragraphs[0] ?? 'Media/text block',
+        block,
+      });
+      continue;
+    }
+
     if (node.type === 'imageBlock') {
       const block = imageBlockFromNode(node);
       if (!block) continue;
@@ -387,6 +450,16 @@ export function proseMirrorToNarrativeBlocks(
 
       flush();
       blocks.push(flourish);
+      encounteredBodyContent = true;
+      continue;
+    }
+
+    if (node.type === 'mediaTextBlock') {
+      const mediaText = mediaTextBlockFromNode(node);
+      if (!mediaText) continue;
+
+      flush();
+      blocks.push(mediaText);
       encounteredBodyContent = true;
       continue;
     }

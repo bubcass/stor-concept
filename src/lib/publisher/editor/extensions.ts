@@ -1,5 +1,32 @@
 import { mergeAttributes, Node } from '@tiptap/core';
 
+function decodeHtmlAttribute(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
+function parseParagraphList(value: string) {
+  if (!value) return [];
+
+  try {
+    const parsed = JSON.parse(decodeHtmlAttribute(value));
+    return Array.isArray(parsed) ? parsed.map((item) => String(item ?? '')) : [];
+  } catch {
+    return decodeHtmlAttribute(value)
+      .split(/\n{2,}/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+}
+
+function encodeParagraphList(value: unknown) {
+  const source = Array.isArray(value) ? value : [];
+  return encodeURIComponent(JSON.stringify(source.map((item) => String(item ?? ''))));
+}
+
 export const ImageBlock = Node.create({
   name: 'imageBlock',
   group: 'block',
@@ -141,13 +168,114 @@ export const FlourishBlock = Node.create({
   },
 });
 
-function decodeHtmlAttribute(value: string) {
-  try {
-    return decodeURIComponent(value);
-  } catch {
-    return value;
-  }
-}
+export const MediaTextBlock = Node.create({
+  name: 'mediaTextBlock',
+  group: 'block',
+  atom: true,
+  selectable: true,
+  draggable: true,
+
+  addAttributes() {
+    return {
+      eyebrow: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-eyebrow') || '',
+        renderHTML: (attributes) => ({ 'data-eyebrow': attributes.eyebrow || '' }),
+      },
+      heading: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-heading') || '',
+        renderHTML: (attributes) => ({ 'data-heading': attributes.heading || '' }),
+      },
+      paragraphs: {
+        default: [],
+        parseHTML: (element) =>
+          parseParagraphList(element.getAttribute('data-paragraphs') || ''),
+        renderHTML: (attributes) => ({
+          'data-paragraphs': encodeParagraphList(attributes.paragraphs),
+        }),
+      },
+      mediaType: {
+        default: 'image',
+        parseHTML: (element) => element.getAttribute('data-media-type') || 'image',
+        renderHTML: (attributes) => ({
+          'data-media-type': attributes.mediaType || 'image',
+        }),
+      },
+      poster: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-poster') || '',
+        renderHTML: (attributes) => ({ 'data-poster': attributes.poster || '' }),
+      },
+      captions: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-captions') || '',
+        renderHTML: (attributes) => ({
+          'data-captions': attributes.captions || '',
+        }),
+      },
+      mediaSide: {
+        default: 'right',
+        parseHTML: (element) => element.getAttribute('data-media-side') || 'right',
+        renderHTML: (attributes) => ({
+          'data-media-side': attributes.mediaSide || 'right',
+        }),
+      },
+      src: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-src') || '',
+        renderHTML: (attributes) => ({ 'data-src': attributes.src || '' }),
+      },
+      alt: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-alt') || '',
+        renderHTML: (attributes) => ({ 'data-alt': attributes.alt || '' }),
+      },
+      caption: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-caption') || '',
+        renderHTML: (attributes) => ({
+          'data-caption': attributes.caption || '',
+        }),
+      },
+      credit: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-credit') || '',
+        renderHTML: (attributes) => ({ 'data-credit': attributes.credit || '' }),
+      },
+    };
+  },
+
+  parseHTML() {
+    return [{ tag: 'stor-media-text' }];
+  },
+
+  renderHTML({ HTMLAttributes, node }) {
+    const paragraphs = parseParagraphList(String(node.attrs.paragraphs ?? ''));
+    return [
+      'stor-media-text',
+      mergeAttributes(HTMLAttributes, {
+        class: `stor-embedded-block stor-embedded-block--media-text stor-embedded-block--media-${node.attrs.mediaSide || 'right'}`,
+      }),
+      ['div', { class: 'stor-embedded-block__eyebrow' }, 'Media/text split'],
+      [
+        'p',
+        { class: 'stor-embedded-block__text' },
+        node.attrs.heading || paragraphs[0] || 'Media/text block',
+      ],
+      [
+        'p',
+        { class: 'stor-embedded-block__meta' },
+        `${node.attrs.mediaType === 'video' ? 'Video' : 'Image'} · ${
+          node.attrs.mediaSide === 'left' ? 'Media left' : 'Media right'
+        } · ${node.attrs.src || 'No media selected'}`,
+      ],
+      ...(node.attrs.caption
+        ? [['p', { class: 'stor-embedded-block__meta' }, node.attrs.caption]]
+        : []),
+    ];
+  },
+});
 
 function summarizeTable(html: string) {
   const rowCount = (html.match(/<tr\b/gi) || []).length;
@@ -200,7 +328,7 @@ export const TableBlock = Node.create({
 });
 
 export interface StructuredBlockSelection {
-  type: 'imageBlock' | 'flourishBlock' | 'tableBlock';
+  type: 'imageBlock' | 'flourishBlock' | 'tableBlock' | 'mediaTextBlock';
   attrs: Record<string, unknown>;
   from: number;
   to: number;
@@ -229,7 +357,8 @@ export function getSelectedStructuredBlock(editor: {
     selectedNode &&
     (selectedNode.type.name === 'imageBlock' ||
       selectedNode.type.name === 'flourishBlock' ||
-      selectedNode.type.name === 'tableBlock')
+      selectedNode.type.name === 'tableBlock' ||
+      selectedNode.type.name === 'mediaTextBlock')
   ) {
     return {
       type: selectedNode.type.name,
@@ -244,7 +373,8 @@ export function getSelectedStructuredBlock(editor: {
     nodeAfter &&
     (nodeAfter.type.name === 'imageBlock' ||
       nodeAfter.type.name === 'flourishBlock' ||
-      nodeAfter.type.name === 'tableBlock')
+      nodeAfter.type.name === 'tableBlock' ||
+      nodeAfter.type.name === 'mediaTextBlock')
   ) {
     return {
       type: nodeAfter.type.name,

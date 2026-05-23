@@ -14,6 +14,7 @@
         FlourishBlock,
         getSelectedStructuredBlock,
         ImageBlock,
+        MediaTextBlock,
         TableBlock,
         type StructuredBlockSelection,
     } from "$lib/publisher/editor/extensions";
@@ -1214,6 +1215,33 @@
             .run();
     }
 
+    function insertMediaTextBlock() {
+        if (!editor) return;
+
+        editor
+            .chain()
+            .focus()
+            .insertContent({
+                type: "mediaTextBlock",
+                attrs: {
+                    eyebrow: "",
+                    heading: "Media/text heading",
+                    paragraphs: [
+                        "Add the associated copy for this split block here.",
+                    ],
+                    mediaType: "image",
+                    mediaSide: "right",
+                    src: "/media/report_launch.jpg",
+                    alt: "Describe the image",
+                    poster: "",
+                    captions: "",
+                    caption: "",
+                    credit: "",
+                },
+            })
+            .run();
+    }
+
     function updateSelectedFlourishSource(value: string) {
         const dataSrc = normalizeFlourishDataSrc(value);
         updateSelectedStructuredBlock({
@@ -1221,6 +1249,18 @@
             embedType: inferFlourishEmbedType(dataSrc),
             thumbnail: flourishThumbnailFor(dataSrc),
         });
+    }
+
+    function paragraphsToEditorValue(value: unknown) {
+        if (!Array.isArray(value)) return "";
+        return value.map((item) => String(item ?? "")).join("\n\n");
+    }
+
+    function editorValueToParagraphs(value: string) {
+        return value
+            .split(/\n{2,}/)
+            .map((item) => item.trim())
+            .filter(Boolean);
     }
 
     function updateSelectedStructuredBlock(patch: Record<string, unknown>) {
@@ -1259,6 +1299,16 @@
             .extendMarkRange("link")
             .setLink({ href: url })
             .run();
+    }
+
+    function isDraftRelatedMessage(message: string | null) {
+        if (!message) return false;
+
+        return (
+            message.startsWith("Restored local draft") ||
+            message.startsWith("A previous local draft") ||
+            message.startsWith("Draft saved locally")
+        );
     }
 
     function currentEditorTextStyle() {
@@ -1328,6 +1378,7 @@
                 Superscript,
                 Subscript,
                 ImageBlock,
+                MediaTextBlock,
                 FlourishBlock,
                 TableBlock,
             ],
@@ -1556,7 +1607,11 @@
 
         {#if openStage !== "start"}
             <div class="status-strip">
-                <div class="status-card">
+                <div
+                    class="status-card"
+                    class:status-card--warning={validation.errors.length > 0}
+                    class:status-card--ready={validation.errors.length === 0}
+                >
                     <strong>Validation</strong>
                     <span>
                         {#if validation.errors.length}
@@ -1569,7 +1624,13 @@
                         {/if}
                     </span>
                 </div>
-                <div class="status-card">
+                <div
+                    class="status-card"
+                    class:status-card--warning={!hasBodyContent(editorDocument) ||
+                        hasEmbeddedImportImages}
+                    class:status-card--ready={hasBodyContent(editorDocument) &&
+                        !hasEmbeddedImportImages}
+                >
                     <strong>Content</strong>
                     <span
                         >{#if hasEmbeddedImportImages}
@@ -1584,7 +1645,11 @@
                         {/if}</span
                     >
                 </div>
-                <div class="status-card">
+                <div
+                    class="status-card"
+                    class:status-card--warning={!canonicalDocument}
+                    class:status-card--ready={Boolean(canonicalDocument)}
+                >
                     <strong>Current output</strong>
                     <span
                         >{canonicalDocument
@@ -1595,7 +1660,7 @@
             </div>
         {/if}
 
-        {#if importMessage}
+        {#if importMessage && !isDraftRelatedMessage(importMessage)}
             <div class="publish-message success">
                 <strong>{importMessage}</strong>
             </div>
@@ -1608,10 +1673,15 @@
         {/if}
 
         <div class="draft-status-bar">
-            <span
-                >{draftStatus ??
-                    "Draft not yet saved locally in this browser."}</span
-            >
+            <div class="draft-status-copy">
+                <span
+                    >{draftStatus ??
+                        "Draft not yet saved locally in this browser."}</span
+                >
+                {#if importMessage && isDraftRelatedMessage(importMessage)}
+                    <strong class="draft-status-note">{importMessage}</strong>
+                {/if}
+            </div>
             {#if hasLocalDraft}
                 <div class="draft-status-actions">
                     <button type="button" onclick={discardLocalDraft}
@@ -2686,6 +2756,13 @@
                                         <button
                                             type="button"
                                             class="editor-menu__dropdown-action"
+                                            onclick={insertMediaTextBlock}
+                                        >
+                                            Add media/text split
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="editor-menu__dropdown-action"
                                             onclick={insertImageBlock}
                                         >
                                             Add image
@@ -2724,7 +2801,251 @@
                         {#if selectedStructuredBlock}
                             <div class="editor-sidebars">
                             <aside class="inspector-panel">
-                                {#if selectedStructuredBlock?.type === "imageBlock"}
+                                {#if selectedStructuredBlock?.type === "mediaTextBlock"}
+                                    <h3>Media/text split</h3>
+                                    <div class="inspector-preview inspector-preview--image">
+                                        <div class="inspector-preview__media">
+                                            {#if String(
+                                                selectedStructuredBlock.attrs
+                                                    .mediaType ?? "image",
+                                            ) === "video"}
+                                                {#if String(
+                                                    selectedStructuredBlock
+                                                        .attrs.poster ?? "",
+                                                )}
+                                                    <img
+                                                        src={resolveInspectorAssetSrc(
+                                                            selectedStructuredBlock
+                                                                .attrs.poster,
+                                                        )}
+                                                        alt="Selected video poster"
+                                                    />
+                                                {:else}
+                                                    <div class="inspector-preview__empty">
+                                                        Video selected
+                                                    </div>
+                                                {/if}
+                                            {:else}
+                                                <img
+                                                    src={resolveInspectorAssetSrc(
+                                                        selectedStructuredBlock.attrs
+                                                            .src,
+                                                    )}
+                                                    alt={String(
+                                                        selectedStructuredBlock.attrs
+                                                            .alt ??
+                                                            "Selected media",
+                                                    )}
+                                                />
+                                            {/if}
+                                        </div>
+                                        <div class="inspector-preview__copy">
+                                            <strong
+                                                >Currently selected media/text
+                                                split</strong
+                                            >
+                                            <span>
+                                                Edit the copy, image and left or
+                                                right placement for this split
+                                                layout block.
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <label>
+                                        <span>Eyebrow</span>
+                                        <input
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .eyebrow ?? "",
+                                            )}
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    eyebrow: (
+                                                        event.currentTarget as HTMLInputElement
+                                                    ).value,
+                                                })}
+                                        />
+                                    </label>
+                                    <label>
+                                        <span>Heading</span>
+                                        <input
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .heading ?? "",
+                                            )}
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    heading: (
+                                                        event.currentTarget as HTMLInputElement
+                                                    ).value,
+                                                })}
+                                        />
+                                    </label>
+                                    <label>
+                                        <span>Body copy</span>
+                                        <textarea
+                                            rows="9"
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    paragraphs:
+                                                        editorValueToParagraphs(
+                                                            (
+                                                                event.currentTarget as HTMLTextAreaElement
+                                                            ).value,
+                                                        ),
+                                                })}
+                                        >{paragraphsToEditorValue(
+                                            selectedStructuredBlock.attrs
+                                                .paragraphs,
+                                        )}</textarea>
+                                    </label>
+                                    <p class="inspector-hint">
+                                        Separate paragraphs with a blank line.
+                                    </p>
+                                    <label>
+                                        <span>Media type</span>
+                                        <select
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .mediaType ?? "image",
+                                            )}
+                                            onchange={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    mediaType: (
+                                                        event.currentTarget as HTMLSelectElement
+                                                    ).value,
+                                                })}
+                                        >
+                                            <option value="image">Image</option>
+                                            <option value="video">Video</option>
+                                        </select>
+                                    </label>
+                                    <label>
+                                        <span>Media side</span>
+                                        <select
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .mediaSide ?? "right",
+                                            )}
+                                            onchange={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    mediaSide: (
+                                                        event.currentTarget as HTMLSelectElement
+                                                    ).value,
+                                                })}
+                                        >
+                                            <option value="right"
+                                                >Media right</option
+                                            >
+                                            <option value="left"
+                                                >Media left</option
+                                            >
+                                        </select>
+                                    </label>
+                                    <label>
+                                        <span
+                                            >{String(
+                                                selectedStructuredBlock.attrs
+                                                    .mediaType ?? "image",
+                                            ) === "video"
+                                                ? "Video path"
+                                                : "Image path"}</span
+                                        >
+                                        <input
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .src ?? "",
+                                            )}
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    src: (
+                                                        event.currentTarget as HTMLInputElement
+                                                    ).value,
+                                                })}
+                                        />
+                                    </label>
+                                    {#if String(
+                                        selectedStructuredBlock.attrs
+                                            .mediaType ?? "image",
+                                    ) === "video"}
+                                        <label>
+                                            <span>Poster image</span>
+                                            <input
+                                                value={String(
+                                                    selectedStructuredBlock
+                                                        .attrs.poster ?? "",
+                                                )}
+                                                oninput={(event) =>
+                                                    updateSelectedStructuredBlock({
+                                                        poster: (
+                                                            event.currentTarget as HTMLInputElement
+                                                        ).value,
+                                                    })}
+                                            />
+                                        </label>
+                                        <label>
+                                            <span>Captions file</span>
+                                            <input
+                                                value={String(
+                                                    selectedStructuredBlock
+                                                        .attrs.captions ?? "",
+                                                )}
+                                                oninput={(event) =>
+                                                    updateSelectedStructuredBlock({
+                                                        captions: (
+                                                            event.currentTarget as HTMLInputElement
+                                                        ).value,
+                                                    })}
+                                            />
+                                        </label>
+                                    {:else}
+                                        <label>
+                                            <span>Alt text</span>
+                                            <input
+                                                value={String(
+                                                    selectedStructuredBlock.attrs
+                                                        .alt ?? "",
+                                                )}
+                                                oninput={(event) =>
+                                                    updateSelectedStructuredBlock({
+                                                        alt: (
+                                                            event.currentTarget as HTMLInputElement
+                                                        ).value,
+                                                    })}
+                                            />
+                                        </label>
+                                    {/if}
+                                    <label>
+                                        <span>Caption</span>
+                                        <input
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .caption ?? "",
+                                            )}
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    caption: (
+                                                        event.currentTarget as HTMLInputElement
+                                                    ).value,
+                                                })}
+                                        />
+                                    </label>
+                                    <label>
+                                        <span>Credit</span>
+                                        <input
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .credit ?? "",
+                                            )}
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    credit: (
+                                                        event.currentTarget as HTMLInputElement
+                                                    ).value,
+                                                })}
+                                        />
+                                    </label>
+                                {:else if selectedStructuredBlock?.type === "imageBlock"}
                                     <h3>Image block</h3>
                                     <div class="inspector-preview inspector-preview--image">
                                         <div class="inspector-preview__media">
@@ -3216,9 +3537,17 @@
         padding: 0.5rem 0.1rem 0.55rem;
         background: transparent;
         border: 0;
-        border-bottom: 1px solid #dddcd5;
+        border-bottom: 2px solid #dddcd5;
         border-radius: 0;
         box-shadow: none;
+    }
+
+    .status-card--warning {
+        border-bottom-color: #c28a2f;
+    }
+
+    .status-card--ready {
+        border-bottom-color: #2f7a45;
     }
 
     .status-card strong {
@@ -3228,9 +3557,25 @@
         color: #555550;
     }
 
+    .status-card--warning strong {
+        color: #7d5b1e;
+    }
+
+    .status-card--ready strong {
+        color: #245c34;
+    }
+
     .status-card span {
         color: #72726c;
         font-size: 0.86rem;
+    }
+
+    .status-card--warning span {
+        color: #8a6a32;
+    }
+
+    .status-card--ready span {
+        color: #3f6c4e;
     }
 
     .publish-message,
@@ -3280,12 +3625,35 @@
         min-height: 2.85rem;
     }
 
+    .draft-status-copy {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        min-width: 0;
+        flex: 1;
+    }
+
     .draft-status-bar span {
         font-size: 0.9rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         min-width: 0;
+    }
+
+    .draft-status-note {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        min-height: 1.85rem;
+        padding: 0.16rem 0.55rem;
+        border: 1px solid #d7d7d2;
+        border-radius: 999px;
+        background: #fafaf8;
+        color: #394239;
+        font-size: 0.82rem;
+        font-weight: 600;
+        white-space: nowrap;
     }
 
     .draft-status-actions {
@@ -3973,6 +4341,17 @@
         max-height: 14rem;
         object-fit: contain;
         background: #ffffff;
+    }
+
+    .inspector-preview__empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 10rem;
+        padding: 1rem;
+        color: #66635c;
+        font-size: 0.92rem;
+        font-weight: 600;
     }
 
     .inspector-preview__copy {
