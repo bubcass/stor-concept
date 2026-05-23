@@ -1261,6 +1261,31 @@
             .run();
     }
 
+    function currentEditorTextStyle() {
+        if (!editor) return "p";
+        if (editor.isActive("heading", { level: 1 })) return "1";
+        if (editor.isActive("heading", { level: 2 })) return "2";
+        if (editor.isActive("heading", { level: 3 })) return "3";
+        if (editor.isActive("heading", { level: 4 })) return "4";
+        return "p";
+    }
+
+    function setEditorTextStyle(value: string) {
+        if (!editor) return;
+        if (value === "p") {
+            editor.chain().focus().setParagraph().run();
+            return;
+        }
+
+        editor
+            .chain()
+            .focus()
+            .toggleHeading({
+                level: Number(value) as 1 | 2 | 3 | 4,
+            })
+            .run();
+    }
+
     function mountEditorHost(node: HTMLDivElement) {
         editorHost = node;
 
@@ -2316,124 +2341,376 @@
                         </div>
                     </details>
 
-                    <div class="editor-layout">
+                    <div
+                        class="editor-layout"
+                        class:editor-layout--inspecting={Boolean(
+                            selectedStructuredBlock,
+                        )}
+                    >
                         <div class="editor-shell">
                             <div class="editor-menu">
-                                <span class="editor-menu__label"
-                                    >Formatting</span
-                                >
-                                <select
-                                    onchange={(event) => {
-                                        const value = (
-                                            event.currentTarget as HTMLSelectElement
-                                        ).value;
-                                        if (!editor) return;
-                                        if (value === "p") {
-                                            editor
-                                                .chain()
-                                                .focus()
-                                                .setParagraph()
-                                                .run();
-                                            return;
-                                        }
+                                <div class="editor-menu__group">
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        onclick={() =>
+                                            editor?.chain().focus().undo().run()}
+                                        title="Undo"
+                                        aria-label="Undo"
+                                    >
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path
+                                                d="M9 7H5v4"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="1.8"
+                                            />
+                                            <path
+                                                d="M5 11c1.7-3 4.4-4.5 8-4.5 4.4 0 7 2.6 8 6.5"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="1.8"
+                                            />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "strike",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor?.chain().focus().toggleStrike().run()}
+                                        title="Strikethrough"
+                                        aria-label="Strikethrough"
+                                    >
+                                        <span class="editor-menu__glyph">S</span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "code",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor?.chain().focus().toggleCode().run()}
+                                        title="Inline code"
+                                        aria-label="Inline code"
+                                    >
+                                        <span class="editor-menu__glyph editor-menu__glyph--code"
+                                            >&lt;/&gt;</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        onclick={() =>
+                                            editor?.chain().focus().redo().run()}
+                                        title="Redo"
+                                        aria-label="Redo"
+                                    >
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path
+                                                d="M15 7h4v4"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="1.8"
+                                            />
+                                            <path
+                                                d="M19 11c-1.7-3-4.4-4.5-8-4.5-4.4 0-7 2.6-8 6.5"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="1.8"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
 
-                                        editor
-                                            .chain()
-                                            .focus()
-                                            .toggleHeading({
-                                                level: Number(value) as
-                                                    | 1
-                                                    | 2
-                                                    | 3
-                                                    | 4,
-                                            })
-                                            .run();
-                                    }}
-                                >
-                                    <option value="p">Paragraph</option>
-                                    <option value="1">Heading 1</option>
-                                    <option value="2">Heading 2</option>
-                                    <option value="3">Heading 3</option>
-                                    <option value="4">Heading 4</option>
-                                </select>
-                                <button
-                                    type="button"
-                                    onclick={() =>
-                                        editor?.chain().focus().undo().run()}
-                                    >Undo</button
-                                >
-                                <button
-                                    type="button"
-                                    onclick={() =>
-                                        editor?.chain().focus().redo().run()}
-                                    >Redo</button
-                                >
-                                <button
-                                    type="button"
-                                    onclick={() =>
-                                        editor
-                                            ?.chain()
-                                            .focus()
-                                            .toggleBold()
-                                            .run()}>Bold</button
-                                >
-                                <button
-                                    type="button"
-                                    onclick={() =>
-                                        editor
-                                            ?.chain()
-                                            .focus()
-                                            .toggleItalic()
-                                            .run()}>Italic</button
-                                >
-                                <button
-                                    type="button"
-                                    onclick={() =>
-                                        editor
-                                            ?.chain()
-                                            .focus()
-                                            .toggleUnderline()
-                                            .run()}>Underline</button
-                                >
-                                <button type="button" onclick={setLink}
-                                    >Link</button
-                                >
-                                <button
-                                    type="button"
-                                    onclick={() =>
-                                        editor
-                                            ?.chain()
-                                            .focus()
-                                            .toggleBulletList()
-                                            .run()}>Bullets</button
-                                >
-                                <button
-                                    type="button"
-                                    onclick={() =>
-                                        editor
-                                            ?.chain()
-                                            .focus()
-                                            .toggleOrderedList()
-                                            .run()}>Numbers</button
-                                >
-                                <button
-                                    type="button"
-                                    onclick={() =>
-                                        editor
-                                            ?.chain()
-                                            .focus()
-                                            .toggleBlockquote()
-                                            .run()}>Quote</button
-                                >
-                                <span class="editor-menu__label">Blocks</span>
-                                <button type="button" onclick={insertImageBlock}
-                                    >Add image</button
-                                >
-                                <button
-                                    type="button"
-                                    onclick={insertFlourishBlock}
-                                    >Add Flourish</button
-                                >
+                                <div class="editor-menu__divider"></div>
+
+                                <div class="editor-menu__group editor-menu__group--select">
+                                    <label
+                                        class="editor-menu__heading-control"
+                                        title="Text style"
+                                    >
+                                        <span class="editor-menu__heading-glyph" aria-hidden="true"
+                                            >H</span
+                                        >
+                                        <span
+                                            class="editor-menu__heading-chevron"
+                                            aria-hidden="true">⌄</span
+                                        >
+                                        <span class="sr-only">Text style</span>
+                                        <select
+                                            value={currentEditorTextStyle()}
+                                            onchange={(event) =>
+                                                setEditorTextStyle(
+                                                    (
+                                                        event.currentTarget as HTMLSelectElement
+                                                    ).value,
+                                                )}
+                                        >
+                                            <option value="p">Paragraph</option>
+                                            <option value="1">Heading 1</option>
+                                            <option value="2">Heading 2</option>
+                                            <option value="3">Heading 3</option>
+                                            <option value="4">Heading 4</option>
+                                        </select>
+                                    </label>
+                                </div>
+
+                                <div class="editor-menu__divider"></div>
+
+                                <div class="editor-menu__group">
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "bold",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor?.chain().focus().toggleBold().run()}
+                                        title="Bold"
+                                        aria-label="Bold"
+                                    >
+                                        <span class="editor-menu__glyph editor-menu__glyph--bold"
+                                            >B</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "italic",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor?.chain().focus().toggleItalic().run()}
+                                        title="Italic"
+                                        aria-label="Italic"
+                                    >
+                                        <span class="editor-menu__glyph editor-menu__glyph--italic"
+                                            >I</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "underline",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor
+                                                ?.chain()
+                                                .focus()
+                                                .toggleUnderline()
+                                                .run()}
+                                        title="Underline"
+                                        aria-label="Underline"
+                                    >
+                                        <span
+                                            class="editor-menu__glyph editor-menu__glyph--underline"
+                                            >U</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "link",
+                                        ) ?? false}
+                                        onclick={setLink}
+                                        title="Link"
+                                        aria-label="Link"
+                                    >
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path
+                                                d="M10.5 13.5 13.5 10.5M8.5 15.5l-2 2a3 3 0 0 1-4-4l2-2M15.5 8.5l2-2a3 3 0 0 1 4 4l-2 2"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="1.8"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="editor-menu__divider"></div>
+
+                                <div class="editor-menu__group">
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "superscript",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor
+                                                ?.chain()
+                                                .focus()
+                                                .toggleSuperscript()
+                                                .run()}
+                                        title="Superscript"
+                                        aria-label="Superscript"
+                                    >
+                                        <span
+                                            class="editor-menu__glyph editor-menu__glyph--super"
+                                            >x²</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "subscript",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor
+                                                ?.chain()
+                                                .focus()
+                                                .toggleSubscript()
+                                                .run()}
+                                        title="Subscript"
+                                        aria-label="Subscript"
+                                    >
+                                        <span
+                                            class="editor-menu__glyph editor-menu__glyph--sub"
+                                            >x₂</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "bulletList",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor
+                                                ?.chain()
+                                                .focus()
+                                                .toggleBulletList()
+                                                .run()}
+                                        title="Bullet list"
+                                        aria-label="Bullet list"
+                                    >
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle cx="6" cy="7" r="1.4" fill="currentColor"></circle>
+                                            <circle cx="6" cy="12" r="1.4" fill="currentColor"></circle>
+                                            <circle cx="6" cy="17" r="1.4" fill="currentColor"></circle>
+                                            <path
+                                                d="M10 7h8M10 12h8M10 17h8"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-width="1.8"
+                                            />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "orderedList",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor
+                                                ?.chain()
+                                                .focus()
+                                                .toggleOrderedList()
+                                                .run()}
+                                        title="Numbered list"
+                                        aria-label="Numbered list"
+                                    >
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path
+                                                d="M5 7h2M5 12h2M5 17h2M10 7h9M10 12h9M10 17h9"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-width="1.8"
+                                            />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="editor-menu__button editor-menu__button--icon"
+                                        class:editor-menu__button--active={editor?.isActive(
+                                            "blockquote",
+                                        ) ?? false}
+                                        onclick={() =>
+                                            editor
+                                                ?.chain()
+                                                .focus()
+                                                .toggleBlockquote()
+                                                .run()}
+                                        title="Block quote"
+                                        aria-label="Block quote"
+                                    >
+                                        <span
+                                            class="editor-menu__glyph editor-menu__glyph--quote"
+                                            >❝</span
+                                        >
+                                    </button>
+                                </div>
+
+                                <div class="editor-menu__divider"></div>
+
+                                <details class="editor-menu__dropdown">
+                                    <summary class="editor-menu__dropdown-toggle">
+                                        <span
+                                            class="editor-menu__dropdown-icon"
+                                            aria-hidden="true"
+                                        >
+                                            <svg viewBox="0 0 24 24">
+                                                <path
+                                                    d="M4.5 6.5h8v11h-8zM8.5 4.5v4M16 8h4M18 6v4M15 17h5"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="1.8"
+                                                />
+                                            </svg>
+                                        </span>
+                                        <span>Add</span>
+                                    </summary>
+                                    <div class="editor-menu__dropdown-panel">
+                                        <button
+                                            type="button"
+                                            class="editor-menu__dropdown-action"
+                                            onclick={insertImageBlock}
+                                        >
+                                            Add image
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="editor-menu__dropdown-action"
+                                            onclick={insertFlourishBlock}
+                                        >
+                                            Add Flourish
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="editor-menu__dropdown-action"
+                                            disabled
+                                        >
+                                            ArcGIS soon
+                                        </button>
+                                        <p class="editor-menu__dropdown-note">
+                                            Use this menu for custom embeds and
+                                            rich blocks such as Flourish. ArcGIS
+                                            is the next slot in that workflow.
+                                        </p>
+                                    </div>
+                                </details>
                             </div>
 
                             <div class="editor-stage">
@@ -2444,7 +2721,8 @@
                             </div>
                         </div>
 
-                        <div class="editor-sidebars">
+                        {#if selectedStructuredBlock}
+                            <div class="editor-sidebars">
                             <aside class="inspector-panel">
                                 {#if selectedStructuredBlock?.type === "imageBlock"}
                                     <h3>Image block</h3>
@@ -2676,15 +2954,10 @@
                                         columns, {tableSummary.headers}
                                         header cells.
                                     </p>
-                                {:else}
-                                    <h3>Special element inspector</h3>
-                                    <p>
-                                        Select an image, Flourish block or
-                                        imported table to inspect it.
-                                    </p>
                                 {/if}
                             </aside>
-                        </div>
+                            </div>
+                        {/if}
                     </div>
 
                     <div class="wizard-nav">
@@ -3369,57 +3642,282 @@
 
     .editor-layout {
         display: grid;
-        gap: 0.85rem;
-        grid-template-columns: minmax(0, 1fr) 20rem;
+        gap: 1rem;
+        grid-template-columns: minmax(0, 1fr);
         align-items: start;
+    }
+
+    .editor-layout--inspecting {
+        grid-template-columns: minmax(0, 1fr) 21rem;
     }
 
     .editor-shell {
         display: grid;
-        gap: 0.7rem;
         min-height: 0;
+        border: 1px solid #d7d7d2;
+        border-radius: 8px;
+        background: #fffdfa;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(33, 33, 30, 0.05);
     }
 
     .editor-menu {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.45rem;
+        gap: 0.4rem;
         align-items: center;
-        padding: 0.7rem 0.8rem;
-        border: 1px solid #d7d7d2;
-        border-radius: 4px;
-        background: #f2f2ef;
+        padding: 0.72rem 0.95rem;
+        background: #fbfbf8;
         position: sticky;
         top: 0;
-        z-index: 2;
+        z-index: 3;
+        border-bottom: 1px solid #e3e1db;
+        min-height: 3.5rem;
     }
 
-    .editor-menu__label {
-        color: #555555;
-        font-size: 0.77rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
+    .editor-menu__group {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        flex-wrap: wrap;
     }
 
-    .editor-menu select {
-        width: auto;
-        min-width: 8rem;
-        background: #fafaf8;
+    .editor-menu__group--select {
+        min-width: 0;
+    }
+
+    .editor-menu__divider {
+        width: 1px;
+        align-self: stretch;
+        background: #dfddd6;
+        margin: 0 0.2rem;
+    }
+
+    .editor-menu__button svg,
+    .editor-menu__dropdown-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .editor-menu__heading-control {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2rem;
+        min-width: 3rem;
+        min-height: 2.4rem;
+        padding: 0.45rem 0.55rem 0.45rem 0.65rem;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        background: transparent;
+        color: #8d8a82;
+        cursor: pointer;
+        transition:
+            background 140ms ease,
+            border-color 140ms ease,
+            color 140ms ease;
+    }
+
+    .editor-menu__heading-control:hover {
+        border-color: #ddd9d0;
+        background: #f6f4ee;
+        color: #4e4a42;
+    }
+
+    .editor-menu__heading-glyph {
+        font-size: 1.55rem;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    .editor-menu__heading-chevron {
+        margin-top: 0.18rem;
+        font-size: 0.9rem;
+        line-height: 1;
+    }
+
+    .editor-menu__heading-control select {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .editor-menu__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        min-width: 2.4rem;
+        min-height: 2.4rem;
+        padding: 0.45rem;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        background: transparent;
+        color: #8d8a82;
+        transition:
+            background 140ms ease,
+            border-color 140ms ease,
+            color 140ms ease;
+    }
+
+    .editor-menu__button:hover,
+    .editor-menu__dropdown-toggle:hover {
+        border-color: #ddd9d0;
+        background: #f6f4ee;
+        color: #4e4a42;
+    }
+
+    .editor-menu__button--icon {
+        width: 2.25rem;
+    }
+
+    .editor-menu__button--active {
+        border-color: #d4c8aa;
+        background: #f6f0e3;
+        color: #6c5213;
+    }
+
+    .editor-menu__button svg {
+        width: 1.15rem;
+        height: 1.15rem;
+    }
+
+    .editor-menu__glyph {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 1.1rem;
+        line-height: 1;
+        font-size: 1.05rem;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    .editor-menu__glyph--bold {
+        font-weight: 800;
+    }
+
+    .editor-menu__glyph--italic {
+        font-style: italic;
+        font-family: "IBM Plex Serif", "Georgia", serif;
+    }
+
+    .editor-menu__glyph--underline {
+        text-decoration: underline;
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 0.16em;
+    }
+
+    .editor-menu__glyph--code {
+        font-size: 0.92rem;
+        font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+        font-weight: 600;
+    }
+
+    .editor-menu__glyph--super,
+    .editor-menu__glyph--sub {
+        font-size: 0.95rem;
+        font-weight: 500;
+    }
+
+    .editor-menu__glyph--quote {
+        font-size: 1.2rem;
+        line-height: 0.8;
+    }
+
+    .editor-menu__dropdown {
+        position: relative;
+        margin-left: auto;
+    }
+
+    .editor-menu__dropdown[open] .editor-menu__dropdown-toggle {
+        border-color: #d4c8aa;
+        background: #f3ecdd;
+        color: #6c5213;
+    }
+
+    .editor-menu__dropdown-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        min-height: 2.35rem;
+        padding: 0.45rem 0.8rem;
+        border: 1px solid #ddd9d0;
+        border-radius: 6px;
+        background: #fffdfa;
+        color: #7a766c;
+        cursor: pointer;
+        list-style: none;
+        font-size: 0.92rem;
+        font-weight: 600;
+    }
+
+    .editor-menu__dropdown-toggle::-webkit-details-marker {
+        display: none;
+    }
+
+    .editor-menu__dropdown-icon {
+        display: inline-flex;
+        width: 1.15rem;
+        height: 1.15rem;
+    }
+
+    .editor-menu__dropdown-panel {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 0.45rem);
+        width: min(18rem, 80vw);
+        display: grid;
+        gap: 0.4rem;
+        padding: 0.65rem;
+        border: 1px solid #d7d7d2;
+        border-radius: 8px;
+        background: #fffdfa;
+        box-shadow: 0 12px 28px rgba(28, 28, 26, 0.12);
+    }
+
+    .editor-menu__dropdown-action {
+        justify-content: flex-start;
+        width: 100%;
+        min-height: 2.5rem;
+        padding: 0.6rem 0.75rem;
+        border: 1px solid #e1ddd3;
+        border-radius: 6px;
+        background: #faf9f5;
+        text-align: left;
+        font-weight: 600;
+        color: #232320;
+    }
+
+    .editor-menu__dropdown-action:hover {
+        background: #f3f1ea;
+    }
+
+    .editor-menu__dropdown-action:disabled {
+        color: #8a867c;
+        background: #f6f4ee;
+        cursor: not-allowed;
+    }
+
+    .editor-menu__dropdown-note {
+        margin: 0.2rem 0 0;
+        color: #5e5a50;
+        font-size: 0.84rem;
+        line-height: 1.45;
     }
 
     .editor-stage {
         min-height: 0;
-        max-height: calc(100vh - 2rem);
-        border: 1px solid #d7d7d2;
-        border-radius: 4px;
-        background: #fffdfa;
+        height: calc(100vh - 15rem);
         overflow: auto;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        background: linear-gradient(180deg, #fffdf9 0%, #ffffff 100%);
     }
 
     .editor-host {
-        min-height: 70vh;
+        min-height: 100%;
     }
 
     .inspector-panel {
@@ -3628,15 +4126,15 @@
     }
 
     :global(.publisher-editor__content) {
-        min-height: 70vh;
-        max-width: 48rem;
+        min-height: 100%;
+        max-width: 52rem;
         margin: 0 auto;
-        padding: 1.6rem 1.35rem 2rem;
+        padding: 2rem 2rem 3rem;
         outline: none;
         color: #1f1f1f;
-        line-height: 1.72;
-        font-size: 1rem;
-        font-family: "IBM Plex Serif", "Georgia", serif;
+        line-height: 1.7;
+        font-size: 1.02rem;
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
     }
 
     :global(.publisher-editor__content > *:first-child) {
@@ -3644,7 +4142,7 @@
     }
 
     :global(.publisher-editor__content p) {
-        margin: 0 0 1.05rem;
+        margin: 0 0 1rem;
     }
 
     :global(.publisher-editor__content .ProseMirror-selectednode) {
@@ -3662,6 +4160,18 @@
         color: #202020;
         line-height: 1.12;
         font-family: "IBM Plex Sans", system-ui, sans-serif;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        white-space: nowrap;
     }
 
     :global(.publisher-editor__content ul),
@@ -3717,6 +4227,14 @@
             grid-template-columns: 1fr;
         }
 
+        .editor-menu {
+            position: static;
+        }
+
+        .editor-menu__dropdown {
+            margin-left: 0;
+        }
+
         .editor-sidebars {
             position: static;
             top: auto;
@@ -3724,6 +4242,7 @@
 
         .editor-stage,
         .inspector-panel {
+            height: auto;
             max-height: none;
         }
 
