@@ -227,6 +227,28 @@ a:focus-visible {
   text-decoration: none;
 }
 
+.my-stor-link {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.38rem;
+}
+
+.my-stor-link__icon {
+  color: currentColor;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 0.92rem;
+  justify-content: center;
+  transform: translateY(-0.02em);
+  width: 0.92rem;
+}
+
+.my-stor-link__icon svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 @media (max-width: 860px) {
   .site-nav {
     align-items: flex-start;

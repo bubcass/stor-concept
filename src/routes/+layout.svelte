@@ -587,7 +587,24 @@
                 <a href="{base}/library-research-service/"
                     >Library & Research Service</a
                 >
-                <a href="{base}/my-stor/">My Stór</a>
+                <a class="my-stor-link" href="{base}/my-stor/">
+                    <span class="my-stor-link__icon" aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            role="presentation"
+                            focusable="false"
+                        >
+                            <circle cx="12" cy="7.2" r="3.4" fill="currentColor" />
+                            <path
+                                d="M4 20c0-3.7 3.6-6 8-6s8 2.3 8 6"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </span>
+                    <span>My Stór</span>
+                </a>
             </div>
         </nav>
     </header>

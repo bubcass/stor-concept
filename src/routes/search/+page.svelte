@@ -404,7 +404,7 @@
                             <select
                                 id="committee-filter"
                                 name="committee"
-                                value={requestedCommittee}
+                                bind:value={requestedCommittee}
                             >
                                 <option value=""
                                     >All published committees</option
@@ -425,7 +425,7 @@
                                 type="radio"
                                 name="date"
                                 value=""
-                                checked={datePreset === ""}
+                                bind:group={datePreset}
                             />
                             <span>All dates</span>
                         </label>
@@ -434,7 +434,7 @@
                                 type="radio"
                                 name="date"
                                 value="past-week"
-                                checked={datePreset === "past-week"}
+                                bind:group={datePreset}
                             />
                             <span>Past week</span>
                         </label>
@@ -443,7 +443,7 @@
                                 type="radio"
                                 name="date"
                                 value="past-month"
-                                checked={datePreset === "past-month"}
+                                bind:group={datePreset}
                             />
                             <span>Past month</span>
                         </label>
@@ -452,7 +452,7 @@
                                 type="radio"
                                 name="date"
                                 value="past-6-months"
-                                checked={datePreset === "past-6-months"}
+                                bind:group={datePreset}
                             />
                             <span>Past 6 months</span>
                         </label>
@@ -461,7 +461,7 @@
                                 type="radio"
                                 name="date"
                                 value="past-year"
-                                checked={datePreset === "past-year"}
+                                bind:group={datePreset}
                             />
                             <span>Past year</span>
                         </label>
@@ -470,7 +470,7 @@
                                 type="radio"
                                 name="date"
                                 value="custom"
-                                checked={datePreset === "custom"}
+                                bind:group={datePreset}
                             />
                             <span>Custom range</span>
                         </label>
@@ -483,12 +483,12 @@
                                 <input
                                     type="date"
                                     name="from"
-                                    value={dateFrom}
+                                    bind:value={dateFrom}
                                 />
                             </label>
                             <label>
                                 <span>To</span>
-                                <input type="date" name="to" value={dateTo} />
+                                <input type="date" name="to" bind:value={dateTo} />
                             </label>
                         </div>
                     {/if}
