@@ -144,6 +144,10 @@ function renderInline(node: ProseMirrorNode): string {
 
 function renderList(node: ProseMirrorNode): string {
   const tag = node.type === "orderedList" ? "ol" : "ul";
+  const start =
+    node.type === "orderedList" && typeof node.attrs?.start === "number" && node.attrs.start > 1
+      ? Math.floor(node.attrs.start)
+      : null;
   const items = (node.content ?? []).map((item) => {
     const body = (item.content ?? [])
       .map((child) => {
@@ -158,7 +162,9 @@ function renderList(node: ProseMirrorNode): string {
     return `<li>${body}</li>`;
   });
 
-  return `<${tag}>${items.join("")}</${tag}>`;
+  const attrs = tag === "ol" && start ? ` start="${start}"` : "";
+
+  return `<${tag}${attrs}>${items.join("")}</${tag}>`;
 }
 
 export function proseMirrorToCommitteeNodes(

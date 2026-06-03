@@ -73,6 +73,10 @@ export function renderInline(node: ProseMirrorNode): string {
 
 export function renderList(node: ProseMirrorNode): string {
   const tag = node.type === 'orderedList' ? 'ol' : 'ul';
+  const start =
+    node.type === 'orderedList' && typeof node.attrs?.start === 'number' && node.attrs.start > 1
+      ? Math.floor(node.attrs.start)
+      : null;
   const items = (node.content ?? []).map((item) => {
     const body = (item.content ?? [])
       .map((child) => {
@@ -87,11 +91,13 @@ export function renderList(node: ProseMirrorNode): string {
     return `<li>${body}</li>`;
   });
 
-  return `<${tag}>${items.join('')}</${tag}>`;
+  const attrs = tag === 'ol' && start ? ` start="${start}"` : '';
+
+  return `<${tag}${attrs}>${items.join('')}</${tag}>`;
 }
 
 function isOrderedListHtml(value: string) {
-  return /^\s*<ol>/i.test(value) && /<\/ol>\s*$/i.test(value);
+  return /^\s*<ol(?:\s[^>]*)?>/i.test(value) && /<\/ol>\s*$/i.test(value);
 }
 
 function mergeOrderedListHtml(previous: string, current: string) {
@@ -99,8 +105,12 @@ function mergeOrderedListHtml(previous: string, current: string) {
     return null;
   }
 
-  const previousItems = previous.replace(/^\s*<ol>/i, '').replace(/<\/ol>\s*$/i, '');
-  const currentItems = current.replace(/^\s*<ol>/i, '').replace(/<\/ol>\s*$/i, '');
+  const previousItems = previous
+    .replace(/^\s*<ol(?:\s[^>]*)?>/i, '')
+    .replace(/<\/ol>\s*$/i, '');
+  const currentItems = current
+    .replace(/^\s*<ol(?:\s[^>]*)?>/i, '')
+    .replace(/<\/ol>\s*$/i, '');
 
   return `<ol>${previousItems}${currentItems}</ol>`;
 }

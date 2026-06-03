@@ -1,0 +1,4360 @@
+{
+  "id": "review-of-the-joint-committee-on-autism-final-report-20251111",
+  "slug": "review-of-the-joint-committee-on-autism-final-report-20251111",
+  "type": "committee-report",
+  "destination": "committee-reports",
+  "featured": false,
+  "heroLayout": "contained",
+  "showContents": true,
+  "flourishWidth": "prose",
+  "title": "Review of the Joint Committee on Autism Final Report",
+  "dek": "",
+  "eyebrow": "Committee on Disability Matters",
+  "committeeName": "Committee on Disability Matters",
+  "topics": [
+    "report",
+    "autism"
+  ],
+  "layout": "standard",
+  "status": "published",
+  "language": "en",
+  "version": "1.0",
+  "keywords": [
+    "report",
+    "autism"
+  ],
+  "license": "Oireachtas PSI Licence",
+  "publisher": "Houses of the Oireachtas",
+  "publishedDate": "2025-11-11",
+  "contributors": [
+    {
+      "name": "Ronan O'Connor",
+      "role": "author",
+      "affiliation": "Committee secretariat",
+      "showAsAuthor": false
+    }
+  ],
+  "researcher": {
+    "name": "Ronan O'Connor",
+    "organisation": "Committee secretariat"
+  },
+  "content": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An Comhchoiste um Nithe a Bhaineann le Michumas"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Athbhreithniú ar an Tuarascáil Deiridh ón gComhchoiste um Uathachas"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Samhain 2025"
+          }
+        ]
+      },
+      {
+        "type": "paragraph"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Joint Committee on Disability Matters"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Review of the Joint Committee on Autism Final Report"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "November 2025"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "hardBreak"
+          },
+          {
+            "type": "text",
+            "text": "34/DM/02"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Contents"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323264",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Related information 4"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323265",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Publications 4"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323266",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Contact details 4"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323267",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Orders of Reference 4"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323268",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Committee Membership 5"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323269",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Cathaoirleach 5"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323270",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Leas-Cathaoirleach 5"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323271",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Members 5"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323272",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Cathaoirleach’s Foreword 6"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323273",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Introduction & Context 7"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323274",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Methodology 8"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323275",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Thematic Updates 10"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323276",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "1."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323276",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323276",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "General provisions and implementation of the UNCRPD"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323276",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 11"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323277",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "2."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323277",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323277",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Participation in political, cultural, community and public life"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323277",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 12"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323278",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "3."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323278",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323278",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Accessibility"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323278",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 13"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323279",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "4."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323279",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323279",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Health and Life"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323279",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 14"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323280",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "5."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323280",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323280",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Independent and adequate standard of living and social protection"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323280",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 15"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323281",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "6."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323281",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323281",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Autonomy and Integrity"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323281",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 16"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323282",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "7."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323282",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323282",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Equality and non-discrimination"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323282",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 16"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323283",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "8."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323283",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323283",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Awareness-raising"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323283",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 17"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323284",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "9."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323284",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323284",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Education"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323284",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 18"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323285",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "10."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323285",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323285",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Employment"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323285",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 22"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323286",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "11."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323286",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323286",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Access to justice"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323286",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 22"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323287",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "12."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323287",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323287",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Freedom from exploitation, violence, and abuse"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323287",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": " 23"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323288",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Conclusion 25"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323289",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Appendix 1 – Traffic Light Indicator 26"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#_Toc213323290",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Appendix 2 – Written Submissions 36"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Related information"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Publications"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All publications for this committee are available on the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/committees/34/disability-matters/?a=7",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Oireachtas website"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Contact details"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The contact details for the Committee can be found on the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/committees/34/disability-matters/?a=7",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Committee page"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Orders of Reference"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Read the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/committees/about-committees/functions-powers-and-remit-of-departmental-joint-committees/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Orders of Reference"
+          },
+          {
+            "type": "text",
+            "text": " for the Committee."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Committee Membership"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cathaoirleach"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Maurice-Quinlivan.D.2016-10-03/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Maurice Quinlivan TD"
+          },
+          {
+            "type": "text",
+            "text": ", Sinn Féin"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Leas-Cathaoirleach"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Margaret-Murphy-O'Mahony.D.2016-10-03/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Senator Margaret Murphy O’Mahony"
+          },
+          {
+            "type": "text",
+            "text": ", Fianna Fáil"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Members"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Miche%C3%A1l-Carrigy.S.2020-03-30/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Micheál Carrigy TD"
+          },
+          {
+            "type": "text",
+            "text": ", Fine Gael"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Peter-'Chap'-Cleere.D.2024-11-29/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Peter 'Chap' Cleere TD"
+          },
+          {
+            "type": "text",
+            "text": ", Fianna Fáil"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Martin-Daly.D.2024-11-29/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Martin Daly TD"
+          },
+          {
+            "type": "text",
+            "text": ", Fianna Fáil"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Seamus-Healy.D.2000-06-22/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Seamus Healy TD"
+          },
+          {
+            "type": "text",
+            "text": ", Independent"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Keira-Keogh.D.2024-11-29/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Keira Keogh TD"
+          },
+          {
+            "type": "text",
+            "text": ", Fine Gael"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Liam-Quaide.D.2024-11-29/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Liam Quaide TD"
+          },
+          {
+            "type": "text",
+            "text": ", Social Democrats"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Gillian-Toole.D.2024-11-29/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Gillian Toole TD"
+          },
+          {
+            "type": "text",
+            "text": ", Independent"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Ruair%C3%AD-%C3%93-Murch%C3%BA.D.2020-02-08/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Ruairí Ó Murchú TD"
+          },
+          {
+            "type": "text",
+            "text": ", Sinn Féin"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Nikki-Bradley.S.2024-07-10/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Senator Nikki Bradley"
+          },
+          {
+            "type": "text",
+            "text": ", Fine Gael"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Maria-Byrne.S.2016-04-25/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Senator Maria Byrne"
+          },
+          {
+            "type": "text",
+            "text": ", Fine Gael"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Tom-Clonan.S.2022-04-04/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Senator Tom Clonan"
+          },
+          {
+            "type": "text",
+            "text": ", Independent"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/members/member/Laura-Harmon.S.2025-01-29/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Senator Laura Harmon"
+          },
+          {
+            "type": "text",
+            "text": ", Labour Party"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cathaoirleach’s Foreword"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "As Cathaoirleach of the Joint Committee on Disability Matters, I welcome this review of progress on the recommendations of the Final Report of the Joint Committee on Autism. It was agreed by the Committee to carry out this review in order to ensure that a spotlight continued to be shone on the difficulties experienced by autistic people seeking access to supports and services in areas including disability services, education, social protection, employment, and housing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The review assesses progress on the recommendations of the Report. Several key issues were identified by the former Joint Committee on Autism which remain relevant to this Committee, including delays in Assessments of Need, insufficient access to assessments and services, issues with inclusivity in education and a lack of employment supports."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "I believe in the importance of consultation and active involvement of persons with disabilities, including autistic people in decision-making process, design, implementation and monitoring as set out in the United Nations Convention on the Rights of Persons with Disabilities (UNCRPD). The mainstreaming of disability, including autism across all sectors will ensure a reduction in isolated or siloed approaches to services and supports."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "More action is needed by the State to mobilise cross sectoral actors and to place an autism strategy on a statutory footing as part of the wider review of disability legislation, particularly following Ireland’s ratification of the UNCRPD."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "I would like to thank all the stakeholders who made submissions to the Committee for their valuable engagement. Thank you to Committee Members for all their hard work. I also wish to acknowledge the assistance of the Committee Secretariat in preparing this report."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Maurice Quinlivan TD"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cathaoirleach to the Committee"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "November 2025"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Introduction and Context"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Joint Committee on Disability Matters agreed to conduct a review on the progress of the implementation of the recommendations of the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ],
+            "text": "Final Report of the Joint Committee on Autism"
+          },
+          {
+            "type": "text",
+            "text": " as part of its Work Programme for 2025. The Joint Committee on Autism sat during the 33"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "rd"
+          },
+          {
+            "type": "text",
+            "text": " Dáil and 26"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "th"
+          },
+          {
+            "type": "text",
+            "text": " Seanad terms and its Final Report was published on 14"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "th"
+          },
+          {
+            "type": "text",
+            "text": " June 2023. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-2",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[1]"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For the purposes of this review, the Final Report of the Joint Committee on Autism is hereinafter referred to as “the Final Report”."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The purpose of this review is to:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Evaluate the progress made by Government Departments and Agencies in implementing the recommendations."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Support transparency in the State’s response to autism policy and service provision."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Inform the work of the Joint Committee on Disability Matters and further support the mainstreaming of disability supports including autism."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ireland ratified the United Nations Convention on the Rights of Persons with Disabilities (UNCRPD) in 2018. UNCRPD is a landmark Convention that calls for systematic change across all sectors of society through its various articles across health, education, employment, access to justice, personal security, independent living, and access to information. This should secure the mainstreaming of disability, including autism across all sectors. It establishes the obligations of States to take legislative, policy, and administrative measures to protect and promote the rights of persons with disabilities, including through inclusive education, accessibility, social protection, and respect for personal autonomy and integrity."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In 2024, Ireland ratified the Optional Protocol to the Convention."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Together, the UNCRPD and its Optional Protocol create an overarching framework for the promotion and protection of disability rights in Ireland. They guide national policy and ensure that progress can be monitored both domestically and internationally."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This review by the Joint Committee on Disability Matters is framed within those commitments. The Committee’s work in reviewing the progress of recommendations made in the Final Report draws on Ireland’s obligations under the UNCRPD to progressively realise the rights of autistic people. The Review uses the Convention’s thematic modules as its organising structure, ensuring that findings and updates are presented in a way that reflects the Convention’s Articles and the holistic nature of disability rights."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Methodology"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In preparing this review, a traffic light indicator system was initially developed to benchmark progress on recommendations in the Final Report. The traffic light indicators evaluated the progress of specific recommendations by categorising them through a Red-Amber-Green (RAG) system."
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Red indicated ‘"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "no progress"
+                  },
+                  {
+                    "type": "text",
+                    "text": "’"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Amber indicated ‘"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "limited progress"
+                  },
+                  {
+                    "type": "text",
+                    "text": "’"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Green indicated ‘"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "good progress"
+                  },
+                  {
+                    "type": "text",
+                    "text": "’"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Committee structured its review and analysis in alignment with the thematic modules of the UNCRPD. This approach reflects international best practice in monitoring human rights implementation. The use of modular and indicator-based frameworks enables systematic assessment of progress against the Convention’s obligations. As noted by the European Union Agency for Fundamental Rights (FRA, 2023), developing, and applying such indicators “translates globally agreed standards into specific legal, policy-making and practical steps towards realising fundamental rights” and provides an evidence-based means to identify gaps and track progress over time."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-3",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[2]"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Submissions were received from the Department of the Taoiseach, the Department of Children, Disability and Equality (DCDE), the Department of Enterprise, Trade and Employment (DETE), the Department of Social Protection (DSP), the Department of Housing, Local Government and Heritage (DHLGH), the Department of Health, the Department of Rural and Community Development and the Gaeltacht (DRCDG), the Department of Further and Higher Education, Research, Innovation and Science (DFHERIS), the Department of Education and Youth (DEY), the County and City Management Association (CCMA), the Office of Public Works (OPW), and the Public Appointments Service (PAS)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each submission was reviewed to identify references to the recommendations of the Final Report. The information provided was mapped to the UNCRPD modules to ensure consistency with Ireland’s international obligations."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A “good progress” tag was designated where it was clear that a recommendation had already been acted upon and no update was sought from the relevant Department or Agency. For example, Recommendation 6 – which called for the ratification of the Optional Protocol of the UNCRPD without delay – was fully delivered through the ratification of the Optional Protocol in 2024, and therefore required no further follow-up. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-4",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[3]"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "As submissions were reviewed, the traffic light indicator table was updated accordingly. The table can be viewed at Appendix 1 – Traffic Light Indicator."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Further information on the submissions received can be viewed at Appendix 2 – Written Submissions."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Thematic Updates"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This section presents an overview of progress on the recommendations of the Final Report, organised under the thematic modules of the UNCRPD. These modules correspond to clusters of Articles within the UNCRPD, and provide a framework to assess developments in policy, service delivery, and legislation."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The use of UNCRPD modules allows for a structured approach that links the recommendations of the Final Report to Ireland’s international human rights obligations. Not all UNCRPD modules were addressed in the original report."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The thematic modules can be viewed in the table below."
+          }
+        ]
+      },
+      {
+        "type": "tableBlock",
+        "attrs": {
+          "html": "<table><thead><tr><th scope=\"col\"><p><strong>Categorisation </strong></p></th><th scope=\"col\"><p><strong>UNCRPD Articles</strong></p></th></tr></thead><tbody><tr><td><p>General provisions and implementation of the UNCRPD</p></td><td><p>Articles 1–4, Articles 11, 18, 22, 31, 32, 33</p></td></tr><tr><td><p>Participation in political, cultural, community and public life</p></td><td><p>Article 29, 30</p></td></tr><tr><td><p>Accessibility</p></td><td><p>Articles 9, 21, 30</p></td></tr><tr><td><p>Health and life</p></td><td><p>Articles 10, 23, 25</p></td></tr><tr><td><p>Independent and adequate standard of living and social protection</p></td><td><p>Articles 19, 20, 26, 28</p></td></tr><tr><td><p>Autonomy and integrity</p></td><td><p>Articles 12, 14, 15, 17</p></td></tr><tr><td><p>Equality and non-discrimination</p></td><td><p>Article 5</p></td></tr><tr><td><p>Awareness-raising </p></td><td><p>Article 8 </p></td></tr><tr><td><p>Education</p></td><td><p>Articles 7, 24</p></td></tr><tr><td><p>Employment</p></td><td><p>Article 27</p></td></tr><tr><td><p>Access to justice </p></td><td><p>Articles 12, 13</p></td></tr><tr><td><p>Freedom from exploitation, violence, and abuse</p></td><td><p>Articles 6, 16</p></td></tr></tbody></table>"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Within each module, a narrative update is provided that integrates the submissions received and refers to the specific recommendations of the Final Report. This approach offers a broader thematic analysis, while still referencing individual recommendations where progress has been reported."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "General provisions and implementation of the UNCRPD"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Articles 1–4, 11, 18, 22, 31, 32, 33)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This module encompasses the State’s general obligations under the Convention, including ensuring that legislation and policy frameworks protect the rights of persons with disabilities, ensuring cross-government coordination, collecting robust data, and embedding mechanisms for implementation and reporting."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Committee notes that progress has been reported by the Department of the Taoiseach in relation to several key recommendations. Recommendation 1, which called for the enactment of autism legislation, has not yet been implemented in full. However, the Department confirmed that the Autism Innovation Strategy, published in August 2024, provides an interim cross-government framework while the question of legislation is considered as part of a broader review of disability law."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-5",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[4]"
+          },
+          {
+            "type": "text",
+            "text": " The Strategy itself represents an important development, as it provides a time-bound plan (18 months) with actions co-designed with autistic people, though the original call for legislation remains unfulfilled."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In relation to Recommendation 3, which sought the collection of disaggregated data on autistic people, the Department highlighted that the National Disability Authority (NDA) has established an autism subgroup within the National Disability Survey. This subgroup is co-designing autism-specific questions with autistic people, thereby directly addressing the data gaps identified by the Final Report."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Progress has also been reported on Recommendation 4, which urged the development of Universal Design standards that explicitly address the needs of autistic people. The Autism Innovation Strategy commits the NDA to developing guidance to ensure that public services, ICT systems, and buildings are more responsive to autistic needs."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On the functioning of the public service, Recommendation 7 is being advanced through a review of disability inclusion policies in the civil and public service. This work focuses on improving reasonable accommodations, providing disability awareness training, and strengthening the role of Disability Liaison Officers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendation 8 called for workforce planning to address shortages in services for autistic people. The Department reported a series of actions: expansion of clinical placements and sponsorships for students in health and social care professions; international recruitment campaigns with relocation supports; development of advanced practice roles; and the establishment of a Children’s Disability Network Teams (CDNT)-specific retention fund (to commence in 2026). These actions represent meaningful progress, although significant retention challenges persist, particularly within CDNTs."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Overall, notable progress has been made in establishing stronger governance and implementation structures for autism policy, particularly through the Autism Innovation Strategy and related initiatives on data, Universal Design, and workforce planning. However, full realisation of the Final Report recommendations will depend on sustained cross-government coordination, continued investment in service capacity, and further consideration of dedicated autism legislation to embed these commitments in law."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Participation in political, cultural, community and public life"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Articles 29, 30)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Articles 29 and 30 guarantee the right of persons with disabilities to participate in community and cultural life. For autistic people, this means ensuring that staff are trained, services are welcoming, and community and heritage spaces are sensory-friendly and inclusive."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The CCMA provided an update relevant to Recommendation 103, which called for autism awareness training across local government services. Local authorities have begun rolling out autism awareness training for staff, drawing on guidance from the NDA, resources from the Health Service Executive (HSE), and workshops delivered by AsIAm. This has been supported by participation in the AHEAD WAM Programme, which offers work placements for graduates with disabilities, including autistic graduates."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The OPW provided updates on cultural access. In response to Recommendation 106, the OPW confirmed that it is working with AsIAm to achieve accreditation for heritage sites. In connection with Recommendation 107, autism awareness training has been delivered to OPW staff, while sensory maps and aids have been developed to support autistic visitors. Recommendations 108 and 109 are also being advanced through the piloting of sensory-friendly tours at heritage sites. Together, these initiatives represent a significant step towards ensuring that autistic people can fully enjoy cultural spaces."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DRCD also provided an update relevant to Recommendation 19, which called for recognition and support for community groups working with autistic people. DRCD participated in the consultation phase of the Autism Innovation Strategy, published by DCDE in 2024. That Strategy includes an action to provide funding for a range of sensory initiatives and community organisations to create more inclusive environments for autistic people and others with sensory-processing differences, led by the HSE with support from DCDE. Through the Social Inclusion and Community Activation Programme (SICAP), DRCD continues to provide services for people with disabilities, including autistic people. However, the Department confirmed that a distinct funding stream specifically for autism community groups has not yet been established."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Overall, significant progress has been made in promoting participation in community and cultural life, particularly through local authority initiatives and the OPW’s autism-friendly access to heritage sites. Although important cross-departmental progress is evident, further work is required to ensure that community funding frameworks and local programmes consistently recognise and support autism inclusion. Continued attention will be required to ensure that autism inclusion becomes a consistent feature across all public and cultural institutions, supported by ongoing training, stakeholder engagement, and sustained resourcing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Accessibility"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Articles 9, 21, 30)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Accessibility is a foundational right under the UNCRPD, requiring States to ensure that persons with disabilities have equal access to the physical environment, transport, information, and communication technologies, as well as cultural and recreational facilities. For autistic people, accessible design often means sensory-considerate spaces, predictable layouts, and clear information."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Several recommendations in the Final Report addressed accessibility. The Department of the Taoiseach confirmed progress on Recommendation 4, with the NDA tasked under the Autism Innovation Strategy to develop Universal Design guidelines that reflect autistic needs."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Local authorities, through the CCMA, reported progress on Recommendation 104, highlighting their collaboration with the NDA and the Royal Institute of Architects of Ireland (RIAI) to promote Universal Design through continuous professional development (CPD) training. This includes ensuring that built environments and public services incorporate autism-friendly design features."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The OPW also contributed updates relevant to accessibility in cultural spaces, reporting work on sensory maps and autism-friendly guides as part of their progress on Recommendations 107–109."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendation 98 (revising housing application processes to be accessible) and Recommendation 99 (recognising autism as a sensory disability in housing allocation) were acted upon by the DHLGH and the CCMA, with revised forms and policies introduced. However, submissions acknowledged that practical implementation challenges remain, particularly around consistency across local authorities."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Overall, meaningful steps have been taken to embed accessibility in policy and practice, particularly through Universal Design and autism-friendly initiatives, but progress remains uneven and further work is needed to ensure these standards are applied uniformly nationwide."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Health and Life"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Articles 10, 23, 25)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The right to health is fundamental, and under the UNCRPD States must ensure access to health services, including those related to habilitation and rehabilitation, without discrimination. For autistic people, they encompass timely diagnosis, coordinated healthcare, mental-health supports, and qualified staff who understand autism. The Final Report made extensive recommendations in this area."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DCDE provided substantial updates. Recommendation 11 called for a Single Point of Access (SPoA) to children’s disability and Child and Adolescent Mental Health Services (CAMHS). DCDE confirmed that this initiative is being implemented within the HSE, with regional engagement events held in September and October 2025 and full operationalisation planned for October 2025. This will reduce fragmentation and ensure children are not passed between services."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendations 12–17 focused on expanding the workforce pipeline. DCDE noted progress including expansion of student sponsorships and clinical placements (Rec 12, 14); national campaigns to promote disability careers (Rec 15); ongoing collaboration with CORU and Higher Education Institutions (HEIs) to expand training places (Rec 16); and international recruitment campaigns with relocation supports (Rec 17)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendation 18 sought review of the Assessment of Need (AON) process. The National Council for Special Education (NCSE) has completed its review of the education section of the AON."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendations 19 and 20 are also being progressed through collaborative work between DCDE, the Department of Health, and the HSE. DCDE reported that these recommendations are being implemented via the Joint Protocol between Disability Services and CAMHS, designed to support coordinated care for autistic children and young people with mental health needs."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Retention of staff was also a focus of DCDE’s submission. Updates included: targeted retention campaigns, achievement of Section 39 pay parity through a Workplace Relations Commission (WRC) agreement, rollout of autism-specific training, a pilot gap year scheme, promotion of public service benefits, and commitment to a CDNT Retention Fund from 2026. The Department of the Taoiseach also highlighted that there is an ongoing discussion at Cabinet level on how best to maximise recruitment from third level institutions and internationally."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While these initiatives represent progress, significant challenges persist in retaining staff and ensuring equitable service delivery."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Independent and adequate standard of living and social protection"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Articles 19, 20, 26, 28)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This module relates to the right of persons with disabilities to live independently and to access adequate social protection supports. For autistic people, independent living, access to income supports, and housing that accommodates sensory and social needs are all major concerns."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DSP provided extensive updates. Recommendation 62 has been advanced through the introduction of Cost of Disability supports, with the Department confirming that this payment will be made permanent. Recommendations 63 and 64 have also been progressed, with bonus payments introduced and income disregards for Disability and Carer’s Allowance increased. The phasing out of the Carer’s Allowance means test has also begun."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DSP state that measures are in place to ensure smooth movement from Disability Allowance to the State Pension. They advised that Recommendation 69 has been addressed through rate increases linked to benchmarking commitments. Recommendation 70 has seen accessibility improvements, including Plain English forms, and expanded online services. Recommendation 71 confirmed DSP’s ongoing work to make its application systems more accessible."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DHLGH and CCMA confirmed that Recommendations 98–100 were progressed. Application processes have been revised and made more accessible both online and at local offices (Rec 98), autism recognised as a sensory disability in housing policy (Rec 99), and Housing Adaptation Grant ceilings raised (Rec 100). The CCMA noted, however, that grants remain insufficient to cover actual costs."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While progress has been reported, significant gaps remain in delivering independent living supports, particularly in personal assistance and community-based services."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Autonomy and Integrity"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Articles 12, 14, 15, 17)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This module concerns equal recognition before the law, liberty and security, freedom from torture or inhuman treatment, and the protection of physical and mental integrity. For autistic people, these principles mean access to decision-making supports, safeguards in clinical settings, and respect for autonomy and informed consent in health, education, and service provision."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Department of Health reported that the National Clinical Programme for Autism embeds a rights-based approach in clinical practice and service delivery, ensuring that interventions are person-centred and uphold service-user autonomy. The Programme’s design emphasises informed consent, effective communication, and recognition of sensory and communication differences, all of which contribute to protecting personal integrity and promoting dignity in healthcare settings."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DCDE highlighted that the NCSE have completed their review of the Disability Act as raised in Recommendation 18 (review of the AON education section). At the time of writing, the findings of the review have not been published."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Together, these developments demonstrate growing recognition of the need to place autistic people at the centre of decision-making and to align service design with the UNCRPD’s principles of dignity and integrity. However, continued work will be required to ensure that these frameworks translate into consistent, rights-based practice across all settings."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The initiatives reported reflect progress in embedding autonomy and integrity within service delivery. Continued interdepartmental collaboration and sustained monitoring will be necessary to ensure that rights-based approaches are implemented consistently, that decision-making supports are strengthened, and that autistic people experience full recognition and respect for their autonomy in practice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Equality and non-discrimination"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Article 5)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Equality and non-discrimination are cross-cutting obligations under the Convention. For autistic people, they relate to inclusive employment, fair recruitment, and workplace supports."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DETE reported on Recommendations 82 and 86. It has promoted awareness of the Wage Subsidy Scheme and Reasonable Accommodation Fund. DETE confirmed that it exceeded the public sector disability employment target, achieving 6.24% in 2024."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "PAS confirmed implementation of Recommendations 75–78 with autism-friendly recruitment, remote-interview options, and interviewer training now standard across campaigns. PAS advised that Recommendation 76 (interviewer training) has been implemented, with all interviewers now trained in disability awareness and unconscious bias."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Overall, there has been progress made in embedding equality and inclusion within public sector employment practices, supported by awareness of available schemes and structured training. Continued focus will be required to ensure that these positive measures are sustained across all sectors, that awareness of supports reaches all employers, and that autistic people experience tangible improvements in workplace equality and opportunity."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Awareness-raising"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Article 8)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Awareness-raising is essential to combating stigma and ensuring that society values the contributions of all disabled persons including autistic people. For autistic people, it is essential to building inclusive communities and workplaces."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DCDE reported a range of initiatives that contribute directly to awareness-raising and inclusion. Through the National Human Rights Strategy for Disabled People 2025–2030, the Government has committed to strengthening disability awareness across society, embedding Universal Design, and ensuring that services are more inclusive and responsive to the needs of disabled people, including autistic people."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-6",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[5]"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DCDE highlighted the role of the Disability Participation and Awareness Fund (DPAF) in advancing Recommendations 103 and 107. In 2024, €3.5 million was allocated to support 22 projects nationwide, including initiatives promoting autism and neurodiversity awareness in community, arts, and sports settings. Projects such as Thriving Autistic CLG’s “Discovery Programme” and My Canine Companion’s School Therapy Dog Programme have directly enhanced understanding of neurodiversity within communities, demonstrating alignment with the UNCRPD’s principles of participation and inclusion."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DCDE also reported ongoing work through the Access and Inclusion Model (AIM) and its collaboration with AsIAm to produce Introductory Guidelines to Support the Inclusion of Autistic Children in Early Learning and Care, School-Age Childcare, and Childminding Settings."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-7",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[6]"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The CCMA confirmed progress on Recommendation 103, with local authorities rolling out autism awareness training for staff. The OPW provided updates on Recommendation 107, delivering autism awareness training to staff, and developing guides and sensory aids."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The initiatives outlined show how partnership between Government, local authorities, and autism organisations can drive meaningful cultural change. Maintaining this collaborative approach and extending awareness programmes to additional sectors will be key to achieving the lasting societal inclusion envisioned by the UNCRPD."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Education"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Articles 7, 24)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Education is critical to inclusion and is specifically addressed in Article 24 of the Convention. For autistic learners, this encompasses access to mainstream schooling with appropriate supports, trained staff, and clear progression pathways through further and higher education."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DEY provided an update addressing Recommendation 13 and Recommendations 30 to 53, outlining progress across workforce development, school accommodation, inclusive practice and special-educational provision."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In relation to Recommendation 13, which calls for expansion of training places and improved planning for the education workforce, DEY reported continued collaboration with DCDE, DFHERIS and the Teaching Council to align teacher supply with demand for special-education and autism expertise."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In response to Recommendation 30, DEY confirmed that the principles of Universal Design are embedded in all school-building technical guidance, ensuring that new and refurbished school facilities meet the needs of all learners. Under Recommendation 31, progress continues through the Special Educational Needs (SEN) Repurposing Scheme, which funds small-scale works to enhance accessibility and autism-friendly features in schools."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For Recommendation 32, DEY reported that the pupil–teacher ratio at primary level has improved to 23:1 – the lowest ever recorded – with an average of 17:1 in DEIS Urban Band 1 schools. Approximately 15,000 special-education teachers now support inclusion in mainstream settings, including through team-teaching."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In line with Recommendation 33, DEY continues to work with the NCSE to advance a long-term plan for inclusive education. Following the NCSE policy paper “An Inclusive Education for an Inclusive Society,” a phased roadmap for inclusion is being developed under the EU Technical Support Instrument (TSI), including capacity-building, teacher training and the forthcoming Education Therapy Service (ETS)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendations 34 and 35 are being progressed through the Autism Good Practice Guidance for Schools, which informs all NCSE teacher professional learning in autism. A review of this guidance is underway to incorporate lived experience and updated language. Ongoing CPD, summer courses, postgraduate programmes and the SNA national-training programme continue to strengthen autism understanding across the school workforce."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Under Recommendation 36, DEY outlined its Reduced School Day Guidelines (in effect since January 2022), monitored by Tusla Education Support Service and the NCSE to ensure that reduced days are limited and reviewed regularly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendation 37 is being addressed through collaboration with DCDE and the HSE. Following a 2024 pilot of in-school therapy in 16 special schools, Government approval was granted in June 2025 to establish the Education Therapy Service (ETS) within the NCSE. The ETS will provide embedded therapy supports to special and mainstream schools, complementing CDNT provision."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In relation to Recommendations 38 and 39, the Summer Programme continues to expand, with pay adjustments for participating SNAs and teachers and flexibility for schools to recruit clinicians such as therapists or psychologists, supported by dedicated grants."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Progress under Recommendation 40 was reported through the Review of the Education for Persons with Special Educational Needs (EPSEN) Act 2004, completed in June 2025. The review produced 51 recommendations for legislative reform, including alignment with the Disability Act and Assessment of Need processes. An implementation plan will be published before the end of 2025."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For Recommendations 41 and 42, DEY is implementing transition supports under the Comprehensive Employment Strategy (CES), including pilot programmes in 41 special schools. Work is also underway to establish a Transitions (Guidance) Support Service in all special schools from 2026."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendations 43 and 44 are being advanced through review and expansion of the Assistive Technology Scheme, which received a 60 per cent funding increase in Budget 2023 and further funding in Budget 2026. More than €4.6 million was spent in 2024 to support 5,324 children with assistive technology."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Under Recommendations 45 and 46, DEY confirmed continued partnership with the Northern Ireland Department of Education in supporting the Middletown Centre for Autism, which promotes best practice in autism education across both jurisdictions."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For Recommendations 47 to 49, DEY outlined governance measures to embed a rights-based approach in the Summer Programme and in classroom practice, supported by work with Hub na nÓg on children’s participation and voice."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendation 50 is being progressed through the SNA Workforce Development Plan, which includes structured training in autism awareness and communication strategies. Middletown Centre for Autism continues to provide SNA training in partnership with the Department."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Under Recommendation 51, autism content has been expanded across teacher professional-learning programmes, including Oide CPD, Droichead induction and leadership development initiatives."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendations 52 and 53 are being addressed through the Inspectorate’s work on positive behaviour support and ongoing development of national guidelines on the use of restraint and seclusion."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DCDE reported on Recommendations 12–17, confirming efforts to expand training places, reduce registration delays, and promote disability-related careers. Sponsorships and placements have been expanded, while engagement with CORU and HEIs continues to address shortages."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DCDE outlined complementary measures that contribute to inclusion in early learning and care. Central to this is AIM, which supports the full participation of children with disabilities, including autistic children, in mainstream early learning and childcare settings. DCDE confirmed that the AIM model continues to expand, with training for early years educators now incorporating autism awareness and inclusion strategies."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In partnership with AsIAm, DCDE has developed Introductory Guidelines to Support the Inclusion of Autistic Children in Early Learning and Care, School-Age Childcare, and Childminding Settings. These guidelines, published in 2024, promote practical approaches to supporting autistic children’s participation in everyday learning environments and directly advance Recommendations 30 and 33, which called for inclusive practices and autism awareness among educators."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DCDE also referenced its National Human Rights Strategy for Disabled People 2025–2030"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-8",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[7]"
+          },
+          {
+            "type": "text",
+            "text": ", which includes actions aimed at embedding equality and inclusion in education and training, and the Action Plan for Disability Services 2024-2026"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-9",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[8]"
+          },
+          {
+            "type": "text",
+            "text": ", which is at the centre of renewed efforts to deliver tangible service improvements for all people supported by disability services, including autistic people. While these initiatives fall outside formal school governance, they demonstrate interdepartmental cooperation in fostering inclusive education."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Committee also received an update from the DFHERIS. DFHERIS reported progress on Recommendations 54 to 61, which address workforce planning, tertiary education and student supports. Under Recommendation 54, 461 new health and social care training places were created across nine professions following an Expression of Interest process run by the Higher Education Authority in 2025; 310 of these places commenced in September 2025. Recommendation 55 is being progressed through the Working Group on Education established under the Ministerial Action Plan on Planning Resources, chaired by the Office of the Planning Regulator, which is considering mechanisms to increase the number of accredited undergraduate and postgraduate planning courses."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In relation to Recommendation 56, DFHERIS clarified that scholarship schemes remain a matter for employers such as the HSE. Under Recommendation 57, DFHERIS continues to liaise with DEY and the Central Applications Office (CAO) to ensure that information on Leaving Certificate results and third-level placements is available early enough to support students who require additional accommodations."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Implementation of Recommendation 58 continues through the Inclusive Environment Fund, which issued €2.8 million to higher-education institutions to advance Universal Design for Learning and autism-friendly campus initiatives. Recommendation 59 is being implemented under PATH 4 Phase 2 of the National Access Plan 2022–2028, which supports courses for people with intellectual disabilities in 11 higher-education institutions with 195 students currently enrolled."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Under Recommendation 60, DCDE is working with DFHERIS, DEY and the HSE to embed autism-specific content in initial-teacher-education and health-related courses. Progress under Recommendation 61 includes a €3 million increase to the Fund for Students with Disabilities in Budget 2026, an additional €1 million for student mental health supports and the launch of a Disabilities Demonstration Project to identify effective models of support within higher education."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Together, these submissions demonstrate strengthened coordination across early learning, school and higher education. Progress has been reported on multiple recommendations, particularly in inclusive education planning, assistive technology and transitions. Continued monitoring will be essential to ensure that reforms are fully implemented, and that inclusive practice becomes embedded across all levels of the education system."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Employment"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Article 27)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The right to work and employment without discrimination is central to Article 27. For autistic people, this includes fair recruitment, workplace adjustments, and progression opportunities."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DSP, PAS and DETE provided updates under Recommendations 65, 75–78, 82, and 86."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DSP confirmed that Recommendation 65 has been progressed through income disregard reforms and that the means test for Carer’s Allowance is being phased out."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "PAS reported progress on Recommendations 75–78, confirming implementation of autism-friendly recruitment practices, remote interviews, quiet rooms, and mandatory interviewer training."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DETE reported progress on Recommendations 82 and 86, including promotion of employer supports and exceeding public service disability employment targets."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "CCMA referenced participation in the AHEAD WAM Programme, supporting autistic graduates to access employment."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The measures reported demonstrate clear progress in promoting inclusive employment and reducing barriers for autistic jobseekers. However, a report launched by IrishJobs and AsIAm estimates that 85% of Autistic people in Ireland are unemployed or underemployed."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-10",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[9]"
+          },
+          {
+            "type": "text",
+            "text": " Continued focus will be required to ensure that these inclusive practices extend beyond the public sector, that awareness of public supports increases across industries, and that autistic people experience meaningful and sustainable participation in the labour market."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Access to justice"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Articles 12, 13)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Access to justice is a fundamental right under the UNCRPD and is essential to ensuring that persons with disabilities, including autistic people, can exercise their legal rights, seek redress, and participate equally in legal and administrative proceedings. For autistic individuals, this requires that the justice system be accessible, autism-informed, and free from communication or sensory barriers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Joint Committee on Autism noted in its Final Report (recommendation 10) a submission from AsIAm that was featured in the ‘Report on Courts and Courthouses’ by the Joint Committee on Justice, published in July 2022, which called for action to be taken to address the inaccessibility of the legal and courts systems."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-11",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[10]"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Further context is provided in the Report on Courts and Courthouses, which documented progress in improving accessibility and communication within Ireland’s court system. The Joint Committee on Justice noted that the Courts Service has prioritised full physical accessibility in all new and refurbished courthouses, incorporating consultation spaces, victim support rooms, and modern digital infrastructure. The report also welcomed the rollout of the JAM Card initiative across court settings, enabling individuals to discreetly communicate that they may require additional time or support; by 2022, approximately 75 per cent of court staff had received JAM Card training. The Courts Service further committed to improving communication accessibility through plain-English information, virtual tours, and online guidance to help all users, including autistic people, navigate the court environment with greater confidence and independence."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "These developments represent important steps toward ensuring that the justice system is both physically and communicatively accessible, supporting autistic and disabled people to participate fully and equally in legal processes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Freedom from exploitation, violence, and abuse"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "(Relates to UNCRPD Articles 6, 16)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The right to freedom from exploitation, violence and abuse is a core principle of the UNCRPD and applies across all care, education and community settings. The Joint Committee on Disability Matters ‘Report on Aligning Disability Services with the United Nations Convention on the Rights of Persons with Disabilities’, published in February 2023, provided important context on the current state of disability services in Ireland, highlighting the systemic challenges that can heighten vulnerability to abuse or neglect."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#footnote-12",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[11]"
+          },
+          {
+            "type": "text",
+            "text": " It identified significant gaps in community infrastructure, inadequate rehabilitative supports, and persistent reliance on institutional or congregated settings — all of which limit personal autonomy and increase safeguarding risks."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The 2023 report also stressed that the transition to a rights-based model of care must be supported by adequate investment in staff training, governance, and oversight mechanisms. In this context, ensuring effective safeguarding frameworks and trauma-informed practice remains central to achieving compliance with Article 16 of the Convention."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ongoing monitoring, transparent reporting, and continued engagement with autistic people and their representative organisations will be essential to ensure that safeguarding and protection measures evolve in line with human rights standards and lived experience."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Conclusion"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In line with Ireland’s obligations under the UNCRPD, the Joint Committee on Disability Matters has examined progress thematically across the core modules of the Convention, assessing the extent to which the recommendations of the Final Report have been implemented two years after publication."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The Review highlights progress in several areas. The publication of the Autism Innovation Strategy in 2024, reforms in social protection supports, improvements in autism awareness training within public services, and the pursuit of autism-friendly initiatives across housing and cultural sectors all reflect positive developments. The Committee acknowledges the efforts of Departments and Agencies that provided detailed submissions and welcomes the steps taken to involve autistic people and their families in co-designing new policies and services."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "However, significant gaps remain. In some cases, reforms have been initiated but remain incomplete or are subject to long delays, particularly in relation to service access, workforce retention, and independent living supports. It should be noted that some recommendations may not have been progressed independently but may form part of the wider review of disability issues."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The Committee reiterates the importance of meaningful consultation with autistic people and their representative organisations, crucial in the design of policies, programmes and in all project planning processes. Proactive, coordinated action will remove barriers and ensure equality in all areas of life, which is at the heart of the UNCRPD."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The Committee further highlights the importance of the implementation of the principles of Universal Design. By considering diverse needs and the abilities of all throughout the design stage process, universal design creates digital and built environments services and systems that meet peoples’ needs, regardless of age, size, ability, or disability."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Appendix 1 – Traffic Light Indicator"
+          }
+        ]
+      },
+      {
+        "type": "tableBlock",
+        "attrs": {
+          "html": "<table><thead><tr><th scope=\"col\"><p>&nbsp;</p></th><th scope=\"col\"><p>Recommendation</p></th><th scope=\"col\"><p>Indicator</p></th></tr></thead><tbody><tr><td><p><strong>1</strong></p></td><td><p>Enact legislation which requires the State to publish an autism strategy every three years, establish a committee or monitoring group featuring autistic people to participate in drafting and monitoring the strategy and require the Minister for Disabilities of the day to address both houses of the Oireachtas annually to provide an update regarding its progress</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>2</strong></p></td><td><p>Initiate national autism acceptance campaigns to promote the participation of autistic people in all areas of social and cultural life along with targeted campaigns in key areas such as education, employment and health</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>3</strong></p></td><td><p>Initiate consultation with the autistic community and their families to establish how best to collect disaggregated data for the purposes of forward-planning</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>4</strong></p></td><td><p>Ensure that the needs of autistic people are taken into account when designing all public services and include the autistic community when designing autism specific services</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>5</strong></p></td><td><p>Establish a dedicated cross-departmental unit in the Department of the Taoiseach to facilitate a whole-of-government approach to autism and to embed joined-up cross-departmental services</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>6</strong></p></td><td><p>Ratify the Optional Protocol of the United Nations Convention on the Rights of Persons with Disabilities (UNCRPD) without delay</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>7</strong></p></td><td><p>Ensure that all government departments develop an autism policy</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>8</strong></p></td><td><p>Develop a long-term workforce planning strategy to address staffing issues in disability services, including recruitment and retention of staff</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>9</strong></p></td><td><p>Establish a ‘One Stop Shop’ programme wherein autistic people or those who think they may be autistic can receive information and can link in with the services that they require</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>10</strong></p></td><td><p>Implement the recommendations concerning accessibility and disability</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>11</strong></p></td><td><p>Establish a single-entry point to children’s disability services and Child and Adolescent Mental Health Services for autistic children and disabled children to ensure that children are no longer passed between services</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>12</strong></p></td><td><p>Liaise with third-level institutions to develop work placement schemes to attract staff to disability services</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>13</strong></p></td><td><p>Initiate a campaign in secondary schools targeting Leaving Certificate students to promote careers in disability services</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>14</strong></p></td><td><p>Engage with the relevant professional bodies representing speech and language therapists, occupational therapists, physiotherapists, psychologists and nurses to inform a long-term strategy to address the staffing issues in disability services</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>15</strong></p></td><td><p>Rebalance the distribution of resources between staff working on Assessments of Need and staff implementing therapeutic supports</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>16</strong></p></td><td><p>Resolve pay parity issues for organisations who provide services under section 39 of the Health Act 2004</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>17</strong></p></td><td><p>Attract staff in disciplines relevant to disability services who have the right to work in Ireland to return by subsidising travel costs to return to Ireland</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>18</strong></p></td><td><p>Initiate a review of the practice of principals and teachers filling in the Educational section of the Assessment of Need form, taking into account the views of stakeholders and ensuring that the practice complies with the spirit of the Disability Act 2005</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>19</strong></p></td><td><p>Recognise the work of community groups who support autistic people by establishing a distinct funding stream to develop their work and to facilitate the establishment of new autism community groups across the country</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>20</strong></p></td><td><p>Develop opportunities for career progression within public disability services for professionals in areas such as Occupational Therapy, Speech and Language Therapy, Physiotherapy, Psychology and more</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>21</strong></p></td><td><p>Incentivise working within the public health sector to ensure that fewer professionals leave Ireland and that staff do not feel compelled to supplement their income by working in the private sector</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>22</strong></p></td><td><p>Develop a plan that will ensure that public sector health workers are satisfied to work exclusively within the public health sector</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>23</strong></p></td><td><p>Roll out suitable autism training for all public health staff to ensure that they can engage with and meet the needs of the autistic community</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>24</strong></p></td><td><p>Develop clinical guidelines – along the lines of those developed by National Institute for Health and Care Excellence in the United Kingdom - for undertaking an autism assessment and ensure that they are adhered to by professionals within the public health sector and the private health sector</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>25</strong></p></td><td><p>Liaise with the Department of Education and adopt an approach which integrates the School Inclusion Model and the Children’s Disability Network Team model to ensure that in-school therapies are available along with community-based services for autistic people</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>26</strong></p></td><td><p>Develop and enforce guidelines to ensure that interventions provided to autistic people and disabled people are evidence-based and rights-based</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>27</strong></p></td><td><p>Provide adequate financial supports to families who access assessments and supports privately due to their unavailability in the public health system until such time as vacant positions within CDNTs have been filled</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>28</strong></p></td><td><p>Increase the capacity within respite care across all Community Health Organisations</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>29</strong></p></td><td><p>Provide additional funding to organisations who provide equine therapy and assistance dogs to scale up service provision across the country</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>30</strong></p></td><td><p>Provide funding and guidelines to all schools building new premises to ensure that they are built in line with the principles of Universal Design</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>31</strong></p></td><td><p>Provide funding and guidelines to all schools to undertake an audit of their buildings and make them autism-friendly </p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>32</strong></p></td><td><p>Work to reduce class sizes to allow teachers the opportunity to better observe the development of pupils and to reduce distraction and distress for autistic pupils in overcrowded classrooms</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>33</strong></p></td><td><p>Engage with the National Council for Special Education to develop a long-term plan to synthesise mainstream and special educational provision in line with the UNCRPD</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>34</strong></p></td><td><p>Ensure that children in special classes, autism classes and special schools can participate in mainstream educational classes to end the practice of segregation based on neurotype</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>35</strong></p></td><td><p>Update Continuing Professional Development (CPD) to ensure that education professionals, including teachers and SNAs, receive suitable autism training</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>36</strong></p></td><td><p>Engage with the National Council for Special Education to establish the number of pupils on reduced school hours and implement measures to reduce the use of such measures</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>37</strong></p></td><td><p>Engage with the HSE and the Department of Children, Equality, Disability, Integration and Youth to ensure that children in special schools can access clinical supports in schools until such time as CDNTs are fully staffed and access to services can be reviewed</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>38</strong></p></td><td><p>Increase the pay offered to SNAs and teachers for participating in a schoolbased Summer Programme to incentivise participation</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>39</strong></p></td><td><p>Engage with children’s disability service providers to foster and encourage the participation of clinicians such as therapists and psychologists in the Summer Programme at an attractive rate of pay</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>40</strong></p></td><td><p>Work with the Department of Health to amend the Disability Act 2005 in tandem with the Education for Persons with Special Educational Needs (EPSEN) Act 2004 and include a right to services as well as a right to Assessment of Need</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>41</strong></p></td><td><p>Review established practices on transitioning to new schools throughout the education system and provide more guidance and supports for schools in assisting pupils to transition between schools</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>42</strong></p></td><td><p>Establish a National Transitions Service to assist autistic children and adults as they transition into primary education, between schools, to secondary education, to university, to employment and all other areas of life</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>43</strong></p></td><td><p>Establish a clear pathway to accessing Alternative and Augmentative Communication and assistive technology and ensure that autistic children and adults can access and retain AAC devices and supports throughout their lives</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>44</strong></p></td><td><p>Increase the funding allocated to Alternative and Augmentative Communication and assistive technology to ensure that there are sufficient devices available to those who need them as well as training for the families of AAC-users</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>45</strong></p></td><td><p>Review Department of Education policy in relation to the role and the priorities of the Middletown Centre for Autism </p></td><td><p>No progress</p></td></tr><tr><td><p><strong>46</strong></p></td><td><p>Liaise with the Department of Education in Northern Ireland to negotiate a mutual increase in funding to the Middletown Centre for Autism to expand their services and apply their best practice model nationally</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>47</strong></p></td><td><p>Adopt a rights-based approach to the Summer Programme to ensure that it is regarded as an essential service for autistic children and their families</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>48</strong></p></td><td><p>Establish an agency or a dedicated section of the Department of Education to manage the Summer Programme and ensure that it is made available in all schools, with the participation of trained external staff where internal staff are unavailable</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>49</strong></p></td><td><p>Develop a clear policy to ensure that there is a requirement that interventions provided within the context of special education are evidence-based and rights-based</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>50</strong></p></td><td><p>Liaise with the Middletown Centre for Autism to provide continuing professional development training for SNAs and encourage participation by regarding them as additional hours worked under the Croke Park Agreement</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>51</strong></p></td><td><p>Include a mandatory module on autism training as continuing professional development for teachers</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>52</strong></p></td><td><p>Ensure that all schools that are in receipt of public funding, whether public or private, foster more inclusive practices around autism, including the opening of special classes</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>53</strong></p></td><td><p>Design a template or guidelines for schools clearly explaining the steps that should be taken if behavioural challenges emerge in an educational setting and ensure that protocols around restraint and penalisation are stated unambiguously, with a view towards eliminating these practices</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>54</strong></p></td><td><p>Liaise with the Department of Health to increase the number of places in third-level courses in occupational therapy, speech and language therapy, physiotherapy, psychology, social work and nursing and work to match these numbers with clinical placements</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>55</strong></p></td><td><p>Increase the number of places in third-level courses in planning</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>56</strong></p></td><td><p>Establish a scholarship scheme to fund students in third-level courses in disciplines relevant to disability services with a commitment from graduates to work in Ireland for a set number of years</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>57</strong></p></td><td><p>Liaise with the Department of Education and Central Applications Office to provide prospective students with information regarding Leaving Certificate results and third level placements in sufficient time to allow for Higher Education Institutions to engage with students who may have need for additional supports</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>58</strong></p></td><td><p>Provide funding to Higher Education Institutions to compile sensory maps and provide more autism-friendly tours of campuses throughout the year</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>59</strong></p></td><td><p>Provide funding to allow for the model of the Trinity Centre for People with Intellectual Disabilities to be developed further and replicated across Higher Education Institutions</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>60</strong></p></td><td><p>Liaise with Higher Education Institutions, the Department of Education, the Department of Health and the HSE to include autism training in Initial Teacher Education (ITE) as well as therapy, nursing and medical courses in third level institutions</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>61</strong></p></td><td><p>Provide multiannual funding based on the academic calendar to allow Higher Education Institutions to undertake comprehensive, long-term planning to establish supports for disabled students as well as tailored supports for individual students before the beginning of the academic year</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>62</strong></p></td><td><p>Introduce a non-means tested, targeted Cost of Disability Payment for autistic people and disabled people with high levels of expenditure due to their autism diagnosis or disability</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>63</strong></p></td><td><p>Introduce a non-means tested, targeted Cost of Disability Payment for the carers to autistic people and disabled people with high levels of expenditure due to their autism diagnosis or disability</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>64</strong></p></td><td><p>Introduce specific targeted supports for those with the highest additional costs due to disability, including autism</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>65</strong></p></td><td><p>Increase the income disregard for the Disability Allowance and the Carer’s Allowance to account for the high costs of disability</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>66</strong></p></td><td><p>Recognise the work of carers and the services they provide the State by establishing a pilot scheme for a basic income entitlement or a participation income to replace the Carer’s Allowance in line with the recommendations of Family Carers Ireland and the Joint Committee on Gender Equality</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>67</strong></p></td><td><p>Establish a grant to assist autistic people and disabled people in paying for larger, one-off expenses</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>68</strong></p></td><td><p>Benchmark the rate of the Disability Allowance and other social protection payments to ensure that autistic recipients can achieve a Minimum Essential Standard of Living</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>69</strong></p></td><td><p>Undertake consultation with the autistic community on the accessibility of information regarding supports and services provided by the Department of Social Protection and ensure that there is no reduction in supports when those in receipt of Disability Allowance reach State Pension age</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>70</strong></p></td><td><p>Undertake a review of the accessibility and user-friendliness of all application forms for disability supports with the autistic community</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>71</strong></p></td><td><p>Initiate a review of application processes and their transparency to minimise the rate of rejection of applications for disability supports and care supports</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>72</strong></p></td><td><p>Allow those who were previously in receipt of Disability Allowance and have subsequently entered employment to retain their entitlement to a Medical Card and Free Travel Pass, subject to certain limitations</p></td><td><p>&nbsp;Limited progress</p></td></tr><tr><td><p><strong>73</strong></p></td><td><p>Raise the age limit of Domiciliary Care Allowance to 18</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>74</strong></p></td><td><p>Adopt a needs-based approach to the Disabled Drivers and Passengers Scheme</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>75</strong></p></td><td><p>Undertake a review of public sector recruitment and employment practices to ensure that they are autism-friendly</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>76</strong></p></td><td><p>Provide autism training to all public sector interviewers to address any biases against autistic people and ensure equality of opportunity for employment</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>77</strong></p></td><td><p>Ensure that all environments where public employment processes are undertaken (interview offices, examination rooms, waiting rooms etc) are autism-friendly</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>78</strong></p></td><td><p>Provide the option of remote job interviews by video call and other reasonable accommodations to prospective employees in the public sector</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>79</strong></p></td><td><p>Develop a long-term plan for the State to provide a high-quality public employment service directly to autistic people and disabled people to ensure equal availability of employment services to disabled people across the State</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>80</strong></p></td><td><p>Establish a State-run public employment service that builds on the good practice in the field of disability employment and which links autistic people to employers and offers support, guidance and information as well as tailored support services for participating employers</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>81</strong></p></td><td><p>Engage with stakeholders including the autistic community and employers and review the Wage Subsidy Scheme and Reasonable Accommodation Fund with a view to promoting uptake of the schemes</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>82</strong></p></td><td><p>Liaise with the Department of Enterprise, Trade and Employment to promote the availability and potential benefits of schemes such as the Wage Subsidy Scheme and Reasonable Accommodation Fund to employers</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>83</strong></p></td><td><p>Amalgamate and streamline workplace support grants and the Reasonable Accommodation Fund under one fund which employers may draw down for the purposes of accommodating an autistic or disabled employee or prospective employee</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>84</strong></p></td><td><p>Initiate a review of the Wage Subsidy Scheme through a rights-based, social lens and identify how best to update or replace the scheme</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>85</strong></p></td><td><p>Remove the minimum work hours to access the Wage Subsidy Scheme to allow for people with disabilities to access part-time employment</p></td><td><p>&nbsp;Limited progress</p></td></tr><tr><td><p><strong>86</strong></p></td><td><p>Ensure that all Departments and State Agencies meet their targets to employ autistic people and disabled people</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>87</strong></p></td><td><p>Introduce mandatory autism training for all health and social care workers in the Health Service Executive and in Section 38 and Section 39 organisations who provide services on behalf of the Health Service Executive</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>88</strong></p></td><td><p>Ensure that understanding autism training is a component in all higher education courses relative to health and social care, including medicine, nursing, dentistry, occupational therapy, speech and language therapy, physiotherapy, social work and psychology</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>89</strong></p></td><td><p>Provide funding to health service providers (including general practice and dentistry) to make their services and built environment more autism-friendly</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>90</strong></p></td><td><p>Formulate guidelines for autism-friendly service design and built environment design within health services, including general practice, physiotherapy, dentistry and mental health services</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>91</strong></p></td><td><p>Direct Child and Adolescent Mental Health Services to cease its practice of refusing to serve children on the basis of an autism diagnosis or a suspected autism diagnosis</p></td><td><p>&nbsp;No progress</p></td></tr><tr><td><p><strong>92</strong></p></td><td><p>Initiate an independent review of CAMHS practices in respect of service provision to autistic children and investigate reports of discrimination against autistic children referred to CAMHS</p></td><td><p>&nbsp;Limited progress</p></td></tr><tr><td><p><strong>93</strong></p></td><td><p>Initiate meetings between CAMHS and disability services to establish how best to provide mental health services to autistic children, taking into account the current lack of capacity within CDNTs to provide multi-disciplinary supports including mental health interventions</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>94</strong></p></td><td><p>Initiate plans to establish how best to create a pathway for autistic adults to access multi-disciplinary supports, including mental health interventions</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>95</strong></p></td><td><p>Offer individual health plans to autistic people, including health check-ups, to ensure that they are supported in accessing health services</p></td><td><p>No progress</p></td></tr><tr><td><p><strong>96</strong></p></td><td><p>Increase resources for the Centre for Excellence in Universal Design to allow for the Centre to reach its full potential in assisting the State to embed the principles of Universal Design</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>97</strong></p></td><td><p>Provide capacity to the National Disability Authority to review the accessibility of information on the websites of government departments and on application forms and support departments in changing or updating information</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>98</strong></p></td><td><p>Review the application processes for social housing and other housing supports to ensure that they are accessible to autistic people and disabled people</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>99</strong></p></td><td><p>Ensure that autism is regarded as a sensory disability by all Local Authorities for the purposes of accessing prioritised social housing provision</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>100</strong></p></td><td><p>Provide adequate grants to allow for sensory rooms to be added to homes and the sensory-proofing of homes for autistic people</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>101</strong></p></td><td><p>Ensure that Local Authorities engage with schools to assist in developing suitable sensory provision for autistic children</p></td><td><p>&nbsp;</p></td></tr><tr><td><p><strong>102</strong></p></td><td><p>Provide designated funding to Local Authorities to add sensory areas and communication boards to all playgrounds</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>103</strong></p></td><td><p>Provide autism training to staff in Local Authorities and ensure that autism is accepted as a condition which qualifies for housing support</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>104</strong></p></td><td><p>Incentivise participation in continuing professional development courses in Universal Design and accessibility for architects and planners</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>105</strong></p></td><td><p>Liaise with professional bodies within architecture and planning to promote education in Universal Design and the implementation of Universal Design practices</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>106</strong></p></td><td><p>Engage with the Office of Public Works (OPW) to implement guidelines on making facilities and sites under their auspices more autism-friendly</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>107</strong></p></td><td><p>Provide autism training to tour guides and other public-facing OPW staff at heritage sites and cultural institutions</p></td><td><p>Good progress</p></td></tr><tr><td><p><strong>108</strong></p></td><td><p>Provide more opportunities for career development in public sector planning to retain planners</p></td><td><p>Limited progress</p></td></tr><tr><td><p><strong>109</strong></p></td><td><p>Recruit a designated Disability Officer in every Local Authority to advise autistic people and their families on accessing supports and assist them to complete the application process, where needed</p></td><td><p>Limited progress</p></td></tr></tbody></table>"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Appendix 2 – Written Submissions"
+          }
+        ]
+      },
+      {
+        "type": "tableBlock",
+        "attrs": {
+          "html": "<table><thead><tr><th scope=\"col\"><p><a id=\"_Hlk210755214\"></a>Reference</p></th><th scope=\"col\"><p>Topic</p></th><th scope=\"col\"><p>Submitter</p></th></tr></thead><tbody><tr><td><p>R - 2025 - 0235 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Public Appointments Service (PAS)</p></td></tr><tr><td><p>R - 2025 - 0245 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Department of Children, Disability and Equality (DCDE)</p></td></tr><tr><td><p>R - 2025 - 0246 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>County and City Management Association (CCMA)</p></td></tr><tr><td><p>R - 2025 - 0251 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Department of the Taoiseach</p></td></tr><tr><td><p>R - 2025 - 0253 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Department of Social Protection (DSP)</p></td></tr><tr><td><p>R - 2025 - 0282 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Department of Enterprise, Trade and Employment (DETE)</p></td></tr><tr><td><p>R - 2025 - 0288 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Department of Housing, Local Government and Heritage (DHLGH)</p></td></tr><tr><td><p>R - 2025 - 0289 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Office of Public Works (OPW)</p></td></tr><tr><td><p>R - 2025 - 0297 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Department of Health</p></td></tr><tr><td><p>R - 2025 - 0328 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Department of Rural and Community Development and the Gaeltacht (DRCDG)</p></td></tr><tr><td><p>R - 2025 - 0338 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Department of Further and Higher Education, Research, Innovation and Science (DFHERIS)</p></td></tr><tr><td><p>R - 2025 - 0342 - DIS</p></td><td><p>Review of recommendations of the Final Report of the Joint Committee on Autism</p></td><td><p>Department of Education and Youth (DEY)</p></td></tr></tbody></table>"
+        }
+      },
+      {
+        "type": "orderedList",
+        "attrs": {
+          "start": 1,
+          "type": null
+        },
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Final Report of the Joint Committee on Autism, Joint Committee on Autism, June 2023: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_autism/reports/2023/2023-06-14_final-report-of-the-joint-committee-on-autism_en.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_autism/reports/2023/2023-06-14_final-report-of-the-joint-committee-on-autism_en.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-2",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Implementing the UN Convention on the Rights of Persons with Disabilities: Human Rights Indicators, FRA, 2023, pp. 2 3): "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://fra.europa.eu/sites/default/files/fra_uploads/fra-2023-uncrpd-human-rights-indicators_en.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Implementing the UN Convention on the Rights of Persons with Disabilities: Human rights indicators"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-3",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "‘Optional Protocol to the Convention on Persons with Disabilities to come into force in Ireland on 30 November 2024’, Press Release from the Department of Children, Disability and Equality, 6"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "superscript"
+                      }
+                    ],
+                    "text": "th"
+                  },
+                  {
+                    "type": "text",
+                    "text": " November 2024: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.gov.ie/en/department-of-children-disability-and-equality/press-releases/optional-protocol-to-the-convention-on-persons-with-disabilities-to-come-into-force-in-ireland-on-30-november-2024/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Optional Protocol to the Convention on Persons with Disabilities to come into force in Ireland on 30 November 2024"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-4",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "‘Autism Innovation Strategy’, Prepared by the Department of Children, Equality, Disability, Integration and Youth, August 2024: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://assets.gov.ie/static/documents/autism-innovation-strategy-august-2024.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "autism-innovation-strategy-august-2024.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-5",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "‘National Human Rights Strategy for Disabled People 2025-2030’, Department of Children, Disability and Equality, September 2025: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.gov.ie/en/department-of-children-disability-and-equality/publications/national-human-rights-strategy-for-disabled-people-2025-2030-formats/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "National Human Rights Strategy for Disabled People 2025-2030: Formats"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-6",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "‘Introductory Guidelines to Support the Meaningful Inclusion of Autistic Children in Early Learning and Care & School Age Childcare’, Prepared by the Department of Children, Equality, Disability, Integration and Youth, October 2024: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://aim.gov.ie/app/uploads/2024/10/91746-Department-of-Children-Equality-Autism-Guidelines-Booklet-v5-online-1.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "91746-Department-of-Children-Equality-Autism-Guidelines-Booklet-v5-online-1.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-7",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.gov.ie/en/department-of-children-disability-and-equality/publications/national-human-rights-strategy-for-disabled-people-2025-2030-formats/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "National Human Rights Strategy for Disabled People 2025-2030: Formats"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-8",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "‘Action Plan for Disability Services 2024-2026’, Department of Children, Disability and Equality, December 2023: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://assets.gov.ie/static/documents/action-plan-for-disability-services-2024-2026.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "action-plan-for-disability-services-2024-2026.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-9",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "‘Autism in the Workplace Report’, IrishJobs & AsIAm, 2021, p. 4: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://cdn.prod.website-files.com/6537ebfefba7b3c24a18e646/65f200ff3022f1a31b991605_Autism-in-the-Workplace-Report-2021.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://cdn.prod.website-files.com/6537ebfefba7b3c24a18e646/65f200ff3022f1a31b991605_Autism-in-the-Workplace-Report-2021.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-10",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "‘Report on Courts and Courthouses’, Joint Committee on Justice, July 2022: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_justice/reports/2022/2022-07-14_report-on-courts-and-courthouses_en.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "2022-07-14_report-on-courts-and-courthouses_en.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-11",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "‘Aligning Disability Services with the United Nations Convention on the Rights of Persons with Disabilities’, Joint Committee on Disability Matters, February 2023: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_disability_matters/reports/2023/2023-02-23_report-on-aligning-disability-services-with-the-united-nations-convention-on-the-rights-of-persons-with-disabilities_en.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Aligning Disability Services with the United Nations Convention on the Rights of Persons with Disabilities"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#footnote-ref-12",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph"
+      }
+    ]
+  }
+}

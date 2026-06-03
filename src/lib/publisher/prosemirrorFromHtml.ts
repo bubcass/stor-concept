@@ -146,6 +146,8 @@ function listFromElement(
   document: Document,
 ): ProseMirrorNode | null {
   const tag = element.tagName.toLowerCase();
+  const rawStart = Number(element.getAttribute('start') ?? '1');
+  const start = Number.isFinite(rawStart) && rawStart > 0 ? Math.floor(rawStart) : 1;
   const content = Array.from(element.children)
     .filter((child) => child.tagName.toLowerCase() === 'li')
     .map((child) => listItemFromElement(child as HTMLElement, document))
@@ -155,7 +157,7 @@ function listFromElement(
 
   return {
     type: tag === 'ol' ? 'orderedList' : 'bulletList',
-    attrs: tag === 'ol' ? { start: 1 } : undefined,
+    attrs: tag === 'ol' ? { start } : undefined,
     content,
   };
 }

@@ -1,53 +1,51 @@
 {
-  "id": "report-on-pre-legislative-scrutiny-of-the-general-scheme-of-the-disability-amendment-bill-2025-20260416",
-  "slug": "report-on-pre-legislative-scrutiny-of-the-general-scheme-of-the-disability-amendment-bill-2025-20260416",
+  "id": "pre-legislative-scrutiny-of-the-disability-amendment-bill-2025-20260417",
+  "slug": "pre-legislative-scrutiny-of-the-disability-amendment-bill-2025-20260417",
   "type": "committee-report",
   "destination": "committee-reports",
   "featured": false,
   "heroLayout": "contained",
   "showContents": true,
   "flourishWidth": "prose",
-  "title": "Report on Pre-Legislative Scrutiny of the General Scheme of the Disability (Amendment) Bill 2025",
-  "dek": "The report reflects the Committee's view that the general scheme addresses real and pressing operational issues but it must be strengthened to ensure reform is rights-based, fair in practice and capable of improving outcomes for children and families",
+  "title": "Pre-Legislative Scrutiny of the Disability (Amendment) Bill 2025",
+  "dek": "",
   "eyebrow": "Committee on Disability Matters",
   "committeeName": "Committee on Disability Matters",
+  "topics": [
+    "pre-legislative scrutiny",
+    "disability",
+    "legislation"
+  ],
   "layout": "standard",
   "status": "published",
   "language": "en",
   "version": "1.0",
-  "keywords": [],
+  "keywords": [
+    "pre-legislative scrutiny",
+    "disability",
+    "legislation"
+  ],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
-  "publishedDate": "2026-04-16",
+  "publishedDate": "2026-04-17",
   "contributors": [
     {
-      "name": "Sinead O'Reilly",
+      "name": "Ronan O'Connor",
       "role": "author",
       "affiliation": "Committee secretariat",
-      "showAsAuthor": false,
-      "profileRole": "Committee Clerk"
-    },
-    {
-      "name": "David Cass",
-      "role": "reviewer",
-      "affiliation": "Communications",
-      "showAsAuthor": false,
-      "profileRole": "Web content editor"
+      "showAsAuthor": false
     }
   ],
   "researcher": {
-    "name": "Sinead O'Reilly",
-    "role": "Committee Clerk",
+    "name": "Ronan O'Connor",
     "organisation": "Committee secretariat"
-  },
-  "hero": {
-    "src": "/media/report-launch-pac.jpg",
-    "alt": "Cover of a disability committee report from April 2026",
-    "position": "left center"
   },
   "content": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph"
+      },
       {
         "type": "paragraph",
         "content": [
@@ -1483,6 +1481,16 @@
         ]
       },
       {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/committee-reports/committee-on-disability-matters/pre-legislative-scrutiny-of-the-disability-amendment-bill-2025-20260417/image-02.png",
+          "alt": "Maurice Quinlivans signature",
+          "caption": "",
+          "credit": "",
+          "layout": "inline"
+        }
+      },
+      {
         "type": "paragraph",
         "content": [
           {
@@ -2291,19 +2299,6 @@
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "orderedList",
         "attrs": {
           "start": 1,
@@ -2420,22 +2415,9 @@
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "orderedList",
         "attrs": {
-          "start": 1,
+          "start": 2,
           "type": null
         },
         "content": [
@@ -2670,22 +2652,9 @@
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "orderedList",
         "attrs": {
-          "start": 1,
+          "start": 3,
           "type": null
         },
         "content": [
@@ -2764,22 +2733,9 @@
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "orderedList",
         "attrs": {
-          "start": 1,
+          "start": 4,
           "type": null
         },
         "content": [
@@ -2898,22 +2854,9 @@
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "orderedList",
         "attrs": {
-          "start": 1,
+          "start": 5,
           "type": null
         },
         "content": [
@@ -2979,22 +2922,9 @@
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "orderedList",
         "attrs": {
-          "start": 1,
+          "start": 6,
           "type": null
         },
         "content": [
@@ -3140,22 +3070,9 @@
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "orderedList",
         "attrs": {
-          "start": 1,
+          "start": 7,
           "type": null
         },
         "content": [
@@ -3221,22 +3138,9 @@
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "orderedList",
         "attrs": {
-          "start": 1,
+          "start": 8,
           "type": null
         },
         "content": [
@@ -3306,22 +3210,9 @@
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "orderedList",
         "attrs": {
-          "start": 1,
+          "start": 9,
           "type": null
         },
         "content": [
@@ -3452,7 +3343,7 @@
       {
         "type": "heading",
         "attrs": {
-          "level": 1
+          "level": 2
         },
         "content": [
           {
@@ -3462,7 +3353,10 @@
         ]
       },
       {
-        "type": "paragraph",
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
         "content": [
           {
             "type": "text",
@@ -3477,7 +3371,10 @@
         }
       },
       {
-        "type": "paragraph",
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
         "content": [
           {
             "type": "text",
