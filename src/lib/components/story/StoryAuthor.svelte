@@ -15,7 +15,13 @@
     {#each authors as author}
       {@const name = author.name?.trim() ?? ''}
       <div class="story-author">
-        <div class="story-author__avatar" aria-hidden={!author.image}><img src={imageSrc(author.image)} alt="" hidden={!author.image} /><span hidden={Boolean(author.image)}>{initials(name)}</span></div>
+        <div class="story-author__avatar" aria-hidden={author.image ? undefined : 'true'}>
+          {#if author.image}
+            <img src={imageSrc(author.image)} alt={author.imageAlt ?? `${name}, article author`} />
+          {:else}
+            <span>{initials(name)}</span>
+          {/if}
+        </div>
         <div><p class="story-author__name">{name}</p>{#if author.role || author.organisation}<p class="story-author__description">{#if author.role}<span>{author.role}</span>{/if}{#if author.organisation}<span class="story-author__organisation">{author.organisation}</span>{/if}</p>{/if}</div>
       </div>
     {/each}

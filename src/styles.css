@@ -405,6 +405,8 @@ a:focus-visible {
   .site-header.site-header--mobile-hidden { display: none; }
   .site-header.site-header--mobile-hidden .site-header-actions { pointer-events: none; visibility: hidden; }
 
+  .site-header--resource .site-nav { display: grid; }
+
   .site-nav {
     grid-template-columns: minmax(6rem, 1fr) auto minmax(6rem, 1fr);
     min-height: 3.5rem;
