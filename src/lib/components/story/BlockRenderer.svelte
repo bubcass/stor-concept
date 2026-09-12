@@ -4,6 +4,7 @@
   import ChartBlock from './blocks/ChartBlock.svelte';
   import CommitteeMembersBlock from './CommitteeMembersBlock.svelte';
   import FlourishBlock from './blocks/FlourishBlock.svelte';
+  import ObservableBlock from './blocks/ObservableBlock.svelte';
   import VoteMapBlock from './blocks/VoteMapBlock.svelte';
   import ImageBlock from './ImageBlock.svelte';
   import LinkListBlock from './LinkListBlock.svelte';
@@ -39,6 +40,10 @@
 {:else if block.type === 'flourish'}
   {#if !hideMedia}
     <FlourishBlock {block} {flourishWidth} />
+  {/if}
+{:else if block.type === 'observable'}
+  {#if !hideMedia}
+    <ObservableBlock {block} {flourishWidth} />
   {/if}
 {:else if block.type === 'arcgis-map'}
   {#if !hideMedia}

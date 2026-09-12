@@ -103,9 +103,7 @@
 
   let showContentsRail = $derived(story.showContents && contentsEntries.length > 1);
   let activeContentsId = $state<string | null>(null);
-  let showBackToTop = $state(false);
   let teardownContentsObserver: (() => void) | null = null;
-  let teardownScrollListener: (() => void) | null = null;
 
   function setupContentsObserver() {
     teardownContentsObserver?.();
@@ -179,39 +177,7 @@
     };
   }
 
-  function scrollToTop() {
-    if (typeof window === 'undefined') return;
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-
-  function setupBackToTopObserver() {
-    teardownScrollListener?.();
-    teardownScrollListener = null;
-
-    if (typeof window === 'undefined') {
-      showBackToTop = false;
-      return;
-    }
-
-    const toggleVisibility = () => {
-      showBackToTop = window.scrollY > 640;
-    };
-
-    toggleVisibility();
-    window.addEventListener('scroll', toggleVisibility, { passive: true });
-    teardownScrollListener = () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
-  }
-
-  onMount(() => {
-    setupContentsObserver();
-    setupBackToTopObserver();
-  });
+  onMount(setupContentsObserver);
 
   $effect(() => {
     showContentsRail;
@@ -226,7 +192,6 @@
 
   onDestroy(() => {
     teardownContentsObserver?.();
-    teardownScrollListener?.();
   });
 </script>
 
@@ -412,17 +377,12 @@
     </div>
   </div>
 
-  {#if showBackToTop}
-    <button class="back-to-top" type="button" onclick={scrollToTop} aria-label="Back to top">
-      <span class="back-to-top-chevron" aria-hidden="true">⌃</span>
-    </button>
-  {/if}
 </article>
 
 <style>
   .story {
     overflow: clip;
-    --site-header-height: 3.25rem;
+    --site-header-height: 2.75rem;
   }
 
   .story-hero.split {
@@ -739,7 +699,7 @@
 
   .hero-overlay {
     bottom: clamp(var(--space-7), 8vh, 5rem);
-    color: var(--color-paper);
+    color: var(--interactive-overlay-text);
     left: max(var(--gutter), calc((100vw - var(--wide)) / 2 + var(--gutter)));
     max-width: min(34rem, calc(100vw - (var(--gutter) * 2)));
     position: absolute;
@@ -751,20 +711,23 @@
     backdrop-filter: blur(10px);
     background: linear-gradient(
       180deg,
-      rgba(24, 21, 18, 0.62),
-      rgba(24, 21, 18, 0.46)
+      var(--interactive-overlay-start),
+      var(--interactive-overlay-end)
     );
-    border: 1px solid rgba(255, 253, 248, 0.14);
+    border: 1px solid var(--interactive-overlay-border);
     border-radius: 0.5rem;
-    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.14);
+    box-shadow: 0 0.75rem 2rem var(--interactive-shadow);
     padding: var(--space-3) var(--space-4);
   }
 
   .story-hero.immersive h1,
-  .story-hero.immersive .lede,
-  .story-hero.immersive .meta,
   .story-hero.immersive .eyebrow {
-    color: var(--color-paper);
+    color: var(--interactive-overlay-heading);
+  }
+
+  .story-hero.immersive .lede,
+  .story-hero.immersive .meta {
+    color: var(--interactive-overlay-text);
   }
 
   .story-hero.immersive h1 {
@@ -809,45 +772,11 @@
     padding: 0 var(--gutter) var(--space-8);
   }
 
-  .back-to-top {
-    align-items: center;
-    background: var(--color-paper);
-    border: 4px solid color-mix(in srgb, var(--color-accent) 72%, white 28%);
-    border-radius: 999px;
-    bottom: max(var(--space-4), env(safe-area-inset-bottom));
-    box-shadow: 0 0.35rem 1rem rgb(17 15 13 / 0.12);
-    color: var(--color-accent-2);
-    cursor: pointer;
-    display: grid;
-    height: 2.7rem;
-    padding: 0;
-    position: fixed;
-    right: max(var(--space-4), env(safe-area-inset-right));
-    place-items: center;
-    transition: box-shadow 160ms ease, transform 160ms ease;
-    width: 2.7rem;
-    z-index: 30;
-  }
-
-  .back-to-top:hover,
-  .back-to-top:focus-visible {
-    box-shadow: 0 0.6rem 1.2rem rgb(17 15 13 / 0.16);
-    transform: translateY(-1px);
-  }
-
-  .back-to-top-chevron {
-    font-family: var(--font-sans);
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 1;
-    transform: translateY(0.02em);
-  }
-
   .story-content.with-contents {
     align-items: start;
     display: grid;
     gap: clamp(var(--space-6), 5vw, var(--space-8));
-    grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+    grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr);
   }
 
   .story-contents {
@@ -1008,17 +937,6 @@
 
     .story-content {
       padding-bottom: var(--space-7);
-    }
-
-    .back-to-top {
-      bottom: max(var(--space-3), env(safe-area-inset-bottom));
-      height: 2.4rem;
-      right: max(var(--space-3), env(safe-area-inset-right));
-      width: 2.4rem;
-    }
-
-    .back-to-top-chevron {
-      font-size: 1.08rem;
     }
 
     .story-content.with-contents {

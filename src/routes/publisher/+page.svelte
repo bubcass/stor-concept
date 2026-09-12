@@ -15,9 +15,14 @@
         getSelectedStructuredBlock,
         ImageBlock,
         MediaTextBlock,
+        ObservableBlock,
         TableBlock,
         type StructuredBlockSelection,
     } from "$lib/publisher/editor/extensions";
+    import {
+        formatObservableSource,
+        parseObservableSource,
+    } from "$lib/embeds/observable";
     import { transformImportedHtml } from "$lib/publisher/editor/importHtml";
     import { storDocumentToStory } from "$lib/content/stor/toStory";
     import { storDocumentToXml } from "$lib/content/stor/toXml";
@@ -312,7 +317,11 @@
         if (!document?.content?.length) return false;
 
         return document.content.some((node) => {
-            if (node.type === "imageBlock" || node.type === "flourishBlock")
+            if (
+                node.type === "imageBlock" ||
+                node.type === "flourishBlock" ||
+                node.type === "observableBlock"
+            )
                 return true;
             if (node.type === "text") return Boolean(node.text?.trim());
             if (!node.content?.length) return false;
@@ -1215,6 +1224,28 @@
             .run();
     }
 
+    function insertObservableBlock() {
+        if (!editor) return;
+
+        editor
+            .chain()
+            .focus()
+            .insertContent({
+                type: "observableBlock",
+                attrs: {
+                    moduleUrl: "",
+                    cellName: "",
+                    notebookUrl: "",
+                    creditHref: "",
+                    creditText: "",
+                    alt: "Observable visualisation",
+                    caption: "",
+                    width: metadata.flourishWidth,
+                },
+            })
+            .run();
+    }
+
     function insertMediaTextBlock() {
         if (!editor) return;
 
@@ -1248,6 +1279,17 @@
             dataSrc,
             embedType: inferFlourishEmbedType(dataSrc),
             thumbnail: flourishThumbnailFor(dataSrc),
+        });
+    }
+
+    function updateSelectedObservableSource(value: string) {
+        const parsed = parseObservableSource(value);
+        updateSelectedStructuredBlock({
+            moduleUrl: parsed.moduleUrl,
+            cellName: parsed.cellName,
+            notebookUrl: parsed.notebookUrl,
+            creditHref: parsed.creditHref,
+            creditText: parsed.creditText,
         });
     }
 
@@ -1380,6 +1422,7 @@
                 ImageBlock,
                 MediaTextBlock,
                 FlourishBlock,
+                ObservableBlock,
                 TableBlock,
             ],
             content: EMPTY_DOCUMENT,
@@ -2777,14 +2820,22 @@
                                         <button
                                             type="button"
                                             class="editor-menu__dropdown-action"
+                                            onclick={insertObservableBlock}
+                                        >
+                                            Add Observable
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="editor-menu__dropdown-action"
                                             disabled
                                         >
                                             ArcGIS soon
                                         </button>
                                         <p class="editor-menu__dropdown-note">
                                             Use this menu for custom embeds and
-                                            rich blocks such as Flourish. ArcGIS
-                                            is the next slot in that workflow.
+                                            rich blocks such as Flourish and
+                                            Observable. ArcGIS is the next slot
+                                            in that workflow.
                                         </p>
                                     </div>
                                 </details>
@@ -3261,6 +3312,138 @@
                                             <option value="prose">Prose</option>
                                         </select>
                                     </label>
+                                {:else if selectedStructuredBlock?.type === "observableBlock"}
+                                    <h3>Observable block</h3>
+                                    <label>
+                                        <span>Observable source</span>
+                                        <textarea
+                                            value={formatObservableSource(
+                                                String(
+                                                    selectedStructuredBlock.attrs
+                                                        .moduleUrl ?? "",
+                                                ),
+                                                String(
+                                                    selectedStructuredBlock.attrs
+                                                        .cellName ?? "",
+                                                ),
+                                            )}
+                                            rows="7"
+                                            oninput={(event) =>
+                                                updateSelectedObservableSource(
+                                                    (
+                                                        event.currentTarget as HTMLTextAreaElement
+                                                    ).value,
+                                                )}
+                                        ></textarea>
+                                    </label>
+                                    <p class="inspector-hint">
+                                        Paste the full Observable embed snippet,
+                                        or a shorthand like
+                                        <code
+                                            >@cassdavid/oireachtas-xml-corpus#barChartSpeech1</code
+                                        >.
+                                    </p>
+                                    <label>
+                                        <span>Alt text</span>
+                                        <input
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .alt ?? "",
+                                            )}
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    alt: (
+                                                        event.currentTarget as HTMLInputElement
+                                                    ).value,
+                                                })}
+                                        />
+                                    </label>
+                                    <label>
+                                        <span>Caption</span>
+                                        <input
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .caption ?? "",
+                                            )}
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    caption: (
+                                                        event.currentTarget as HTMLInputElement
+                                                    ).value,
+                                                })}
+                                        />
+                                    </label>
+                                    <label>
+                                        <span>Credit label</span>
+                                        <input
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .creditText ?? "",
+                                            )}
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    creditText: (
+                                                        event.currentTarget as HTMLInputElement
+                                                    ).value,
+                                                })}
+                                        />
+                                    </label>
+                                    <label>
+                                        <span>Credit URL</span>
+                                        <input
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .creditHref ?? "",
+                                            )}
+                                            oninput={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    creditHref: (
+                                                        event.currentTarget as HTMLInputElement
+                                                    ).value,
+                                                })}
+                                        />
+                                    </label>
+                                    <label>
+                                        <span>Width</span>
+                                        <select
+                                            value={String(
+                                                selectedStructuredBlock.attrs
+                                                    .width ??
+                                                    metadata.flourishWidth,
+                                            )}
+                                            onchange={(event) =>
+                                                updateSelectedStructuredBlock({
+                                                    width: (
+                                                        event.currentTarget as HTMLSelectElement
+                                                    ).value,
+                                                })}
+                                        >
+                                            <option value="wide">Wide</option>
+                                            <option value="prose">Prose</option>
+                                        </select>
+                                    </label>
+                                    {#if String(
+                                        selectedStructuredBlock.attrs
+                                            .moduleUrl ?? "",
+                                    )}
+                                        <p class="inspector-meta">
+                                            Normalised to
+                                            <code
+                                                >{formatObservableSource(
+                                                    String(
+                                                        selectedStructuredBlock
+                                                            .attrs.moduleUrl ??
+                                                            "",
+                                                    ),
+                                                    String(
+                                                        selectedStructuredBlock
+                                                            .attrs.cellName ??
+                                                            "",
+                                                    ),
+                                                )}</code
+                                            >
+                                        </p>
+                                    {/if}
                                 {:else if selectedStructuredBlock?.type === "tableBlock"}
                                     {@const tableSummary = summarizeTableHtml(
                                         selectedStructuredBlock.attrs.html,

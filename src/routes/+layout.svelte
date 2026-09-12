@@ -2,8 +2,11 @@
     import "../styles.css";
     import { base } from "$app/paths";
     import { page } from "$app/state";
+    import { onMount } from "svelte";
+    import BackToTop from "$lib/components/BackToTop.svelte";
 
     let { children } = $props();
+    let theme = $state<'light' | 'dark'>('light');
     const publisherPath = `${base}/publisher`;
     const proofOfConceptPath = `${base}/proof-of-concept`;
     const isPublisherRoute = $derived(
@@ -14,6 +17,35 @@
         page.url.pathname === proofOfConceptPath ||
             page.url.pathname.startsWith(`${proofOfConceptPath}/`),
     );
+    const isResourceRoute = $derived(
+        (page.url.pathname.startsWith(`${base}/articles/`) && page.url.pathname !== `${base}/articles/`) ||
+            (page.url.pathname.startsWith(`${base}/stories/`) && page.url.pathname !== `${base}/stories/`),
+    );
+    const activeSection = $derived.by(() => {
+        const pathname = page.url.pathname.replace(/\/+$/, "") || "/";
+        if (pathname.startsWith(`${base}/committees`)) return "committees";
+        if (pathname.startsWith(`${base}/parliamentary-budget-office`)) return "pbo";
+        if (pathname.startsWith(`${base}/library-research-service`)) return "lrs";
+        if (pathname.startsWith(`${base}/my-stor`)) return "my-stor";
+        return null;
+    });
+
+    function toggleTheme() {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = theme;
+        window.dispatchEvent(new CustomEvent('stor:theme-changed', { detail: theme }));
+        try {
+            localStorage.setItem('stor-theme', theme);
+        } catch {
+            // The selected theme remains active for this visit when storage is unavailable.
+        }
+    }
+
+    onMount(() => {
+        theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+        window.addEventListener('stor:toggle-theme', toggleTheme);
+        return () => window.removeEventListener('stor:toggle-theme', toggleTheme);
+    });
 </script>
 
 <svelte:head>
@@ -394,8 +426,16 @@
         </nav>
     </header>
 {:else}
-    <header class="site-header" aria-label="Site header">
+    <header class="site-header" class:site-header--resource={isResourceRoute} aria-label="Site header">
         <nav class="site-nav" aria-label="Primary navigation">
+            <a
+                class="oireachtas-home"
+                href="https://www.oireachtas.ie/"
+                aria-label="Return to oireachtas.ie"
+                title="Return to oireachtas.ie"
+            >
+                <img src="{base}/brand/oireachtas-logo.svg" alt="" />
+            </a>
             <a
                 class="brand"
                 href="{base}/"
@@ -579,15 +619,38 @@
                     >
                 </span>
             </a>
+            <div class="site-header-actions">
+                <button
+                    class="theme-toggle"
+                    type="button"
+                    onclick={toggleTheme}
+                    aria-pressed={theme === 'dark'}
+                    aria-label={`Use ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                    title={`Use ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                >
+                    {#if theme === 'dark'}
+                        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                        </svg>
+                    {:else}
+                        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                            <path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z" />
+                        </svg>
+                    {/if}
+                </button>
+            </div>
+        </nav>
+        <nav class="section-nav" aria-label="Stór sections">
             <div class="nav-links">
-                <a href="{base}/committees/">Committees</a>
-                <a href="{base}/parliamentary-budget-office/"
+                <a href="{base}/committees/" aria-current={activeSection === "committees" ? "page" : undefined}>Committees</a>
+                <a href="{base}/parliamentary-budget-office/" aria-current={activeSection === "pbo" ? "page" : undefined}
                     >Parliamentary Budget Office</a
                 >
-                <a href="{base}/library-research-service/"
+                <a href="{base}/library-research-service/" aria-current={activeSection === "lrs" ? "page" : undefined}
                     >Library & Research Service</a
                 >
-                <a class="my-stor-link" href="{base}/my-stor/">
+                <a class="my-stor-link" href="{base}/my-stor/" aria-current={activeSection === "my-stor" ? "page" : undefined}>
                     <span class="my-stor-link__icon" aria-hidden="true">
                         <svg
                             viewBox="0 0 24 24"
@@ -613,6 +676,10 @@
 <main id="content">
     {@render children()}
 </main>
+
+{#if !isPublisherRoute}
+    <BackToTop />
+{/if}
 
 {#if !isPublisherRoute && !isProofOfConceptRoute}
     <footer class="site-footer">

@@ -126,10 +126,10 @@ function endsWithSentencePunctuation(value: string) {
 }
 
 export interface CommitteeReportNode {
-  type: 'heading' | 'paragraph' | 'flourish' | 'image' | 'table' | 'media-text';
+  type: 'heading' | 'paragraph' | 'flourish' | 'observable' | 'image' | 'table' | 'media-text';
   level?: number;
   text: string;
-  block?: Extract<StoryBlock, { type: 'flourish' | 'image' | 'table' | 'media-text' }>;
+  block?: Extract<StoryBlock, { type: 'flourish' | 'observable' | 'image' | 'table' | 'media-text' }>;
 }
 
 function parseFlourishMarker(text: string) {
@@ -245,6 +245,36 @@ function flourishBlockFromNode(node: ProseMirrorNode) {
   };
 }
 
+function observableBlockFromNode(node: ProseMirrorNode) {
+  const moduleUrl = String(node.attrs?.moduleUrl ?? '').trim();
+  const cellName = String(node.attrs?.cellName ?? '').trim();
+  if (!moduleUrl || !cellName) return null;
+
+  const width = String(node.attrs?.width ?? '').trim();
+
+  return {
+    type: 'observable' as const,
+    moduleUrl,
+    cellName,
+    alt: String(node.attrs?.alt ?? '').trim() || 'Observable visualisation',
+    ...(String(node.attrs?.caption ?? '').trim()
+      ? { caption: String(node.attrs?.caption ?? '').trim() }
+      : {}),
+    ...(String(node.attrs?.notebookUrl ?? '').trim()
+      ? { notebookUrl: String(node.attrs?.notebookUrl ?? '').trim() }
+      : {}),
+    ...(String(node.attrs?.creditHref ?? '').trim()
+      ? { creditHref: String(node.attrs?.creditHref ?? '').trim() }
+      : {}),
+    ...(String(node.attrs?.creditText ?? '').trim()
+      ? { creditText: String(node.attrs?.creditText ?? '').trim() }
+      : {}),
+    ...(width === 'prose' || width === 'wide'
+      ? { width: width as 'prose' | 'wide' }
+      : {}),
+  };
+}
+
 function tableBlockFromNode(node: ProseMirrorNode) {
   const html = String(node.attrs?.html ?? '').trim();
   if (!html) return null;
@@ -337,6 +367,18 @@ export function proseMirrorToCommitteeNodes(
       nodes.push({
         type: 'flourish',
         text: block.caption ?? block.alt ?? block.dataSrc,
+        block,
+      });
+      continue;
+    }
+
+    if (node.type === 'observableBlock') {
+      const block = observableBlockFromNode(node);
+      if (!block) continue;
+
+      nodes.push({
+        type: 'observable',
+        text: block.caption ?? block.alt ?? `${block.moduleUrl}#${block.cellName}`,
         block,
       });
       continue;
@@ -460,6 +502,16 @@ export function proseMirrorToNarrativeBlocks(
 
       flush();
       blocks.push(flourish);
+      encounteredBodyContent = true;
+      continue;
+    }
+
+    if (node.type === 'observableBlock') {
+      const observable = observableBlockFromNode(node);
+      if (!observable) continue;
+
+      flush();
+      blocks.push(observable);
       encounteredBodyContent = true;
       continue;
     }

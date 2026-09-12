@@ -6,6 +6,7 @@ export type StoryBlock =
   | VideoBlock
   | CommitteeMembersBlock
   | FlourishStoryBlock
+  | ObservableStoryBlock
   | ArcGISMapStoryBlock
   | ChartStoryBlock
   | VoteMapStoryBlock
@@ -141,6 +142,18 @@ export interface FlourishStoryBlock {
   width?: 'wide' | 'prose';
   dataSrc: string;
   thumbnail?: string;
+  alt?: string;
+  caption?: string;
+}
+
+export interface ObservableStoryBlock {
+  type: 'observable';
+  moduleUrl: string;
+  cellName: string;
+  notebookUrl?: string;
+  creditHref?: string;
+  creditText?: string;
+  width?: 'wide' | 'prose';
   alt?: string;
   caption?: string;
 }

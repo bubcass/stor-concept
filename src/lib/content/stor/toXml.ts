@@ -263,6 +263,32 @@ function serializeFlourishBlock(node: ProseMirrorNode) {
   }</phrase></textobject></mediaobject><remark><para>Flourish ${embedType}: <ulink url="${dataSrc}">${dataSrc}</ulink></para></remark></figure>`;
 }
 
+function serializeObservableBlock(node: ProseMirrorNode) {
+  const moduleUrl = esc(String(node.attrs?.moduleUrl ?? ''));
+  const cellName = esc(String(node.attrs?.cellName ?? ''));
+  const notebookUrl = esc(String(node.attrs?.notebookUrl ?? ''));
+  const creditHref = esc(String(node.attrs?.creditHref ?? ''));
+  const creditText = esc(String(node.attrs?.creditText ?? ''));
+  const alt = esc(String(node.attrs?.alt ?? ''));
+  const width = esc(String(node.attrs?.width ?? 'wide'));
+  const caption = node.attrs?.caption ? `<title>${esc(String(node.attrs.caption))}</title>` : '';
+  const notebookRemark = notebookUrl
+    ? `<para>Notebook: <ulink url="${notebookUrl}">${notebookUrl}</ulink></para>`
+    : '';
+  const creditRemark =
+    creditHref && creditText
+      ? `<para>Credit: <ulink url="${creditHref}">${creditText}</ulink></para>`
+      : creditHref
+        ? `<para>Credit: <ulink url="${creditHref}">${creditHref}</ulink></para>`
+        : creditText
+          ? `<para>Credit: ${creditText}</para>`
+          : '';
+
+  return `<figure role="observable" condition="${width}">${caption}<mediaobject><textobject><phrase>${
+    alt || 'Embedded Observable visualisation'
+  }</phrase></textobject></mediaobject><remark><para>Observable cell ${cellName}: <ulink url="${moduleUrl}">${moduleUrl}</ulink></para>${notebookRemark}${creditRemark}</remark></figure>`;
+}
+
 function serializeMediaTextBlock(node: ProseMirrorNode) {
   const src = esc(String(node.attrs?.src ?? ''));
   const alt = esc(String(node.attrs?.alt ?? ''));
@@ -321,6 +347,8 @@ function serializeStandaloneNode(node: ProseMirrorNode): string {
       return serializeMediaTextBlock(node);
     case 'flourishBlock':
       return serializeFlourishBlock(node);
+    case 'observableBlock':
+      return serializeObservableBlock(node);
     case 'tableBlock':
       return serializeTableHtml(String(node.attrs?.html ?? ''));
     default:

@@ -3,6 +3,7 @@ import type {
   ImageBlock,
   LinkListBlock,
   MediaTextBlock,
+  ObservableStoryBlock,
   QuoteBlock,
   SceneScrollyBlock,
   ScrollyBlock,
@@ -58,6 +59,13 @@ function imageBlockCopy(block: ImageBlock) {
   return [block.heading, block.image.caption].filter(Boolean).map((part) => stripHtml(part!)).join(' ');
 }
 
+function observableBlockCopy(block: ObservableStoryBlock) {
+  return [block.caption, block.creditText, block.cellName]
+    .filter(Boolean)
+    .map((part) => stripHtml(part!))
+    .join(' ');
+}
+
 export function storyBlockCopy(block: StoryBlock) {
   switch (block.type) {
     case 'text':
@@ -76,6 +84,8 @@ export function storyBlockCopy(block: StoryBlock) {
       return arcgisMapCopy(block);
     case 'image':
       return imageBlockCopy(block);
+    case 'observable':
+      return observableBlockCopy(block);
     default:
       return '';
   }

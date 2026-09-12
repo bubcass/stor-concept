@@ -24,6 +24,8 @@
   .text-block {
     margin: clamp(var(--space-7), 5vw, 4rem) auto;
     max-width: var(--measure-prose);
+    min-width: 0;
+    width: min(100%, var(--measure-prose));
   }
 
   h2,
@@ -53,6 +55,7 @@
     font-weight: var(--font-weight-body);
     line-height: var(--line-height-body);
     margin: 0 0 var(--space-stack);
+    overflow-wrap: break-word;
   }
 
   .rich-block {

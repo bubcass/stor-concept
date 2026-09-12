@@ -168,6 +168,98 @@ export const FlourishBlock = Node.create({
   },
 });
 
+export const ObservableBlock = Node.create({
+  name: 'observableBlock',
+  group: 'block',
+  atom: true,
+  selectable: true,
+  draggable: true,
+
+  addAttributes() {
+    return {
+      moduleUrl: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-module-url') || '',
+        renderHTML: (attributes) => ({
+          'data-module-url': attributes.moduleUrl || '',
+        }),
+      },
+      cellName: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-cell-name') || '',
+        renderHTML: (attributes) => ({
+          'data-cell-name': attributes.cellName || '',
+        }),
+      },
+      notebookUrl: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-notebook-url') || '',
+        renderHTML: (attributes) => ({
+          'data-notebook-url': attributes.notebookUrl || '',
+        }),
+      },
+      creditHref: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-credit-href') || '',
+        renderHTML: (attributes) => ({
+          'data-credit-href': attributes.creditHref || '',
+        }),
+      },
+      creditText: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-credit-text') || '',
+        renderHTML: (attributes) => ({
+          'data-credit-text': attributes.creditText || '',
+        }),
+      },
+      alt: {
+        default: 'Observable visualisation',
+        parseHTML: (element) =>
+          element.getAttribute('data-alt') || 'Observable visualisation',
+        renderHTML: (attributes) => ({ 'data-alt': attributes.alt || '' }),
+      },
+      caption: {
+        default: '',
+        parseHTML: (element) => element.getAttribute('data-caption') || '',
+        renderHTML: (attributes) => ({
+          'data-caption': attributes.caption || '',
+        }),
+      },
+      width: {
+        default: 'wide',
+        parseHTML: (element) => element.getAttribute('data-width') || 'wide',
+        renderHTML: (attributes) => ({ 'data-width': attributes.width || 'wide' }),
+      },
+    };
+  },
+
+  parseHTML() {
+    return [{ tag: 'stor-observable' }];
+  },
+
+  renderHTML({ HTMLAttributes, node }) {
+    return [
+      'stor-observable',
+      mergeAttributes(HTMLAttributes, {
+        class: 'stor-embedded-block stor-embedded-block--observable',
+      }),
+      ['div', { class: 'stor-embedded-block__eyebrow' }, 'Observable'],
+      [
+        'p',
+        { class: 'stor-embedded-block__text' },
+        node.attrs.caption || node.attrs.alt || 'Observable visualisation',
+      ],
+      [
+        'p',
+        { class: 'stor-embedded-block__meta' },
+        node.attrs.cellName
+          ? `${node.attrs.moduleUrl || 'No Observable notebook selected'}#${node.attrs.cellName}`
+          : node.attrs.moduleUrl || 'No Observable notebook selected',
+      ],
+    ];
+  },
+});
+
 export const MediaTextBlock = Node.create({
   name: 'mediaTextBlock',
   group: 'block',
@@ -328,7 +420,12 @@ export const TableBlock = Node.create({
 });
 
 export interface StructuredBlockSelection {
-  type: 'imageBlock' | 'flourishBlock' | 'tableBlock' | 'mediaTextBlock';
+  type:
+    | 'imageBlock'
+    | 'flourishBlock'
+    | 'observableBlock'
+    | 'tableBlock'
+    | 'mediaTextBlock';
   attrs: Record<string, unknown>;
   from: number;
   to: number;
@@ -357,6 +454,7 @@ export function getSelectedStructuredBlock(editor: {
     selectedNode &&
     (selectedNode.type.name === 'imageBlock' ||
       selectedNode.type.name === 'flourishBlock' ||
+      selectedNode.type.name === 'observableBlock' ||
       selectedNode.type.name === 'tableBlock' ||
       selectedNode.type.name === 'mediaTextBlock')
   ) {
@@ -373,6 +471,7 @@ export function getSelectedStructuredBlock(editor: {
     nodeAfter &&
     (nodeAfter.type.name === 'imageBlock' ||
       nodeAfter.type.name === 'flourishBlock' ||
+      nodeAfter.type.name === 'observableBlock' ||
       nodeAfter.type.name === 'tableBlock' ||
       nodeAfter.type.name === 'mediaTextBlock')
   ) {

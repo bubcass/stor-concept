@@ -11,18 +11,12 @@
   "dek": "Parliamentary reporters currently assign headings to the thousands of parliamentary questions published each year. Machine learning tools could help them do it faster.",
   "eyebrow": "Digital transformation",
   "abstract": "This paper sets out a controlled, non‑generative machine‑learning approach to supporting the assignment of topic headings to parliamentary questions (PQs) as part of the publication process. It assesses whether historical publication data can be used to train a supervised machine learning model that could safely automate or assist a high‑volume editorial process while maintaining institutional accountability, auditability and human oversight.\nKey findings indicate that a hybrid model, combining machine‑learning classification with editorial review, could support the automatic or semi‑automatic handling of approximately 70–85% of PQs, with the remainder clearly flagged for human decision‑making. The approach deliberately avoids generative AI and operates strictly within an established and approved taxonomy of headings.",
-  "topics": [
-    "Machine learning",
-    "PQs"
-  ],
+  "topics": ["Machine learning", "PQs"],
   "layout": "standard",
   "status": "published",
   "language": "en",
   "version": "1.0",
-  "keywords": [
-    "Machine learning",
-    "PQs"
-  ],
+  "keywords": ["Machine learning", "PQs"],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
   "publishedDate": "2026-01-18",

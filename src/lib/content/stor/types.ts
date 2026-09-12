@@ -65,6 +65,7 @@ export interface ProseMirrorNode {
     | 'imageBlock'
     | 'mediaTextBlock'
     | 'flourishBlock'
+    | 'observableBlock'
     | 'tableBlock';
   attrs?: Record<string, unknown> & {
     level?: number;
