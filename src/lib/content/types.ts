@@ -46,6 +46,8 @@ export interface Story {
   byline: string;
   /** Optional trusted inline HTML for an abstract/summary shown before the article body. */
   abstract?: string;
+  /** Author profiles selected for display, in publisher order. Limited to three. */
+  authors?: ResearcherProfile[];
   researcher?: ResearcherProfile;
   date: string;
   publishedDate?: string | null;

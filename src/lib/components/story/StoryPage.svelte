@@ -5,6 +5,7 @@
   import BlockRenderer from './BlockRenderer.svelte';
   import CommitteeMembersBlock from './CommitteeMembersBlock.svelte';
   import StoryToolbar from './StoryToolbar.svelte';
+  import StoryAuthor from './StoryAuthor.svelte';
 
   let {
     story,
@@ -286,48 +287,8 @@
 
   {#if story.researcher || story.abstract}
     <section class="story-intro" aria-label="Article introduction">
-      {#if story.researcher}
-        <div class="story-researcher" aria-label="Researcher information">
-          <div class="researcher-shell">
-            {#if !hideMedia && story.researcher.image}
-              <img
-                class="researcher-avatar"
-                src="{base}{story.researcher.image}"
-                alt={story.researcher.imageAlt ?? `${story.researcher.name ?? story.byline} portrait`}
-                loading="lazy"
-              />
-            {:else}
-              <div class="researcher-avatar researcher-avatar--fallback" aria-hidden="true">
-                <span>{researcherInitials}</span>
-              </div>
-            {/if}
-
-            <div class="researcher-copy">
-              {#if researcherProfileLink}
-                <p class="researcher-name">
-                  <a class="researcher-name-link" href={researcherProfileLink.href}>
-                    {story.researcher.name ?? story.byline}
-                  </a>
-                </p>
-              {:else}
-                <p class="researcher-name">{story.researcher.name ?? story.byline}</p>
-              {/if}
-              {#if story.researcher.role || story.researcher.organisation}
-                <p class="researcher-roleline">
-                  {#if story.researcher.role}
-                    {story.researcher.role}
-                  {/if}
-                  {#if story.researcher.organisation}
-                    <span>{story.researcher.organisation}</span>
-                  {/if}
-                </p>
-              {/if}
-              {#if story.researcher.bio}
-                <p class="researcher-bio">{story.researcher.bio}</p>
-              {/if}
-            </div>
-          </div>
-        </div>
+      {#if story.researcher || story.authors?.length}
+        <StoryAuthor {story} />
       {/if}
 
       {#if story.abstract}
