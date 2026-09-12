@@ -1206,10 +1206,23 @@
     const syncTheme = (event: Event) => {
       isDarkTheme = (event as CustomEvent<'light' | 'dark'>).detail === 'dark';
     };
+    const handleArticleAction = (event: Event) => {
+      switch ((event as CustomEvent<string>).detail) {
+        case 'listen': togglePlayback(); break;
+        case 'share': void shareStory(); break;
+        case 'save': toggleBookmark(); break;
+        case 'cite': void copyCitation(); break;
+        case 'print': printArticle(); break;
+      }
+    };
     window.addEventListener('stor:theme-changed', syncTheme);
+    window.addEventListener('article-action', handleArticleAction);
     void loadGeneratedAudio();
 
-    return () => window.removeEventListener('stor:theme-changed', syncTheme);
+    return () => {
+      window.removeEventListener('stor:theme-changed', syncTheme);
+      window.removeEventListener('article-action', handleArticleAction);
+    };
   });
 
   onDestroy(() => {
@@ -1500,6 +1513,10 @@
     font-family: var(--font-sans);
     font-size: var(--font-size-small);
     margin: 0.35rem 0 0;
+  }
+
+  @media (max-width: 860px) {
+    .story-toolbar { display: none; }
   }
 
   @media (max-width: 700px) {

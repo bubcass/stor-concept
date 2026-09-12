@@ -7,6 +7,14 @@
 
     let { children } = $props();
     let theme = $state<'light' | 'dark'>('light');
+    let isMobileViewport = $state(false);
+    let mobileMastheadHidden = $state(false);
+    let mobileSectionMenuOpen = $state(false);
+    let mobileSectionActionsOpen = $state(false);
+    let headerActionsOpen = $state(false);
+    let mobileSectionMenu: HTMLDivElement | undefined = $state();
+    let mobileSectionActions: HTMLDivElement | undefined = $state();
+    let headerActions: HTMLDivElement | undefined = $state();
     const publisherPath = `${base}/publisher`;
     const proofOfConceptPath = `${base}/proof-of-concept`;
     const isPublisherRoute = $derived(
@@ -29,6 +37,31 @@
         if (pathname.startsWith(`${base}/my-stor`)) return "my-stor";
         return null;
     });
+    const mobileSectionLabel = $derived.by(() => {
+        if (activeSection === "committees") return "Committees";
+        if (activeSection === "pbo") return "Parliamentary Budget Office";
+        if (activeSection === "lrs") return "Library & Research Service";
+        if (activeSection === "my-stor") return "My Stór";
+        return "Stór";
+    });
+    const mobileSectionItems = [
+        { href: `${base}/committees/`, label: "Committees" },
+        { href: `${base}/parliamentary-budget-office/`, label: "Parliamentary Budget Office" },
+        { href: `${base}/library-research-service/`, label: "Library & Research Service" },
+        { href: `${base}/my-stor/`, label: "My Stór" },
+    ];
+
+    function isCurrentMobileSection(href: string) {
+        const current = page.url.pathname.replace(/\/+$/, "") || "/";
+        const target = href.replace(/\/+$/, "") || "/";
+        return current === target;
+    }
+
+    function closeMobileTools() {
+        mobileSectionMenuOpen = false;
+        mobileSectionActionsOpen = false;
+        headerActionsOpen = false;
+    }
 
     function toggleTheme() {
         theme = theme === 'dark' ? 'light' : 'dark';
@@ -43,8 +76,27 @@
 
     onMount(() => {
         theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+        const syncHeader = () => {
+            isMobileViewport = window.matchMedia("(max-width: 860px)").matches;
+            mobileMastheadHidden = isMobileViewport && window.scrollY > 16;
+        };
+        const closeOnOutsideClick = (event: PointerEvent) => {
+            if ((mobileSectionMenuOpen || mobileSectionActionsOpen || headerActionsOpen) && !mobileSectionMenu?.contains(event.target as Node) && !mobileSectionActions?.contains(event.target as Node) && !headerActions?.contains(event.target as Node)) closeMobileTools();
+        };
+        const closeOnEscape = (event: KeyboardEvent) => {
+            if (event.key === "Escape") closeMobileTools();
+        };
+        syncHeader();
+        window.addEventListener("scroll", syncHeader, { passive: true });
+        window.addEventListener("pointerdown", closeOnOutsideClick);
+        window.addEventListener("keydown", closeOnEscape);
         window.addEventListener('stor:toggle-theme', toggleTheme);
-        return () => window.removeEventListener('stor:toggle-theme', toggleTheme);
+        return () => {
+            window.removeEventListener("scroll", syncHeader);
+            window.removeEventListener("pointerdown", closeOnOutsideClick);
+            window.removeEventListener("keydown", closeOnEscape);
+            window.removeEventListener('stor:toggle-theme', toggleTheme);
+        };
     });
 </script>
 
@@ -426,7 +478,7 @@
         </nav>
     </header>
 {:else}
-    <header class="site-header" class:site-header--resource={isResourceRoute} aria-label="Site header">
+    <header class="site-header" class:site-header--resource={isResourceRoute} class:site-header--mobile-hidden={mobileMastheadHidden} aria-label="Site header" aria-hidden={mobileMastheadHidden ? "true" : undefined} inert={mobileMastheadHidden ? true : undefined}>
         <nav class="site-nav" aria-label="Primary navigation">
             <a
                 class="oireachtas-home"
@@ -619,26 +671,20 @@
                     >
                 </span>
             </a>
-            <div class="site-header-actions">
+            <div class="site-header-actions" bind:this={headerActions}>
                 <button
-                    class="theme-toggle"
+                    class="masthead-overflow"
                     type="button"
-                    onclick={toggleTheme}
-                    aria-pressed={theme === 'dark'}
-                    aria-label={`Use ${theme === 'dark' ? 'light' : 'dark'} mode`}
-                    title={`Use ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                    aria-label="More site actions"
+                    aria-expanded={headerActionsOpen}
+                    aria-controls="masthead-actions-menu"
+                    onclick={() => (headerActionsOpen = !headerActionsOpen)}
                 >
-                    {#if theme === 'dark'}
-                        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-                            <circle cx="12" cy="12" r="4" />
-                            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-                        </svg>
-                    {:else}
-                        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-                            <path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z" />
-                        </svg>
-                    {/if}
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="19" cy="12" r="1.8"></circle></svg>
                 </button>
+                {#if headerActionsOpen}
+                    <div id="masthead-actions-menu" class="masthead-actions-menu"><button type="button" onclick={() => { toggleTheme(); headerActionsOpen = false; }}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</button></div>
+                {/if}
             </div>
         </nav>
         <nav class="section-nav" aria-label="Stór sections">
@@ -671,6 +717,50 @@
             </div>
         </nav>
     </header>
+{/if}
+
+{#if !isPublisherRoute && !isProofOfConceptRoute}
+    <div class="mobile-section-tools" class:mobile-section-tools--visible={mobileMastheadHidden} aria-label="Stór navigation">
+        <button class="mobile-back" type="button" aria-label="Go back" onclick={() => history.length > 1 ? history.back() : window.location.assign(`${base}/`)}><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m14.5 5-7 7 7 7" /></svg></button>
+        <div class="resource-mobile-nav" bind:this={mobileSectionMenu}>
+            <button class="resource-mobile-nav__toggle" type="button" aria-expanded={mobileSectionMenuOpen} aria-controls="mobile-section-menu" onclick={() => (mobileSectionMenuOpen = !mobileSectionMenuOpen)}>
+                <span>{mobileSectionLabel}</span><i aria-hidden="true"></i>
+            </button>
+            {#if mobileSectionMenuOpen}
+                <nav id="mobile-section-menu" class="resource-mobile-nav__menu" aria-label="Stór sections">
+                    {#each mobileSectionItems as item}
+                        <a href={item.href} aria-current={isCurrentMobileSection(item.href) ? "page" : undefined} onclick={() => (mobileSectionMenuOpen = false)}>{item.label}</a>
+                    {/each}
+                </nav>
+            {/if}
+        </div>
+        <div class="mobile-section-actions" bind:this={mobileSectionActions}>
+            <button class="mobile-section-actions__toggle" type="button" aria-label="More page actions" aria-expanded={mobileSectionActionsOpen} aria-controls="mobile-section-actions-menu" onclick={() => (mobileSectionActionsOpen = !mobileSectionActionsOpen)}>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="19" cy="12" r="1.8"></circle></svg>
+            </button>
+            {#if mobileSectionActionsOpen}
+                <div id="mobile-section-actions-menu" class="mobile-section-actions__menu">
+                    {#if isResourceRoute}
+                        <button type="button" onclick={() => { window.dispatchEvent(new CustomEvent("article-action", { detail: "listen" })); mobileSectionActionsOpen = false; }}><span>Listen</span></button>
+                        <button type="button" onclick={() => { window.dispatchEvent(new CustomEvent("article-action", { detail: "share" })); mobileSectionActionsOpen = false; }}><span>Share article</span></button>
+                        <button type="button" onclick={() => { window.dispatchEvent(new CustomEvent("article-action", { detail: "save" })); mobileSectionActionsOpen = false; }}><span>Save article</span></button>
+                        <button type="button" onclick={() => { window.dispatchEvent(new CustomEvent("article-action", { detail: "cite" })); mobileSectionActionsOpen = false; }}><span>Copy citation</span></button>
+                        <button type="button" onclick={() => { window.dispatchEvent(new CustomEvent("article-action", { detail: "print" })); mobileSectionActionsOpen = false; }}><span>Print article</span></button>
+                    {/if}
+                    <button type="button" onclick={() => { toggleTheme(); mobileSectionActionsOpen = false; }}>
+                        <span class="mobile-section-action-icon" aria-hidden="true">
+                            {#if theme === 'dark'}
+                                <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+                            {:else}
+                                <svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z" /></svg>
+                            {/if}
+                        </span>
+                        <span>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+                    </button>
+                </div>
+            {/if}
+        </div>
+    </div>
 {/if}
 
 <main id="content">
