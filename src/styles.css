@@ -255,7 +255,23 @@ a:focus-visible {
   display: block;
   height: 100%;
   overflow: visible;
-  width: auto;
+  width: 100%;
+}
+
+.brand-mark .house-lockup,
+.studio-header__mark .house-lockup,
+.resource-home-crumb .house-lockup {
+  display: block;
+  fill: currentColor;
+  height: 100%;
+  stroke: none;
+  width: 100%;
+}
+
+.brand-mark svg > :not(.house-lockup),
+.studio-header__mark svg > :not(.house-lockup),
+.resource-home-crumb svg > :not(.house-lockup) {
+  display: none;
 }
 
 .brand:hover .brand-mark,

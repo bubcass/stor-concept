@@ -115,12 +115,13 @@
         <div class="studio-header__inner">
             <span class="studio-header__mark" aria-hidden="true">
                 <svg
-                    viewBox="0 0 64 28"
+                    viewBox="0 0 1092 526"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     role="presentation"
                     focusable="false"
                 >
+                    <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" />
                     <path
                         d="M12 9H26L32 5L38 9H52"
                         stroke="currentColor"
@@ -299,12 +300,13 @@
             >
                 <span class="brand-mark" aria-hidden="true">
                     <svg
-                        viewBox="0 0 64 28"
+                        viewBox="0 0 1092 526"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         role="presentation"
                         focusable="false"
                     >
+                        <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" />
                         <path
                             d="M12 9H26L32 5L38 9H52"
                             stroke="currentColor"
@@ -495,12 +497,13 @@
             >
                 <span class="brand-mark" aria-hidden="true">
                     <svg
-                        viewBox="0 0 64 28"
+                        viewBox="0 0 1092 526"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         role="presentation"
                         focusable="false"
                     >
+                        <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" />
                         <path
                             d="M12 9H26L32 5L38 9H52"
                             stroke="currentColor"
@@ -695,7 +698,8 @@
                 aria-label="Return to Stór home"
                 title="Return to Stór home"
             >
-                <svg viewBox="0 0 64 28" aria-hidden="true" focusable="false">
+                <svg viewBox="0 0 1092 526" aria-hidden="true" focusable="false">
+                    <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" />
                     <path d="M12 9H26L32 5L38 9H52" />
                     <line x1="12" y1="10.5" x2="52" y2="10.5" />
                     <rect x="12" y="10.5" width="40" height="13.5" />
