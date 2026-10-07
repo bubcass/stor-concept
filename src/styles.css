@@ -222,10 +222,10 @@ a:focus-visible {
   color: currentColor;
   display: inline-flex;
   flex: 0 0 auto;
-  height: 1.7rem;
+  height: 1.95rem;
   justify-content: center;
   transform: translateY(-0.05em);
-  width: 3.95rem;
+  width: 4.55rem;
 }
 
 .brand-copy {

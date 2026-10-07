@@ -121,7 +121,7 @@
                     role="presentation"
                     focusable="false"
                 >
-                    <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" />
+                    <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" fill="currentColor" />
                     <path
                         d="M12 9H26L32 5L38 9H52"
                         stroke="currentColor"
@@ -306,7 +306,7 @@
                         role="presentation"
                         focusable="false"
                     >
-                        <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" />
+                        <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" fill="currentColor" />
                         <path
                             d="M12 9H26L32 5L38 9H52"
                             stroke="currentColor"
@@ -503,7 +503,7 @@
                         role="presentation"
                         focusable="false"
                     >
-                        <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" />
+                        <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" fill="currentColor" />
                         <path
                             d="M12 9H26L32 5L38 9H52"
                             stroke="currentColor"
@@ -699,7 +699,7 @@
                 title="Return to Stór home"
             >
                 <svg viewBox="0 0 1092 526" aria-hidden="true" focusable="false">
-                    <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" />
+                    <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" fill="currentColor" />
                     <path d="M12 9H26L32 5L38 9H52" />
                     <line x1="12" y1="10.5" x2="52" y2="10.5" />
                     <rect x="12" y="10.5" width="40" height="13.5" />
