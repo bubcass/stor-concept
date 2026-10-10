@@ -115,13 +115,14 @@
         <div class="studio-header__inner">
             <span class="studio-header__mark" aria-hidden="true">
                 <svg
-                    viewBox="0 0 1092 526"
+                    viewBox="0 0 790 381"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     role="presentation"
                     focusable="false"
                 >
-                    <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" fill="currentColor" />
+                    <use class="house-lockup" href="{base}/brand/insights-house.svg?canonical=2#house-lockup" fill="currentColor" />
+                    <g display="none" aria-hidden="true">
                     <path
                         d="M12 9H26L32 5L38 9H52"
                         stroke="currentColor"
@@ -283,6 +284,7 @@
                         stroke="currentColor"
                         stroke-width="1.2"
                     />
+                    </g>
                 </svg>
             </span>
             <span class="studio-header__title"
@@ -298,15 +300,16 @@
                 href="{base}/proof-of-concept/"
                 aria-label="Committee report wireframe home"
             >
-                <span class="brand-mark" aria-hidden="true">
+                <span class="brand-mark" aria-hidden="true" style={`--house-mask: url("${base}/brand/insights-house.svg?canonical=2")`}>
                     <svg
-                        viewBox="0 0 1092 526"
+                        viewBox="0 0 790 381"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         role="presentation"
                         focusable="false"
                     >
-                        <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" fill="currentColor" />
+                        <use class="house-lockup" href="{base}/brand/insights-house.svg?canonical=2#house-lockup" fill="currentColor" />
+                        <g display="none" aria-hidden="true">
                         <path
                             d="M12 9H26L32 5L38 9H52"
                             stroke="currentColor"
@@ -468,6 +471,7 @@
                             stroke="currentColor"
                             stroke-width="1.2"
                         />
+                        </g>
                     </svg>
                 </span>
                 <span class="brand-copy proof-brand-copy">
@@ -495,15 +499,16 @@
                 href="{base}/"
                 aria-label="Stór | Independent Parliamentary Research home"
             >
-                <span class="brand-mark" aria-hidden="true">
+                <span class="brand-mark" aria-hidden="true" style={`--house-mask: url("${base}/brand/insights-house.svg?canonical=2")`}>
                     <svg
-                        viewBox="0 0 1092 526"
+                        viewBox="0 0 790 381"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         role="presentation"
                         focusable="false"
                     >
-                        <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" fill="currentColor" />
+                        <use class="house-lockup" href="{base}/brand/insights-house.svg?canonical=2#house-lockup" fill="currentColor" />
+                        <g display="none" aria-hidden="true">
                         <path
                             d="M12 9H26L32 5L38 9H52"
                             stroke="currentColor"
@@ -665,6 +670,7 @@
                             stroke="currentColor"
                             stroke-width="1.2"
                         />
+                        </g>
                     </svg>
                 </span>
                 <span class="brand-copy">
@@ -698,8 +704,9 @@
                 aria-label="Return to Stór home"
                 title="Return to Stór home"
             >
-                <svg viewBox="0 0 1092 526" aria-hidden="true" focusable="false">
-                    <use class="house-lockup" href="{base}/brand/insights-house.svg#house-lockup" fill="currentColor" />
+                <svg viewBox="0 0 790 381" aria-hidden="true" focusable="false">
+                    <use class="house-lockup" href="{base}/brand/insights-house.svg?canonical=2#house-lockup" fill="currentColor" />
+                    <g display="none" aria-hidden="true">
                     <path d="M12 9H26L32 5L38 9H52" />
                     <line x1="12" y1="10.5" x2="52" y2="10.5" />
                     <rect x="12" y="10.5" width="40" height="13.5" />
@@ -721,6 +728,7 @@
                     <rect class="resource-home-crumb__window" x="39.3" y="18" width="1.7" height="1.7" />
                     <rect class="resource-home-crumb__window" x="43.3" y="18" width="1.7" height="1.7" />
                     <rect class="resource-home-crumb__window" x="47.3" y="18" width="1.7" height="1.7" />
+                    </g>
                 </svg>
             </a>
             {/if}

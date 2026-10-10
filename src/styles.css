@@ -226,6 +226,9 @@ a:focus-visible {
   justify-content: center;
   transform: translateY(-0.05em);
   width: 4.55rem;
+  background-color: currentColor;
+  -webkit-mask: var(--house-mask) center / contain no-repeat;
+  mask: var(--house-mask) center / contain no-repeat;
 }
 
 .brand-copy {
@@ -252,7 +255,7 @@ a:focus-visible {
 }
 
 .brand-mark svg {
-  display: block;
+  display: none;
   height: 100%;
   overflow: visible;
   width: 100%;
