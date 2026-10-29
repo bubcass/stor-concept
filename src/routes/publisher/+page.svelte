@@ -9,6 +9,7 @@
     import Superscript from "@tiptap/extension-superscript";
     import Subscript from "@tiptap/extension-subscript";
     import StoryPage from "$lib/components/story/StoryPage.svelte";
+    import { getStorDocument, storDocumentList } from "$lib/content/stor";
     import { extractDocxMetadata } from "$lib/publisher/extractDocxMetadata";
     import {
         FlourishBlock,
@@ -186,6 +187,8 @@
     let editorMounted = $state(false);
     let hasLocalDraft = $state(false);
     let draftStatus = $state<string | null>(null);
+    let existingStorySlug = $state("");
+    let existingStoryQuery = $state("");
     let draftPersistenceReady = false;
     let editorDraftSaveTimeout: number | null = null;
     const DOCX_IMPORT_RELOAD_KEY = "stor-docx-import-reload-attempted";
@@ -689,6 +692,89 @@
         resetPublisherState();
     }
 
+    function loadStorDocumentIntoPublisher(document: StorDocument) {
+        metadata = {
+            destination: document.destination,
+            type: document.type,
+            featured: document.featured ?? false,
+            heroLayout: document.heroLayout ?? "contained",
+            showContents: document.showContents ?? true,
+            flourishWidth: document.flourishWidth ?? "prose",
+            title: document.title,
+            dek: document.dek,
+            eyebrow: document.eyebrow ?? "",
+            abstract: document.abstract ?? "",
+            committeeName: document.committeeName ?? "",
+            publishedDate: document.publishedDate ?? todayLocalIsoDate(),
+            status: document.status ?? "draft",
+            language: document.language ?? "en",
+            keywords: (document.keywords ?? document.topics ?? []).join(", "),
+            version: document.version ?? "0.1",
+            license: document.license ?? "Oireachtas PSI Licence",
+            doi: document.doi ?? "",
+            publisher: document.publisher ?? "Houses of the Oireachtas",
+            heroSrc: document.hero?.src ?? "",
+            heroAlt: document.hero?.alt ?? "",
+            heroPosition: document.hero?.position ?? "left center",
+            launchVideoSrc: document.launchVideo?.src ?? "",
+            launchVideoPoster: document.launchVideo?.poster ?? "",
+            launchVideoCaption: document.launchVideo?.caption ?? "",
+            launchVideoCredit: document.launchVideo?.credit ?? "",
+            slug: document.slug,
+        };
+        contributors = normalizeContributorDisplay(
+            document.contributors?.length
+                ? document.contributors
+                : defaultContributorsForDestination(document.destination),
+            document.destination,
+        );
+        importedFilename = "";
+        importError = null;
+        importMessage = `Loaded ${document.title} into the publisher.`;
+        existingStorySlug = document.slug;
+        openStage = "details";
+
+        if (editor) {
+            editor.commands.setContent(document.content);
+            editorDocument = editor.getJSON() as ProseMirrorDocument;
+        } else {
+            editorDocument = document.content;
+        }
+    }
+
+    function openExistingStory() {
+        if (!existingStorySlug) return;
+        const document = getStorDocument(existingStorySlug);
+        if (!document) {
+            importError = "That document could not be loaded into the publisher.";
+            return;
+        }
+
+        loadStorDocumentIntoPublisher(document);
+    }
+
+    function selectExistingStory(story: (typeof storDocumentList)[number]) {
+        existingStorySlug = story.slug;
+    }
+
+    function existingStorySearchText(story: (typeof storDocumentList)[number]) {
+        return [
+            story.title,
+            story.slug,
+            story.destination,
+            story.committeeName ?? "",
+            story.publishedDate ?? "",
+        ]
+            .join(" ")
+            .toLowerCase();
+    }
+
+    function formatExistingStoryLabel(story: (typeof storDocumentList)[number]) {
+        return `${story.destination.replace(/-/g, " ")}${
+            story.publishedDate ? ` · ${story.publishedDate}` : ""
+        }`;
+    }
+
     let canonicalDocument = $derived.by<StorDocument | null>(() => {
         if (!editorDocument) return null;
 
@@ -869,6 +955,18 @@
 
     let activeStage = $derived(
         stageItems.find((stage) => stage.id === openStage) ?? stageItems[0],
+    );
+
+    let filteredExistingStories = $derived(
+        storDocumentList.filter((story) =>
+            existingStorySearchText(story).includes(
+                existingStoryQuery.trim().toLowerCase(),
+            ),
+        ),
+    );
+    let selectedExistingStory = $derived(
+        storDocumentList.find((story) => story.slug === existingStorySlug) ??
+            null,
     );
 
     let validation = $derived.by(() => {
@@ -1799,7 +1897,7 @@
             {#if openStage === "start"}
                 <div class="stage-body stage-body--start">
                     <div class="workflow-grid">
-                        <div class="workflow-card">
+                        <div class="workflow-card workflow-card--quick-start">
                             <strong>Upload document</strong>
                             <span
                                 >Import a document and move into metadata
@@ -1822,7 +1920,7 @@
                             {/if}
                         </div>
 
-                        <div class="workflow-card">
+                        <div class="workflow-card workflow-card--quick-start">
                             <strong>Start a blank draft</strong>
                             <span
                                 >Create a new document and continue to
@@ -1831,6 +1929,72 @@
                             <button type="button" onclick={startNewDraft}
                                 >Start a new draft</button
                             >
+                        </div>
+
+                        <div class="workflow-card workflow-card--existing-story">
+                            <div class="existing-story-header">
+                                <div>
+                                    <strong>Open existing document</strong>
+                                    <span
+                                        >Load a previously published or edited
+                                        document into the publisher and continue
+                                        working on it in place.</span
+                                    >
+                                </div>
+                                <label class="story-search">
+                                    <span class="sr-only"
+                                        >Search existing documents</span
+                                    >
+                                    <input
+                                        bind:value={existingStoryQuery}
+                                        type="search"
+                                        placeholder="Search by title, destination, or date"
+                                    />
+                                </label>
+                            </div>
+                            <div class="story-search-results">
+                                {#if filteredExistingStories.length}
+                                    {#each filteredExistingStories as story}
+                                        <button
+                                            type="button"
+                                            class="story-search-result"
+                                            class:story-search-result--active={existingStorySlug ===
+                                                story.slug}
+                                            onclick={() =>
+                                                selectExistingStory(story)}
+                                        >
+                                            <strong>{story.title}</strong>
+                                            <span>{story.slug}</span>
+                                            <span class="story-search-result__meta"
+                                                >{formatExistingStoryLabel(story)}</span
+                                            >
+                                        </button>
+                                    {/each}
+                                {:else}
+                                    <p class="workflow-note">
+                                        No documents match that search yet.
+                                    </p>
+                                {/if}
+                            </div>
+                            <div class="existing-story-footer">
+                                {#if selectedExistingStory}
+                                    <p class="workflow-note">
+                                        Selected:
+                                        <code>{selectedExistingStory.slug}</code>
+                                    </p>
+                                {:else}
+                                    <p class="workflow-note">
+                                        Choose a document to continue editing it.
+                                    </p>
+                                {/if}
+                                <button
+                                    type="button"
+                                    onclick={openExistingStory}
+                                    disabled={!existingStorySlug}
+                                >
+                                    Open selected document
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -3596,8 +3760,19 @@
 
 <style>
     .publisher-scope {
-        color: #262626;
-        background: #f4f4f2;
+        --studio-ink: #2f3134;
+        --studio-text: #4f5358;
+        --studio-muted: #70757c;
+        --studio-faint: #90959c;
+        --studio-line: #d4d7dc;
+        --studio-line-strong: #b9bec6;
+        --studio-paper: #f4f5f6;
+        --studio-panel: #ffffff;
+        --studio-panel-soft: #f8f9fa;
+        --studio-panel-strong: #eef1f4;
+        --studio-focus: #202225;
+        color: var(--studio-ink);
+        background: var(--studio-paper);
         font-family:
             "IBM Plex Sans",
             system-ui,
@@ -3624,10 +3799,10 @@
     }
 
     .publisher-scope button {
-        background: #fafaf8;
-        border: 1px solid #d7d7d2;
+        background: var(--studio-panel);
+        border: 1px solid var(--studio-line);
         border-radius: 4px;
-        color: #262626;
+        color: var(--studio-ink);
         cursor: pointer;
         padding: 0.58rem 0.82rem;
         transition:
@@ -3638,8 +3813,8 @@
     }
 
     .publisher-scope button:hover {
-        background: #f0f0ed;
-        border-color: #b8b8b2;
+        background: var(--studio-panel-soft);
+        border-color: var(--studio-line-strong);
     }
 
     .publisher-scope button:disabled {
@@ -3651,15 +3826,20 @@
     .publisher-scope select,
     .publisher-scope textarea {
         width: 100%;
-        background: #fafaf8;
-        border: 1px solid #d7d7d2;
+        background: var(--studio-panel);
+        border: 1px solid var(--studio-line);
         border-radius: 4px;
-        color: #262626;
+        color: var(--studio-ink);
         padding: 0.65rem 0.8rem;
     }
 
     .publisher-scope textarea {
         resize: vertical;
+    }
+
+    .publisher-scope input::placeholder,
+    .publisher-scope textarea::placeholder {
+        color: var(--studio-faint);
     }
 
     .publisher-scope input[type="checkbox"] {
@@ -3671,7 +3851,7 @@
     .publisher-scope select:focus-visible,
     .publisher-scope textarea:focus-visible,
     .publisher-scope summary:focus-visible {
-        outline: 2px solid #111111;
+        outline: 2px solid var(--studio-focus);
         outline-offset: 2px;
     }
 
@@ -3695,16 +3875,16 @@
         padding: 0.75rem 0.9rem;
         text-align: left;
         white-space: normal;
-        color: #4f4f4f;
+        color: var(--studio-text);
         font-size: 0.95rem;
         font-weight: 550;
     }
 
     .stage-pill.active {
-        background: #efefec;
-        border-color: #b8b8b2;
-        color: #262626;
-        box-shadow: inset 0 3px 0 #262626;
+        background: var(--studio-panel-strong);
+        border-color: var(--studio-line-strong);
+        color: var(--studio-ink);
+        box-shadow: inset 0 3px 0 var(--studio-ink);
         font-weight: 600;
     }
 
@@ -3720,7 +3900,7 @@
         padding: 0.5rem 0.1rem 0.55rem;
         background: transparent;
         border: 0;
-        border-bottom: 2px solid #dddcd5;
+        border-bottom: 2px solid var(--studio-line);
         border-radius: 0;
         box-shadow: none;
     }
@@ -3737,7 +3917,7 @@
         font-size: 0.74rem;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        color: #555550;
+        color: var(--studio-text);
     }
 
     .status-card--warning strong {
@@ -3749,7 +3929,7 @@
     }
 
     .status-card span {
-        color: #72726c;
+        color: var(--studio-muted);
         font-size: 0.86rem;
     }
 
@@ -3763,21 +3943,21 @@
 
     .publish-message,
     .status-panel {
-        background: #fafaf8;
-        border: 1px solid #d7d7d2;
+        background: var(--studio-panel);
+        border: 1px solid var(--studio-line);
         border-radius: 4px;
         padding: 0.8rem 0.95rem;
     }
 
     .publish-message.error,
     .status-panel.error {
-        border-color: #b9a8a8;
-        background: #f6f2f1;
+        border-color: #c8ccd2;
+        background: #f4f5f6;
     }
 
     .publish-message.success {
-        border-color: #c6ccc1;
-        background: #f1f3ef;
+        border-color: #c8ccd2;
+        background: #f4f5f6;
     }
 
     .publish-message {
@@ -3800,10 +3980,10 @@
         justify-content: space-between;
         gap: 0.75rem;
         padding: 0.7rem 0.95rem;
-        background: #f1f3ef;
-        border: 1px solid #c6ccc1;
+        background: var(--studio-panel-strong);
+        border: 1px solid #c8ccd2;
         border-radius: 4px;
-        color: #394239;
+        color: var(--studio-ink);
         flex-wrap: nowrap;
         min-height: 2.85rem;
     }
@@ -3830,10 +4010,10 @@
         flex-shrink: 0;
         min-height: 1.85rem;
         padding: 0.16rem 0.55rem;
-        border: 1px solid #d7d7d2;
+        border: 1px solid var(--studio-line);
         border-radius: 999px;
-        background: #fafaf8;
-        color: #394239;
+        background: var(--studio-panel);
+        color: var(--studio-ink);
         font-size: 0.82rem;
         font-weight: 600;
         white-space: nowrap;
@@ -3848,8 +4028,8 @@
     }
 
     .status-panel.warning {
-        border-color: #cfc8b3;
-        background: #f6f4ec;
+        border-color: #c8ccd2;
+        background: #f4f5f6;
     }
 
     .status-panel ul {
@@ -3858,8 +4038,8 @@
     }
 
     .stage-section {
-        background: #fafaf8;
-        border: 1px solid #d7d7d2;
+        background: var(--studio-panel);
+        border: 1px solid var(--studio-line);
         border-radius: 4px;
         overflow: hidden;
         box-shadow: 0 8px 20px rgba(38, 38, 38, 0.03);
@@ -3871,11 +4051,11 @@
         gap: 1rem;
         align-items: center;
         padding: 0.8rem 0.95rem;
-        background: #efefec;
+        background: var(--studio-panel-strong);
     }
 
     .stage-heading span {
-        color: #262626;
+        color: var(--studio-ink);
         font-size: 0.82rem;
         font-weight: 700;
         letter-spacing: 0.05em;
@@ -3883,7 +4063,7 @@
     }
 
     .stage-heading strong {
-        color: #555555;
+        color: var(--studio-text);
         font-size: 0.92rem;
         font-weight: 600;
     }
@@ -3896,7 +4076,7 @@
 
     .stage-copy {
         margin: 0;
-        color: #555555;
+        color: var(--studio-text);
         line-height: 1.45;
         max-width: 42rem;
         font-size: 0.95rem;
@@ -3918,9 +4098,19 @@
         align-content: start;
         min-height: 12rem;
         padding: 0.9rem;
-        border: 1px solid #d7d7d2;
+        border: 1px solid var(--studio-line);
         border-radius: 4px;
-        background: #f7f7f4;
+        background: var(--studio-panel-soft);
+    }
+
+    .workflow-card--quick-start {
+        min-height: 10.5rem;
+    }
+
+    .workflow-card--existing-story {
+        grid-column: 1 / -1;
+        min-height: 0;
+        gap: 0.8rem;
     }
 
     .workflow-card strong {
@@ -3928,13 +4118,82 @@
     }
 
     .workflow-card span {
-        color: #555555;
+        color: var(--studio-text);
         font-size: 0.92rem;
+    }
+
+    .existing-story-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.9fr);
+        gap: 1rem;
+        align-items: end;
+    }
+
+    .existing-story-header > div {
+        display: grid;
+        gap: 0.35rem;
+    }
+
+    .story-search {
+        display: grid;
+    }
+
+    .story-search-results {
+        display: grid;
+        gap: 0.45rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-height: 19rem;
+        padding-right: 0.1rem;
+        overflow-y: auto;
+    }
+
+    .story-search-result {
+        display: grid;
+        gap: 0.2rem;
+        align-items: start;
+        padding: 0.72rem 0.78rem;
+        border: 1px solid var(--studio-line);
+        border-radius: 4px;
+        background: var(--studio-panel);
+        text-align: left;
+    }
+
+    .story-search-result strong {
+        font-size: 0.96rem;
+    }
+
+    .story-search-result span {
+        font-size: 0.84rem;
+    }
+
+    .story-search-result__meta {
+        color: var(--studio-text);
+    }
+
+    .story-search-result--active {
+        border-color: var(--studio-line-strong);
+        background: color-mix(
+            in srgb,
+            var(--studio-ink) 5%,
+            var(--studio-panel) 95%
+        );
+        box-shadow: 0 0 0 1px rgba(47, 49, 52, 0.2);
+    }
+
+    .existing-story-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .existing-story-footer button {
+        flex: 0 0 auto;
     }
 
     .workflow-note {
         margin: 0;
-        color: #555555;
+        color: var(--studio-text);
         font-size: 0.88rem;
     }
 
@@ -3944,9 +4203,9 @@
         justify-content: center;
         width: fit-content;
         padding: 0.58rem 0.82rem;
-        border: 1px solid #d7d7d2;
+        border: 1px solid var(--studio-line);
         border-radius: 4px;
-        background: #fafaf8;
+        background: var(--studio-panel);
         cursor: pointer;
     }
 
@@ -4817,6 +5076,11 @@
         .presentation-grid--single {
             grid-template-columns: 1fr;
         }
+
+        .existing-story-header,
+        .story-search-results {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 640px) {
@@ -4854,6 +5118,15 @@
         .draft-status-actions,
         .publish-panel__actions-right {
             flex-wrap: wrap;
+        }
+
+        .existing-story-footer {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .existing-story-footer button {
+            width: 100%;
         }
     }
 </style>

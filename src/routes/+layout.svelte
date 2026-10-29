@@ -827,24 +827,25 @@
 
 <style>
     .studio-header {
-        background: #fafaf8;
-        border-bottom: 1px solid #d7d7d2;
-        color: #303030;
+        background: #fbfbfa;
+        border-bottom: 1px solid #d9dadc;
+        color: #36383b;
     }
 
     .studio-header__inner {
         align-items: center;
         display: flex;
-        gap: 1rem;
+        gap: 1.1rem;
         justify-content: center;
         margin: 0 auto;
         max-width: 1320px;
-        padding: 1.9rem 1.1rem 1.8rem;
+        min-height: 6.4rem;
+        padding: 0 1.1rem;
     }
 
     .studio-header__mark {
         display: inline-flex;
-        width: 3.5rem;
+        width: 4.55rem;
     }
 
     .studio-header__mark :global(svg) {
@@ -854,9 +855,11 @@
 
     .studio-header__title {
         font-family: "IBM Plex Sans", system-ui, sans-serif;
-        font-size: clamp(1.2rem, 2vw, 1.7rem);
-        font-weight: 700;
-        letter-spacing: 0.06em;
+        font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+        font-weight: 800;
+        letter-spacing: 0.085em;
+        line-height: 1.05;
+        text-align: center;
         text-transform: uppercase;
     }
 
