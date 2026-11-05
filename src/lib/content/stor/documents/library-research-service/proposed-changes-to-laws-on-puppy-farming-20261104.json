@@ -8,22 +8,22 @@
   "showContents": true,
   "flourishWidth": "wide",
   "title": "Proposed changes to laws on puppy farming",
-  "dek": "",
+  "dek": "Dog breeding, the control of dogs and animal welfare are the responsibility of the Department of Agriculture, Food and the Marine. The agriculture committee is currently considering the general scheme of new dog breeding legislation.",
   "eyebrow": "Research Matters",
   "abstract": "Ireland is a nation of dog lovers, and the welfare of dogs and practices at puppy farms is highly emotive. Here are some insights into what the data tell us about dogs in Ireland, an overview of proposals to improve the welfare of dogs and pups and a list of known issues not addressed in this legislation.",
   "topics": [
-    "open data",
-    "transparency",
-    "digital communications"
+    "dog breeding",
+    "legislation",
+    "animal welfare"
   ],
   "layout": "standard",
-  "status": "draft",
+  "status": "published",
   "language": "en",
   "version": "1.0",
   "keywords": [
-    "open data",
-    "transparency",
-    "digital communications"
+    "dog breeding",
+    "legislation",
+    "animal welfare"
   ],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
@@ -45,8 +45,8 @@
     "image": "/media/kate-walsh-headshot.jpg"
   },
   "hero": {
-    "src": "/media/election.mp4",
-    "alt": "People in a general election count centre",
+    "src": "/media/two-puppies.jpg",
+    "alt": "A pair of black and white puppies looking at the camera",
     "position": "left center"
   },
   "content": {
