@@ -1,0 +1,971 @@
+{
+  "id": "proposed-changes-to-laws-on-puppy-farming-20261104",
+  "slug": "proposed-changes-to-laws-on-puppy-farming-20261104",
+  "type": "article",
+  "destination": "library-research-service",
+  "featured": false,
+  "heroLayout": "split",
+  "showContents": true,
+  "flourishWidth": "wide",
+  "title": "Proposed changes to laws on puppy farming",
+  "dek": "",
+  "eyebrow": "Research Matters",
+  "abstract": "Ireland is a nation of dog lovers, and the welfare of dogs and practices at puppy farms is highly emotive. Here are some insights into what the data tell us about dogs in Ireland, an overview of proposals to improve the welfare of dogs and pups and a list of known issues not addressed in this legislation.",
+  "topics": [
+    "open data",
+    "transparency",
+    "digital communications"
+  ],
+  "layout": "standard",
+  "status": "draft",
+  "language": "en",
+  "version": "1.0",
+  "keywords": [
+    "open data",
+    "transparency",
+    "digital communications"
+  ],
+  "license": "Oireachtas PSI Licence",
+  "publisher": "Houses of the Oireachtas",
+  "publishedDate": "2026-11-04",
+  "contributors": [
+    {
+      "name": "Kate Walsh",
+      "role": "author",
+      "affiliation": "Library & Research Service",
+      "showAsAuthor": true,
+      "profileRole": "Senior Parliamentary Researcher (Environmental Science)",
+      "profileImage": "/media/kate-walsh-headshot.jpg"
+    }
+  ],
+  "researcher": {
+    "name": "Kate Walsh",
+    "role": "Senior Parliamentary Researcher (Environmental Science)",
+    "organisation": "Library & Research Service",
+    "image": "/media/kate-walsh-headshot.jpg"
+  },
+  "hero": {
+    "src": "/media/election.mp4",
+    "alt": "People in a general election count centre",
+    "position": "left center"
+  },
+  "content": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What changes in the law are proposed?"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "As of 2025, responsibilities for policy and legislation regarding dog breeding, dog control and animal welfare now all lie with the Department of Agriculture, Food and the Marine. For enforcement, it is local authorities (county and city councils) that are responsible for dog wardens, dog control, strays and destruction, shelters and pounds, and inspections for dog breeding establishments (sometimes described as ‘puppy farms’, shortened to DBEs here on). There are around 60 dog wardens nationwide, and some local authorities opt to outsource this service."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://assets.gov.ie/static/documents/9306956d/General_Scheme_of_the_Dog_Breeding_Establishments_Amendment_Bill_2026.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "General Scheme of the Dog Breeding Establishments (Amendment) Bill 2026 "
+          },
+          {
+            "type": "text",
+            "text": "is now being scrutinised by the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.oireachtas.ie/en/press-centre/press-releases/20260929-joint-committee-on-agriculture-and-food-meets-for-pre-legislative-scrutiny-of-the-general-scheme-of-the-dog-breeding-establishments-amendment-bill-2026/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Joint Committee on Agriculture and Food"
+          },
+          {
+            "type": "text",
+            "text": " in the Oireachtas. Some of the noteworthy proposals in the draft heads include:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Introduction of a new "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "ban on inbreeding"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for health and mortality reasons, including of first cousins."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "New offence for the existing requirement for "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "microchipping puppies at a DBE before they are 8 weeks old"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", and to not remove pups from the mother and establishment before 8 weeks. New offences are punishable by a fine of up to €5000 and 6 months imprisonment."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Introduces a new offence that disallows a pup from being sold or removed from its mother before 8 weeks of age (except for veterinary treatment)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Legislates for "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "pre-inspection"
+                  },
+                  {
+                    "type": "text",
+                    "text": " of a new dog breeding establishment before it is placed on the register."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Caps on the number of breeding litters"
+                  },
+                  {
+                    "type": "text",
+                    "text": " per female breeding dog: maximum four litters per lifetime (extendible to six if veterinarian approved); and maximum one litter per year; and no more mating if a bitch has had two litters delivered by Caesarean section."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Age limits"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for breeding female dogs: no younger than 12 months and no older than 8 years."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A new requirement that a prospective buyer must be shown the biological mother of any pup under 6 months old when buying."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Future introduction of a "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "minimum staffing ratio"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", of 20 dogs to 1 full time staff member, to ensure dog welfare standards. This number is variable subject to future regulations. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "text": "This expressly does not apply to charities, hunt clubs and greyhound establishments."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "New "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "powers to seize dogs"
+                  },
+                  {
+                    "type": "text",
+                    "text": " where dog welfare offences are suspected."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What the data say about dogs and puppy farms in Ireland"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "There is no information gathered on dog ownership as part of the main CSO census. Best estimates derived from national pet food sales suggest that there are currently around 560,000 dogs in Ireland, owned by 1 in 4 households."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "There are data from the four authorised animal microchipping companies, and since regulations were introduced in 2015 an average of 100,000 dogs are newly microchipped and registered annually in Ireland. Microchipping is low-cost (under €50) and typically happens for new puppies under 12 weeks, and when older dogs are rehomed."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://flourish-user-preview.com/30461239/3O6HVPgY3dGCE3SxQxDuP36Tn190ljjFHuHsB2XAuXLD6UsRfcxEEEzzqoCONpvs/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Dog microchipping data 2012 to 2022"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "<iframe src='https://flo.uri.sh/visualisation/30461239/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-01.png",
+          "alt": "Imported DOCX image",
+          "caption": "",
+          "credit": "",
+          "layout": "inline"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All dog owners are required by law to hold a valid dog licence for dogs aged over four months old. For individual dogs, two options are available: a lifetime (€140) and an annual licence (€20)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Around 200,000 dog licences are issued annually in Ireland. The chart below displays the number of licences for each local authority for each year since 2000. Counties Cork and Kerry are consistently in the lead for the most dog licences sold."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://flourish-user-preview.com/30388680/cpJgu6WxRZkr-qxD8dLkt3KiSQdv99K4Ud1MSEdzr8HaQPwnsbyS8aQYTceiZ6zp/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Dog licences by LA and by year, 2000 to 2024"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "<iframe src='https://flo.uri.sh/visualisation/30388680/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-02.png",
+          "alt": "A graph of a number of cities\n\nAI-generated content may be incorrect.",
+          "caption": "",
+          "credit": "",
+          "layout": "inline"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The vast majority of owners opt for individual licences, however lifetime licence sales have grown in recent years. Producing a dog licence is not often required, even when registering the microchip record of a dog, as the two systems are unrelated. Except for a stray dog encountering a dog warden for example, the licence is rarely needed again by the majority of dog owners that have no reason to encounter authorities with dog control powers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "What is unclear is how disciplined dog owners are at "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ],
+            "text": "renewing"
+          },
+          {
+            "type": "text",
+            "text": " their annual individual licenses. Here, the seven-fold higher cost of the lifetime licence compared to the annual individual licence is probably a factor. Domesticated dogs typically have a life expectancy of 10 or more years so there is little financial incentive for lifetime over individual licence options."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The annual income from licensing of dogs is around €5 million annually, bringing in about half the reported costs of dog control operations. Animal welfare groups argue that resources for dog welfare are drastically underfunded, with the burden for rehoming and adoptions mostly met by charities. By contrast, fees for licensing of the 250 registered dog breeding establishments (DBEs) raised just €60,000 in 2024. The costs of inspection and enforcement fall to local government."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Besides licensing (recurring annually) and one-off registration (mostly of pups) via microchipping, the statistical picture on dogs in Ireland is patchy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "There is a register of pet sellers, with 509 registered dog sellers on the latest August 2026 register. They are shown on the map below. The number of pet sellers and the numbers of dogs licensed do not always match geographically. It is apparent that people travel around the country to buy puppies."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://app.flourish.studio/visualisation/30401842/edit",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Dog pet sellers by county | Flourish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "<iframe src='https://flo.uri.sh/visualisation/30401842/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-03.png",
+          "alt": "Imported DOCX image",
+          "caption": "",
+          "credit": "",
+          "layout": "inline"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Scale of puppy production in Ireland"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Estimates of the number of puppies born each year in dog breeding establishments (DBEs) are well short of the true numbers of puppies bred, informally and commercially, in Ireland each year. The NSPCA estimate around 30,000 pups are bred in the registered DBEs each year. Some estimates put the true puppy production figure as high as 100,000, many of which are exported to the UK."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "There are 250 registered DBEs according to the latest (2024) statistics. The numbers of DBEs by county are shown on the map below."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://flourish-user-preview.com/30398412/SvKbGwB4U0cUiKMRBRmU7yZxYoamGFi0EBozI-2QIIf_3fiENQr9MAQ3mRvaA_t7/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "DBEs by local authorities Ireland"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "<iframe src='https://flo.uri.sh/visualisation/30398412/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        }
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-04.png",
+          "alt": "Imported DOCX image",
+          "caption": "",
+          "credit": "",
+          "layout": "inline"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The intensity of how many breeding females and pups there are at any one DBE is one metric of concern for dog welfare advocates. All establishments with more than six breeding females are currently legally required to be registered. The latest published register is summarised in the table below. The majority (57%) of DBEs are licensed for a maximum of 18 breeding female dogs, virtually all have fewer than 100."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://flourish-user-preview.com/30411195/VZguNGqADqNYWJ-yeqnalE41PsnM2I_qT-cAiNWGoe3qlc4sef5eEt3ZRgz9EXiy/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "No. DBEs with no of breeding female dogs"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "<iframe src='https://flo.uri.sh/visualisation/30411195/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-05.png",
+          "alt": "Imported DOCX image",
+          "caption": "",
+          "credit": "",
+          "layout": "inline"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "From the above table, the inference is that there are a maximum of around 8,000 registered female breeding dogs in Ireland. Around 25,000 pups are sold annually online in Ireland, in addition to known exports of puppies to the UK. When compared to a hundred thousand dogs being microchipped each year it is clear that the official statistics reveal that the majority of pups are being bred in unregistered breeding establishments. The National Society for the Prevention of Cruelty to Animals (NSPCA) estimate that two thirds of pups born in Ireland are outside of the regulated DBEs."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Key issues for legislators to consider"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://flourish-user-preview.com/30412319/vDs9Bm0SKXVyCsEQ4RklKn6y5pCFkGSW5qMRuNwRWqnVaedJAlpt0j6lt6AjmWff/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Key DBE legislation changes summarised"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "<iframe src='https://flo.uri.sh/visualisation/30412319/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-06.png",
+          "alt": "Imported DOCX image",
+          "caption": "",
+          "credit": "",
+          "layout": "inline"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Whilst the changes for improved animal welfare in operating DBEs have been welcomed, there remain concerns highlighted by animal welfare advocates. Some of the issues that are not addressed in the proposed legislation include:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The proposed amending legislation does not address concerns about traceability of breeders and of animals, and it does not close the gaps in layers of law and regulation between breeding, selling, licensing, microchipping and the control and welfare for dogs. In contrast to other equine and bovine animal tracing systems and for example greyhounds, the proposed legislative changes leave much of Irish puppy production untouched."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Defining a DBE as having six or more breeding bitches means that the majority of puppies bred in Ireland (estimated to account for two-thirds of all puppies) are not covered by the dog breeding establishments legislation."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "There is no upper legal limit on the number of breeding dogs in one establishment, meaning that banning large scale puppy farms are not specifically addressed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Artificial insemination and fertility treatments to select or modify unborn pups are not addressed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Linking the requirements for dog licensing and pet microchipping (at any life stage) is not included in the legislative proposal."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "There is no requirement for registered DBEs to "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "text": "also"
+                  },
+                  {
+                    "type": "text",
+                    "text": " apply to be on the register of pet animal sellers that came into regulations in 2020, applicable to sellers of 6 or more pet sales per annum."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The fate of female breeding dogs, once they have reached the maximum permitted breeding cycles, is not dealt with in legislation."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Resourcing for improved inspection and enforcement at local authority level is not addressed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "There is no new alignment with the legislation in Northern Ireland, including for issues such as rabies vaccination and puppy passports."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Enforcement and inspection remains with the 31 local authorities, whilst the majority of other animal welfare is typically overseen by departmental inspectors and veterinarians."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Broader dog control issues such as fouling, potentially harmful breeds, dog attacks, livestock worrying, or matters specific to hunting and racing activities are not in the scope of the amendments to the revised Dog Breeding Establishments Acts. For a useful overview of concerns and recommendations for updating legislation for dog welfare, breeding and sales, see this report from the Joint Committee on Agriculture, Food and the Marine from the 33"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "rd"
+          },
+          {
+            "type": "text",
+            "text": " Dáil, ‘"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://data.oireachtas.ie/ie/oireachtas/committee/dail/33/joint_committee_on_agriculture_food_and_the_marine/reports/2022/2022-10-13_issues-impacting-dog-welfare-in-ireland_en.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Issues Impacting Dog Welfare in Ireland"
+          },
+          {
+            "type": "text",
+            "text": "’ from 2022."
+          }
+        ]
+      }
+    ]
+  }
+}

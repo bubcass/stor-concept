@@ -25,6 +25,7 @@
         parseObservableSource,
     } from "$lib/embeds/observable";
     import { transformImportedHtml } from "$lib/publisher/editor/importHtml";
+    import { buildCmsHtmlExport } from "$lib/publisher/cmsHtml";
     import { storDocumentToStory } from "$lib/content/stor/toStory";
     import { storDocumentToXml } from "$lib/content/stor/toXml";
     import {
@@ -1227,6 +1228,21 @@
         URL.revokeObjectURL(url);
     }
 
+    function downloadCmsHtml() {
+        if (!renderedPreview?.story || !validation.ok) return;
+
+        const blob = new Blob(
+            [buildCmsHtmlExport(renderedPreview.story, window.location.origin)],
+            { type: "text/html" },
+        );
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `${renderedPreview.story.slug}.cms.html`;
+        link.click();
+        URL.revokeObjectURL(url);
+    }
+
     async function publishCanonicalJson() {
         if (!canonicalDocument || !suggestedPath || !validation.ok) return;
 
@@ -1846,31 +1862,44 @@
                         >Back</button
                     >
                     <div class="publish-panel__actions-right">
-                        <button
-                            type="button"
-                            onclick={copyProseMirrorJson}
-                            disabled={!editorDocument ||
-                                hasEmbeddedImportImages}
-                        >
-                            Copy ProseMirror JSON
-                        </button>
-                        <button
-                            type="button"
-                            onclick={downloadCanonicalXml}
-                            disabled={!canonicalXml ||
-                                !canonicalDocument ||
-                                hasEmbeddedImportImages}
-                        >
-                            Download XML
-                        </button>
-                        <button
-                            type="button"
-                            onclick={downloadCanonicalJson}
-                            disabled={!canonicalDocument ||
-                                hasEmbeddedImportImages}
-                        >
-                            Download JSON
-                        </button>
+                        <details class="publish-panel__exports">
+                            <summary>More export options</summary>
+                            <div class="publish-panel__export-actions">
+                                <button
+                                    type="button"
+                                    onclick={copyProseMirrorJson}
+                                    disabled={!editorDocument ||
+                                        hasEmbeddedImportImages}
+                                >
+                                    Copy ProseMirror JSON
+                                </button>
+                                <button
+                                    type="button"
+                                    onclick={downloadCanonicalXml}
+                                    disabled={!canonicalXml ||
+                                        !canonicalDocument ||
+                                        hasEmbeddedImportImages}
+                                >
+                                    Download XML
+                                </button>
+                                <button
+                                    type="button"
+                                    onclick={downloadCmsHtml}
+                                    disabled={!renderedPreview?.story ||
+                                        hasEmbeddedImportImages}
+                                >
+                                    Download CMS HTML
+                                </button>
+                                <button
+                                    type="button"
+                                    onclick={downloadCanonicalJson}
+                                    disabled={!canonicalDocument ||
+                                        hasEmbeddedImportImages}
+                                >
+                                    Download JSON
+                                </button>
+                            </div>
+                        </details>
                         <button
                             type="button"
                             class="publish-button"
@@ -4842,6 +4871,55 @@
         align-items: center;
     }
 
+    .publish-panel__exports {
+        position: relative;
+    }
+
+    .publish-panel__exports summary {
+        list-style: none;
+        padding: 0.56rem 0.82rem;
+        border: 1px solid #d7d7d2;
+        border-radius: 4px;
+        background: #ffffff;
+        color: #303030;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .publish-panel__exports summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .publish-panel__exports summary::after {
+        content: "⌄";
+        display: inline-block;
+        margin-left: 0.5rem;
+    }
+
+    .publish-panel__exports[open] summary::after {
+        transform: rotate(180deg);
+    }
+
+    .publish-panel__export-actions {
+        position: absolute;
+        z-index: 2;
+        top: calc(100% + 0.4rem);
+        right: 0;
+        display: grid;
+        gap: 0.35rem;
+        min-width: 13.5rem;
+        padding: 0.45rem;
+        border: 1px solid #d7d7d2;
+        border-radius: 4px;
+        background: #ffffff;
+        box-shadow: 0 0.5rem 1.25rem rgb(36 35 32 / 0.14);
+    }
+
+    .publish-panel__export-actions button {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
     .path-hint {
         margin: 0;
         color: #555555;
@@ -5118,6 +5196,11 @@
         .draft-status-actions,
         .publish-panel__actions-right {
             flex-wrap: wrap;
+        }
+
+        .publish-panel__export-actions {
+            left: 0;
+            right: auto;
         }
 
         .existing-story-footer {
