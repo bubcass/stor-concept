@@ -53,6 +53,15 @@
     "type": "doc",
     "content": [
       {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "As of 2025, responsibilities for policy and legislation regarding dog breeding, dog control and animal welfare now all lie with the Department of Agriculture, Food and the Marine. For enforcement, it is local authorities (county and city councils) that are responsible for dog wardens, dog control, strays and destruction, shelters and pounds, and inspections for dog breeding establishments (sometimes described as ‘puppy farms’, shortened to DBEs here on). There are around 60 dog wardens nationwide, and some local authorities opt to outsource this service."
+          }
+        ]
+      },
+      {
         "type": "heading",
         "attrs": {
           "level": 2
@@ -61,15 +70,6 @@
           {
             "type": "text",
             "text": "What changes in the law are proposed?"
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "As of 2025, responsibilities for policy and legislation regarding dog breeding, dog control and animal welfare now all lie with the Department of Agriculture, Food and the Marine. For enforcement, it is local authorities (county and city councils) that are responsible for dog wardens, dog control, strays and destruction, shelters and pounds, and inspections for dog breeding establishments (sometimes described as ‘puppy farms’, shortened to DBEs here on). There are around 60 dog wardens nationwide, and some local authorities opt to outsource this service."
           }
         ]
       },
@@ -376,43 +376,14 @@
         ]
       },
       {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://flourish-user-preview.com/30461239/3O6HVPgY3dGCE3SxQxDuP36Tn190ljjFHuHsB2XAuXLD6UsRfcxEEEzzqoCONpvs/",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null,
-                  "title": null
-                }
-              }
-            ],
-            "text": "Dog microchipping data 2012 to 2022"
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "<iframe src='https://flo.uri.sh/visualisation/30461239/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
-          }
-        ]
-      },
-      {
-        "type": "imageBlock",
+        "type": "flourishBlock",
         "attrs": {
-          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-01.png",
-          "alt": "Imported DOCX image",
+          "dataSrc": "visualisation/30461239?2729416",
+          "alt": "Flourish visualisation",
           "caption": "",
-          "credit": "",
-          "layout": "inline"
+          "thumbnail": "https://public.flourish.studio/visualisation/30461239/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
         }
       },
       {
@@ -434,43 +405,14 @@
         ]
       },
       {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://flourish-user-preview.com/30388680/cpJgu6WxRZkr-qxD8dLkt3KiSQdv99K4Ud1MSEdzr8HaQPwnsbyS8aQYTceiZ6zp/",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null,
-                  "title": null
-                }
-              }
-            ],
-            "text": "Dog licences by LA and by year, 2000 to 2024"
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "<iframe src='https://flo.uri.sh/visualisation/30388680/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
-          }
-        ]
-      },
-      {
-        "type": "imageBlock",
+        "type": "flourishBlock",
         "attrs": {
-          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-02.png",
-          "alt": "A graph of a number of cities\n\nAI-generated content may be incorrect.",
+          "dataSrc": "visualisation/30388680?2729416",
+          "alt": "Flourish visualisation",
           "caption": "",
-          "credit": "",
-          "layout": "inline"
+          "thumbnail": "https://public.flourish.studio/visualisation/30388680/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
         }
       },
       {
@@ -532,49 +474,20 @@
         ]
       },
       {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://app.flourish.studio/visualisation/30401842/edit",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null,
-                  "title": null
-                }
-              }
-            ],
-            "text": "Dog pet sellers by county | Flourish"
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "<iframe src='https://flo.uri.sh/visualisation/30401842/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
-          }
-        ]
-      },
-      {
-        "type": "imageBlock",
+        "type": "flourishBlock",
         "attrs": {
-          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-03.png",
-          "alt": "Imported DOCX image",
+          "dataSrc": "visualisation/30401842?2729416",
+          "alt": "Flourish visualisation",
           "caption": "",
-          "credit": "",
-          "layout": "inline"
+          "thumbnail": "https://public.flourish.studio/visualisation/30401842/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
         }
       },
       {
         "type": "heading",
         "attrs": {
-          "level": 3
+          "level": 2
         },
         "content": [
           {
@@ -602,49 +515,14 @@
         ]
       },
       {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://flourish-user-preview.com/30398412/SvKbGwB4U0cUiKMRBRmU7yZxYoamGFi0EBozI-2QIIf_3fiENQr9MAQ3mRvaA_t7/",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null,
-                  "title": null
-                }
-              }
-            ],
-            "text": "DBEs by local authorities Ireland"
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "<iframe src='https://flo.uri.sh/visualisation/30398412/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
-          }
-        ]
-      },
-      {
-        "type": "heading",
+        "type": "flourishBlock",
         "attrs": {
-          "level": 2
-        }
-      },
-      {
-        "type": "imageBlock",
-        "attrs": {
-          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-04.png",
-          "alt": "Imported DOCX image",
+          "dataSrc": "visualisation/30398412?2729416",
+          "alt": "Flourish visualisation",
           "caption": "",
-          "credit": "",
-          "layout": "inline"
+          "thumbnail": "https://public.flourish.studio/visualisation/30398412/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
         }
       },
       {
@@ -657,43 +535,14 @@
         ]
       },
       {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://flourish-user-preview.com/30411195/VZguNGqADqNYWJ-yeqnalE41PsnM2I_qT-cAiNWGoe3qlc4sef5eEt3ZRgz9EXiy/",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null,
-                  "title": null
-                }
-              }
-            ],
-            "text": "No. DBEs with no of breeding female dogs"
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "<iframe src='https://flo.uri.sh/visualisation/30411195/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
-          }
-        ]
-      },
-      {
-        "type": "imageBlock",
+        "type": "flourishBlock",
         "attrs": {
-          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-05.png",
-          "alt": "Imported DOCX image",
+          "dataSrc": "visualisation/30411195?2729416",
+          "alt": "Flourish visualisation",
           "caption": "",
-          "credit": "",
-          "layout": "inline"
+          "thumbnail": "https://public.flourish.studio/visualisation/30411195/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
         }
       },
       {
@@ -722,39 +571,19 @@
         "content": [
           {
             "type": "text",
-            "marks": [
-              {
-                "type": "link",
-                "attrs": {
-                  "href": "https://flourish-user-preview.com/30412319/vDs9Bm0SKXVyCsEQ4RklKn6y5pCFkGSW5qMRuNwRWqnVaedJAlpt0j6lt6AjmWff/",
-                  "target": "_blank",
-                  "rel": "noopener noreferrer nofollow",
-                  "class": null,
-                  "title": null
-                }
-              }
-            ],
-            "text": "Key DBE legislation changes summarised"
+            "text": "Whilst the changes for improved animal welfare in operating DBEs have been welcomed, there remain concerns highlighted by animal welfare advocates. "
           }
         ]
       },
       {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "<iframe src='https://flo.uri.sh/visualisation/30412319/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>"
-          }
-        ]
-      },
-      {
-        "type": "imageBlock",
+        "type": "flourishBlock",
         "attrs": {
-          "src": "/media/imported/library-research-service/proposed-changes-to-laws-on-puppy-farming-20261104/image-06.png",
-          "alt": "Imported DOCX image",
+          "dataSrc": "visualisation/30412319?2729416",
+          "alt": "Flourish visualisation",
           "caption": "",
-          "credit": "",
-          "layout": "inline"
+          "thumbnail": "https://public.flourish.studio/visualisation/30412319/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
         }
       },
       {
@@ -762,7 +591,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Whilst the changes for improved animal welfare in operating DBEs have been welcomed, there remain concerns highlighted by animal welfare advocates. Some of the issues that are not addressed in the proposed legislation include:"
+            "text": "Some of the issues that are not addressed in the proposed legislation include:"
           }
         ]
       },
