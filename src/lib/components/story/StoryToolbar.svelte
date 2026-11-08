@@ -530,7 +530,13 @@
     window.speechSynthesis.speak(utterance);
   }
 
-  function togglePlayback() {
+  async function togglePlayback() {
+    // Recheck the manifest when no recording has been resolved yet. This also
+    // lets a locally running preview pick up a newly added audio entry.
+    if (!generatedAudioSrc) {
+      await loadGeneratedAudio();
+    }
+
     if (generatedAudioSrc) {
       playGeneratedAudio();
       return;
@@ -1158,7 +1164,11 @@
 
   async function loadGeneratedAudio() {
     try {
-      const response = await fetch(`${base}/audio/stories/manifest.json`);
+      // Audio entries can be added while a local preview is running, so do not
+      // retain an older manifest response when an article is mounted.
+      const response = await fetch(`${base}/audio/stories/manifest.json`, {
+        cache: 'no-store'
+      });
       if (!response.ok) return;
 
       const manifest = (await response.json()) as Record<string, AudioManifestEntry>;

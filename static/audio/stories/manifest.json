@@ -28,5 +28,10 @@
     "src": "/audio/stories/tackling-homelessness.mp3",
     "generatedAt": "2026-05-14T00:00:00.000Z",
     "provider": "manual"
+  },
+  "proposed-changes-to-laws-on-puppy-farming-20261104": {
+    "src": "/audio/stories/puppy-farming.mp3",
+    "generatedAt": "2026-11-08T00:00:00.000Z",
+    "provider": "manual-elevenlabs"
   }
 }
