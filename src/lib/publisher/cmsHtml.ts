@@ -25,13 +25,14 @@ export function buildCmsHtmlExport(story: Story, origin: string) {
     let foundCitationList = false;
 
     return withReferences.replace(/<ol(\b[^>]*)?>([\s\S]*?)<\/ol>/gi, (list, attributes = '', items) => {
-      if (foundCitationList || !/(?:↑|href=["']#footnote-ref-\d+)/i.test(items)) return list;
+      if (foundCitationList || !/(?:↑|href=["']#footnote(?:-ref|-reference)-\d+|id=["']footnote-\d+)/i.test(items)) return list;
       foundCitationList = true;
       let position = 0;
       const cleanedItems = items.replace(/<li(\b[^>]*)?>([\s\S]*?)<\/li>/gi, (_item: string, itemAttributes: string = '', item: string) => {
         position += 1;
         const citation = item
           .replace(/\s*<a\b[^>]*href=["']#footnote-ref-\d+["'][^>]*>\s*↑\s*<\/a>/gi, '')
+          .replace(/\s*<a\b[^>]*href=["']#footnote-reference-\d+["'][^>]*>\s*↩\s*<\/a>/gi, '')
           .replace(/\s*↑\s*$/u, '');
         return `<li${itemAttributes} id="ip-footnote-${position}">${citation}</li>`;
       });
