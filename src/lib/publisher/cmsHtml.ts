@@ -30,11 +30,12 @@ export function buildCmsHtmlExport(story: Story, origin: string) {
       let position = 0;
       const cleanedItems = items.replace(/<li(\b[^>]*)?>([\s\S]*?)<\/li>/gi, (_item: string, itemAttributes: string = '', item: string) => {
         position += 1;
+        const attributesWithoutId = itemAttributes.replace(/\s+id=(['"]).*?\1/i, '');
         const citation = item
           .replace(/\s*<a\b[^>]*href=["']#footnote-ref-\d+["'][^>]*>\s*↑\s*<\/a>/gi, '')
           .replace(/\s*<a\b[^>]*href=["']#footnote-reference-\d+["'][^>]*>\s*↩\s*<\/a>/gi, '')
           .replace(/\s*↑\s*$/u, '');
-        return `<li${itemAttributes} id="ip-footnote-${position}">${citation}</li>`;
+        return `<li${attributesWithoutId} id="ip-footnote-${position}">${citation}</li>`;
       });
       return `<ol${attributes} class="ip-footnotes">${cleanedItems}</ol>`;
     });
