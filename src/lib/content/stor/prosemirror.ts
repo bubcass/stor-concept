@@ -48,10 +48,6 @@ function renderMarkedText(text: string, marks: ProseMirrorMark[] = []) {
         output = `<sub>${output}</sub>`;
         break;
       case 'link':
-        if (mark.attrs?.href?.startsWith('#')) {
-          break;
-        }
-
         output = `<a href="${escapeHtml(mark.attrs?.href ?? '#')}">${output}</a>`;
         break;
     }
@@ -94,6 +90,47 @@ export function renderList(node: ProseMirrorNode): string {
   const attrs = tag === 'ol' && start ? ` start="${start}"` : '';
 
   return `<${tag}${attrs}>${items.join('')}</${tag}>`;
+}
+
+/**
+ * Imported documents often carry internal footnote IDs from their source editor.
+ * Those IDs are not always consistent after import, so give footnotes a stable,
+ * article-local identity based on their displayed number instead.
+ */
+function normaliseFootnotes(blocks: StoryBlock[]): StoryBlock[] {
+  let foundCitationList = false;
+
+  return blocks.map((block) => {
+    if (block.type !== 'text') return block;
+
+    return {
+      ...block,
+      paragraphs: block.paragraphs.map((paragraph) => {
+        const withReferences = paragraph.replace(
+          /<sup>\s*(?:<a\b[^>]*>)?\[(\d+)\](?:<\/a>)?\s*<\/sup>/gi,
+          (_match, number) => `<sup><a id="footnote-reference-${number}" href="#footnote-${number}" aria-label="Read footnote ${number}">[${number}]</a></sup>`,
+        );
+
+        return withReferences.replace(/<ol(\b[^>]*)?>([\s\S]*?)<\/ol>/gi, (list, attributes = '', items) => {
+          if (foundCitationList || !/(?:↑|href=["']#footnote-ref-\d+)/i.test(items)) return list;
+          foundCitationList = true;
+          let position = 0;
+
+          const linkedItems = items.replace(/<li(\b[^>]*)?>([\s\S]*?)<\/li>/gi, (_item: string, itemAttributes: string = '', item: string) => {
+            position += 1;
+            const attributesWithoutId = itemAttributes.replace(/\s+id=(['"]).*?\1/i, '');
+            const backlink = `<a class="footnote-backlink" href="#footnote-reference-${position}" aria-label="Back to footnote reference ${position}">↩</a>`;
+            const citation = item
+              .replace(/<a\b[^>]*href=["']#footnote-ref-\d+["'][^>]*>\s*↑\s*<\/a>/gi, backlink)
+              .replace(/\s*↑\s*$/u, ` ${backlink}`);
+            return `<li${attributesWithoutId} id="footnote-${position}">${citation}</li>`;
+          });
+
+          return `<ol${attributes} class="footnotes">${linkedItems}</ol>`;
+        });
+      }),
+    };
+  });
 }
 
 function isOrderedListHtml(value: string) {
@@ -548,5 +585,5 @@ export function proseMirrorToNarrativeBlocks(
 
   flush();
 
-  return blocks;
+  return normaliseFootnotes(blocks);
 }

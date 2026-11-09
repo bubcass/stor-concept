@@ -13,6 +13,31 @@ export function buildCmsHtmlExport(story: Story, origin: string) {
   // Wrapping those in a paragraph produces invalid HTML, which CMS browsers repair
   // differently and can result in unexpected type and whitespace.
   const paragraphs = (values: string[]) => values.map((value) => /^\s*<(?:ul|ol|table|figure|blockquote|div|h[1-6]|section)\b/i.test(value) ? value : `<p>${value}</p>`).join('');
+  // Imported ProseMirror footnotes arrive as numbered superscripts plus a final
+  // ordered list whose source return links have been flattened to an ↑. Rebuild
+  // that relationship only in the portable CMS output; it must not alter Stór's
+  // article data or its on-site rendering.
+  const linkFootnotes = (html: string) => {
+    const withReferences = html.replace(
+      /<sup>\s*(?:<a\b[^>]*>)?\[(\d+)\](?:<\/a>)?\s*<\/sup>/gi,
+      (_match, number) => `<sup class="ip-footnote-reference"><a id="ip-footnote-reference-${number}" href="#ip-footnote-${number}" aria-label="Read footnote ${number}">[${number}]</a></sup>`,
+    );
+    let foundCitationList = false;
+
+    return withReferences.replace(/<ol(\b[^>]*)?>([\s\S]*?)<\/ol>/gi, (list, attributes = '', items) => {
+      if (foundCitationList || !/(?:↑|href=["']#footnote-ref-\d+)/i.test(items)) return list;
+      foundCitationList = true;
+      let position = 0;
+      const cleanedItems = items.replace(/<li(\b[^>]*)?>([\s\S]*?)<\/li>/gi, (_item: string, itemAttributes: string = '', item: string) => {
+        position += 1;
+        const citation = item
+          .replace(/\s*<a\b[^>]*href=["']#footnote-ref-\d+["'][^>]*>\s*↑\s*<\/a>/gi, '')
+          .replace(/\s*↑\s*$/u, '');
+        return `<li${itemAttributes} id="ip-footnote-${position}">${citation}</li>`;
+      });
+      return `<ol${attributes} class="ip-footnotes">${cleanedItems}</ol>`;
+    });
+  };
   const caption = (value?: string | null, credit?: string | null) => value || credit ? `<figcaption>${value ?? ''}${credit ? `<span class="ip-credit">${esc(credit)}</span>` : ''}</figcaption>` : '';
   const image = (asset: ImageAsset, className = '') => `<figure class="ip-media ${className}"><img src="${esc(absoluteUrl(asset.src))}" alt="${esc(asset.alt)}" loading="lazy">${caption(asset.caption, asset.credit)}</figure>`;
   const video = (asset: VideoAsset, className = '') => `<figure class="ip-media ${className}"><video controls playsinline preload="metadata"${asset.poster ? ` poster="${esc(absoluteUrl(asset.poster))}"` : ''}><source src="${esc(absoluteUrl(asset.src))}" type="video/mp4">${asset.captions ? `<track kind="captions" label="English captions" srclang="en" src="${esc(absoluteUrl(asset.captions))}" default>` : ''}</video>${caption(asset.caption, asset.credit)}</figure>`;
@@ -55,7 +80,8 @@ export function buildCmsHtmlExport(story: Story, origin: string) {
     }
   };
 
-  return `<style>${CMS_STYLE}.ip-summary{clear:both;display:block !important;float:none !important;position:relative;width:min(100%,720px)}.ip-layout{clear:both}.ip-author__avatar{flex:0 0 72px}.ip-author__name{color:#3f3d38}.ip-author__description{color:#6b6963;font-weight:500;opacity:1}.ip-members{margin:2.5rem 0}.ip-member-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));list-style:none;margin:0;padding:0}.ip-member-card{padding:.5rem .35rem;text-align:center}.ip-member-link{display:grid;gap:.65rem;justify-items:center;color:inherit;text-decoration:none}.ip-member-link::before,.ip-member-link::after{content:none !important;display:none !important;background:none !important;padding:0 !important}.ip-member-link:focus-visible{outline:2px solid #786321;outline-offset:3px}.ip-member-avatar{flex:0 0 4.5rem;width:4.5rem !important;height:4.5rem !important;max-width:none !important;aspect-ratio:1/1;border:1px solid #ded8c8;border-radius:50%;object-fit:cover}.ip-member-avatar--fallback{display:grid;place-items:center;background:#eeece4;color:#786321;font-weight:700}.ip-member-copy{display:grid;gap:.2rem;color:#3f3d38;font-size:.82rem;font-weight:500 !important;line-height:1.2}.ip-member-copy a,.ip-member-copy strong{color:#3f3d38;font-size:.88rem;font-weight:700;line-height:1.2;text-decoration:none}.ip-member-copy a::after{content:none !important}.ip-member-copy small{display:block;color:#786321;font-size:.72rem;font-weight:500;letter-spacing:.03em;margin-top:.1rem;text-transform:uppercase}.ip-media video{width:100%;aspect-ratio:16/9;background:#111;border:1px solid #ded8c8}@media(max-width:620px){.ip-member-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ip-member-avatar{width:4rem;height:4rem}}.ip-body>section{margin:0;padding:0}.ip-body>section>h2:first-child,.ip-body>section>h3:first-child{margin-top:0}</style><article class="inside-parliament-embed">${story.abstract ? `<section class="ip-summary" aria-label="Article summary">${story.abstract}</section>` : ''}${authorProfiles.length ? `<section class="ip-authors" aria-label="Article author">${authorProfiles.map(author).join('')}</section>` : ''}<div class="ip-layout">${headings.length ? `<aside class="ip-contents"><p>Contents</p><nav>${headings.map((entry) => `<a href="#${entry.id}">${esc(entry.label)}</a>`).join('')}</nav></aside>` : ''}<div class="ip-body simple-content normal">${story.blocks.map(content).join('')}</div></div><script async src="https://public.flourish.studio/resources/embed.js"></script></article>`;
+  const body = linkFootnotes(story.blocks.map(content).join(''));
+  return `<style>${CMS_STYLE}.ip-summary{clear:both;display:block !important;float:none !important;position:relative;width:min(100%,720px)}.ip-layout{clear:both}.ip-author__avatar{flex:0 0 72px}.ip-author__name{color:#3f3d38}.ip-author__description{color:#6b6963;font-weight:500;opacity:1}.ip-footnote-reference{line-height:0}.ip-footnote-reference a{font-size:.72em;text-decoration:none}.ip-footnotes{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid #ded8c8}.ip-footnotes li{scroll-margin-top:2rem}.ip-members{margin:2.5rem 0}.ip-member-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));list-style:none;margin:0;padding:0}.ip-member-card{padding:.5rem .35rem;text-align:center}.ip-member-link{display:grid;gap:.65rem;justify-items:center;color:inherit;text-decoration:none}.ip-member-link::before,.ip-member-link::after{content:none !important;display:none !important;background:none !important;padding:0 !important}.ip-member-link:focus-visible{outline:2px solid #786321;outline-offset:3px}.ip-member-avatar{flex:0 0 4.5rem;width:4.5rem !important;height:4.5rem !important;max-width:none !important;aspect-ratio:1/1;border:1px solid #ded8c8;border-radius:50%;object-fit:cover}.ip-member-avatar--fallback{display:grid;place-items:center;background:#eeece4;color:#786321;font-weight:700}.ip-member-copy{display:grid;gap:.2rem;color:#3f3d38;font-size:.82rem;font-weight:500 !important;line-height:1.2}.ip-member-copy a,.ip-member-copy strong{color:#3f3d38;font-size:.88rem;font-weight:700;line-height:1.2;text-decoration:none}.ip-member-copy a::after{content:none !important}.ip-member-copy small{display:block;color:#786321;font-size:.72rem;font-weight:500;letter-spacing:.03em;margin-top:.1rem;text-transform:uppercase}.ip-media video{width:100%;aspect-ratio:16/9;background:#111;border:1px solid #ded8c8}@media(max-width:620px){.ip-member-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ip-member-avatar{width:4rem;height:4rem}}.ip-body>section{margin:0;padding:0}.ip-body>section>h2:first-child,.ip-body>section>h3:first-child{margin-top:0}</style><article class="inside-parliament-embed">${story.abstract ? `<section class="ip-summary" aria-label="Article summary">${story.abstract}</section>` : ''}${authorProfiles.length ? `<section class="ip-authors" aria-label="Article author">${authorProfiles.map(author).join('')}</section>` : ''}<div class="ip-layout">${headings.length ? `<aside class="ip-contents"><p>Contents</p><nav>${headings.map((entry) => `<a href="#${entry.id}">${esc(entry.label)}</a>`).join('')}</nav></aside>` : ''}<div class="ip-body simple-content normal">${body}</div></div><script async src="https://public.flourish.studio/resources/embed.js"></script></article>`;
 }
 
 /* Only article-specific components are packaged. The host CMS controls normal type, colour and links. */
