@@ -80,7 +80,7 @@
     text-underline-offset: 0.18em;
   }
 
-  .table-shell :global(a)::after {
+  .table-shell :global(a[href^="http"])::after {
     content: "↗";
     display: inline-block;
     font-size: 0.8em;

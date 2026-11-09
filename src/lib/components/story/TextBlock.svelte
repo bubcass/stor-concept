@@ -84,7 +84,7 @@
     text-underline-offset: 0.18em;
   }
 
-  p :global(a)::after {
+  p :global(a[href^="http"])::after {
     content: "↗";
     display: inline-block;
     font-size: 0.8em;
@@ -112,7 +112,7 @@
     text-underline-offset: 0.18em;
   }
 
-  .rich-block :global(a)::after {
+  .rich-block :global(a[href^="http"])::after {
     content: "↗";
     display: inline-block;
     font-size: 0.8em;

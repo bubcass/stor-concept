@@ -161,7 +161,7 @@
     text-underline-offset: 0.18em;
   }
 
-  .copy > p:not(.eyebrow) :global(a)::after {
+  .copy > p:not(.eyebrow) :global(a[href^="http"])::after {
     content: "↗";
     display: inline-block;
     font-size: 0.8em;

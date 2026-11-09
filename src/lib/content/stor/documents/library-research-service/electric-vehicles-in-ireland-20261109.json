@@ -1,0 +1,1710 @@
+{
+  "id": "electric-vehicles-in-ireland-20261109",
+  "slug": "electric-vehicles-in-ireland-20261109",
+  "type": "article",
+  "destination": "library-research-service",
+  "featured": true,
+  "heroLayout": "split",
+  "showContents": true,
+  "flourishWidth": "prose",
+  "title": "Electric vehicles in Ireland",
+  "dek": "Electric vehicles are becoming more popular in Ireland but obstacles remain to them taking the place of the types of cars, vans and lorries using fossil fuels.",
+  "eyebrow": "Series | Research Matters",
+  "abstract": "Decarbonising the transport sector with electric vehicles can help Ireland meet its climate targets and improve energy security. The transition requires improving the affordability of electric vehicles and charging infrastructure to address any geographical and income barriers.",
+  "topics": [
+    "electric cars",
+    "environment",
+    "climate action"
+  ],
+  "layout": "standard",
+  "status": "published",
+  "language": "en",
+  "version": "0.1",
+  "keywords": [
+    "electric cars",
+    "environment",
+    "climate action"
+  ],
+  "license": "Oireachtas PSI Licence",
+  "publisher": "Houses of the Oireachtas",
+  "publishedDate": "2026-11-09",
+  "contributors": [
+    {
+      "name": "Eoin McLoughlin",
+      "role": "author",
+      "affiliation": "Library & Research Service",
+      "showAsAuthor": true,
+      "profileRole": "Senior Parliamentary Researcher (Economics)",
+      "profileImage": "/media/eoin-mcloughlin-headshot.jpg"
+    }
+  ],
+  "researcher": {
+    "name": "Eoin McLoughlin",
+    "role": "Senior Parliamentary Researcher (Economics)",
+    "organisation": "Library & Research Service",
+    "image": "/media/eoin-mcloughlin-headshot.jpg"
+  },
+  "hero": {
+    "src": "/media/electric-vehicle.mp4",
+    "alt": "Electric vehicles in Ireland",
+    "position": "right center"
+  },
+  "content": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The transport sector is the second-largest source of greenhouse gas emissions (GHG) in Ireland, accounting for 22% of total national emissions in 2025."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-1",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[1]"
+          },
+          {
+            "type": "text",
+            "text": " The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://assets.gov.ie/static/documents/Climate_Action_Plan_2025_updated_cover.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Climate Action Plan 2025"
+          },
+          {
+            "type": "text",
+            "text": " aims to have 30% of the total passenger car fleet and 100% of new car registrations electric vehicles (EVs) by 2030. These targets incorporate both Battery Electric Vehicles (BEVs) as well as Plug-In Hybrid Electric Vehicles (PHEVs)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Figure 1 shows the trend in the number of BEVs and PHEVs. In 2015, 0.5% of new private cars licensed in that year were electric while by 2023 this had increased to 28%. While there was a falloff in 2024 due to various factors such as changes in grant values"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-2",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[2]"
+          },
+          {
+            "type": "text",
+            "text": ", EVs have since increased to 41.1% of new licensed private cars to date in 2026 (26.4% of which BEVs and 14.7% PHEVs)."
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30366295?2729506",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 1: Percentage of electric vehicles (BEVs and PHEVs) as a share of new private cars licensed for the first time",
+          "thumbnail": "https://public.flourish.studio/visualisation/30366295/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Figure 2 shows the fuel type of private vehicles as a percentage of the licensed car fleet i.e. all licensed vehicles in the private car fleet rather than just new licensed vehicles. In July 2026, EVs accounted for 9.4% of all licensed private vehicles in the total car fleet, with BEVs at 5.1% and PHEVs 4.3% respectively."
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30366501?2729506",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 2: Percentage share of all private vehicles licensed in the car fleet as of July 2026",
+          "thumbnail": "https://public.flourish.studio/visualisation/30366501/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Figures 3 and 4 show how Ireland compares against other EU countries in relation to EV adoption. Ireland had the 9th highest percentage of newly registered electric cars among the EU-27 and the 7"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "th"
+          },
+          {
+            "type": "text",
+            "text": " highest percentage of electric cars in the passenger car fleet in 2025. The highest shares of EV penetration in the car fleet are generally found in Scandinavia as well as in Belgium and the Netherlands."
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30366642?2729506",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 3: Percentage share of new passenger cars by type of fuel, 2025",
+          "thumbnail": "https://public.flourish.studio/visualisation/30366642/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
+        }
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30366697?2729506",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 4: Percentage share of all passenger cars by type of fuel, 2025",
+          "thumbnail": "https://public.flourish.studio/visualisation/30366697/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Electric vehicles in Ireland"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "As of July 2026, there are currently 244,432 EVs licenced as private cars in Ireland. This includes 131,957 BEVs and 112,475 PHEVs."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-3",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[3]"
+          },
+          {
+            "type": "text",
+            "text": " The breakdown of BEVs by county is shown in Figure 5 below. Wicklow ranks highest in terms of the number of BEVs per 10,000 inhabitants, followed closely by Kildare and then Dublin and Meath. Counties such as Monaghan and Donegal have the lowest amount of BEVs per 10,000 inhabitants."
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30469756?2729506",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 5: Number of BEVs per 10,000 inhabitants, July 2026",
+          "thumbnail": "https://public.flourish.studio/visualisation/30469756/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "One of the main barriers to the adoption of EVs is the upfront purchase costs."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-4",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[4]"
+          },
+          {
+            "type": "text",
+            "text": " Recent research has shown that the financial capacity of households to purchase an EV varies substantially across Ireland. Hotspots of low affordability are found in the northern, north-western and western edges of Ireland. This includes counties Donegal, Leitrim, Cavan, Sligo, Roscommon, Mayo, West Galway and Clare, Kerry, and West Cork. In some cases, this overlaps with areas of forced car ownership where households need to own a car to maintain sufficient transport accessibility."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-5",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[5]"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Charging infrastructure"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Counties with higher penetrations of BEVs generally have higher charging ratios with more BEVs per public charger. In particular, counties such as Dublin and Cork as well as the commuter belt counties around Dublin have a higher ratio of BEVs to public chargers (see Figure 6). A similar relationship has been observed in other jurisdictions, such as the United Kingdom."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-6",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[6]"
+          },
+          {
+            "type": "text",
+            "text": " This may indicate that infrastructure is lagging behind in some of the areas where uptake has grown more quickly. There is also a need to reinforce grid capacity to accommodate an increase in electricity demand arising from the charging of EVs to avoid any bottlenecks."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-7",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[7]"
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30469888?2729506",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 6: Number of BEVs per public charger, July 2026",
+          "thumbnail": "https://public.flourish.studio/visualisation/30469888/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://eur-lex.europa.eu/eli/reg/2023/1804/oj/eng",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "2023 EU Alternative Fuels Infrastructure Regulation (AFIR)"
+          },
+          {
+            "type": "text",
+            "text": " sets rules and definitions for calculating minimum infrastructure requirements for alternative fuel vehicles (electricity, hydrogen or natural gas). For every fully electric car, Member States shall provide a total power output of at least 1.3 kilowatt (kW) through "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "publicly accessible recharging"
+          },
+          {
+            "type": "text",
+            "text": " stations and for every plug-in hybrid electric car provide a total power output of at least 0.8kW."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "According to the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://alternative-fuels-observatory.ec.europa.eu/transport-mode/road/ireland/vehicles-and-fleet",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "European Alternative Fuels Observatory (EAFO)"
+          },
+          {
+            "type": "text",
+            "text": ", in Q1 2026, Ireland had a total power output of 194,641 kW compared against a target of 209,595 kW. This means that Ireland is currently 7% below its target. Most EU countries are currently exceeding their AFIR target, with only Malta below Ireland (see Figure 7). According to reports, if Ireland had the EU average level of AFIR compliance for the current EV fleet, there would be 13,000 chargers as opposed to the current 4,000 public chargers."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-8",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[8]"
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30366737?2729506",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 7: Percentage compliance with EU targets for levels of public charging (100% = fully compliant)",
+          "thumbnail": "https://public.flourish.studio/visualisation/30366737/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Approximately 80% of EV owners in Ireland charge their cars at home."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-9",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[9]"
+          },
+          {
+            "type": "text",
+            "text": " If using night-rate electricity, it is estimated their transport fuel bills (€/km) will be roughly one-third the price of petrol or diesel."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-10",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[10]"
+          },
+          {
+            "type": "text",
+            "text": " However, those living in an apartment or dwellings without a driveway may have to rely on public EV charging which is considerably more expensive."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-11",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[11]"
+          },
+          {
+            "type": "text",
+            "text": " Many apartments have private parking, but not EV charging. For on-street parking, insufficient regulations are currently prohibiting options such as kerb chargers or overhead charging arms."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-12",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[12]"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Electric vehicle policy"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Government currently provides a number of policy supports to encourage the adoption of EVs in Ireland. This includes a €3,500 purchase grant, VRT relief up to a maximum of €5,000 subject to the Open Market Selling Price, as well as a €300 home charger grant. A recent pilot scrappage scheme also provided a €5,000 grant for motorists with older petrol and diesel cars to switch to new EVs."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-13",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[13]"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.zevi.ie/sites/default/files/2026-02/EV-Infrastructure-Strategy-2026-2028-Final-Web.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Draft National EV Charging Infrastructure Strategy 2026-2028"
+          },
+          {
+            "type": "text",
+            "text": " was published for consultation in February 2026."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-14",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[14]"
+          },
+          {
+            "type": "text",
+            "text": " The Strategy sets out the national pathway for the continued delivery of Ireland’s EV charging infrastructure and seeks to ensure that the provision of public charging infrastructure remains ahead of growing demand."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Government is also bringing forward legislation under the Private Wires Bill to allow on-street charging solutions for EVs. The bill will amend the Electricity Regulation Act 1999 which currently restricts the use of EV charging cables across public footpaths."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "#endnote-15",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              },
+              {
+                "type": "superscript"
+              }
+            ],
+            "text": "[15]"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Key issues for legislators to consider"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Some key policy issues for legislators to consider for EVs in Ireland include the following:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Addressing the affordability gap"
+                  },
+                  {
+                    "type": "text",
+                    "text": " – the upfront cost of purchasing an EV remains an obstacle to their wider adoption, particularly for low-income households. Providing differentiated subsidies based on income and household size may help address this barrier."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Targeted supports "
+                  },
+                  {
+                    "type": "text",
+                    "text": "– research suggests that some of the hotspots of low EV affordability also overlap with areas of forced car ownership. Households in remote rural areas, where forced car ownership is high, may require higher subsidies. Conversely, urban areas could receive lower subsidies to promote the use of more sustainable transport modes such as public transport and active travel."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Ensuring public charging infrastructure remains ahead of demand"
+                  },
+                  {
+                    "type": "text",
+                    "text": " – having a reliable and sufficient public charging infrastructure to cater for increased demand and alleviate range anxiety can encourage wider EV adoption. As a minimum, Ireland should meet its target under the Alternative Fuels Infrastructure Regulation."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Charging point data requirements"
+                  },
+                  {
+                    "type": "text",
+                    "text": " – under Article 20 of the EU's Alternative Fuels Infrastructure Regulation, all Charge Point Operators running public or semi-public chargers must feed data into their country's official National Access Point. The Climate Change Advisory Council (CCAC) has recommended that the Department of Transport should set robust industry standards for operation and reliability, including disclosure of uptime and outages."
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-16",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      },
+                      {
+                        "type": "superscript"
+                      }
+                    ],
+                    "text": "[16]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Facilitating home charging"
+                  },
+                  {
+                    "type": "text",
+                    "text": " – the convenience and cost effectiveness of being able to charge at home is critical in facilitating households making the switch to an EV. As noted by the CCAC, the swift adoption of provisions under the Private Wires Bill relevant to on-street EV charging and providing guidance and funding for local authorities to facilitate the roll-out of private wires for EV charging is key."
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-17",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      },
+                      {
+                        "type": "superscript"
+                      }
+                    ],
+                    "text": "[17]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Grid reinforcement "
+                  },
+                  {
+                    "type": "text",
+                    "text": "– planning upgrades in advance for grid reinforcement can help alleviate any infrastructure gaps and avoid bottlenecks on the electricity network arising from increased power demand due to charging EVs."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "attrs": {
+          "start": 1,
+          "type": null
+        },
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.epa.ie/publications/monitoring--assessment/climate-change/air-emissions/EPA-Provisional-GHG-Emissions-1990-2025-web.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.epa.ie/publications/monitoring--assessment/climate-change/air-emissions/EPA-Provisional-GHG-Emissions-1990-2025-web.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-1",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.seai.ie/blog/ev-sales-drop-2024",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.seai.ie/blog/ev-sales-drop-2024"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-2",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://data.cso.ie/table/TTM02",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://data.cso.ie/table/TTM02"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-3",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.fleetcar.ie/news/expense-a-major-barrier-to-irish-ev-adoption-according-to-carzones-2025-motoring-report/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.fleetcar.ie/news/expense-a-major-barrier-to-irish-ev-adoption-according-to-carzones-2025-motoring-report/"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-4",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.sciencedirect.com/science/article/pii/S0739885924000908",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.sciencedirect.com/science/article/pii/S0739885924000908"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-5",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://theicct.org/wp-content/uploads/2021/06/EV-charging-metrics-aug2020.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://theicct.org/wp-content/uploads/2021/06/EV-charging-metrics-aug2020.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " pg. 12 "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-6",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.rte.ie/brainstorm/2026/0331/1565868-rural-ireland-electric-cars-electricity-grid-infrastructure/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.rte.ie/brainstorm/2026/0331/1565868-rural-ireland-electric-cars-electricity-grid-infrastructure/"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-7",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.rte.ie/brainstorm/2026/0324/1564935-electric-cars-public-charger-perception-infrastructure/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Does Ireland have enough public chargers for electric cars?"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-8",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.zevi.ie/news/building-irelands-ev-future-a-regional-and-local-approach",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.zevi.ie/news/building-irelands-ev-future-a-regional-and-local-approach"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-9",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.seai.ie/plan-your-energy-journey/for-your-home/electric-vehicles/buying-an-ev/fuel-cost-comparison",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Fuel Price Comparison | Driving Electric | SEAI"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-10",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.irishtimes.com/ireland/2026/11/04/ev-public-charging-costs-now-exceeding-those-for-petrol-and-diesel/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.irishtimes.com/ireland/2026/11/04/ev-public-charging-costs-now-exceeding-those-for-petrol-and-diesel/"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-11",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.irishtimes.com/ireland/2026/05/09/as-fuel-prices-soar-some-dublin-homeowners-cannot-get-their-evs-hooked-up-to-the-grid/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.irishtimes.com/ireland/2026/05/09/as-fuel-prices-soar-some-dublin-homeowners-cannot-get-their-evs-hooked-up-to-the-grid/"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-12",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.zevi.ie/supports-schemes",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.zevi.ie/supports-schemes"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-13",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.gov.ie/en/department-of-transport/consultations/draft-national-ev-charging-infrastructure-strategy-2026-2028/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.gov.ie/en/department-of-transport/consultations/draft-national-ev-charging-infrastructure-strategy-2026-2028/"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-14",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.oireachtas.ie/en/debates/question/2026-05-19/338/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.oireachtas.ie/en/debates/question/2026-05-19/338/"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-15",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.climatecouncil.ie/councilpublications/annualreviewandreport/AR26-Transport-final.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.climatecouncil.ie/councilpublications/annualreviewandreport/AR26-Transport-final.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-16",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.climatecouncil.ie/councilpublications/annualreviewandreport/AR26-Transport-final.pdf",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "https://www.climatecouncil.ie/councilpublications/annualreviewandreport/AR26-Transport-final.pdf"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "#endnote-ref-17",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "↑"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph"
+      }
+    ]
+  }
+}

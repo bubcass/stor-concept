@@ -48,6 +48,10 @@ function renderMarkedText(text: string, marks: ProseMirrorMark[] = []) {
         output = `<sub>${output}</sub>`;
         break;
       case 'link':
+        if (mark.attrs?.href?.startsWith('#')) {
+          break;
+        }
+
         output = `<a href="${escapeHtml(mark.attrs?.href ?? '#')}">${output}</a>`;
         break;
     }
@@ -98,6 +102,39 @@ export function renderList(node: ProseMirrorNode): string {
  * article-local identity based on their displayed number instead.
  */
 function normaliseFootnotes(blocks: StoryBlock[]): StoryBlock[] {
+  const referenceNumbers = new Set<number>();
+  for (const block of blocks) {
+    if (block.type !== 'text') continue;
+    for (const paragraph of block.paragraphs) {
+      for (const match of paragraph.matchAll(/<sup>\s*(?:<a\b[^>]*>)?\[(\d+)\](?:<\/a>)?\s*<\/sup>/gi)) {
+        referenceNumbers.add(Number(match[1]));
+      }
+    }
+  }
+  const hasCitationList = blocks.some(
+    (block) =>
+      block.type === 'text' &&
+      block.paragraphs.some((paragraph) => /<ol\b[\s\S]*?(?:↑|href=["']#footnote-ref-\d+)/i.test(paragraph)),
+  );
+
+  // A small number of imported reports contain citation markers without their
+  // matching reference list. Keep those markers visible, but do not emit a
+  // broken fragment link that would fail static prerendering.
+  if (!hasCitationList) {
+    return blocks.map((block) => {
+      if (block.type !== 'text') return block;
+      return {
+        ...block,
+        paragraphs: block.paragraphs.map((paragraph) =>
+          paragraph.replace(
+            /<sup>\s*<a\b[^>]*href=["']#footnote-\d+["'][^>]*>([\s\S]*?)<\/a>\s*<\/sup>/gi,
+            '<sup>$1</sup>',
+          ),
+        ),
+      };
+    });
+  }
+
   let foundCitationList = false;
 
   return blocks.map((block) => {
@@ -119,7 +156,9 @@ function normaliseFootnotes(blocks: StoryBlock[]): StoryBlock[] {
           const linkedItems = items.replace(/<li(\b[^>]*)?>([\s\S]*?)<\/li>/gi, (_item: string, itemAttributes: string = '', item: string) => {
             position += 1;
             const attributesWithoutId = itemAttributes.replace(/\s+id=(['"]).*?\1/i, '');
-            const backlink = `<a class="footnote-backlink" href="#footnote-reference-${position}" aria-label="Back to footnote reference ${position}">↩</a>`;
+            const backlink = referenceNumbers.has(position)
+              ? `<a class="footnote-backlink" href="#footnote-reference-${position}" aria-label="Back to footnote reference ${position}">↩</a>`
+              : '';
             const citation = item
               .replace(/<a\b[^>]*href=["']#footnote-ref-\d+["'][^>]*>\s*↑\s*<\/a>/gi, backlink)
               .replace(/\s*↑\s*$/u, ` ${backlink}`);
@@ -130,6 +169,64 @@ function normaliseFootnotes(blocks: StoryBlock[]): StoryBlock[] {
         });
       }),
     };
+  });
+}
+
+function normaliseCommitteeFootnotes(nodes: CommitteeReportNode[]): CommitteeReportNode[] {
+  const referenceNumbers = new Set<number>();
+  for (const node of nodes) {
+    if (node.type !== 'paragraph') continue;
+    for (const match of node.text.matchAll(/<sup>\s*(?:<a\b[^>]*>)?\[(\d+)\](?:<\/a>)?\s*<\/sup>/gi)) {
+      referenceNumbers.add(Number(match[1]));
+    }
+  }
+  const hasCitationList = nodes.some(
+    (node) =>
+      node.type === 'paragraph' &&
+      /<ol\b[\s\S]*?(?:↑|href=["']#footnote-ref-\d+)/i.test(node.text),
+  );
+
+  if (!hasCitationList) {
+    return nodes.map((node) =>
+      node.type === 'paragraph'
+        ? {
+            ...node,
+            text: node.text.replace(
+              /<sup>\s*<a\b[^>]*href=["']#footnote-\d+["'][^>]*>([\s\S]*?)<\/a>\s*<\/sup>/gi,
+              '<sup>$1</sup>',
+            ),
+          }
+        : node,
+    );
+  }
+
+  let foundCitationList = false;
+  return nodes.map((node) => {
+    if (node.type !== 'paragraph') return node;
+
+    const withReferences = node.text.replace(
+      /<sup>\s*(?:<a\b[^>]*>)?\[(\d+)\](?:<\/a>)?\s*<\/sup>/gi,
+      (_match, number) => `<sup><a id="footnote-reference-${number}" href="#footnote-${number}" aria-label="Read footnote ${number}">[${number}]</a></sup>`,
+    );
+    const text = withReferences.replace(/<ol(\b[^>]*)?>([\s\S]*?)<\/ol>/gi, (list, attributes = '', items) => {
+      if (foundCitationList || !/(?:↑|href=["']#footnote-ref-\d+)/i.test(items)) return list;
+      foundCitationList = true;
+      let position = 0;
+      const linkedItems = items.replace(/<li(\b[^>]*)?>([\s\S]*?)<\/li>/gi, (_item: string, itemAttributes: string = '', item: string) => {
+        position += 1;
+        const attributesWithoutId = itemAttributes.replace(/\s+id=(['"]).*?\1/i, '');
+        const backlink = referenceNumbers.has(position)
+          ? `<a class="footnote-backlink" href="#footnote-reference-${position}" aria-label="Back to footnote reference ${position}">↩</a>`
+          : '';
+        const citation = item
+          .replace(/<a\b[^>]*href=["']#footnote-ref-\d+["'][^>]*>\s*↑\s*<\/a>/gi, backlink)
+          .replace(/\s*↑\s*$/u, ` ${backlink}`);
+        return `<li${attributesWithoutId} id="footnote-${position}">${citation}</li>`;
+      });
+      return `<ol${attributes} class="footnotes">${linkedItems}</ol>`;
+    });
+
+    return { ...node, text };
   });
 }
 
@@ -457,7 +554,7 @@ export function proseMirrorToCommitteeNodes(
     }
   }
 
-  return nodes;
+  return normaliseCommitteeFootnotes(nodes);
 }
 
 export function proseMirrorToNarrativeBlocks(
