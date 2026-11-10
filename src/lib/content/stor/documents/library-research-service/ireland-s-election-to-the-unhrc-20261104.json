@@ -1,0 +1,1929 @@
+{
+  "id": "ireland-s-election-to-the-unhrc-20261104",
+  "slug": "ireland-s-election-to-the-unhrc-20261104",
+  "type": "article",
+  "destination": "library-research-service",
+  "featured": false,
+  "heroLayout": "contained",
+  "showContents": true,
+  "flourishWidth": "prose",
+  "title": "Ireland's election to the UNHRC",
+  "dek": "Ireland will take up an important UN role in 2027, with a chance to promote and protect human rights.",
+  "eyebrow": "Series | Research Matters",
+  "abstract": "As a Member State of the United Nations (UN) Human Rights Council (2027-2029), Ireland can harness its vote and diplomatic resources to promote and protect human rights at a critical time, as the world experiences rising rates of armed conflict and declining economic support for the UN’s human rights pillar.",
+  "topics": [
+    "United Nations",
+    "governance",
+    "human rights"
+  ],
+  "layout": "standard",
+  "status": "draft",
+  "language": "en",
+  "version": "0.1",
+  "keywords": [
+    "United Nations",
+    "governance",
+    "human rights"
+  ],
+  "license": "Oireachtas PSI Licence",
+  "publisher": "Houses of the Oireachtas",
+  "publishedDate": "2026-11-04",
+  "contributors": [
+    {
+      "name": "Caroline Sweeney",
+      "role": "author",
+      "affiliation": "Library & Research Service",
+      "showAsAuthor": true,
+      "profileRole": "Senior Parliamentary Researcher (Law)",
+      "profileImage": "/media/caroline-sweeney-headshot.png"
+    }
+  ],
+  "researcher": {
+    "name": "Caroline Sweeney",
+    "role": "Senior Parliamentary Researcher (Law)",
+    "organisation": "Library & Research Service",
+    "image": "/media/caroline-sweeney-headshot.png"
+  },
+  "hero": {
+    "src": "/media/united-nations.jpg",
+    "alt": "A United Nations building with flags in the foreground",
+    "position": "left center"
+  },
+  "content": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Introduction"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On 13 October 2026, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://press.un.org/en/2026/ga12795.doc.htm",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Ireland was elected"
+          },
+          {
+            "type": "text",
+            "text": " as a Member State of the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hrbodies/hrc/home",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "UN Human Rights Council"
+          },
+          {
+            "type": "text",
+            "text": " (UNHRC/the ‘Council’) for a three-year term, starting on 1 January 2027. The UNHRC is the UN’s principal inter-governmental organisation with responsibility for the promotion and protection of human rights worldwide. This will be Ireland’s second term as a UNHRC Member State having previously served from "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ireland.ie/ga/dfa/r%C3%B3l-polasaithe/tosa%C3%ADochta%C3%AD-idirn%C3%A1isi%C3%BAnta/cearta-daonna/ireland-and-the-human-rights-council/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "2013 to 2015"
+          },
+          {
+            "type": "text",
+            "text": ". Commenting on Ireland’s election, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.gov.ie/en/department-of-foreign-affairs/press-releases/ireland-elected-to-united-nations-human-rights-council/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Minister for Foreign Affairs and Trade, Helen McEntee T.D."
+          },
+          {
+            "type": "text",
+            "text": ", said:"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "“"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ],
+            "text": "Ireland will take up its seat on the Council at a difficult time. We are seeing devastating conflict and systemic human rights violations in many parts of the world. International law, the multilateral system, and the broad human rights framework are under unprecedented pressure…"
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ],
+            "text": "Ireland will use its voice and influence to promote and protect the universality of international human rights law and to stand up for the most vulnerable and marginalised."
+          },
+          {
+            "type": "text",
+            "text": "”"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ireland’s membership priorities"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ireland has "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ireland.ie/en/un/human-rights-campaign-27-29/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "five priorities"
+          },
+          {
+            "type": "text",
+            "text": " for its UNHRC membership (2027-2029):"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "attrs": {
+          "start": 1,
+          "type": null
+        },
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Supporting the role of "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "civil society and human rights defenders"
+                  },
+                  {
+                    "type": "text",
+                    "text": "."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Championing "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "women’s rights and gender equality"
+                  },
+                  {
+                    "type": "text",
+                    "text": "."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Defending the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "rights of LGBTIQ+ persons"
+                  },
+                  {
+                    "type": "text",
+                    "text": " worldwide."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bringing renewed attention to the fundamental "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "right to adequate food"
+                  },
+                  {
+                    "type": "text",
+                    "text": "."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Maintaining a strong focus on the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "rights of persons with disabilities in conflict"
+                  },
+                  {
+                    "type": "text",
+                    "text": "."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ireland’s campaign brochure and voluntary pledges and commitments are available "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://assets.ireland.ie/documents/Human_Rights_Council_Brochure.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "here"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://assets.ireland.ie/documents/IrelandHRCcampaign_voluntary_pledges_and_commitments.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "here"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "UNHRC membership and elections"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/membership",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "UNHRC is comprised"
+          },
+          {
+            "type": "text",
+            "text": " of 47 UN Member States, who serve for three-year terms. In order to ensure an equitable geographical balance, the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.un.org/dgacm/en/content/regional-groups",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "UN’s five regional groups of Member States"
+          },
+          {
+            "type": "text",
+            "text": " are each allocated a fixed number of UNHRC seats, and they nominate candidates whenever vacancies arise."
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/ireland-s-election-to-the-united-nations-human-rights-council-for-the-2027-2029-term-opportunities-and-challenges-20261104/image-01.png",
+          "alt": "Imported DOCX image",
+          "caption": "Figure 1: UNHRC’s allocation of seats to regional groups",
+          "credit": "Source: ISHR Academy (2025)",
+          "layout": "full"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Under "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://documents.un.org/doc/undoc/gen/n05/502/66/pdf/n0550266.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "UN General Assembly (UNGA) Resolution 60/251 (2006)"
+          },
+          {
+            "type": "text",
+            "text": ", which created the UNHRC, candidate States must receive the support of a majority of UNGA Member States voting in a secret ballot in order to be appointed (currently 97 votes). There are no mandatory membership criteria concerning human rights performance. However, when voting UNGA Member States must take into account any voluntary pledges and commitments made by candidate States, as well as their contribution to the promotion and protection of human rights. States are ineligible for immediate re-election after serving two consecutive UNHRC membership terms."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ireland belongs to the Western European and Others regional group (WEOG), which has seven UNHRC membership seats. On "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://press.un.org/en/2026/ga12795.doc.htm",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "13 October 2026"
+          },
+          {
+            "type": "text",
+            "text": ", Ireland and Germany were elected to two vacant WEOG seats on the Council. They were the only two candidates nominated for the vacant seats. This is known as the submission of a closed slate. Some human rights advocates "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.universal-rights.org/human-rights-council-elections-clean-slates-continue-to-undermine-the-council/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "criticise"
+          },
+          {
+            "type": "text",
+            "text": " the use of closed slates for enabling States with very poor human rights records to become UNHRC Members in uncontested elections. Some human rights non-governmental organisations (NGOs), such as "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.hrw.org/news/2019/01/14/human-rights-council-membership-has-its-consequences",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Human Rights Watch"
+          },
+          {
+            "type": "text",
+            "text": ", have accused these States of seeking membership as a way to shield themselves from criticism from the inside. All five UN regional groups "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://ishr.ch/latest-updates/uncontested-vote-lands-15-new-states-at-the-un-human-rights-council/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "submitted closed slates"
+          },
+          {
+            "type": "text",
+            "text": " for the 2026 UNHRC election."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://documents.un.org/doc/undoc/gen/n05/502/66/pdf/n0550266.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "UNGA Resolution 60/251 (2006)"
+          },
+          {
+            "type": "text",
+            "text": " requires UNHRC Member States to uphold the highest standards in promoting and protecting human rights. UNGA, by a two-thirds majority of its Members present and voting, can resolve to suspend a UNHRC Member State that commits gross and systematic human rights violations. However, to date, this power has only been used on two occasions, when UNGA resolved to suspend Libya in 2011 and Russia in 2022."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Non-UNHRC Member States can participate in the UNHRC’s work as observer States. Whilst observer States lack voting rights, they can participate in negotiations concerning, and co-sponsor, draft UNHRC resolutions. They can also make oral interventions during the Council’s general debates, panel discussions and interactive dialogues. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/nhri-participation",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "National human rights institutions (NHRIs) with ‘A’ status accreditation"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/ngo-participation",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "NGOs which are accredited by the UN Economic and Social Council"
+          },
+          {
+            "type": "text",
+            "text": " can also make oral interventions."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "UNHRC functions, principles and sessions"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://documents.un.org/doc/undoc/gen/n05/502/66/pdf/n0550266.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Council’s functions"
+          },
+          {
+            "type": "text",
+            "text": " include:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "promoting universal respect for human rights;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "addressing situations of gross and systematic human rights violations;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "periodically reviewing the human rights record of every UN Member State;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "contributing to the prevention of human rights violations;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "responding promptly to human rights emergencies;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "assuming and, where necessary, rationalising the system of special procedures (explained below);"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "providing advisory services, technical assistance and capacity-building support; and"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "making recommendations for the development of international human rights law (IHRL)."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Council should be guided by the principles of universality, impartiality, objectivity, non-selectivity, constructive international dialogue and cooperation. It convenes for three "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/regular-sessions",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "regular sessions"
+          },
+          {
+            "type": "text",
+            "text": " each year in March, June and September, comprising 10 weeks in total. Special (emergency) sessions may be held with the support of at least one-third of its Member States. To date, the UNHRC has convened "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/special-sessions",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "39 special sessions"
+          },
+          {
+            "type": "text",
+            "text": ", which have addressed human rights situations in countries in the Middle East, Africa and Asia. Two special sessions addressed thematic issues. The UNHRC endeavours to adopt proposed resolutions by consensus. If a vote is called, a simple majority of the Members who are present and voting is required to adopt the proposed resolution. Country-specific resolutions, which are not supported by the State concerned, are typically adopted by a vote. The UNHRC convenes in the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ungeneva.org/en/about/palais-des-nations",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Palais des Nations"
+          },
+          {
+            "type": "text",
+            "text": " in Geneva, Switzerland."
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/ireland-s-election-to-the-united-nations-human-rights-council-for-the-2027-2029-term-opportunities-and-challenges-20261104/image-02.jpg",
+          "alt": "A group of people in a room\n\nAI-generated content may be incorrect.",
+          "caption": "  Figure 2: Human Rights Council, Geneva (March 2014)",
+          "credit": "Source: U.S. Mission Geneva/Eric Bridiers, Public domain, via Wikimedia Commons",
+          "layout": "wide"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Special procedures"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The UNHRC has a system of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/special-procedures-human-rights-council",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "special procedures"
+          },
+          {
+            "type": "text",
+            "text": " to examine thematic issues and country-specific situations of concern. As of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/special-procedures-human-rights-council",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "August 2026"
+          },
+          {
+            "type": "text",
+            "text": ", there were 44 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "http://spinternet.ohchr.org/_Layouts/SpecialProceduresInternet/ViewAllCountryMandates.aspx?Type=TM",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "thematic"
+          },
+          {
+            "type": "text",
+            "text": " and 12 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "http://spinternet.ohchr.org/_Layouts/SpecialProceduresInternet/ViewAllCountryMandates.aspx",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "country-specific"
+          },
+          {
+            "type": "text",
+            "text": " mandates. These mandates are typically created for three years and one year respectively and can be renewed by a Council resolution. Independent human rights experts are "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/sp/basic-information-selection-independent-experts",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "appointed"
+          },
+          {
+            "type": "text",
+            "text": " to serve as mandate-holders. They are unpaid, serve for up to six years, and receive support from the Office of the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/about-us/high-commissioner",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "UN High Commissioner for Human Rights"
+          },
+          {
+            "type": "text",
+            "text": " (OHCHR). Their duties include:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "undertaking "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.ohchr.org/en/special-procedures-human-rights-council/country-and-other-visits",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "country visits"
+                  },
+                  {
+                    "type": "text",
+                    "text": ";"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "receiving individual complaints of alleged violations and sending "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.ohchr.org/en/special-procedures-human-rights-council/what-are-communications",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "communications"
+                  },
+                  {
+                    "type": "text",
+                    "text": " to States;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "contributing to the development of international human rights standards; and"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "engaging in advocacy, raising public awareness and providing technical advice to States."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Special procedures publish reports with recommendations. They operate as a vital early warning system by shedding light on emergent situations of gross and systematic human rights violations. Mandate-holders have been subjected to "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/press-releases/2024/05/attacks-against-un-human-rights-experts-must-cease-coordination-committee",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "intimidation and challenges to their independence"
+          },
+          {
+            "type": "text",
+            "text": ". Some governments have denied them access to the territory of their States for country visits. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://spinternet.ohchr.org/ViewCountryVisits.aspx?visitType=all&country=IRL&Lang=en",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Ireland"
+          },
+          {
+            "type": "text",
+            "text": " has received country visits from thematic special procedures focussed on issues such as freedom of expression, human rights defenders, and extreme poverty. Irish human rights experts have also served as mandate-holders. For example, Mary Lawlor and Professor Siobhán Mullally previously served as the UN special rapporteurs on "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/special-procedures/sr-human-rights-defenders/ms-mary-lawlor",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "the situation of human rights defenders"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/special-procedures/sr-trafficking-in-persons",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "trafficking in persons, especially women and children"
+          },
+          {
+            "type": "text",
+            "text": ", respectively."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Universal Periodic Review (UPR)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The UNHRC has an inter-state "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/upr/upr-home",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "UPR"
+          },
+          {
+            "type": "text",
+            "text": " mechanism to review the human rights record of every UN Member State every 4.5 years. To date, Ireland’s record has been reviewed on three occasions and its fourth UPR is scheduled for "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/upr/ie-index",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "10 November 2026"
+          },
+          {
+            "type": "text",
+            "text": ". During these reviews, Ireland receives recommendations from other States on how it can improve the human rights situation in the State."
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/ireland-s-election-to-the-united-nations-human-rights-council-for-the-2027-2029-term-opportunities-and-challenges-20261104/image-03.png",
+          "alt": "A blue screen with colorful graphics",
+          "caption": "Figure 3: UPR recommendations received by Ireland by theme and link to the SDGs",
+          "credit": "Source: OHCHR (accessed 30 October 2026)",
+          "layout": "wide"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Some UPR recommendations have been "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.universal-rights.org/download.php?file=https://www.universal-rights.org/wp-content/uploads/2016/07/URG_UPR_stick_or_twist.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "criticised"
+          },
+          {
+            "type": "text",
+            "text": " as politicised and/or overly vague. To combat this, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://upr-info.org/en/news/impact-ground-upr-needs-smart-recommendations",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "UPR Info"
+          },
+          {
+            "type": "text",
+            "text": ", an NGO, encourages States to make recommendations that are specific, measurable, achievable, relevant, and time-bound (SMART). The OHCHR has prepared guidance to help "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/upr/ngos-nhris",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "civil society organisations, NHRIs"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/upr/parliaments",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "parliaments"
+          },
+          {
+            "type": "text",
+            "text": " to engage with the UPR."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Investigative mechanisms"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The UNHRC has created "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/co-is",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "investigative mechanisms"
+          },
+          {
+            "type": "text",
+            "text": " comprised of independent human rights experts, in response to situations of serious violations of IHRL and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.redcross.ie/international-humanitarian-law/international-humanitarian-law/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "international humanitarian law"
+          },
+          {
+            "type": "text",
+            "text": " (IHL). For example, the UNHRC has created commissions of inquiry (COIs) concerning situations in the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/iici-syria/independent-international-commission",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Syrian Arab Republic"
+          },
+          {
+            "type": "text",
+            "text": " (Syria), "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/iicihr-ukraine/index",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Ukraine"
+          },
+          {
+            "type": "text",
+            "text": ", and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/co-israel/index",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "the Occupied Palestinian Territory, including East Jerusalem, and Israel"
+          },
+          {
+            "type": "text",
+            "text": ". These mechanisms are often mandated to identify violations of IHRL and IHL, where relevant, including violations that may amount to international crimes, and to identify suspected perpetrators. The current members of the COI for Syria include Professor "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hr-bodies/hrc/iici-syria/biographies#niaolain",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Fionnuala Ní Aoláin"
+          },
+          {
+            "type": "text",
+            "text": ", an Irish independent human rights expert."
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/ireland-s-election-to-the-united-nations-human-rights-council-for-the-2027-2029-term-opportunities-and-challenges-20261104/image-04.jpg",
+          "alt": "Imported DOCX image",
+          "caption": "Figure 4: COI for Syria (2013)",
+          "credit": "Source: U.S. Mission Geneva/ Eric Bridiers, Public domain, via Wikimedia Common",
+          "layout": "wide"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The UNHRC has also created "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://academic.oup.com/jicj/article/21/3/551/7328884",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "hybrid investigative mechanisms"
+          },
+          {
+            "type": "text",
+            "text": ", which are mandated to collect, consolidate, preserve and analyse evidence to a criminal standard, alongside the more traditional functions of factfinding and public reporting. An example is the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://iimm.un.org/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Independent Investigative Mechanism for Myanmar"
+          },
+          {
+            "type": "text",
+            "text": ". The UNHRC has created one thematic investigative mechanism, the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/hrc-subsidiaries/expert-mechanism-racial-justice-law-enforcement",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Expert Mechanism to Advance Racial Justice and Equality in Law Enforcement"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Implementation and impact"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Measuring the UNHRC’s impact on the ground can be challenging (as discussed "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.universal-rights.org/download.php?file=https://www.universal-rights.org/wp-content/uploads/2016/07/URG_UPR_stick_or_twist.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "here"
+          },
+          {
+            "type": "text",
+            "text": ", "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.tandfonline.com/doi/full/10.1080/13642987.2022.2061952",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "here"
+          },
+          {
+            "type": "text",
+            "text": ", and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://academic.oup.com/ejil/article-pdf/30/3/819/31496167/chz043.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "here"
+          },
+          {
+            "type": "text",
+            "text": "). In situations where States receive similar human rights-related recommendations from multiple sources, it can be difficult to determine which, if any, was the main trigger for a decision to implement the substance of the recommendation. The sheer volume of recommendations received from various international, regional and domestic human rights mechanisms can pose an implementation challenge for States. To assist States, the OHCHR has prepared guidance on "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/instruments-and-mechanisms/human-rights-indicators",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "human rights indicators"
+          },
+          {
+            "type": "text",
+            "text": " and on the establishment of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/instruments-and-mechanisms/national-mechanisms-implementation-reporting-and-follow",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "national mechanisms for implementation, reporting and follow-up"
+          },
+          {
+            "type": "text",
+            "text": ". It also developed a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://uhri.ohchr.org/en/search-human-rights-recommendations",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Universal Human Rights Index database"
+          },
+          {
+            "type": "text",
+            "text": ", which is searchable by country and collates the recommendations emanating from the UPR, the special procedures and the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/treaty-bodies",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "human rights treaty monitoring bodies"
+          },
+          {
+            "type": "text",
+            "text": " in one place."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ireland’s membership (2027-2029): challenges and opportunities"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.ohchr.org/en/statements-and-speeches/2026/09/high-commissioner-turk-updates-human-rights-council-human-rights",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "challenge"
+          },
+          {
+            "type": "text",
+            "text": " currently facing the UNHRC is the increasing incidence of armed conflicts worldwide and a concurrent decrease in respect for IHRL and IHL. Another challenge is a decline in political and economic support for multilateral institutions in many countries. For example, in February 2025 the US President, Donald Trump, signed an "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.whitehouse.gov/presidential-actions/2025/02/withdrawing-the-united-states-from-and-ending-funding-to-certain-united-nations-organizations-and-reviewing-united-states-support-to-all-international-organizations/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Executive Order"
+          },
+          {
+            "type": "text",
+            "text": " stipulating that the US will no longer participate in, or fund, the UNHRC, which it accused of shielding human rights abusers. Even before this, the UNHRC was negatively impacted by the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.hrw.org/news/2026/07/20/qa-the-un-funding-crisis-and-human-rights-work",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "UN’s ongoing liquidity crisis."
+          },
+          {
+            "type": "text",
+            "text": " Rising geopolitical tensions also "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.icj.org/un-human-rights-council-once-again-navigates-troubled-waters-to-protect-human-rights-in-crisis-situations-despite-global-setbacks/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "threaten to increase polarisation"
+          },
+          {
+            "type": "text",
+            "text": " within the Council with potential negative ramifications for its capacity to adopt progressive resolutions."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "As a UNHRC Member State, Ireland can harness not only its vote, but also its diplomatic resources, to help build the cross-regional backing necessary for initiatives it supports. Ireland can also count toward the quorum necessary to convene special sessions. Furthermore, Ireland can champion its five membership priorities, fulfil its candidature "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://assets.ireland.ie/documents/IrelandHRCcampaign_voluntary_pledges_and_commitments.pdf",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "commitment"
+          },
+          {
+            "type": "text",
+            "text": " to defend the independence of special procedures, and make contributions during interactive dialogues, general debates, panel discussions and UPR reviews."
+          }
+        ]
+      }
+    ]
+  }
+}

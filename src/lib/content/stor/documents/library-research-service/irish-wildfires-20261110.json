@@ -35,14 +35,14 @@
       "affiliation": "Library & Research Service",
       "showAsAuthor": true,
       "profileRole": "Senior Parliamentary Researcher (Environmental Science)",
-      "profileImage": "/media/mike-brennan-headshot.jpg"
+      "profileImage": "/media/mike-brennan-headshot.png"
     }
   ],
   "researcher": {
     "name": "Mike Brennan",
     "role": "Senior Parliamentary Researcher (Environmental Science)",
     "organisation": "Library & Research Service",
-    "image": "/media/mike-brennan-headshot.jpg"
+    "image": "/media/mike-brennan-headshot.png"
   },
   "hero": {
     "src": "/media/wildfire.jpg",
