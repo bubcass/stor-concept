@@ -1,0 +1,874 @@
+{
+  "id": "irish-wildfires-20261110",
+  "slug": "irish-wildfires-20261110",
+  "type": "article",
+  "destination": "library-research-service",
+  "featured": false,
+  "heroLayout": "contained",
+  "showContents": true,
+  "flourishWidth": "prose",
+  "title": "Irish Wildfires",
+  "dek": "Wildfires across Europe were once outliers but there is now a pattern and extreme fires have been a regular feature in Europe's summers since 2021. Ireland will not be immune to them.",
+  "eyebrow": "Series | Research Matters",
+  "abstract": "Wildfires devastated Europe in 2026, including several large fires in Ireland. Land management and habitat restoration provides protection against wildfire. Policy encouraging habitat restoration can create a \"win-win-win\" situation by mitigating fires, managing water and reducing carbon emissions.",
+  "topics": [
+    "wildfires",
+    "environment",
+    "climate action"
+  ],
+  "layout": "standard",
+  "status": "draft",
+  "language": "en",
+  "version": "0.1",
+  "keywords": [
+    "wildfires",
+    "environment",
+    "climate action"
+  ],
+  "license": "Oireachtas PSI Licence",
+  "publisher": "Houses of the Oireachtas",
+  "publishedDate": "2026-11-10",
+  "contributors": [
+    {
+      "name": "Mike Brennan",
+      "role": "author",
+      "affiliation": "Library & Research Service",
+      "showAsAuthor": true,
+      "profileRole": "Senior Parliamentary Researcher (Environmental Science)",
+      "profileImage": "/media/mike-brennan-headshot.png"
+    }
+  ],
+  "researcher": {
+    "name": "Mike Brennan",
+    "role": "Senior Parliamentary Researcher (Environmental Science)",
+    "organisation": "Library & Research Service",
+    "image": "/media/mike-brennan-headshot.png"
+  },
+  "hero": {
+    "src": "/media/wildfire.jpg",
+    "alt": "Wildfire ablaze in a darkened environment",
+    "position": "left center"
+  },
+  "content": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "The world ablaze"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "\"In the first half of the decade, Europe's largest wildfires were outliers. Now they're a pattern: extreme fires have become a regular feature of Europe's summers since 2021, burning the continent's most valuable and vulnerable habitats and species.\""
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kostas Zafeiropoulos, Mediterranean Institute for Investigative Reporting"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Global warming is making wildfires an increasing hazard globally and in Europe, becoming more frequent, more intense, and larger. These wildfires inflict billions of euro in damages, expose millions to dangerous air pollution and incinerate hundreds of thousands of hectares of land."
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/irish-wildfires-20261110/image-01.png",
+          "alt": "A map of europe with text and a black background\n\nAI-generated content may be incorrect.",
+          "caption": "Figure 1: During the fire season between 2015 and 2025, wildfires burned almost 4.5 million hectares (4,534,317) across the 26 European countries analysed, an area the size of Estonia.",
+          "credit": "Source: Louiza Karageorgiou / MIIR",
+          "layout": "wide"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "2026 European wildfires"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In 2026 European wildfires were made more likely and worse by a series of climate-related events including:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Extreme heatwaves beginning in May across Western Europe,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The hottest June on record,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Third and fourth heatwaves hitting Europe in July,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Widespread and prolonged drought turning land into a tinderbox."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Climate attribution analysis conducted by "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.worldweatherattribution.org/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "World Weather Attribution"
+          },
+          {
+            "type": "text",
+            "text": " estimated that human-caused climate change made the hot, dry and windy weather that fuelled the fires in France twice as likely and the conditions in Spain 20 times more likely This has led to 2026 being a particularly devastating year for fire in Europe. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://forest-fire.emergency.copernicus.eu/about-effis",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "European Forest Fire Information System"
+          },
+          {
+            "type": "text",
+            "text": " (EFFIS) determined that so far this year, both the cumulative burnt area (the weekly progression of burnt area) and the weekly number of fires were above the 2006 – 2025 average (Figure 2)."
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30178767",
+          "alt": "Flourish visualisation",
+          "caption": "",
+          "thumbnail": "https://public.flourish.studio/visualisation/30178767/thumbnail",
+          "embedType": "visualisation",
+          "width": "wide"
+        }
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30178973",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 2: (top) Cumulative burnt area in EU countries in 2026 (fires 30ha or larger), (bottom) Weekly Number of Fires. Source: European Union, Copernicus EMS, EFFIS, 2026",
+          "thumbnail": "https://public.flourish.studio/visualisation/30178973/thumbnail",
+          "embedType": "visualisation",
+          "width": "wide"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "It should be noted that the satellite data used by EFFIS to detect fires has a minimum detection limit of 30 hectares This means the number of fires will be underestimated, with many smaller fires being undetected unless they grow large enough. However, by using a variety of methods, the EFFIS states that “"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ],
+            "text": "the area burned by fires mapped in EFFIS represents about 95% of the total area burned in EU"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Future predictions"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While wildfires in 2026 have been extreme, studies suggest that future years will be subject to an even more extreme wildfire season. A study published in August 2026 found that even in a future where carbon emissions are limited roughly 39% more land would be burned per year by the end of the century compared with today's average. In a future where emissions are high it would be around 192%."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Wildfires in Ireland in 2026"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The 2026 wildfire situation has been mixed in Ireland. EFFIS data suggests that the cumulative amount of burnt land in 2026 is lower than the 2006 – 2025 average, but the total number of fires detected by EFFIS in 2026 is higher than the average (18 vs 12.45) (Figure 3)."
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30179084",
+          "alt": "Flourish visualisation",
+          "caption": "",
+          "thumbnail": "https://public.flourish.studio/visualisation/30179084/thumbnail",
+          "embedType": "visualisation",
+          "width": "wide"
+        }
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30179182",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 3: (top) Cumulative burnt area in Ireland (fires 30ha or larger), (bottom) Weekly Number of Fires. Source: European Union, Copernicus EMS, EFFIS, 2026",
+          "thumbnail": "https://public.flourish.studio/visualisation/30179182/thumbnail",
+          "embedType": "visualisation",
+          "width": "wide"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Again, as EFFIS data cannot detect small fires, the true number of wildfires in 2026 is likely significantly higher. Government data consistently reports many more fires on land labelled as “Forest/Bog/Grass etc.” than EFFIS detects (Figure 4)."
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30179265",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 4: Number of fire brigade call outs to fire on forest, bog, grass etc. vs fires detected by EFFIS",
+          "thumbnail": "https://public.flourish.studio/visualisation/30179265/thumbnail",
+          "embedType": "visualisation",
+          "width": "wide"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Additionally, the government has issued 10 Fire Notices to date in 2026, matching the previous high of 2022 (Figure 5)."
+          }
+        ]
+      },
+      {
+        "type": "flourishBlock",
+        "attrs": {
+          "dataSrc": "visualisation/30179379",
+          "alt": "Flourish visualisation",
+          "caption": "Figure 5: Number of Fire Notices issued. Source: Department of Agriculture, Food and the Marine, 2026",
+          "thumbnail": "https://public.flourish.studio/visualisation/30179379/thumbnail",
+          "embedType": "visualisation",
+          "width": "prose"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Several high impact fires have been reported in the media, including:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.agriland.ie/farming-news/slievenamon-fire-spreads-to-coillte-forest/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Slievenamon"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", Co. Tipperary,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.rte.ie/news/regional/2026/0724/1584974-wicklow-wildfire/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Glencree"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", Co. Wicklow,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://waterfordcouncil.ie/update-2-public-notice-fire-comeragh-mountains-31st-july/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Comeragh"
+                  },
+                  {
+                    "type": "text",
+                    "text": " Mountains, Co. Waterford,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.rte.ie/news/dublin/2026/0804/1586359-glencullen-gorse-fire/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Glencullen"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", Co. Dublin,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.ifa.ie/farm-sectors/forest-owners-reminded-to-be-vigilant-about-fire-danger/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Killarney"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", Co. Kerry."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "2026 Wildfire impacts"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This year’s wildfire impacts will not be fully known until 2027, but media reports have noted impacts including:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Over 100ha of Coillte forests impacted by fire in 2026,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wildfires in Ireland are burning protected nature areas,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "25ha of Killarney National Park damaged and visitors barred,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "300ha of Wicklow mountains national park damaged,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Retailers asked to completely halt the sale of disposable barbecues,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "N71 road shut down with related traffic and tourism impacts,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Smoke blanketing Dublin suburbs, and,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "HSE warning of air quality health risks."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "What can we do?"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fire management is complex, and there is no “silver bullet” solution. Broadly, fire management comes down to:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Suppression – reduction of ignition sources (e.g. bans on campfires, barbecues, uncontrolled land burning) and firefighting when fires ignite,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fuel removal – grazing and controlled burns to remove vegetation,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Land use adaptation – protection & restoration of fire-resistant ecosystems (native woodland or peatlands)."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While Ireland already implements suppression, there is room for increased implementation of fuel removal and land use adaptation strategies."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Small-scale grazing programmes used to suppress fire risk have been implemented (e.g. Old Irish goats on Dalkey and Howth), and the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "Department of Agriculture, Food and the Marine"
+          },
+          {
+            "type": "text",
+            "text": " has allowed some grazing changes to "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/campaigns/agri-climate-rural-environment-scheme-acres/",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "ACRES"
+          },
+          {
+            "type": "text",
+            "text": " actions in 2026, though primarily to address pressure on winter fodder. Grazing to manage landscapes has been used in the Burren and Connemara, and declining upland grazing due to changing farming policy has been identified as a factor increasing wildfire risk in Ireland. Upland grazing programmes that balance fuel removal goals while minimising soil erosion and resulting flood risk have the potential to deliver “win-win-win” for farmers, fire management and climate resilience."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ireland’s peatlands are often the site of wildfires, and ~82% are already degraded to some degree. Emerging global evidence has shown that rewetted and restored peatlands are more resistant to wildfires, (Figure 6), delivering another “win-win-win” by mitigating fires, managing water and reducing carbon emissions."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ireland has already shown it can successfully restore peatlands, and is required to rewet its drained organic soils under the Nature Restoration Law, allowing a policy opportunity to manage wildfire risk by strategic rewetting."
+          }
+        ]
+      },
+      {
+        "type": "imageBlock",
+        "attrs": {
+          "src": "/media/imported/library-research-service/irish-wildfires-20261110/image-02.png",
+          "alt": "A green and black land\n\nAI-generated content may be incorrect.",
+          "caption": "Figure : Dove Stone wetland (UK). This rewetted peatland resisted wildfire damage.",
+          "credit": " Source: RSPB, 2026",
+          "layout": "inline"
+        }
+      },
+      {
+        "type": "paragraph"
+      }
+    ]
+  }
+}
