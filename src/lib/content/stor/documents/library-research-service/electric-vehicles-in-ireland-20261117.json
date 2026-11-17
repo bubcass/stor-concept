@@ -1,6 +1,6 @@
 {
-  "id": "electric-vehicles-in-ireland-20261109",
-  "slug": "electric-vehicles-in-ireland-20261109",
+  "id": "electric-vehicles-in-ireland-20261117",
+  "slug": "electric-vehicles-in-ireland-20261117",
   "type": "article",
   "destination": "library-research-service",
   "featured": false,
@@ -8,7 +8,7 @@
   "showContents": true,
   "flourishWidth": "prose",
   "title": "Electric vehicles in Ireland",
-  "dek": "Electric vehicles are becoming more popular in Ireland but obstacles remain to them taking the place of the types of cars, vans and lorries using fossil fuels.",
+  "dek": "Electric vehicles are becoming more popular in Ireland but obstacles remain to them taking the place of the types of cars, vans and lorries using fossil fuels",
   "eyebrow": "Series | Research Matters",
   "abstract": "Decarbonising the transport sector with electric vehicles can help Ireland meet its climate targets and improve energy security. The transition requires improving the affordability of electric vehicles and charging infrastructure to address any geographical and income barriers.",
   "topics": [
@@ -27,7 +27,7 @@
   ],
   "license": "Oireachtas PSI Licence",
   "publisher": "Houses of the Oireachtas",
-  "publishedDate": "2026-11-09",
+  "publishedDate": "2026-11-17",
   "contributors": [
     {
       "name": "Eoin McLoughlin",
@@ -132,7 +132,7 @@
           },
           {
             "type": "text",
-            "text": ", EVs have since increased to 41.1% of new licensed private cars to date in 2026 (26.4% of which BEVs and 14.7% PHEVs)."
+            "text": ", EVs have since increased to 41.1% of new licensed private cars from January to July 2026 (26.4% of which BEVs and 14.7% PHEVs)."
           }
         ]
       },
@@ -140,7 +140,7 @@
         "type": "flourishBlock",
         "attrs": {
           "dataSrc": "visualisation/30366295?2729506",
-          "alt": "Flourish visualisation",
+          "alt": "Flourish visualisation of Figure 1: Percentage of electric vehicles (BEVs and PHEVs) as a share of new private cars licensed for the first time",
           "caption": "Figure 1: Percentage of electric vehicles (BEVs and PHEVs) as a share of new private cars licensed for the first time",
           "thumbnail": "https://public.flourish.studio/visualisation/30366295/thumbnail",
           "embedType": "visualisation",
@@ -160,8 +160,8 @@
         "type": "flourishBlock",
         "attrs": {
           "dataSrc": "visualisation/30366501?2729506",
-          "alt": "Flourish visualisation",
-          "caption": "Figure 2: Percentage share of all private vehicles licensed in the car fleet as of July 2026",
+          "alt": "Flourish visualisation of Figure 2: Percentage share of all private vehicles licensed in the car fleet by fuel type as of July 2026",
+          "caption": "Figure 2: Percentage share of all private vehicles licensed in the car fleet by fuel type as of July 2026",
           "thumbnail": "https://public.flourish.studio/visualisation/30366501/thumbnail",
           "embedType": "visualisation",
           "width": "prose"
@@ -193,8 +193,8 @@
         "type": "flourishBlock",
         "attrs": {
           "dataSrc": "visualisation/30366642?2729506",
-          "alt": "Flourish visualisation",
-          "caption": "Figure 3: Percentage share of new passenger cars by type of fuel, 2025",
+          "alt": "Flourish visualisation of Figure 3: Percentage share of electric vehicles in the new passenger car fleet in 2025 by EU member state.",
+          "caption": "Figure 3: Percentage share of electric vehicles in the new passenger car fleet in 2025 by EU member state.",
           "thumbnail": "https://public.flourish.studio/visualisation/30366642/thumbnail",
           "embedType": "visualisation",
           "width": "prose"
@@ -204,8 +204,8 @@
         "type": "flourishBlock",
         "attrs": {
           "dataSrc": "visualisation/30366697?2729506",
-          "alt": "Flourish visualisation",
-          "caption": "Figure 4: Percentage share of all passenger cars by type of fuel, 2025",
+          "alt": "Flourish visualisation of Figure 4: Percentage share of electric vehicles in the passenger car fleet in 2025 by EU member state.",
+          "caption": "Figure 4: Percentage share of electric vehicles in the passenger car fleet in 2025 by EU member state.",
           "thumbnail": "https://public.flourish.studio/visualisation/30366697/thumbnail",
           "embedType": "visualisation",
           "width": "prose"
@@ -259,7 +259,7 @@
         "type": "flourishBlock",
         "attrs": {
           "dataSrc": "visualisation/30469756?2729506",
-          "alt": "Flourish visualisation",
+          "alt": "Flourish visualisation of Figure 5: Number of BEVs per 10,000 inhabitants, July 2026",
           "caption": "Figure 5: Number of BEVs per 10,000 inhabitants, July 2026",
           "thumbnail": "https://public.flourish.studio/visualisation/30469756/thumbnail",
           "embedType": "visualisation",
@@ -384,7 +384,7 @@
         "type": "flourishBlock",
         "attrs": {
           "dataSrc": "visualisation/30469888?2729506",
-          "alt": "Flourish visualisation",
+          "alt": "Flourish visualisation of Figure 6: Number of BEVs per public charger, July 2026",
           "caption": "Figure 6: Number of BEVs per public charger, July 2026",
           "thumbnail": "https://public.flourish.studio/visualisation/30469888/thumbnail",
           "embedType": "visualisation",
@@ -458,7 +458,7 @@
           },
           {
             "type": "text",
-            "text": ", in Q1 2026, Ireland had a total power output of 194,641 kW compared against a target of 209,595 kW. This means that Ireland is currently 7% below its target. Most EU countries are currently exceeding their AFIR target, with only Malta below Ireland (see Figure 7). According to reports, if Ireland had the EU average level of AFIR compliance for the current EV fleet, there would be 13,000 chargers as opposed to the current 4,000 public chargers."
+            "text": ", in Q1 2026, Ireland had a total power output of 225,646 kW compared against a target of 238,915.5 kW. This means that Ireland is currently 6% below its target. Most EU countries are currently exceeding their AFIR target, with only Malta below Ireland (see Figure 7). According to reports, if Ireland had the EU average level of AFIR compliance for the current EV fleet, there would be 13,000 chargers as opposed to the current 4,000 public chargers."
           },
           {
             "type": "text",
@@ -485,7 +485,7 @@
         "type": "flourishBlock",
         "attrs": {
           "dataSrc": "visualisation/30366737?2729506",
-          "alt": "Flourish visualisation",
+          "alt": "Flourish visualisation of Figure 7: Percentage compliance with EU targets for levels of public charging (100% = fully compliant)",
           "caption": "Figure 7: Percentage compliance with EU targets for levels of public charging (100% = fully compliant)",
           "thumbnail": "https://public.flourish.studio/visualisation/30366737/thumbnail",
           "embedType": "visualisation",
